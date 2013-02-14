@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Tazinst Manual - Manuel de l'installateur 'tazinst'</title>
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+	<h1>Manuel de Tazinst</h1>
+</div>
+
+<!-- Start content -->
+<div id="content">
+
+<h2>NOM</h2>
+<p>
+	Tazinst - Tiny autonomous zone installer manager
+</p>
+
+<h2>SYNTAXE</h2>
+<pre>
+tazinst [commande] [option]
+</pre>
+
+<h2>DESCRIPTION</h2>
+<p>
+	Tazinst est l'installateur ultra léger (~31 Ko) de SliTaz sur disque dur.
+	Il permet d'installer SliTaz au choix à partir du Live-CD, d'une clé
+	LiveUSB, d'une image ISO de SliTaz, ou depuis le web en téléchargeant la
+	version stable, la version cooking ou en donnant le lien http d'une autre
+	iso (ex: iso de developpement).
+</p>
+<p>
+	Tazinst permet de formatter la partition cible aux formats de base ext2,
+	ext3, ext4 ou d'autres formats si les paquets correspondants ont été
+	installés. La partition /home peut être installée sur une autre partition,
+	et si besoin être formattée avant l'installation dans un des formats
+	disponibles. Tazinst peut, à la demande, installer le chargeur de démarrage
+	Grub dans le mbr du disque cible. Un dual-boot avec une partition Windows©
+	existante est possible, la recherche de la partition Windows© étant soit
+	automatique, soit précisée manuellement.
+</p>
+<p>
+	Tazinst permet également la mise à jour de SliTaz déjà installé sur une
+	partition du disque dur, ce qui est pratique en cas de changement de
+	version. Dans ce cas, Slitaz est mis à jour, les données présentes dans
+	/home sont préservées, et les paquets supplémentaires sont réinstallés
+	dans la nouvelle version.
+</p>
+<p>
+	Tazinst a été créé pour les besoins de SliTaz GNU/Linux, mini distribution
+	autonome.
+</p>
+<p>
+	Tazinst, écrit en script shell à partir de zéro est compatible Bash, et 
+	fonctionne avec Ash du projet Busybox. Tazinst est distribué sous license 
+	libre GNU gpl v3.
+</p>
+
+<h2>FICHIER DE PARAMÈTRES</h2>
+<p>
+	L'installateur Tazinst permet de réaliser une installation automatiquement
+	à l'aide d'un simple fichier de paramètres contenant des variables
+	significatives telles que :
+	<code>INST_TYPE="iso"</code>, <code>TGT_PARTITION="/dev/hda1"</code>.
+
+	De cette manière, cela permet aux développeurs de créer différents types de
+	frontend : Dialog, GTK et CGI/web dans TazPanel. Le frontend doit juste
+	créer un fichier de paramètres, puis lancer tazinst en ligne de commande et
+	afficher un rapport d'avancement des différentes étapes (Jauges et/ou
+	messages).
+</p>
+<p>
+	Le fichier de paramètres contient les variables suivantes :
+</p>
+<ul>
+	<li class="level1"><div class="li">
+	Les variables décrivant la source d'installation :
+
+<ol>
+	<li class="level1"><div class="li">
+	<strong>*INST_TYPE</strong> : le type du support contenant les fichiers
+	sources de SliTaz, au choix : <strong>cdrom</strong> (LiveCD de SliTaz),
+	<strong>usb</strong> (LiveUSB de SliTaz), <strong>iso</strong> (Image ISO
+	de SliTaz), <strong>web</strong> (Image ISO sur le Web), 
+	<strong>weboot</strong>,
+	ex : <code>INST_TYPE=web</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>*SRC_FILE</strong> : le nom de la source contenant SliTaz. Il dépend
+	du type de support :
+	<ul>
+	<li class="level2"><div class="li">cdrom (LiveCD de SliTaz) : 
+	<i>inutilisé</i>
+	</div></li>
+	<li class="level2"><div class="li">usb (LiveUSB de SliTaz) : Nom de la 
+	partition hôte de périphérique USB, ex : <code>SRC_FILE=/dev/sdb1</code>
+	</div></li>
+	<li class="level2"><div class="li">iso (Image ISO de SliTaz) : Nom du 
+	fichier ISO, ex : <code>SRC_FILE=~/slitaz.3.0.iso</code>
+	</div></li>
+	<li class="level2"><div class="li">web (Image ISO sur le Web) : Nom de 
+	l'URL, ex : <code>
+	SRC_FILE=http://mirror.slitaz.org/iso/cooking/slitaz-cooking.iso</code>. 
+	À noter que 3 URL sont prédéfinies : 'stable', 'cooking, 'rolling', ex : 
+	<code>SRC_FILE=cooking</code> téléchargera la dernière cooking disponible 
+	sur le web
+	</div></li>
+	<li class="level2"><div class="li">weboot : <i>inutilisé</i>
+	</div></li>
+	</ul>
+	</div></li>
+</ol>
+</div></li>
+</ul>
+
+<ul>
+	<li class="level1"><div class="li"> Les variables décrivant la partition
+	cible :
+
+	<ol>
+	<li class="level1"><div class="li">
+	<strong>*TGT_PARTITION</strong> : Le nom de la partition cible sur laquelle
+	SliTaz sera installé ou mis à jour,
+	ex : <code>TGT_PARTITION=/dev/hda3</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>TGT_FS</strong> : Si cette variable est renseignée, la partition
+	cible sera formatée dans le système de fichiers indiqué, sinon, la partition
+	sera nettoyée et le répertoire /home sera conservé,
+	ex : <code>TGT_FS=ext3</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>TGT_HOME</strong> : Cette variable indique, si besoin est, le nom de
+	la partition recevant le répertoire /home,
+	ex : <code>TGT_HOME=/dev/hda5</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>TGT_HOME_FS</strong> : Si cette variable est renseignée, la
+	partition /home sera formatée dans le système de fichiers indiqué,
+	ex : <code>TGT_HOME_FS=ext2</code>
+	</div></li>
+</ol>
+</div></li>
+</ul>
+
+<ul>
+	<li class="level1"><div class="li"> Les paramètres du système :
+
+<ol>
+	<li class="level1"><div class="li">
+	<strong>TGT_HOSTNAME</strong> : Nom du système,
+	ex : <code>TGT_HOSTNAME=hd-slitaz</code>, par défaut
+	<code>TGT_HOSTNAME=slitaz</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>TGT_ROOT_PWD</strong> : Mot de passe du super-utilisateur,
+	ex : <code>TGT_ROOT_PWD=toor</code>, par défaut
+	<code>TGT_ROOT_PWD=root</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>TGT_USER</strong> : Nom de l'utitisateur par défaut, 
+	ex : <code>TGT_USER=toto</code>, par défaut
+	<code>TGT_USER=tux</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>TGT_USER_PWD</strong> : Mot de passe de l'utilisateur par défaut,
+	ex : <code>TGT_USER_PWD=titi</code>, par défaut 
+	<code>TGT_USER_PWD=tux</code>
+	</div></li>
+</ol>
+</div></li>
+</ul>
+
+<ul>
+	<li class="level1"><div class="li"> Les variables de configuration du chargeur 
+	de démarrage (bootloader) :
+
+<ol>
+	<li class="level1"><div class="li">
+	<strong>TGT_GRUB</strong> : Installation de GRUB (yes ou no),
+	ex : <code>TGT_GRUB=yes</code>, par défaut <code>TGT_GRUB=no</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	<strong>TGT_WINBOOT</strong> : Si cette variable est renseignée, elle
+	indique la partition contenant Windows© pour mettre en place un Dual-boot.
+	Elle peut être aussi positionnée à 'auto', dans ce cas le dual-boot se
+	fera sur la première partition Windows© détectée, 
+	ex : <code>TGT_WINBOOT=auto</code>
+	</div></li>
+</ol>
+</div></li>
+</ul>
+
+<p>
+	À noter que seules les variables précédées d'une atérisque sont 
+	obligatoires, les autres sont optionnelles. Ainsi un fichier de 
+	paramètres minimaliste peut être le suivant:
+</p>
+<pre>
+INST_TYPE=cdrom
+TGT_PARTITION=/dev/hda3
+</pre>
+<p>
+	Ce fichier permettra une installation de SliTaz sur /dev/hda3, sans
+	formatter la partition, à partir d'un LiveCD.
+</p>
+
+<h2>COMMANDES</h2>
+
+<a id="new"></a>
+<h3>new</h3>
+<p>
+	Génère un fichier de paramètres autodocumenté, qui une fois édité 
+	suivant	les besoins de l'utilisateur, permettra d'installer ou mettre 
+	à jour SliTaz sur disque dur.
+</p>
+<pre>
+tazinst new /var/lib/tazinst.conf
+</pre>
+
+<a id="install"></a>
+<h3>install</h3>
+<p>
+	Lance l'installation de SliTaz en fonction des données présentes dans le
+	fichier de paramètres. Si le formattage de la partition est demandé,
+	toutes les données seront perdues. Si le disque n'est pas formatté, toutes
+	les données sauf un répertoire /home existant seront effacées, ce répertoire
+	/home sera gardé tel quel. 
+</p>
+<pre>
+tazinst install /var/lib/tazinst.conf
+</pre>
+
+<a id="upgrade"></a>
+<h3>upgrade</h3>
+<p>
+	Lance la mise à jour de SliTaz en fonction des données présentes dans le
+	fichier de paramètres. Les répertoires /home /etc /var/www seront
+	conservés, tous les autres répertoires seront supprimés. Tout paquet ajouté
+	à la configuration de votre ancien système SliTaz sera mis à jour à la
+	condition qu'une connexion internet soit active.
+</p>
+<pre>
+tazinst upgrade /var/lib/tazinst.conf
+</pre>
+
+<a id="showurl"></a>
+<h3>showurl</h3>
+<p>
+	Affiche l'URL complète des raccourcis prédéfinis : 'stable', 'cooking, 
+	'rolling'.
+</p>
+<p>
+	Note: Vous pouvez redéfinir ces raccourcis dans le fichier système :
+	/etc/slitaz/tazinst.conf.
+</p>
+<pre>
+tazinst showurl stable
+</pre>
+
+<a id="check"></a>
+<h3>check</h3>
+<p>
+	Vérifie que le fichier de paramètres ne contient pas d'erreurs.
+</p>
+<pre>
+tazinst check /var/lib/tazinst.conf
+</pre>
+
+<a id="log"></a>
+<h3>log</h3>
+<p>
+	Affiche le contenu du fichier journal.
+</p>
+<pre>
+tazinst log
+</pre>
+
+<a id="version"></a>
+<h3>version</h3>
+<p>
+	Affiche les informations de version.
+</p>
+<pre>
+tazinst version
+</pre>
+
+<h2>FICHIER SYSTÈME DE CONFIGURATION</h2>
+<p>
+	Le fichier système de configuration /etc/slitaz/tazinst.conf permet de
+	changer les paramètres par défaut de tazinst. Pour utiliser des valeurs
+	personnalisées pour les URL, répertoires et fichiers, ce fichier doit être
+	créé et les variables suivantes modifiées :
+</p>
+
+<ul>
+	<li class="level1"><div class="li">URLs prédéfinies :
+
+<ol>
+	<li class="level1"><div class="li">URL de la version stable actuelle :<br />
+	<code>URL_STABLE="http://mirror.slitaz.org/iso/stable/slitaz-4.0.iso"
+	</code>
+	</div></li>
+	<li class="level1"><div class="li">URL de la version cooking :<br />
+	<code>URL_COOKING="http://mirror.slitaz.org/iso/cooking/slitaz-cooking.iso"
+	</code>
+	</div></li>
+	<li class="level1"><div class="li">URL de la version rolling :<br />
+	<code>URL_ROLLING="http://mirror.slitaz.org/iso/rolling/slitaz-core.iso"
+	</code>
+	</div></li>
+</ol>
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">Points de montage :
+
+<ol>
+	<li class="level1"><div class="li">
+	Point de montage de la partition Source :<br />
+	<code>SOURCE_ROOT="/media/source"</code>
+	</div></li>
+	<li class="level1"><div class="li">
+	Point de montage de la partition Cible :<br />
+	<code>TARGET_ROOT="/mnt/target"</code>
+	</div></li>
+</ol>
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">Debug et journal :
+
+<ol>
+	<li class="level1"><div class="li">Emplacement du fichier journal :<br />
+	<code>LOG="/var/log/tazinst.log"</code>
+	</div></li>
+	<li class="level1"><div class="li">Debugging: (non => 0, debug => 1)<br />
+	<code>DEBUG=0</code><br />
+		Il est chaudement recommandé de définir <code>DEBUG=1</code> et de
+		joindre le fichier journal resultant lors de l'envoi d'un rapport de
+		bogue aux développeurs.
+	</div></li>
+</ol>
+</div></li>
+</ul>
+
+<h2>MAINTENEURS</h2>
+<p>
+	Christophe Lincoln &lt;pankso at slitaz.org&gt; <br />
+	Dominique Corbex &lt;domcox at slitaz.org&gt;
+</p>
+
+<!-- End of content -->
+</div>
+
+<div id="footer">
+	Copyright &copy; 2012 <a href="http://www.slitaz.org/">SliTaz GNU/Linux</a>
+</div>
+
+</body>
+</html>
