@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=SliTaz Installer
+Icon=slitaz-icon
+Exec=browser http://tazpanel:82/installer.cgi
+Categories=System;
