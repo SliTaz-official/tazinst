@@ -15,7 +15,7 @@
 # 2: Install file error
 # 3: Source error
 # 4: Target error
-# 5: Missing ressource
+# 5: Missing resource
 # 6: SliTaz system to upgrade not found
 # 7: Another instance is running
 # 8: Internal error
@@ -60,7 +60,7 @@ readonly LST_MODE="
 install:$(gettext "Fresh install on a HDD")
 upgrade:$(gettext "Upgrade an existing system")"
 
-# medias (key:help)
+# media (key:help)
 readonly LST_MEDIA="
 cdrom:$(gettext "LiveCD")
 usb:$(gettext "LiveUSB")
@@ -123,7 +123,7 @@ usage()
   get         $(gettext "Get the value of a setting.")
   check       $(gettext "Check settings.")
   help        $(gettext "Print a short help on settings")
-  list        $(gettext "List system ressources.")
+  list        $(gettext "List system resources.")
   execute     $(gettext "Execute a SliTaz installation.")
   log         $(gettext "Display log file contents.")
   clean       $(gettext "Clean install and log files.")
@@ -169,7 +169,7 @@ new_file()
 	local install_file=$1
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	if [ -e "$install_file" ]; then
-		printf "$(gettext "Warning: file exists already.")\n" 1>&2
+		printf "$(gettext "Warning: file already exists.")\n" 1>&2
 		exit 0
 	fi
 	[ -n "$install_file" ] && touch "$install_file"
@@ -227,13 +227,13 @@ ROOT_FORMAT="$ROOT_FORMAT"
 # Home partition:
 # On most GNU/Linux systems users personal files are stored in the directory
 # /home. /home can be on another hard disk or on a separate partition.
-# Let HOME_UUID empty if you do not intend to use a specific partition for /home
+# Leave HOME_UUID empty if you do not intend to use a specific partition for /home
 # or enter the UUID of the partition to be used.
 # run 'tazinst list uuid' to list your partitions.
 HOME_UUID="$HOME_UUID"
 
 # Formatting the /home partition (if /home is on a separate partition):
-# Let HOME_FORMAT empty if you don not want to format the /home partition.
+# Leave HOME_FORMAT empty if you do not want to format the /home partition.
 # For options, see comments on 'Formatting the root partition' above.
 HOME_FORMAT="$HOME_FORMAT"
 
@@ -253,13 +253,13 @@ USER_LOGIN="$USER_LOGIN"
 USER_PWD="$USER_PWD"
 
 # Install bootloader:
-# If you do not want to install a bootloader, let this field empty.
+# If you do not want to install a bootloader, leave this field empty.
 # It's generally safe to set it up as 'auto'.
 # Run 'tazinst list bootloader' to list all options.
 BOOTLOADER="$BOOTLOADER"
 
 # Windows dual boot:
-# If you do not want enable Dual boot, let WINBOOT empty (WINBOOT="").
+# If you do not want enable Dual boot, leave WINBOOT empty (WINBOOT="").
 # You may let tazinst automatically find your win partition by specifying auto
 # (WINBOOT="auto"), otherwise enter the UUID of the partition to be used.
 # Run 'tazinst list winboot' to see the Windows partitions found by tazinst.
@@ -487,7 +487,7 @@ $(gettext "For more information, see tazinst Manual.")\n" 1>&2
 	fi
 }
 
-# exit if the partition do not exists
+# exit if the partition does not exist
 check_uuid()
 {
 	local setting="$1" value="$(get $1)" found=0 partition
@@ -502,7 +502,7 @@ $(gettext "To see available partitions, run") 'tazinst list uuid'.\n" 1>&2
 	fi
 }
 
-# exit if the source do not exists
+# exit if the source does not exist
 check_source()
 {
 	local media="$(get media)" source="$(get source)"
@@ -555,7 +555,7 @@ check_password()
 	local errcode=0
 	# too long
 	if [ "${#pass}" -ge 40 ]; then
-		printf "$(gettext "Error: To long password")\n" 1>&2
+		printf "$(gettext "Error: password too long")\n" 1>&2
 		exit 1
 	fi
 	# bad chars
@@ -1167,7 +1167,7 @@ add_pkg()
 # start log
 log_open()
 {
-	printf "=== Tazinst: start on $(date "+%x %X") ===\n" > "$LOG"
+	printf "=== Tazinst: started on $(date "+%x %X") ===\n" > "$LOG"
 	LOGGING="true"
 }
 
@@ -1435,7 +1435,7 @@ end_of_install()
 {
 	log "\n$(gettext "Process completed. You can now restart (reboot)")"
 	log "$(gettext "from your SliTaz GNU/Linux system.")"
-	printf "=== Tazinst end on $(date "+%x %X") ===\n" >> "$LOG"
+	printf "=== Tazinst ended on $(date "+%x %X") ===\n" >> "$LOG"
 	unset LOGGING
 	# saving log
 	log "$(gettext "Copying log to /var/log/tazinst.log")"
