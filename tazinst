@@ -34,7 +34,7 @@ umask 0177
 
 # version
 readonly VERSION=3.90
-BANNER="Tazinst - SliTaz GNU/Linux Installer - $(gettext "Version") $VERSION"
+BANNER="$(gettext "Tazinst - SliTaz GNU/Linux Installer - Version $VERSION")"
 
 # i18n
 . /usr/bin/gettext.sh
@@ -57,51 +57,51 @@ bootloader winboot"
 
 # modes (key:help)
 readonly LST_MODE="
-install:$(gettext "Fresh install on a HDD")
-upgrade:$(gettext "Upgrade an existing system")"
+install:$(gettext 'Fresh install on a HDD')
+upgrade:$(gettext 'Upgrade an existing system')"
 
 # media (key:help)
 readonly LST_MEDIA="
-cdrom:$(gettext "LiveCD")
-usb:$(gettext "LiveUSB")
-iso:$(gettext "ISO image on a local drive")
-web:$(gettext "ISO image on the Internet")"
+cdrom:$(gettext 'LiveCD')
+usb:$(gettext 'LiveUSB')
+iso:$(gettext 'ISO image on a local drive')
+web:$(gettext 'ISO image on the Internet')"
 
 # formats (key:help)
 readonly LST_FORMAT="
-btrfs:B-tree file system (Oracle)
-ext2:Second extended filesystem (Linux)
-ext3:Third extended filesystem (Linux)
-ext4:Fourth extended file system (Linux)
-jfs:Journaled File System (IBM)
-minix:File system of the MINIX operating system
-reiser4:Journaled computer file system (Namesys)
-xfs:journaling file system (Silicon Graphics, Inc.)"
+btrfs:$(gettext 'B-tree file system (Oracle)')
+ext2:$(gettext 'Second extended filesystem (Linux)')
+ext3:$(gettext 'Third extended filesystem (Linux)')
+ext4:$(gettext 'Fourth extended file system (Linux)')
+jfs:$(gettext 'Journaled File System (IBM)')
+minix:$(gettext 'File system of the MINIX operating system')
+reiser4:$(gettext 'Journaled computer file system (Namesys)')
+xfs:$(gettext 'Journaling file system (Silicon Graphics, Inc.)')"
 
 # bootloaders (key:help)
 readonly LST_BOOTLOADER="
-auto:$(gettext "Automatic selection")
-grub:$(gettext "Grub legacy bootoader")
-syslinux:$(gettext "Lightweight bootloader")"
+auto:$(gettext 'Automatic selection')
+grub:$(gettext 'Grub legacy bootoader')
+syslinux:$(gettext 'Lightweight bootloader')"
 
 # predefined iso (key:url:help)
 SLITAZ_VERSION="${SLITAZ_VERSION:-cooking}"
 [ "$SLITAZ_VERSION" = "cooking" ] && SLITAZ_VERSION="$(($(date "+%y")-8)).0"
 [ -n "$URL_ISO" ] && readonly LST_WEB="$URL_ISO" || readonly LST_WEB="
 stable:iso/stable/slitaz-$SLITAZ_VERSION.iso \
-:$(gettext "Stable release") $SLITAZ_VERSION
+:$(gettext 'Stable release') $SLITAZ_VERSION
 core:iso/stable/flavors/slitaz-$SLITAZ_VERSION-core.iso \
-:$(gettext "Stable version without nested subsets")
+:$(gettext 'Stable version without nested subsets')
 base:iso/stable/flavors/slitaz-$SLITAZ_VERSION-base.iso \
-:$(gettext "Stable text-only version (8.1MB)")
+:$(gettext 'Stable text-only version (8.1MB)')
 justx:iso/stable/flavors/slitaz-$SLITAZ_VERSION-justx.iso \
-:$(gettext "Stable basic graphic version without graphic apps")
+:$(gettext 'Stable basic graphic version without graphic apps')
 gtkonly:iso/stable/flavors/slitaz-$SLITAZ_VERSION-gtkonly.iso \
-:$(gettext "Stable basic graphic version with only Gtk")
+:$(gettext 'Stable basic graphic version with only Gtk')
 cooking:iso/cooking/slitaz-cooking.iso \
-:$(gettext "Development version for testing latest features")
+:$(gettext 'Development version for testing latest features')
 rolling:iso/rolling/slitaz-rolling.iso \
-:$(gettext "Bleeding edge development version updated every day")
+:$(gettext 'Bleeding edge development version updated every day')
 "
 
 
@@ -112,11 +112,15 @@ rolling:iso/rolling/slitaz-rolling.iso \
 # print a short help
 usage()
 {
-	printf "\n$BANNER\n\n"
-	printf "\033[1m$(gettext "Usage"):\033[0m $(gettext "tazinst [command] \
-<setting> <value> <file>")
+	local B1=$(echo -en "\033[1m") B0=$(echo -en "\033[0m")
+	cat << EOT
 
-\033[1m$(gettext "Commands"): \033[0m
+$BANNER
+
+
+$B1$(gettext "Usage"):$B0 $(gettext "tazinst [command] <setting> <value> <file>")
+
+$B1$(gettext "Commands"): $B0
   new         $(gettext "Create a new install file.")
   set         $(gettext "Change value of a setting.")
   unset       $(gettext "Clear a setting.")
@@ -129,7 +133,8 @@ usage()
   clean       $(gettext "Clean install and log files.")
   version     $(gettext "Print version and exit.")
   usage       $(gettext "Print this short usage.")
-"
+
+EOT
 	exit 0
 }
 
@@ -138,9 +143,9 @@ usage_error()
 	local command="$1"
 	printf "\n$BANNER\n\n"
 	if [ -z "$command" ]; then
-		printf "$(gettext "Error: Missing parameter.")\n"
+		printf "$(gettext 'Error: Missing parameter.')\n"
 	else
-		printf "\033[1m$command\033[0m: $(gettext "Unknown command.")\n"
+		printf "\033[1m$command\033[0m: $(gettext 'Unknown command.')\n"
 	fi
 	local script_name=$(printf "$0" | /bin/busybox awk 'BEGIN{RS="/"}
 		{cmd=$command}END{print cmd}')
@@ -169,14 +174,14 @@ new_file()
 	local install_file=$1
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	if [ -e "$install_file" ]; then
-		printf "$(gettext "Warning: file already exists.")\n" 1>&2
+		echo $(gettext "Warning: file already exists.") 1>&2
 		exit 0
 	fi
 	[ -n "$install_file" ] && touch "$install_file"
 	if [ -w "$install_file" ]; then
 		write_file "$install_file"
 	else
-		printf "$(gettext "Error: Can't create file.")\n" 1>&2
+		echo $(gettext "Error: Can't create file.") 1>&2
 		exit 2
 	fi
 }
@@ -274,12 +279,12 @@ read_file()
 	local install_file="$1"
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	if ! [ -r "$install_file" ]; then
-		printf "$(gettext "Error: Unable to read install file")\n" 1>&2
+		echo $(gettext "Error: Unable to read install file") 1>&2
 		exit 2
 	fi
 	#
 	if ! CONTENTS="$(cat "$install_file")"; then
-		printf "$(gettext "Error: Unable to read install file")\n" 1>&2
+		echo $(gettext "Error: Unable to read install file") 1>&2
 		exit 2
 	fi
 }
@@ -356,7 +361,7 @@ change()
 	# validate setting
 	if ! printf "%s" "$setting" | \
 			egrep -q "$(regex "$SETTINGS")"; then
-		printf "$(gettext "Error: '$setting' unknown setting.")\n" 1>&2
+		echo $(gettext "Error: '$setting' unknown setting.") 1>&2
 		exit 1
 	fi
 	# and file
@@ -384,7 +389,7 @@ change()
 		read_file "$install_file"
 		check "$setting"
 	else
-		printf "$(gettext "Error: Unable to write to install file.")\n" 1>&2
+		echo $(gettext "Error: Unable to write to install file.") 1>&2
 		exit 2
 	fi
 }
@@ -440,7 +445,7 @@ clean()
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	echo "$(gettext "Deleting install file:") $install_file"
 	if ! [ -w "$install_file" ]; then
-		printf "$(gettext "Error: Unable to delete install file")\n" 1>&2
+		echo $(gettext "Error: Unable to delete install file") 1>&2
 		exit 2
 	else
 		rm -f "$install_file"
@@ -455,9 +460,9 @@ clean()
 check_root()
 {
 	if test $(id -u) != 0 ; then
-		printf "$(gettext "You must be the root user (system administrator) \
+		echo $(gettext "You must be the root user (system administrator) \
 to install SliTaz, please use 'su' to get a root SHell and restart \
-installation.")\n" 1>&2
+installation.") 1>&2
 		exit 1
 	fi
 }
@@ -466,7 +471,7 @@ installation.")\n" 1>&2
 check_instance()
 {
 	if [ -e "$LOCK" ]; then
-		printf "$(gettext "Another instance of tazinst is running.")\n" 1>&2
+		echo $(gettext "Another instance of tazinst is running.") 1>&2
 		exit 7
 	else
 		printf "$$" > $LOCK
@@ -480,9 +485,9 @@ check_key()
 	if ! printf "%s" "$keyword" | \
 			egrep -q "$(regex "$keylist")"; then
 		printf "$setting=$keyword
-$(gettext "Error:") '$keyword' $(gettext "Invalid keyword.")
-$(gettext "Select one of these options:") $keylist
-$(gettext "For more information, see tazinst Manual.")\n" 1>&2
+$(gettext 'Error:') '$keyword' $(gettext 'Invalid keyword.')
+$(gettext 'Select one of these options:') $keylist
+$(gettext 'For more information, see tazinst Manual.')\n" 1>&2
 		exit 1
 	fi
 }
@@ -496,8 +501,8 @@ check_uuid()
 	done
 	if [ "$found" != "1" ]; then
 		printf "$(gettext "$setting")=$value
-$(gettext "Error: Partition not found")
-$(gettext "To see available partitions, run") 'tazinst list uuid'.\n" 1>&2
+$(gettext 'Error: Partition not found')
+$(gettext 'To see available partitions, run') 'tazinst list uuid'.\n" 1>&2
 		exit 1
 	fi
 }
@@ -511,7 +516,7 @@ check_source()
 			check_uuid source ;;
 		iso)
 			if [ ! -r "$source" ]; then
-				printf "$(gettext "Error: Source file not found")\n" 1>&2
+				echo $(gettext "Error: Source file not found") 1>&2
 				exit 1
 			fi ;;
 		web)
@@ -526,7 +531,7 @@ check_source()
 			printf "%s" "$source" | \
 				egrep -q "$regexp" && valid=$(($valid+1))
 			if [ "$valid" -le "0" ]; then
-				printf "$(gettext "Error: invalid URL").\n" 1>&2
+				echo $(gettext "Error: invalid URL"). 1>&2
 				exit 1
 			fi
 	esac
@@ -555,12 +560,12 @@ check_password()
 	local errcode=0
 	# too long
 	if [ "${#pass}" -ge 40 ]; then
-		printf "$(gettext "Error: password too long")\n" 1>&2
+		echo $(gettext "Error: password too long") 1>&2
 		exit 1
 	fi
 	# bad chars
 	if ! (echo "$pass" | egrep -q "$invalid"); then
-		printf "$(gettext "Error: Unallowed characters in password.")\n" 1>&2
+		echo  $(gettext "Error: Unallowed characters in password.") 1>&2
 		exit 1
 	fi
 	# short pwd
@@ -569,9 +574,9 @@ check_password()
 	[ -z "$pass" ] && errcode=129
 	case "$errcode" in
 		128)
-		   	printf "$(gettext "Warning: short password!")\n" 1>&2 ;;
+			echo $(gettext "Warning: short password!") 1>&2 ;;
 		129)
-		   	printf "$(gettext "Warning: no password!")\n" 1>&2 ;;
+			echo $(gettext "Warning: no password!") 1>&2 ;;
 	esac
 	return "$errcode"
 }
@@ -601,7 +606,7 @@ check_boot_mix()
 	local bootloader=$(get bootloader)
 	local winboot=$(get winboot)
 	if [ -z "$bootloader" ] && [ -n "$winboot" ]; then
-		printf "$(gettext "Error: Dualboot set with no bootloader.")\n" 1>&2
+		echo $(gettext "Error: Dualboot set with no bootloader.") 1>&2
 		exit 1
 	fi
 }
@@ -615,12 +620,12 @@ check_table()
 	if [ "$(/sbin/blkid | grep -c "$uuid")" == "1" ]; then
 		if ! printf "$(p_table $uuid)" | \
 				egrep -q "$(regex "$pt_list")"; then
-			printf "$(gettext "Error: Unsupported Partition Table")\n" 1>&2
+			echo $(gettext "Error: Unsupported Partition Table") 1>&2
 			exit 1
 		fi
 	else
-		printf "$(gettext "Error: No disk selected, can't install any \
-bootloader.")\n" 1>&2
+		echo $(gettext "Error: No disk selected, can't install any \
+bootloader.") 1>&2
 		exit 1
 	fi
 }

@@ -1,21 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Russian translations for TazInst package
+# Copyright (C) 2013 SliTaz
+# This file is distributed under the same license as the TazInst package.
+# Aleksej Bobylev <al.bobylev@gmail.com>, 2013.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: TazInst \n"
+"Project-Id-Version: TazInst\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-16 17:09+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-02-16 16:35+0000\n"
+"PO-Revision-Date: 2013-02-16 17:08-0000\n"
+"Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
+"Language-Team: \n"
+"Language: Russian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: tazinst:60
 msgid "Fresh install on a HDD"
@@ -23,83 +23,83 @@ msgstr ""
 
 #: tazinst:61
 msgid "Upgrade an existing system"
-msgstr ""
+msgstr "Обновить существующую систему"
 
 #: tazinst:65
 msgid "LiveCD"
-msgstr ""
+msgstr "LiveCD"
 
 #: tazinst:66
 msgid "LiveUSB"
-msgstr ""
+msgstr "LiveUSB"
 
 #: tazinst:67
 msgid "ISO image on a local drive"
-msgstr ""
+msgstr "ISO-образ на локальном приводе"
 
 #: tazinst:68
 msgid "ISO image on the Internet"
-msgstr ""
+msgstr "ISO-образ в интернете"
 
 #: tazinst:72
 msgid "B-tree file system (Oracle)"
-msgstr ""
+msgstr "файловая система B-tree (Oracle)"
 
 #: tazinst:73
 msgid "Second extended filesystem (Linux)"
-msgstr ""
+msgstr "вторая расширенная файловая система (Linux)"
 
 #: tazinst:74
 msgid "Third extended filesystem (Linux)"
-msgstr ""
+msgstr "третья расширенная файловая система (Linux)"
 
 #: tazinst:75
 msgid "Fourth extended file system (Linux)"
-msgstr ""
+msgstr "четвертая расширенная файловая система (Linux)"
 
 #: tazinst:76
 msgid "Journaled File System (IBM)"
-msgstr ""
+msgstr "журналируемая файловая система (IBM)"
 
 #: tazinst:77
 msgid "File system of the MINIX operating system"
-msgstr ""
+msgstr "файловая система операционной системы MINIX"
 
 #: tazinst:78
 msgid "Journaled computer file system (Namesys)"
-msgstr ""
+msgstr "журналируемая компьютерная файловая система (Namesys)"
 
 #: tazinst:79
 msgid "Journaling file system (Silicon Graphics, Inc.)"
-msgstr ""
+msgstr "журналируемая файловая система (Silicon Graphics, Inc.)"
 
 #: tazinst:83
 msgid "Automatic selection"
-msgstr ""
+msgstr "автоматический выбор"
 
 #: tazinst:84
 msgid "Grub legacy bootoader"
-msgstr ""
+msgstr "загрузчик Grub legacy"
 
 #: tazinst:85
 msgid "Lightweight bootloader"
-msgstr ""
+msgstr "легковесный загрузчик"
 
 #: tazinst:92
 msgid "Stable release"
-msgstr ""
+msgstr "стабильная версия"
 
 #: tazinst:94
 msgid "Stable version without nested subsets"
-msgstr ""
+msgstr "стабильная версия без вложенных систем"
 
 #: tazinst:96
 msgid "Stable text-only version (8.1MB)"
-msgstr ""
+msgstr "стабильная текстовая версия (8,1 МБ)"
 
 #: tazinst:98
 msgid "Stable basic graphic version without graphic apps"
-msgstr ""
+msgstr "стабильная основная графическая версия без графических программ"
 
 #: tazinst:100
 msgid "Stable basic graphic version with only Gtk"
@@ -115,15 +115,15 @@ msgstr ""
 
 #: tazinst:121
 msgid "Usage"
-msgstr ""
+msgstr "Использование"
 
 #: tazinst:121
 msgid "tazinst [command] <setting> <value> <file>"
-msgstr ""
+msgstr "tazinst [команда] <параметр> <значение> <файл>"
 
 #: tazinst:123
 msgid "Commands"
-msgstr ""
+msgstr "Команды"
 
 #: tazinst:124
 msgid "Create a new install file."
@@ -197,7 +197,8 @@ msgstr ""
 msgid "Error: Can't create file."
 msgstr ""
 
-#: tazinst:282 tazinst:287
+#: tazinst:282
+#: tazinst:287
 msgid "Error: Unable to read install file"
 msgstr ""
 
@@ -214,9 +215,7 @@ msgid "Error: Unable to delete install file"
 msgstr ""
 
 #: tazinst:463
-msgid ""
-"You must be the root user (system administrator) to install SliTaz, please "
-"use 'su' to get a root SHell and restart installation."
+msgid "You must be the root user (system administrator) to install SliTaz, please use 'su' to get a root SHell and restart installation."
 msgstr ""
 
 #: tazinst:474
@@ -335,19 +334,23 @@ msgstr ""
 msgid "Format of the root partition"
 msgstr ""
 
-#: tazinst:762 tazinst:805
+#: tazinst:762
+#: tazinst:805
 msgid "Name of the system"
 msgstr ""
 
-#: tazinst:763 tazinst:807
+#: tazinst:763
+#: tazinst:807
 msgid "Superuser password"
 msgstr ""
 
-#: tazinst:764 tazinst:809
+#: tazinst:764
+#: tazinst:809
 msgid "First user name"
 msgstr ""
 
-#: tazinst:765 tazinst:811
+#: tazinst:765
+#: tazinst:811
 msgid "First user password"
 msgstr ""
 
@@ -407,7 +410,8 @@ msgstr ""
 msgid "Process not completed"
 msgstr ""
 
-#: tazinst:1202 tazinst:1206
+#: tazinst:1202
+#: tazinst:1206
 msgid "Error"
 msgstr ""
 
@@ -455,7 +459,8 @@ msgstr ""
 msgid "Failed to mount ISO."
 msgstr ""
 
-#: tazinst:1309 tazinst:1393
+#: tazinst:1309
+#: tazinst:1393
 msgid "Creating mount point:"
 msgstr ""
 
@@ -527,7 +532,8 @@ msgstr ""
 msgid "No bootloader to install."
 msgstr ""
 
-#: tazinst:1576 tazinst:1680
+#: tazinst:1576
+#: tazinst:1680
 msgid "Enabling Windows dual-boot"
 msgstr ""
 
@@ -539,7 +545,8 @@ msgstr ""
 msgid "Setting the boot flag"
 msgstr ""
 
-#: tazinst:1609 tazinst:1737
+#: tazinst:1609
+#: tazinst:1737
 msgid "Copying splash image"
 msgstr ""
 
@@ -567,7 +574,8 @@ msgstr ""
 msgid "Cleaning the root partition"
 msgstr ""
 
-#: tazinst:1779 tazinst:2051
+#: tazinst:1779
+#: tazinst:2051
 msgid "keeping /home found on:"
 msgstr ""
 
@@ -603,15 +611,18 @@ msgstr ""
 msgid "Installing SliTaz on:"
 msgstr ""
 
-#: tazinst:1985 tazinst:2164
+#: tazinst:1985
+#: tazinst:2164
 msgid "Checking settings"
 msgstr ""
 
-#: tazinst:1989 tazinst:2168
+#: tazinst:1989
+#: tazinst:2168
 msgid "Preparing source media"
 msgstr ""
 
-#: tazinst:1992 tazinst:2171
+#: tazinst:1992
+#: tazinst:2171
 msgid "Preparing target disk"
 msgstr ""
 
@@ -619,11 +630,13 @@ msgstr ""
 msgid "Cleaning the root partition if necessary"
 msgstr ""
 
-#: tazinst:1998 tazinst:2180
+#: tazinst:1998
+#: tazinst:2180
 msgid "Extracting the root system"
 msgstr ""
 
-#: tazinst:2001 tazinst:2186
+#: tazinst:2001
+#: tazinst:2186
 msgid "Installing the kernel"
 msgstr ""
 
@@ -643,7 +656,8 @@ msgstr ""
 msgid "Checking bootloader installation..."
 msgstr ""
 
-#: tazinst:2016 tazinst:2195
+#: tazinst:2016
+#: tazinst:2195
 msgid "Files installation completed"
 msgstr ""
 
@@ -652,9 +666,7 @@ msgid "Preparing upgrade of SliTaz release:"
 msgstr ""
 
 #: tazinst:2032
-msgid ""
-"This partition doesn't appear to contain a valid SliTaz system, the file: /"
-"etc/slitaz-release doesn't exist."
+msgid "This partition doesn't appear to contain a valid SliTaz system, the file: /etc/slitaz-release doesn't exist."
 msgstr ""
 
 #: tazinst:2055
@@ -707,9 +719,7 @@ msgstr ""
 
 #: tazinst:2151
 msgid ""
-"The list of available packages on the mirror could not be downloaded. No "
-"missing packages will be reinstalled now, but you can do so later by looking "
-"at the following list:\n"
+"The list of available packages on the mirror could not be downloaded. No missing packages will be reinstalled now, but you can do so later by looking at the following list:\n"
 "/var/lib/tazinst/packages-selection.diff"
 msgstr ""
 
@@ -736,3 +746,4 @@ msgstr ""
 #: tazinst:2192
 msgid "Bootloader"
 msgstr ""
+

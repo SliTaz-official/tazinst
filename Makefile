@@ -1,4 +1,4 @@
-# Makefile for TazUSB.
+# Makefile for TazInst.
 # Check the README for more information.
 #
 PREFIX?=/usr
@@ -17,7 +17,7 @@ all:
 
 pot:
 	xgettext -o po/tazinst/tazinst.pot -L Shell \
-		--package-name="Tazinst" \
+		--package-name="TazInst" \
 		--package-version="$(VERSION)" \
 		./tazinst
 	xgettext -o po/slitaz-installer/slitaz-installer.pot -L Shell \
