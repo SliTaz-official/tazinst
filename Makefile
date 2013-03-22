@@ -76,9 +76,11 @@ install: msgfmt
 	mkdir -p $(DESTDIR)$(PREFIX)/sbin
 	install -m 0755 slitaz-installer $(DESTDIR)$(PREFIX)/sbin
 	@echo "Installing installer.cgi into $(DESTDIR)$(TAZPANEL)..."
-	mkdir -p $(DESTDIR)$(TAZPANEL)
+	mkdir -p $(DESTDIR)$(TAZPANEL)/menu.d
 	install -m 0755 installer.cgi $(DESTDIR)$(TAZPANEL)
-	@echo "Installing config file into $(DESTDIR)/etc/slitaz.."
+	@echo "Installing installer.menu into $(DESTDIR)$(TAZPANEL)/menu.d..."
+	install -m 0755 installer.menu $(DESTDIR)$(TAZPANEL)/menu.d
+	@echo "Installing config file into $(DESTDIR)/etc/slitaz..."
 	mkdir -p $(DESTDIR)/etc/slitaz
 	install -m 0755 etc/tazinst.conf $(DESTDIR)/etc/slitaz
 
@@ -100,6 +102,7 @@ uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/sbin/tazinst
 	rm -f $(DESTDIR)$(PREFIX)/sbin/slitaz_installer
 	rm -f $(DESTDIR)$(TAZPANEL)/installer.cgi
+	rm -f $(DESTDIR)$(TAZPANEL)/menu.d/installer.menu
 	rm -rf $(DESTDIR)$(DOCDIR)/tazinst
 	rm -rf $(DESTDIR)$(PREFIX)/share/locale/*/LC_MESSAGES/tazinst*.mo
 	rm -rf $(DESTDIR)$(PREFIX)/share/locale/*/LC_MESSAGES/slitaz-installer*.mo
