@@ -40,6 +40,20 @@ TAZINST_MAXIMUM_VERSION="4.99"
 # tazinst setup file
 INSTFILE=/root/tazinst.conf
 
+#------
+# menu
+#------
+case "$0" in
+index.cgi)	cat << EOT
+<li><a href="/installer.cgi">$(gettext 'Install')</a>
+	<ul>
+		<li><a href="/installer.cgi?page=menu_install">$(gettext 'Install SliTaz')</a></li>
+		<li><a href="/installer.cgi?page=menu_upgrade">$(gettext 'Upgrade system')</a></li>
+	</ul>
+</li>
+EOT
+	exit
+esac
 
 #-----------
 # home page

@@ -79,7 +79,7 @@ install: msgfmt
 	mkdir -p $(DESTDIR)$(TAZPANEL)/menu.d
 	install -m 0755 installer.cgi $(DESTDIR)$(TAZPANEL)
 	@echo "Installing installer.menu into $(DESTDIR)$(TAZPANEL)/menu.d..."
-	install -m 0755 installer.menu $(DESTDIR)$(TAZPANEL)/menu.d
+	ln -s ../installer.cgi $(DESTDIR)$(TAZPANEL)/menu.d/installer.cgi
 	@echo "Installing config file into $(DESTDIR)/etc/slitaz..."
 	mkdir -p $(DESTDIR)/etc/slitaz
 	install -m 0755 etc/tazinst.conf $(DESTDIR)/etc/slitaz
