@@ -43,8 +43,8 @@ INSTFILE=/root/tazinst.conf
 #------
 # menu
 #------
-case "$0" in
-index.cgi)	cat << EOT
+case "$1" in
+menu)	cat << EOT
 <li><a href="/installer.cgi">$(gettext 'Install')</a>
 	<ul>
 		<li><a href="/installer.cgi?page=menu_install">$(gettext 'Install SliTaz')</a></li>
