@@ -1,384 +1,368 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-	<title>Tazinst Manual - Manual for 'tazinst' installer</title>
 	<meta charset="utf-8" />
+	<title>Tazinst Manual—Manual for “tazinst” installer</title>
 	<link rel="shortcut icon" href="favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="../slitaz-doc.css" />
+	<script type="text/javascript" src="../slitaz-doc.js"></script>
 </head>
 <body>
 
-<!-- Header -->
-<div id="header">
+<header>
 	<h1>Tazinst Manual</h1>
-</div>
+</header>
 
 <!-- Start content -->
 <div id="content">
 
 <h2>NAME</h2>
-<p>
-	Tazinst - Tiny autonomous zone installer manager
-</p>
+
+<p>Tazinst—Tiny autonomous zone installer manager</p>
+
 
 <h2>SYNTAX</h2>
+
 <pre>
 tazinst [command] &lt;setting&gt; &lt;value&gt; &lt;file&gt;
 </pre>
 
-<h2>DESCRIPTION</h2>
-<p>
-	Tazinst is a lightweight SliTaz HDD installer. It installs SliTaz
-	to a hard drive from any local media such as a Live-CD, a LiveUSB key, an ISO
-	image located on one of your disks, or from the web by automatically
-	downloading a SliTaz image.
-</p>
-<p>
-	Tazinst can format the target partition to ext2, ext3 or ext4. The home
-	partition can be installed on another partition and if need be, formatted
-	before installation into any one of the available formats. Tazinst may
-	upon request install a bootloader on the target disk. A dual-boot with an
-	existing Windows<sup>&trade;</sup> partition is possible - finding the
-	Windows<sup>&trade;</sup> partition can either be done automatically or
-	manually specified.
-</p>
-<p>
-	Tazinst can also update SliTaz installed on a hard disk partition which is
-	handy in case of version changes. In this case, Slitaz is updated, any data in
-	/home is preserved and additional packages are reinstalled on to the new
-	version.
-</p>
-<p>
-	Tazinst was created independently for the needs of the SliTaz GNU/Linux
-	mini distribution.
-</p>
-<p>
-	Tazinst is written from scratch in shell script and is compatible with
-	Busybox Ash and Bash. Tazinst is licensed under the GNU Free gpl v3.
-</p>
-<h3>Known limitations</h3>
-<p>
-	Tazinst doesn't allow SliTaz to boot on (U)EFI systems (mostly
-	Windows<sup>&trade;</sup> 8 systems), except in BIOS compatibility mode.
-</p>
 
+<h2>DESCRIPTION</h2>
+
+<p>Tazinst is a lightweight SliTaz HDD installer. It installs SliTaz to a hard
+drive from any local media such as a Live-CD, a LiveUSB key, an ISO image
+located on one of your disks, or from the web by automatically downloading a
+SliTaz image.</p>
+<p>Tazinst can format the target partition to ext2, ext3 or ext4. The home
+partition can be installed on another partition and if need be, formatted before
+installation into any one of the available formats. Tazinst may upon request
+install a bootloader on the target disk. A dual-boot with an existing Windows™
+partition is possible—finding the Windows™ partition can either be done
+automatically or manually specified.</p>
+<p>Tazinst can also update SliTaz installed on a hard disk partition which is
+handy in case of version changes. In this case, Slitaz is updated, any data in
+/home is preserved and additional packages are reinstalled on to the new
+version.</p>
+<p>Tazinst was created independently for the needs of the SliTaz GNU/Linux mini
+distribution.</p>
+<p>Tazinst is written from scratch in shell script and is compatible with
+Busybox Ash and Bash. Tazinst is licensed under the GNU Free GPL v3.</p>
+
+
+<h3>Known limitations</h3>
+
+<p>Tazinst doesn't allow SliTaz to boot on (U)EFI systems (mostly Windows™ 8
+systems), except in BIOS compatibility mode.</p>
 
 
 <h2>SETTINGS</h2>
 
-<p>
-	Tazinst installer is able to perform an installation automatically based on
-	a few settings.
-</p>
+<p>Tazinst installer is able to perform an installation automatically based on a
+few settings.</p>
 
-<a id="mode"></a>
-<h3>mode</h3>
-<p>
-	Installation mode that will be performed by tazinst. Type <strong><code>
-	tazinst help mode</code></strong> in order to have a list of supported
-	modes.
-</p>
 
-<a id="media"></a>
-<h3>media</h3>
-<p>
-	The media containing the SliTaz source files, either <strong>cdrom</strong>
-	(SliTaz LiveCD), <strong>usb</strong> (SliTaz LiveUSB),	<strong>iso</strong>
-	(ISO image of SliTaz), or <strong>web</strong> (ISO image on the Web).
-</p>
+<h3 id="mode">mode</h3>
 
-<a id="source"></a>
-<h3>source</h3>
-<p>
-	The name of the source file containing SliTaz.
-	It depends on the type of <strong>media</strong>:
-	<table>
+<p>Installation mode that will be performed by tazinst. Type <code>tazinst help
+mode</code> in order to have a list of supported modes.</p>
+
+
+<h3 id="media">media</h3>
+
+<p>The media containing the SliTaz source files, either <strong>cdrom</strong>
+(SliTaz LiveCD), <strong>usb</strong> (SliTaz LiveUSB),	<strong>iso</strong>
+(ISO image of SliTaz), or <strong>web</strong> (ISO image on the Web).</p>
+
+
+<h3 id="source">source</h3>
+
+<p>The name of the source file containing SliTaz. It depends on the type of
+<strong>media</strong>:</p>
+
+<table>
 	<tr>
-	<td>cdrom:</td>
-	<td><i>unused</i></td>
+		<td>cdrom:</td>
+		<td><i>unused</i></td>
 	</tr>
 	<tr>
-	<td>usb:</td>
-	<td>name of the partition on the host USB device. Type <strong><code>
-		tazinst list usb</code></strong> to list USB partitions.</td>
+		<td>usb:</td>
+		<td>name of the partition on the host USB device. Type <code>tazinst
+			list usb</code></strong> to list USB partitions.</td>
 	</tr>
 	<tr>
-	<td>iso</td>
-	<td>name of the ISO file, example: <strong><code>~/slitaz-rolling.iso</code>
-	</strong>. Type <code><strong>tazinst list iso</code></strong> to list
-		iso files on your disks.</code></strong></td>
+		<td>iso</td>
+		<td>name of the ISO file, example: <code>~/slitaz-rolling.iso</code>.
+			Type <code>tazinst list iso</code> to list iso files on your
+			disks.</td>
 	</tr>
 	<tr>
-	<td>web</td>
-	<td>name of the	image on the web, example: <strong><code>stable cooking rolling
-	base core gtkonly justx</code></strong>, for a full list type <strong>
-	<code>tazinst list web</code></strong>, or enter the full URL of the image,
-	example: <strong><code>
-	http://mirror.slitaz.org/iso/cooking/slitaz-cooking.iso</code></strong>.
-	</td>
+		<td>web</td>
+		<td>name of the	image on the web, example: <code>stable cooking rolling
+			base core gtkonly justx</code>, for a full list type <code>tazinst
+			list web</code>, or enter the full URL of the image, example:
+			<code>http://mirror.slitaz.org/iso/cooking/slitaz-cooking.iso</code>.
+			</td>
 	</tr>
-	</table>
-	</ul>
-</p>
+</table>
 
-<a id="root_uuid"></a>
-<h3>root_uuid</h3>
-<p>
-	The name of the target partition SliTaz will install to. Type <strong>
-	<code>tazinst list uuid</code></strong> to list partitions on your disks.
-</p>
 
-<a id="root_format"></a>
-<h3>root_format</h3>
-<p>
-	Optional. If this setting is used, the target partition will be formatted
-	in the file system specified, otherwise the partition will be cleaned and
-	/home will be preserved. Type <strong><code>tazinst help format</code>
-	</strong> to get the list of all supported filesystems, and <strong><code>
-	tazinst list root_format</code></strong> to see filesystems already
-	installed on your system.
-</p>
+<h3 id="root_uuid">root_uuid</h3>
 
-<a id="home_uuid"></a>
-<h3>home_uuid</h3>
-<p>
-	Optional. A separate home partition may be created if needed. This setting
-	indicates if need be, the name of the partition to receive the /home
-	directory.
-</p>
+<p>The name of the target partition SliTaz will install to. Type <code>tazinst
+list uuid</code> to list partitions on your disks.</p>
 
-<a id="home_format"></a>
-<h3>home_format</h3>
-<p>
-	Optional. If this setting is used, a separate /home partition will be
-	created, this partition will be formatted in the file system specified.
-</p>
 
-<a id="hostname"></a>
-<h3>hostname</h3>
-<p>
-	Optional. Hostname of the system, <strong><code>slitaz</code></strong> by
-	default.
-</p>
+<h3 id="root_format">root_format</h3>
 
-<a id="root_pwd"></a>
-<h3>root_pwd</h3>
-<p>
-	Optional. Superuser [root] password, <strong><code>root</code></strong>, by
-	default.
-</p>
+<p>Optional. If this setting is used, the target partition will be formatted in
+the file system specified, otherwise the partition will be cleaned and /home
+will be preserved. Type <code>tazinst help format</code> to get the list of all
+supported filesystems, and <code>tazinst list root_format</code> to see
+filesystems already installed on your system.</p>
 
-<a id="user_login"></a>
-<h3>user_login</h3>
-<p>
-	Optional. First user name, <strong><code>tux</code></strong> by default.
-</p>
 
-<a id="user_pwd"></a>
-<h3>user_pwd</h3>
-<p>
-	Optional. First user password, <strong><code>tux</code></strong> by default.
-</p>
+<h3 id="home_uuid">home_uuid</h3>
 
-<a id="bootloader"></a>
-<h3>bootloader</h3>
-<p>
-	Optional. Install a bootloader. Usually you should set it to <strong><code>
-	auto</code></strong> unless you want to use an already installed bootloader
-	on your system, install a bootloader by hand yourself or install a specific
-	bootloader. In this case type <strong><code>tazinst help bootloader</code>
-	</strong> to list supported bootloaders.
-</p>
+<p>Optional. A separate home partition may be created if needed. This setting
+indicates if need be, the name of the partition to receive the /home
+directory.</p>
 
-<a id="winboot"></a>
-<h3>winboot</h3>
-<p>
-	Optional. If a bootloader is installed, this setting indicates the
-	partition containing Windows<sup>&trade;</sup> to implement a dual-boot. It can
-	also be set to <strong><code>auto</code></strong>, in this case the
-	dual-boot will be on the first Windows<sup>&trade;</sup> partition. Type <code>
-	<strong>tazinst list winboot</code></strong> to see values tazinst
-	automatically detects.
-</p>
+
+<h3 id="home_format">home_format</h3>
+
+<p>Optional. If this setting is used, a separate /home partition will be
+created, this partition will be formatted in the file system specified.</p>
+
+
+<h3 id="hostname">hostname</h3>
+
+<p>Optional. Hostname of the system, <code>slitaz</code> by default.</p>
+
+
+<h3 id="root_pwd">root_pwd</h3>
+
+<p>Optional. Superuser [root] password, <code>root</code>, by default.</p>
+
+
+<h3 id="user_login">user_login</h3>
+
+<p>Optional. First user name, <code>tux</code> by default.</p>
+
+
+<h3 id="user_pwd">user_pwd</h3>
+
+<p>Optional. First user password, <code>tux</code> by default.</p>
+
+
+<h3 id="bootloader">bootloader</h3>
+
+<p>Optional. Install a bootloader. Usually you should set it to
+<code>auto</code> unless you want to use an already installed bootloader on your
+system, install a bootloader by hand yourself or install a specific bootloader.
+In this case type <code>tazinst help bootloader</code> to list supported
+bootloaders.</p>
+
+
+<h3 id="winboot">winboot</h3>
+
+<p>Optional. If a bootloader is installed, this setting indicates the partition
+containing Windows™ to implement a dual-boot. It can also be set to
+<code>auto</code>, in this case the dual-boot will be on the first Windows™
+partition. Type <code>tazinst list winboot</code> to see values tazinst
+automatically detects.</p>
+
 
 <h2>COMMANDS</h2>
 
-<a id="new"></a>
-<h3>new</h3>
-<p>
-	Generates a new self-documenting install file containing settings which,
-	when set up as required	by the user, will allow tazinst to execute an
-	unattended installation. The default file is <code>./tazint.rc</code>, but
-	an optional file name may be given as a parameter.
-</p>
+
+<h3 id="new">new</h3>
+
+<p>Generates a new self-documenting install file containing settings which, when
+set up as required by the user, will allow tazinst to execute an unattended
+installation. The default file is <code>./tazint.rc</code>, but an optional file
+name may be given as a parameter.</p>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst new
 tazinst new /var/lib/tazinst.conf
 </pre>
 
-<a id="set"></a>
-<h3>set</h3>
-<p>
-	Assign a new value to a given setting.
-</p>
+
+<h3 id="set">set</h3>
+
+<p>Assign a new value to a given setting.</p>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst set mode install
 tazinst set mode install /var/lib/tazinst.conf
 </pre>
 
-<a id="unset"></a>
-<h3>unset</h3>
-<p>
-	Unset, clears a setting.
-</p>
+
+<h3 id="unset">unset</h3>
+
+<p>Unset, clears a setting.</p>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst unset mode
 tazinst unset mode /var/lib/tazinst.conf
 </pre>
 
-<a id="get"></a>
-<h3>get</h3>
-<p>
-	Get the value of a setting. Without a parameter, gets the values of all
-	settings.
-</p>
+
+<h3 id="get">get</h3>
+
+<p>Get the value of a setting. Without a parameter, gets the values of all
+settings.</p>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst get
 tazinst get mode
 tazinst get mode /var/lib/tazinst.conf
 </pre>
 
-<a id="check"></a>
-<h3>check</h3>
-<p>
-	Check a setting for errors. Without a parameter, checks all settings.
 
-</p>
+<h3 id="check">check</h3>
+
+<p>Check a setting for errors. Without a parameter, checks all settings.</p>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst check
 tazinst check mode
 tazinst check mode /var/lib/tazinst.conf
 </pre>
 
-<a id="list"></a>
-<h3>list</h3>
-<p>
-	List the system resources. Resources are:
-	<table>
+
+<h3 id="list">list</h3>
+
+<p>List the system resources. Resources are:</p>
+
+<table>
 	<tr>
-	<td>mode</td>
-	<td>Available modes of install</td>
+		<td>mode</td>
+		<td>Available modes of install</td>
 	</tr>
 	<tr>
-	<td>media</td>
-	<td>Available media to install from. Example: cdrom is not listed on systems
-		with no cdrom drive</td>
+		<td>media</td>
+		<td>Available media to install from. Example: cdrom is not listed on
+			systems with no cdrom drive</td>
 	</tr>
 	<tr>
-	<td>usb</td>
-	<td>Partitions of USB disks</td>
+		<td>usb</td>
+		<td>Partitions of USB disks</td>
 	</tr>
 	<tr>
-	<td>iso</td>
-	<td>Iso images located on local drives, in /root, and in all user's home and
-		first subdirectory</td>
+		<td>iso</td>
+		<td>Iso images located on local drives, in /root, and in all user's home
+			and first subdirectory</td>
 	</tr>
 	<tr>
-	<td>web</td>
-	<td>Predefined names of iso images to download automatically from the
-		Internet</td>
+		<td>web</td>
+		<td>Predefined names of iso images to download automatically from the
+			Internet</td>
 	</tr>
 	<tr>
-	<td>format</td>
-	<td>Installed filesystems</td>
+		<td>format</td>
+		<td>Installed filesystems</td>
 	</tr>
 	<tr>
-	<td>bootloader</td>
-	<td>Available bootloaders</td>
+		<td>bootloader</td>
+		<td>Available bootloaders</td>
 	</tr>
 	<tr>
-	<td>partition_table</td>
-	<td>Partition table schemes of local disks</td>
+		<td>partition_table</td>
+		<td>Partition table schemes of local disks</td>
 	</tr>
 	<tr>
-	<td>winboot</td>
-	<td>Bootable Windows<sup>&trade;</sup> partitions</td>
+		<td>winboot</td>
+		<td>Bootable Windows™ partitions</td>
 	</tr>
-	</table>
-</p>
+</table>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst list
 tazinst list media
 </pre>
 
-<a id="execute"></a>
-<h3>execute</h3>
-<p>
-	Performs a SliTaz install on a HDD based on data in the install file.
-	If you selected to format your HDD, all data will be lost. If you do not,
-	all data except for any existing /home directory will be removed,
-	(the home directory will be kept as is).
-</p>
+
+<h3 id="execute">execute</h3>
+
+<p>Performs a SliTaz install on a HDD based on data in the install file. If you
+selected to format your HDD, all data will be lost. If you do not, all data
+except for any existing /home directory will be removed, (the home directory
+will be kept as is).</p>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst execute
 tazinst execute /var/lib/tazinst.conf
 </pre>
 
-<a id="clean"></a>
-<h3>clean</h3>
-<p>
-	Remove installation and log files.
-</p>
+
+<h3 id="clean">clean</h3>
+
+<p>Remove installation and log files.</p>
+
 <h5>Examples:</h5>
+
 <pre>
 tazinst clean
 tazinst clean /var/lib/tazinst.conf
 </pre>
 
-<a id="log"></a>
-<h3>log</h3>
-<p>
-	Display the last log file contents and exit.
-</p>
+
+<h3 id="log">log</h3>
+
+<p>Display the last log file contents and exit.</p>
+
 <h5>Example:</h5>
+
 <pre>
 tazinst log
 </pre>
 
-<a id="version"></a>
-<h3>version</h3>
-<p>
-	Print the version information and exit.
-</p>
+
+<h3 id="version">version</h3>
+
+<p>Print the version information and exit.</p>
+
 <h5>Example:</h5>
+
 <pre>
 tazinst version
 </pre>
 
-<a id="usage"></a>
-<h3>usage</h3>
-<p>
-	Print a short help and exit.
-</p>
+
+<h3 id="usage">usage</h3>
+
+<p>Print a short help and exit.</p>
+
 <h5>Example:</h5>
+
 <pre>
 tazinst usage
 </pre>
 
-<a id="help"></a>
-<h3>help</h3>
-<p>
-	Print a short help for a given setting and exit. Without an argument, print
-	a short help for all settings.
-</p>
+
+<h3 id="help">help</h3>
+
+<p>Print a short help for a given setting and exit. Without an argument, print a
+short help for all settings.</p>
+
 <h5>Example:</h5>
+
 <pre>
 tazinst help mode
 </pre>
@@ -386,137 +370,147 @@ tazinst help mode
 
 <h2>EXAMPLES</h2>
 
+
 <h3>Install</h3>
 
-<p>
-	How to Install SliTaz on a partition of your hard disk drive. The root
-	partition is not formatted, all data except for any existing <code>/home
-	</code> directory will be removed, (the <code>home</code> directory will be
-	kept as is).
-</p>
+<p>How to Install SliTaz on a partition of your hard disk drive. The root
+partition is not formatted, all data except for any existing <code>/home</code>
+directory will be removed, (the <code>home</code> directory will be kept as
+is).</p>
 
 <ol>
-<li>Create an install file:<pre># tazinst new</pre></li>
-<li>Set the mode as install:<pre># tazinst set mode install</pre></li>
-<li>Use a cdrom as source:<pre># tazinst set media cdrom</pre></li>
-<li>Select the partition to install SliTaz on:
-	<pre># tazinst set root_uuid /dev/hda1</pre></li>
-<li>Install a bootloader:<pre># tazinst set bootloader auto</pre>
-<li>Execute an installation:<pre># tazinst execute</pre>
+	<li>Create an install file:
+		<pre># tazinst new</pre></li>
+	<li>Set the mode as install:
+		<pre># tazinst set mode install</pre></li>
+	<li>Use a cdrom as source:
+		<pre># tazinst set media cdrom</pre></li>
+	<li>Select the partition to install SliTaz on:
+		<pre># tazinst set root_uuid /dev/hda1</pre></li>
+	<li>Install a bootloader:
+		<pre># tazinst set bootloader auto</pre></li>
+	<li>Execute an installation:
+		<pre># tazinst execute</pre></li>
 </ol>
+
 
 <h3>Complex Install</h3>
 
-<p>
-	How to Install SliTaz on your hard disk drive with a separate home
-	partition and a Windows<sup>&trade;</sup> dual-boot. The /home and root partitions
-	are both formatted, (all existing data will be lost).
-</p>
+<p>How to Install SliTaz on your hard disk drive with a separate home partition
+and a Windows™ dual-boot. The /home and root partitions are both formatted, (all
+existing data will be lost).</p>
 
 <ol>
-<li>Create an install file:<pre># tazinst new</pre></li>
-<li>Set the mode as install:<pre># tazinst set mode install</pre></li>
-<li>Use a Live USB as source:<pre># tazinst set media usb</pre></li>
-<li>Select a partition on the Live USB:
-	<pre># tazinst set source /dev/sda1</pre></li>
-<li>Select the partition to install SliTaz on:
-	<pre># tazinst set root_uuid /dev/hda1</pre></li>
-<li>Format / as ext4:
-	<pre># tazinst set root_format ext4</pre></li>
-<li>Use a separate /home partition:
-	<pre># tazinst set home_uuid /dev/hda2</pre></li>
-<li>Format /home as ext2:
-	<pre># tazinst set home_format ext2</pre></li>
-<li>Install a bootloader:<pre># tazinst set bootloader auto</pre>
-<li>Set up a Windows<sup>&trade;</sup> dual-boot:
-	<pre># tazinst set winboot auto</pre></li>
-<li>Execute an installation:<pre># tazinst execute</pre>
-<li>Remove any traces behind:<pre># tazinst clean</pre>
+	<li>Create an install file:
+		<pre># tazinst new</pre></li>
+	<li>Set the mode as install:
+		<pre># tazinst set mode install</pre></li>
+	<li>Use a Live USB as source:
+		<pre># tazinst set media usb</pre></li>
+	<li>Select a partition on the Live USB:
+		<pre># tazinst set source /dev/sda1</pre></li>
+	<li>Select the partition to install SliTaz on:
+		<pre># tazinst set root_uuid /dev/hda1</pre></li>
+	<li>Format / as ext4:
+		<pre># tazinst set root_format ext4</pre></li>
+	<li>Use a separate /home partition:
+		<pre># tazinst set home_uuid /dev/hda2</pre></li>
+	<li>Format /home as ext2:
+		<pre># tazinst set home_format ext2</pre></li>
+	<li>Install a bootloader:
+		<pre># tazinst set bootloader auto</pre></li>
+	<li>Set up a Windows™ dual-boot:
+		<pre># tazinst set winboot auto</pre></li>
+	<li>Execute an installation:
+		<pre># tazinst execute</pre></li>
+	<li>Remove any traces behind:
+		<pre># tazinst clean</pre></li>
 </ol>
+
 
 <h3>Upgrade</h3>
 
-<p>
-	How to upgrade an already installed SliTaz system on your hard disk drive.
-	Your <code>/home /etc /var/www</code> directories will be kept, all other
-	directories will be removed. Any additional packages added to your old
-	Slitaz system will be updated as long you have an active internet
-	connection.
-</p>
+<p>How to upgrade an already installed SliTaz system on your hard disk drive.
+Your <code>/home /etc /var/www</code> directories will be kept, all other
+directories will be removed. Any additional packages added to your old Slitaz
+system will be updated as long you have an active internet connection.</p>
 
 <ol>
-<li>Create an install file:<pre># tazinst new</pre></li>
-<li>Set the mode as upgrade:<pre># tazinst set mode upgrade</pre></li>
-<li>Use web as source:<pre># tazinst set media web</pre></li>
-<li>Select the stable image:
-	<pre># tazinst set source stable</pre></li>
-<li>Select the partition containing Slitaz to upgrade:
-	<pre># tazinst set root_uuid /dev/hda1</pre></li>
-<li>Install a bootloader:<pre># tazinst set bootloader auto</pre>
-<li>Execute an installation:<pre># tazinst execute</pre>
+	<li>Create an install file:
+		<pre># tazinst new</pre></li>
+	<li>Set the mode as upgrade:
+		<pre># tazinst set mode upgrade</pre></li>
+	<li>Use web as source:
+		<pre># tazinst set media web</pre></li>
+	<li>Select the stable image:
+		<pre># tazinst set source stable</pre></li>
+	<li>Select the partition containing Slitaz to upgrade:
+		<pre># tazinst set root_uuid /dev/hda1</pre></li>
+	<li>Install a bootloader:
+		<pre># tazinst set bootloader auto</pre></li>
+	<li>Execute an installation:
+		<pre># tazinst execute</pre></li>
 </ol>
+
 
 <h3>Tips</h3>
 
 <ol>
-<li>Not all settings are used depending on the mode of install. List all
-	settings to see which you need to edit:
-	<pre># tazinst get</pre></li>
-<li>Check your settings before executing install:
-<pre># tazinst check</pre></li>
+	<li>Not all settings are used depending on the mode of install. List all
+		settings to see which you need to edit:
+		<pre># tazinst get</pre></li>
+	<li>Check your settings before executing install:
+		<pre># tazinst check</pre></li>
 </ol>
+
 
 <h2>FILES</h2>
 
+
 <h3>INSTALL FILE</h3>
 
-<p>
-	Settings are saved in the install file, then used by tazinst to execute
-	an unattended installation. The default file is <code>./tazint.rc</code>,
-	but an optional file name may be given as a parameter. The install file is
-	self-documented. The clean command erases this file.
-</p>
+<p>Settings are saved in the install file, then used by tazinst to execute an
+unattended installation. The default file is <code>./tazint.rc</code>, but an
+optional file name may be given as a parameter. The install file is
+self-documented. The clean command erases this file.</p>
+
 
 <h3>SYSTEM FILE</h3>
-<p>
-	The <code>/etc/slitaz/tazinst.conf</code> configuration file allows you to
-	change the default settings of <code>tazinst</code> in case you want
-	to use default custom values.
-</p>
 
-<p>
-	All settings are customisable, if a particular setting is missing, just add
-	the name of the setting in caps	and enter the new value.
-</p>
+<p>The <code>/etc/slitaz/tazinst.conf</code> configuration file allows you to
+change the default settings of <code>tazinst</code> in case you want to use
+default custom values.</p>
+
+<p>All settings are customisable, if a particular setting is missing, just add
+the name of the setting in caps and enter the new value.</p>
 
 <h4>Example:</h4>
 
-<p>
-	If you intend to always install SliTaz from the same iso on the web, you
-	just have to modify or add the following values:
-<pre>MEDIA="web"
-SOURCE="stable"</pre>
-</p>
+<p>If you intend to always install SliTaz from the same iso on the web, you just
+have to modify or add the following values:</p>
+
+<pre>
+MEDIA="web"
+SOURCE="stable"
+</pre>
 
 <h3>LOG FILE</h3>
 
-<p>
-	The file <code>/var/log/tazinst.log</code> contains a log of the install
-	process. The clean command erases this file.
-</p>
+<p>The file <code>/var/log/tazinst.log</code> contains a log of the install
+process. The clean command erases this file.</p>
+
 
 <h2>MAINTAINERS</h2>
-<p>
-	Christophe Lincoln &lt;pankso at slitaz.org&gt; <br />
-	Dominique Corbex &lt;domcox at slitaz.org&gt;
-</p>
+
+<p>Christophe Lincoln &lt;pankso at slitaz.org&gt;<br />
+Dominique Corbex &lt;domcox at slitaz.org&gt;</p>
 
 <!-- End of content -->
 </div>
 
-<div id="footer">
-	Copyright &copy; 2007-2013 <a href="http://www.slitaz.org/">SliTaz GNU/Linux</a>
-</div>
+<footer>
+	Copyright © 2007-2013 <a href="http://www.slitaz.org/">SliTaz GNU/Linux</a>
+</footer>
 
 </body>
 </html>
