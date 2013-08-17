@@ -33,8 +33,7 @@ umask 0177
 [ -r /etc/slitaz/tazinst.conf ] && . /etc/slitaz/tazinst.conf
 
 # version
-readonly VERSION=3.90
-BANNER="$(gettext "Tazinst - SliTaz GNU/Linux Installer - Version $VERSION")"
+readonly VERSION=3.91
 
 # i18n
 . /usr/bin/gettext.sh
@@ -81,7 +80,7 @@ xfs:$(gettext 'Journaling file system (Silicon Graphics, Inc.)')"
 # bootloaders (key:help)
 readonly LST_BOOTLOADER="
 auto:$(gettext 'Automatic selection')
-grub:$(gettext 'Grub legacy bootoader')
+grub:$(gettext 'Grub legacy bootloader')
 syslinux:$(gettext 'Lightweight bootloader')"
 
 # predefined iso (key:url:help)
@@ -112,52 +111,49 @@ rolling:iso/rolling/slitaz-rolling.iso \
 # print a short help
 usage()
 {
-	local B1=$(echo -en "\033[1m") B0=$(echo -en "\033[0m")
-	cat << EOT
+	gettext "SliTaz GNU/Linux Installer - Version:"
+	printf ' %s\n' $VERSION
+	echo -e "\033[1m"; gettext 'Usage'; echo -e '\033[0m:'
+	echo -n '  '; gettext 'tazinst [command] <setting> <value> <file>'; echo
 
-$BANNER
-
-
-$B1$(gettext "Usage"):$B0 $(gettext "tazinst [command] <setting> <value> <file>")
-
-$B1$(gettext "Commands"): $B0
-  new         $(gettext "Create a new install file.")
-  set         $(gettext "Change value of a setting.")
-  unset       $(gettext "Clear a setting.")
-  get         $(gettext "Get the value of a setting.")
-  check       $(gettext "Check settings.")
-  help        $(gettext "Print a short help on settings")
-  list        $(gettext "List system resources.")
-  execute     $(gettext "Execute a SliTaz installation.")
-  log         $(gettext "Display log file contents.")
-  clean       $(gettext "Clean install and log files.")
-  version     $(gettext "Print version and exit.")
-  usage       $(gettext "Print this short usage.")
-
-EOT
+	echo -e "\033[1m"; gettext 'Commands'; echo -e '\033[0m:'
+	printf "  %-12s" "new";		gettext "Create a new install file."; echo
+	printf "  %-12s" "set";   	gettext "Change value of a setting."; echo
+ 	printf "  %-12s" "unset"; 	gettext "Clear a setting."; echo
+	printf "  %-12s" "get";   	gettext "Get the value of a setting."; echo
+	printf "  %-12s" "check"; 	gettext "Check settings."; echo
+	printf "  %-12s" "help";  	gettext "Print a short help on settings"; echo
+	printf "  %-12s" "list";  	gettext "List system resources."; echo
+	printf "  %-12s" "execute";	gettext "Execute a SliTaz installation."; echo
+	printf "  %-12s" "log";   	gettext "Display log file contents."; echo
+	printf "  %-12s" "clean"; 	gettext "Clean install and log files."; echo
+	printf "  %-12s" "version";	gettext "Print version and exit."; echo
+	printf "  %-12s" "usage";  	gettext "Print this short usage."; echo
 	exit 0
 }
 
 usage_error()
 {
-	local command="$1"
-	printf "\n$BANNER\n\n"
-	if [ -z "$command" ]; then
-		printf "$(gettext 'Error: Missing parameter.')\n"
-	else
-		printf "\033[1m$command\033[0m: $(gettext 'Unknown command.')\n"
-	fi
-	local script_name=$(printf "$0" | /bin/busybox awk 'BEGIN{RS="/"}
-		{cmd=$command}END{print cmd}')
-	printf "$(gettext "Run"): '$script_name help' $(gettext "to get a list \
- of available commands").\n\n"
+	local cmd="$1" script="$(basename $0)"
+	gettext "SliTaz GNU/Linux Installer - Version:"
+	printf ' %s\n' $VERSION
+	printf "\n'%s': " "$cmd"
+	gettext 'Unknown command!'; echo
+	gettext 'Run'; printf ": '%s' " "$script help"
+	gettext "to get a list of available commands"; echo -e ".\n"
+	exit 1
 }
 
 option_error()
 {
 	local option="$1" list="$2"
-	printf "\n$BANNER\n\n'$option': Unknown setting!\n
-Please select one of these options: $list\n\n"
+	gettext "SliTaz GNU/Linux Installer - Version:"
+	printf ' %s\n' $VERSION
+	printf "\n'%s': " "$option"
+	gettext 'Unknown option!'; echo
+	gettext "Please select one of these options"
+	printf ":\n  %s\n\n" "$list"
+	exit 1
 }
 
 #---------------------
@@ -174,14 +170,14 @@ new_file()
 	local install_file=$1
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	if [ -e "$install_file" ]; then
-		echo $(gettext "Warning: file already exists.") 1>&2
+		printf "%s\n" "$(gettext "Warning: file already exists.")" 1>&2
 		exit 0
 	fi
 	[ -n "$install_file" ] && touch "$install_file"
 	if [ -w "$install_file" ]; then
 		write_file "$install_file"
 	else
-		echo $(gettext "Error: Can't create file.") 1>&2
+		printf "%s\n" "$(gettext "Error: Can't create file.")" 1>&2
 		exit 2
 	fi
 }
@@ -191,9 +187,9 @@ write_file()
 {
 	local install_file="$1"
 	cat > "$install_file" << EOT
-# $BANNER
+# SliTaz GNU/Linux Installer - Version: $VERSION
 #
-# SliTaz Installer setup file.
+# Install file.
 #
 
 # Mode of installation:
@@ -279,12 +275,12 @@ read_file()
 	local install_file="$1"
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	if ! [ -r "$install_file" ]; then
-		echo $(gettext "Error: Unable to read install file") 1>&2
+		printf "%s\n" "$(gettext "Error: Unable to read install file")" 1>&2
 		exit 2
 	fi
 	#
 	if ! CONTENTS="$(cat "$install_file")"; then
-		echo $(gettext "Error: Unable to read install file") 1>&2
+		printf "%s\n" "$(gettext "Error: Unable to read install file")" 1>&2
 		exit 2
 	fi
 }
@@ -318,7 +314,7 @@ get_settings()
 		upgrade)
 			echo "mode media source root_uuid bootloader winboot" ;;
 		*)
-			echo "$SETTINGS" ;;
+			printf "%s\n" "$SETTINGS" ;;
 	esac
 }
 
@@ -361,7 +357,7 @@ change()
 	# validate setting
 	if ! printf "%s" "$setting" | \
 			egrep -q "$(regex "$SETTINGS")"; then
-		echo $(gettext "Error: '$setting' unknown setting.") 1>&2
+		printf "%s\n" "$(gettext "Error: '$setting' unknown setting.")" 1>&2
 		exit 1
 	fi
 	# and file
@@ -389,7 +385,8 @@ change()
 		read_file "$install_file"
 		check "$setting"
 	else
-		echo $(gettext "Error: Unable to write to install file.") 1>&2
+		printf "%s\n" \
+			"$(gettext "Error: Unable to write to install file.")" 1>&2
 		exit 2
 	fi
 }
@@ -400,35 +397,35 @@ load_settings()
 	MODE="$(get mode)"
 	local settings="$(get settings)"
 	MEDIA="$(get media)"
-	printf "source" | egrep -q "$(regex "$settings")" \
+	echo "source" | egrep -q "$(regex "$settings")" \
 		&& SOURCE="$(get source)" \
 		|| unset SOURCE
 	ROOT_UUID="$(get root_uuid)"
-	printf "root_format" | egrep -q "$(regex "$settings")" \
+	echo "root_format" | egrep -q "$(regex "$settings")" \
 		&& ROOT_FORMAT="$(get root_format)" \
 		|| unset ROOT_FORMAT
-	printf "home_uuid" | egrep -q "$(regex "$settings")" \
+	echo "home_uuid" | egrep -q "$(regex "$settings")" \
 		&& HOME_UUID="$(get home_uuid)" \
 		|| unset HOME_UUID
-	printf "home_format" | egrep -q "$(regex "$settings")" \
+	echo "home_format" | egrep -q "$(regex "$settings")" \
 		&& HOME_FORMAT="$(get home_format)" \
 		|| unset HOME_FORMAT
-	printf "hostname" | egrep -q "$(regex "$settings")" \
+	echo "hostname" | egrep -q "$(regex "$settings")" \
 		&& HOSTNAME="$(get hostname)" \
 		|| unset HOSTNAME
-	printf "root_pwd" | egrep -q "$(regex "$settings")" \
+	echo "root_pwd" | egrep -q "$(regex "$settings")" \
 		&& ROOT_PWD="$(get root_pwd)" \
 		|| unset ROOT_PWD
-	printf "user_login" | egrep -q "$(regex "$settings")" \
+	echo "user_login" | egrep -q "$(regex "$settings")" \
 		&& USER_LOGIN="$(get user_login)" \
 		|| unset USER_LOGIN
-	printf "user_pwd" | egrep -q "$(regex "$settings")" \
+	echo "user_pwd" | egrep -q "$(regex "$settings")" \
 		&& USER_PWD="$(get user_pwd)" \
 		|| unset USER_PWD
-	printf "bootloader" | egrep -q "$(regex "$settings")" \
+	echo "bootloader" | egrep -q "$(regex "$settings")" \
 		&& BOOTLOADER="$(get bootloader)" \
 		|| unset BOOTLOADER
-	printf "winboot" | egrep -q "$(regex "$settings")" \
+	echo "winboot" | egrep -q "$(regex "$settings")" \
 		&& WINBOOT="$(get winboot)" \
 		|| unset WINBOOT
 }
@@ -443,9 +440,9 @@ clean()
 	# rm install file
 	local install_file="$1"
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
-	echo "$(gettext "Deleting install file:") $install_file"
+	printf "%s: %s\n" "$(gettext "Deleting install file")" "$install_file"
 	if ! [ -w "$install_file" ]; then
-		echo $(gettext "Error: Unable to delete install file") 1>&2
+		printf "%s\n" "$(gettext "Error: Unable to delete install file")" 1>&2
 		exit 2
 	else
 		rm -f "$install_file"
@@ -471,23 +468,24 @@ installation.") 1>&2
 check_instance()
 {
 	if [ -e "$LOCK" ]; then
-		echo $(gettext "Another instance of tazinst is running.") 1>&2
+		printf "%s\n" $(gettext "Another instance of tazinst is running.") 1>&2
 		exit 7
 	else
-		printf "$$" > $LOCK
+		printf "%s" "$$" > $LOCK
 	fi
 }
 
 # exit if the setting is not in a list of keywords
 check_key()
 {
-	local setting="$1" keylist="$2" keyword="$(get $1)"
+	local setting="$1" keylist="$2" keyword="$(get $1)" msg
 	if ! printf "%s" "$keyword" | \
 			egrep -q "$(regex "$keylist")"; then
-		printf "$setting=$keyword
+		msg="$setting=$keyword
 $(gettext 'Error:') '$keyword' $(gettext 'Invalid keyword.')
 $(gettext 'Select one of these options:') $keylist
-$(gettext 'For more information, see tazinst Manual.')\n" 1>&2
+$(gettext 'For more information, see tazinst Manual.')"
+		printf "%s\n" "$msg" 1>&2
 		exit 1
 	fi
 }
@@ -495,14 +493,15 @@ $(gettext 'For more information, see tazinst Manual.')\n" 1>&2
 # exit if the partition does not exist
 check_uuid()
 {
-	local setting="$1" value="$(get $1)" found=0 partition
+	local setting="$1" value="$(get $1)" found=0 partition msg
 	for partition in $(list_uuid); do
 		[ "$partition" == "$value" ] && found="$(($found + 1))"
 	done
 	if [ "$found" != "1" ]; then
-		printf "$(gettext "$setting")=$value
+		msg="$(gettext "$setting")=$value
 $(gettext 'Error: Partition not found')
-$(gettext 'To see available partitions, run') 'tazinst list uuid'.\n" 1>&2
+$(gettext 'To see available partitions, run') 'tazinst list uuid'."
+		printf "%s\n" "$msg" 1>&2
 		exit 1
 	fi
 }
@@ -516,7 +515,7 @@ check_source()
 			check_uuid source ;;
 		iso)
 			if [ ! -r "$source" ]; then
-				echo $(gettext "Error: Source file not found") 1>&2
+				printf "%s.\n" "$(gettext "Error: Source file not found")" 1>&2
 				exit 1
 			fi ;;
 		web)
@@ -531,7 +530,7 @@ check_source()
 			printf "%s" "$source" | \
 				egrep -q "$regexp" && valid=$(($valid+1))
 			if [ "$valid" -le "0" ]; then
-				echo $(gettext "Error: invalid URL"). 1>&2
+				printf "%s.\n" "$(gettext "Error: invalid URL")" 1>&2
 				exit 1
 			fi
 	esac
@@ -542,12 +541,12 @@ check_uuid_mix()
 {
 	local list all nodup
 	list="$(get root_uuid) $(get source) $(get home_uuid) $(get winboot)"
-	all="$(echo $list | wc -w)"
-	nodup="$(echo $list | /bin/busybox awk 'BEGIN{RS=" "}{print $0}' | \
-		sort | uniq | wc -w)"
+	all="$(printf "%s" "$list" | wc -w)"
+	nodup="$(printf "%s" "$list" | /bin/busybox awk 'BEGIN{RS=" "}{print $0}' \
+		| sort | uniq | wc -w)"
 	if [ "$all" != "$nodup" ]; then
-		printf "$(gettext "Error: multiple assignations for a disk. Please \
-check your settings.")\n"
+		printf "%s\n" \
+			"$(gettext "Error: multiple assignations for a disk.")" 1>&2
 		exit 1
 	fi
 }
@@ -560,12 +559,13 @@ check_password()
 	local errcode=0
 	# too long
 	if [ "${#pass}" -ge 40 ]; then
-		echo $(gettext "Error: password too long") 1>&2
+		printf "%s\n" "$(gettext "Error: password too long")" 1>&2
 		exit 1
 	fi
 	# bad chars
-	if ! (echo "$pass" | egrep -q "$invalid"); then
-		echo  $(gettext "Error: Unallowed characters in password.") 1>&2
+	if ! (printf "%s" "$pass" | egrep -q "$invalid"); then
+		printf "%s\n" \
+			"$(gettext "Error: Unallowed characters in password.")" 1>&2
 		exit 1
 	fi
 	# short pwd
@@ -574,9 +574,9 @@ check_password()
 	[ -z "$pass" ] && errcode=129
 	case "$errcode" in
 		128)
-			echo $(gettext "Warning: short password!") 1>&2 ;;
+			printf "%s\n" "$(gettext "Warning: short password!")" 1>&2 ;;
 		129)
-			echo $(gettext "Warning: no password!") 1>&2 ;;
+			printf "%s\n" "$(gettext "Warning: no password!")" 1>&2 ;;
 	esac
 	return "$errcode"
 }
@@ -584,18 +584,19 @@ check_password()
 # exit if a name is invalid
 check_name()
 {
-	local name="$1" value="$(get "$1")"
+	local name="$1" value="$(get "$1")" msg
+	msg="$name=$value"
  	if [ "${#value}" -lt 2 ]; then
-		printf "$name=$value\n$(gettext "Error: Too short.")\n" 1>&2
+		printf "%s %s\n" "$msg"	"(gettext "Error: Too short.")\n" 1>&2
 		exit 1
 	fi
 	if [ "${#value}" -gt 32 ]; then
-		printf "$name=$value\n$(gettext "Error: Too long.")\n" 1>&2
+		printf "%s %s\n" "$msg" "$(gettext "Error: Too long.")\n" 1>&2
 		exit 1
 	fi
-	if printf "$value" | \
+	if printf "%s" "$value" | \
 			grep -q "[[:space:]\&\"\'\(\)\|\*\\#\`\+\:/;<>]"; then
-		printf "$name='$value'\n$(gettext "Error: Invalid chars.")\n" 1>&2
+		printf "%s %s\n" "$msg" "$(gettext "Error: Invalid chars.")\n" 1>&2
 		exit 1
 	fi
 }
@@ -606,7 +607,8 @@ check_boot_mix()
 	local bootloader=$(get bootloader)
 	local winboot=$(get winboot)
 	if [ -z "$bootloader" ] && [ -n "$winboot" ]; then
-		echo $(gettext "Error: Dualboot set with no bootloader.") 1>&2
+		printf "%s\n" \
+			"$(gettext "Error: Dualboot set with no bootloader.")" 1>&2
 		exit 1
 	fi
 }
@@ -618,14 +620,14 @@ check_table()
 	# get root uuid
 	local uuid="$(get root_uuid)"
 	if [ "$(/sbin/blkid | grep -c "$uuid")" == "1" ]; then
-		if ! printf "$(p_table $uuid)" | \
+		if ! printf "%s" "$(p_table $uuid)" | \
 				egrep -q "$(regex "$pt_list")"; then
-			echo $(gettext "Error: Unsupported Partition Table") 1>&2
+			printf "%s\n" "$(gettext "Error: Unsupported Partition Table")" 1>&2
 			exit 1
 		fi
 	else
-		echo $(gettext "Error: No disk selected, can't install any \
-bootloader.") 1>&2
+		printf "%s\n" \
+	"$(gettext "Error: No disk selected, can't install any bootloader.")" 1>&2
 		exit 1
 	fi
 }
@@ -742,12 +744,13 @@ check()
 
 help_source()
 {
-	printf "$(gettext "The Source setting depends on the type of media:")\n"
+	printf "%s\n" \
+		"$(gettext "The Source setting depends on the type of media:")"
 	printf "%-12s%s\n" "cdrom" "$(help cdrom)"
 	printf "%-12s%s\n" "usb" "$(help usb)"
 	printf "%-12s%s\n" "iso" "$(help iso)"
-	printf "%-12s%s\n" "web" "$(gettext "Name or URL of the image on the web. \
-Type: tazinst help web")"
+	printf "%-12s%s" "web" "$(gettext "Name or URL of the image on the web.")"
+	printf "%s\n" "$(gettext "Type: tazinst help web")"
 }
 
 help_all()
@@ -765,8 +768,9 @@ user_login:$(gettext "First user name")
 user_pwd:$(gettext "First user password")
 bootloader:$(gettext "Install a bootloader")
 winboot:$(gettext "Partition to duaboot Windows from")"
-	printf "$(gettext "List of settings:")\n"
-	printf "$text" | /bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}'
+	printf "%s\n" "$(gettext "List of settings:")"
+	printf "%s" "$text" | \
+		/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}'
 }
 
 # help command
@@ -775,45 +779,47 @@ help()
 	local setting="$1"
 	case "$setting" in
 	mode)
-		echo "$LST_MODE" | \
+		printf "%s" "$LST_MODE" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}' ;;
 	media)
-		echo "$LST_MEDIA" | \
+		printf "%s" "$LST_MEDIA" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}'	;;
 	source)
 		help_source ;;
 	cdrom)
-		echo "$(gettext "Automatically set")" ;;
+		printf "%s\n" "$(gettext "CD. Automatically set")" ;;
 	usb)
-		echo "$(gettext "USB partition. For a list, type: tazinst list usb")" ;;
+		printf "%s\n" \
+			"$(gettext "USB partition. For a list, type: tazinst list usb")" ;;
 	iso)
-		echo "$(gettext "ISO file name. For a list, type: tazinst list iso")" ;;
+		printf "%s\n" \
+			"$(gettext "ISO file name. For a list, type: tazinst list iso")" ;;
 	web)
-		echo "$LST_WEB" | \
+		printf "%s" "$LST_WEB" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $3}' ;;
 	root_uuid)
 	 	/sbin/blkid -s TYPE -s LABEL | sort ;;
 	root_format)
-	 	echo "$LST_FORMAT" | \
+	 	printf "%s" "$LST_FORMAT" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}' ;;
 	home_uuid)
 		/sbin/blkid -s TYPE -s LABEL | sort ;;
 	home_format)
-		echo "$LST_FORMAT" | \
+		printf "%s" "$LST_FORMAT" | \
 				/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}' ;;
 	hostname)
-		echo "$(gettext "Name of the system")" ;;
+		printf "%s\n" "$(gettext "Name of the system")" ;;
 	root_pwd)
-		echo "$(gettext "Superuser password")" ;;
+		printf "%s\n" "$(gettext "Superuser password")" ;;
 	user_login)
-		echo "$(gettext "First user name")" ;;
+		printf "%s\n" "$(gettext "First user name")" ;;
 	user_pwd)
-		echo "$(gettext "First user password")" ;;
+		printf "%s\n" "$(gettext "First user password")" ;;
 	bootloader)
-		printf "$LST_BOOTLOADER" | \
+		printf "%s" "$LST_BOOTLOADER" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n",$1,$2}' ;;
 	winboot)
-		echo "$(gettext "Partition containing Windows, or 'auto'")" ;;
+		printf "%s\n" "$(gettext "Partition containing Windows, or 'auto'")" ;;
 	""|all)
 	help_all ;;
 	*)
@@ -841,7 +847,7 @@ list_media()
 				media="$media $key"
 		esac
 	done
-	echo "$media" | sed 's/^\s//'
+	printf "%s" "$media" | sed 's/^\s//'
 }
 
 list_usb()
@@ -870,7 +876,7 @@ list_usb()
 list_iso()
 {
 	for i in /root/*.iso /home/*/*.iso /home/*/*/*.iso ; do
-		echo $i | grep -v "*"
+		printf "%s" $i | grep -v "*"
 	done
 }
 
@@ -885,7 +891,7 @@ list_format()
 	type mkfs.minix > /dev/null && fs="$fs minix"
 	type mkfs.reiser4 > /dev/null && fs="$fs reiser4"
 	type mkfs.xfs > /dev/null && fs="$fs xfs"
-	echo "$fs" | sed 's/^\s//'
+	printf "%s" "$fs" | sed 's/^\s//'
 }
 
 # list partitions
@@ -911,8 +917,8 @@ list_web()
 {
 	local key="$1"
 	# print url of a given iso
-	if printf "$LST_WEB" | egrep -q "^$key:"; then
-		printf "$LST_WEB" | egrep "^$key:" | \
+	if printf "%s" "$LST_WEB" | egrep -q "^$key:"; then
+		printf "%s" "$LST_WEB" | egrep "^$key:" | \
 			/bin/busybox awk -F: '{print $2}'
 	fi
 	# print all key
@@ -926,7 +932,7 @@ list_bootloader()
 	local btlr
 	type grub-install > /dev/null && btlr=" grub"
 	type syslinux > /dev/null && btlr="$btlr syslinux"
-	[ -n "$btlr" ] && printf "auto$btlr\n"
+	[ -n "$btlr" ] && printf "%s\n" "auto$btlr"
 }
 
 # list Windows partitions
@@ -982,7 +988,7 @@ list()
 	local ressource="$1"
 	case "$ressource" in
 		mode)
-			echo "$(key "$LST_MODE")" ;;
+			printf "%s\n" "$(key "$LST_MODE")" ;;
 		media)
 			list_media ;;
 		iso)
@@ -1002,15 +1008,15 @@ list()
 		partition_table)
 			list_partition_table ;;
 		""|all)
-			printf "* mode:\n$(key "$LST_MODE")\n\n"
-			printf "* media:\n$(list_media)\n\n"
-			printf "* usb:\n$(list usb)\n\n"
-			printf "* iso:\n$(list_iso)\n\n"
-			printf "* web:\n$(list_web)\n\n"
-			printf "* format:\n$(list_format)\n\n"
-			printf "* bootloader:\n$(list_bootloader)\n\n"
-			printf "* partition_table:\n$(list_partition_table)\n\n"
-			printf "* winboot:\n$(list_winboot)\n"
+			printf "* mode:\n%s\n\n" "$(key "$LST_MODE")"
+			printf "* media:\n%s\n\n" "$(list_media)"
+			printf "* usb:\n%s\n\n" "$(list usb)"
+			printf "* iso:\n%s\n\n" "$(list_iso)"
+			printf "* web:\n%s\n\n" "$(list_web)"
+			printf "* format:\n%s\n\n" "$(list_format)"
+			printf "* bootloader:\n%s\n\n" "$(list_bootloader)"
+			printf "* partition_table:\n%s\n\n" "$(list_partition_table)"
+			printf "* winboot:\n%s\n" "$(list_winboot)"
 			;;
 		*)
 			local options="mode media usb iso web uuid format bootloader \
@@ -1026,7 +1032,7 @@ partition_table winboot"
 # list indexes from a list
 key()
 {
-	printf "$1" | /bin/busybox awk -F: 'BEGIN{
+	printf "%s" "$1" | /bin/busybox awk -F: 'BEGIN{
 		other=-1
 		}
 		!/^#|^$/{
@@ -1042,18 +1048,18 @@ key()
 # convert a list of words to a regex
 regex()
 {
-	printf "^$1$" | sed s'/ /$|^/g'
+	printf "%s" "^$1$" | sed s'/ /$|^/g'
 }
 
 # print dev from uuid
 uuid2dev()
 {
 	local uuid="$1" id
-	if [ "$(echo $uuid | cut -d '=' -f1)" = "UUID" ]; then
-		id="$(echo $uuid | cut -d'=' -f2)"
+	if [ "$(printf "%s" $uuid | cut -d '=' -f1)" = "UUID" ]; then
+		id="$(printf "%s" $uuid | cut -d'=' -f2)"
 		printf "$(/sbin/blkid -U $id)"
 	else
-		printf "$uuid"
+		printf "%s" "$uuid"
 	fi
 }
 
@@ -1061,17 +1067,17 @@ uuid2dev()
 uuid2disk()
 {
 	local uuid="$1"
-	printf "$(uuid2dev $uuid | /bin/busybox awk '{print substr($0,1,8)}')"
+	printf "%s" "$(uuid2dev $uuid | /bin/busybox awk '{print substr($0,1,8)}')"
 }
 
 dev2uuid()
 {
 	local uuid="$1"
-	if printf "$uuid" | grep -q dev; then
-		printf "UUID=$(/sbin/blkid -p -i -o udev "$uuid" \
+	if printf "%s" "$uuid" | grep -q dev; then
+		printf "UUID=%s" "$(/sbin/blkid -p -i -o udev "$uuid" \
 			| grep ID_FS_UUID= | cut -d '=' -f2)"
 	else
-		printf "$uuid"
+		printf "%s" "$uuid"
 	fi
 }
 
@@ -1080,7 +1086,7 @@ p_table()
 {
 	local uuid="$1" device
 	device="$(uuid2disk $uuid)"
-	printf "$(/usr/sbin/parted -lm | grep "$device" | \
+	printf "%s" "$(/usr/sbin/parted -lm | grep "$device" | \
 		cut -d':' -f6)"
 }
 
@@ -1092,7 +1098,7 @@ filesys()
 		grep "$(uuid2dev $uuid)" | cut -d' ' -f3)"
 	fs="${fs#TYPE=\"}"
 	fs="${fs%\"}"
-	printf "$fs"
+	printf "%s" "$fs"
 }
 
 # return removable status from uuid
@@ -1100,7 +1106,7 @@ is_removable()
 {
 	local uuid="$1" removable=1
 	local disk="$(uuid2disk $uuid | /bin/busybox awk '{print substr($0,6,3)}')"
-	if [ "$(echo $disk | wc -w)" -eq "1" ]; then
+	if [ "$(printf "%s" $disk | wc -w)" -eq "1" ]; then
 		[ "$(cat /sys/block/"$disk"/removable)" -gt "0" ] \
 			&& removable=0
 	fi
@@ -1130,7 +1136,7 @@ dnl()
 	mkdir -p /tmp/tazinst
 	for mirror in $MIRRORS; do
 		log "$(gettext "Downloading:") $mirror$file"
-		oldfile="$(printf $file | \
+		oldfile="$(printf "%s" $file | \
 			/bin/busybox awk 'BEGIN{RS="/"}{text=$1}END{print text}')"
 		[ -e "/tmp/tazinst/$oldfile" ] && rm -f "/tmp/tazinst/$oldfile"
 		/bin/busybox wget $mirror$file -P /tmp/tazinst && transfer=1 && break
@@ -1172,14 +1178,14 @@ add_pkg()
 # start log
 log_open()
 {
-	printf "=== Tazinst: started on $(date "+%x %X") ===\n" > "$LOG"
+	printf "%s\n" "=== Tazinst: started on $(date "+%x %X") ===" > "$LOG"
 	LOGGING="true"
 }
 
 # print and log a comment
 log(){
 	# for front-ends, sleep 1 if $1 is num
-	printf "$1" | awk '{
+	printf "%s" "$1" | awk '{
 		num=$1+0
 		if(num>0 && num<=100)
 			exit 0
@@ -1187,8 +1193,8 @@ log(){
 			exit 1
 		}' && sleep 1
 	# log
-	printf "$1\n"
-	[ -n "$LOGGING" ] && printf "$1\n" >> $LOG
+	printf "%s\n" "$1"
+	[ -n "$LOGGING" ] && printf "%s\n" "$1" >> $LOG
 }
 
 #--------------------
@@ -1199,13 +1205,13 @@ log(){
 error()
 {
 	local error="$1" msg="$2" cancel="$(gettext "Process not completed")"
-	printf "$(gettext "Error"): $msg\n$cancel\n" 1>&2
+	printf "%s: %s\n%s\n" "$(gettext "Error")" "$msg" "$cancel" 1>&2
 	if [ -n "$LOGGING" ]; then
 		# 1st pattern
-		printf "-x-x- \n" >> "$LOG"
-		printf "$(gettext "Error") $error: $msg\n$cancel\n" >> "$LOG"
+		echo "-x-x- " >> "$LOG"
+		printf "%s: %s\n%s\n" "$(gettext "Error")" "$msg" "$cancel" >> "$LOG"
 		# 2nd pattern
-		printf "x-x-x \n" >> "$LOG"
+		echo "x-x-x " >> "$LOG"
 		printf "=== Tazinst error on $(date "+%x %X") ===\n" >> "$LOG"
 	fi
 	unset LOGGING
@@ -1268,7 +1274,7 @@ mount_usb()
 mount_iso()
 {
 	# check integrity
-	local md5file=$(echo $SOURCE | sed 's/.iso$/.md5/')
+	local md5file=$(printf "%s" $SOURCE | sed 's/.iso$/.md5/')
 	if [ -r "$md5file" ]; then
 		local md5ref="$(cat "$md5file" | cut -d' ' -f1)"
 		local md5calc="$(md5sum $SOURCE | cut -d' ' -f1)"
@@ -1291,14 +1297,14 @@ mount_iso()
 # ISO file on the web
 mount_web()
 {
-	if (echo "$SOURCE" | egrep -q "$(regex "$(list web)")"); then
+	if (printf "%s" "$SOURCE" | egrep -q "$(regex "$(list web)")"); then
 		SOURCE="$(list web $SOURCE)"
 	fi
 	dnl "$SOURCE"
-	local md5file="$(echo $SOURCE | sed 's/.iso$/.md5/')"
+	local md5file="$(printf "%s" $SOURCE | sed 's/.iso$/.md5/')"
 	dnl "$md5file"
-	local webiso="$(echo $SOURCE | /bin/busybox awk 'BEGIN{RS="/"}{out=$1}
-		END{printf"%s",out}')"
+	local webiso="$(printf "%s" $SOURCE | \
+		/bin/busybox awk 'BEGIN{RS="/"}{out=$1}	END{printf "%s",out}')"
 	SOURCE="/tmp/tazinst/$webiso"
 	mount_iso
 }
@@ -1341,7 +1347,7 @@ format()
 	local uuid="$1" fmt="$2" dest="$3" dev format
 	log "$(gettext "Format") $uuid ($fmt)"
 	format="mkfs.$fmt"
-	if (printf "$uuid" | grep -q "UUID="); then
+	if (printf "%s" "$uuid" | grep -q "UUID="); then
 		# case UUID=
 		dev="$(uuid2dev $uuid)"
 		"$format" "$dev" >>"$LOG" 2>>"$LOG" || error 4 "Formatting has failed"
@@ -1440,7 +1446,7 @@ end_of_install()
 {
 	log "\n$(gettext "Process completed. You can now restart (reboot)")"
 	log "$(gettext "from your SliTaz GNU/Linux system.")"
-	printf "=== Tazinst ended on $(date "+%x %X") ===\n" >> "$LOG"
+	printf "%s\n" "=== Tazinst ended on $(date "+%x %X") ===" >> "$LOG"
 	unset LOGGING
 	# saving log
 	log "$(gettext "Copying log to /var/log/tazinst.log")"
@@ -1463,10 +1469,10 @@ bootloader()
 	if [ "$BOOTLOADER" == "auto" ]; then
 		# use syslinux, but if p_table=msdos take grub (if available)
 		unset BOOTLOADER
-		printf "$(list_bootloader)" | \
+		printf "%s" "$(list_bootloader)" | \
 			grep -q "syslinux" && BOOTLOADER=syslinux
 		if [ "$(p_table $ROOT_UUID)" == "msdos" ]; then
-			printf "$(list_bootloader)" | \
+			printf "%s" "$(list_bootloader)" | \
 				grep -q " grub" && BOOTLOADER=grub
 		fi
 	fi
@@ -1496,7 +1502,7 @@ disknum()
 partnum()
 {
 	local partition="$(uuid2dev $1)"
-	printf "$((${partition#/dev/[h-s]d[a-z]}-1))\n"
+	printf "%s\n" "$((${partition#/dev/[h-s]d[a-z]}-1))"
 }
 
 # print root device
@@ -1506,10 +1512,10 @@ rootdev()
 	case "$(p_table $partition)" in
 		msdos)
 			# print device
-			printf "$(uuid2dev $partition)" ;;
+			printf "%s" "$(uuid2dev $partition)" ;;
 		gpt)
 			# print PARTUUID (different from UUID)
-			printf "PARTUUID="
+			printf "%s" "PARTUUID="
 			/sbin/blkid -p -i -o udev $(uuid2dev $partition) \
 				| grep ENTRY_UUID | cut -d '=' -f2 ;;
 	esac
@@ -1518,7 +1524,7 @@ rootdev()
 # add rootdelay for removable devices
 rootdelay()
 {
-	is_removable "$ROOT_UUID" && printf "rootdelay=9"
+	is_removable "$ROOT_UUID" && printf "%s" "rootdelay=9"
 }
 
 # print winboot uuid
@@ -1527,9 +1533,9 @@ winboot_uuid()
 	if [ "$WINBOOT" = "auto" ]; then
 		# get the first uuid if any
 		[ $(list_winboot | wc -w) -gt 1 ] \
-			&& printf "$(list_winboot | cut -d' ' -f2)"
+			&& printf "%s" "$(list_winboot | cut -d' ' -f2)"
 	else
-		printf "$WINBOOT"
+		printf "%s" "$WINBOOT"
 	fi
 }
 
@@ -1585,10 +1591,10 @@ _EOF_
 	fi
 
 	# log
-	printf "/boot/grub/menu.lst:\n" >> "$LOG"
-	printf "--- menu.lst -------------\n" >> "$LOG"
+	printf "%s\n" "/boot/grub/menu.lst:" >> "$LOG"
+	printf "%s\n" "--- menu.lst -------------" >> "$LOG"
 	cat $TARGET_ROOT/boot/grub/menu.lst >> "$LOG"
-	printf "--- menu.lst -------------\n\n" >> "$LOG"
+	printf "%s\n\n" "--- menu.lst -------------" >> "$LOG"
 }
 
 # GRUB info with disk name used for grub
@@ -1687,10 +1693,10 @@ LABEL windows
 EOF
 	fi
 	# log
-	printf "/boot/syslinux/syslinux.cfg:\n" >> "$LOG"
-	printf "--- syslinux.cfg -------------\n" >> "$LOG"
+	printf "%s\n" "/boot/syslinux/syslinux.cfg:" >> "$LOG"
+	printf "%s\n" "--- syslinux.cfg -------------" >> "$LOG"
 	cat $TARGET_ROOT/boot/syslinux/syslinux.cfg >> "$LOG"
-	printf "--- syslinux.cfg -------------\n\n" >> "$LOG"
+	printf "%s\n\n" "--- syslinux.cfg -------------" >> "$LOG"
 }
 
 # install syslinux
@@ -1900,8 +1906,8 @@ pre_config_system()
 	sed	-i s#'CHECK_FS=\"\"'#"CHECK_FS=\"$ROOT_UUID\""# etc/rcS.conf
 	# set hostname.
 	log "$(gettext "Configuring host name:") $HOSTNAME"
-	printf "$HOSTNAME\n" > etc/hostname
-	printf "127.0.0.1	localhost $HOSTNAME tazpanel\n" > etc/hosts
+	printf "%s\n" "$HOSTNAME" > etc/hostname
+	printf "%s\n" "127.0.0.1	localhost $HOSTNAME tazpanel" > etc/hosts
 	cd "$path" || error8
 }
 
@@ -1912,7 +1918,7 @@ users_settings()
 	cat > "$TARGET_ROOT/users.sh" << _EOF_
 #!/bin/sh
 umask 0022
-echo "root:$ROOT_PWD" | chpasswd -m
+printf "root:%s" "$ROOT_PWD" | chpasswd -m
 adduser -D -H $USER_LOGIN
 
 for grp in audio cdrom floppy dialout disk kmem tape tty video; do
@@ -1921,7 +1927,7 @@ for grp in audio cdrom floppy dialout disk kmem tape tty video; do
  fi
 done
 
-echo "$USER_LOGIN:$USER_PWD" | chpasswd -m
+printf "%s:%s" "$USER_LOGIN" "$USER_PWD" | chpasswd -m
 if [ ! -d /home/$USER_LOGIN ]; then
 	cp -a /etc/skel /home/$USER_LOGIN
 	[ -e /root/.xinitrc ] && cp /root/.xinitrc /home/$USER_LOGIN
@@ -1972,7 +1978,7 @@ home_config()
 		fi
 		# write entry in fstab, force uuid
 		uuid="$(dev2uuid "$HOME_UUID")"
-		printf "$uuid /home $home_fs defaults \t0 \t2\n"	>> etc/fstab
+		printf "%b\n" "$uuid /home $home_fs defaults \t0 \t2"	>> etc/fstab
 		umount home >> "$LOG" 2>> "$LOG"
 		cd "$path" || error8
 	fi
@@ -2105,7 +2111,7 @@ install_pkgs()
 	do
 		if grep -q ^$pkg-[0-9] /var/lib/tazpkg/packages.list; then
 			packages="$(($packages+1))"
-			echo "$pkg" >> packages-to-install.list
+			printf "%s\n" "$pkg" >> packages-to-install.list
 		fi
 	done
 
@@ -2148,9 +2154,9 @@ update_pkgs()
 		install_pkgs
 	else
 		touch packages-to-install.list
-		printf "$(gettext "The list of available packages on the mirror could \
-not be downloaded. No missing packages will be reinstalled now, but you can do \
-so later by looking at the following list:
+		printf "%s\n" "$(gettext "The list of available packages on the mirror \
+could not be downloaded. No missing packages will be reinstalled now, but you \
+can do so later by looking at the following list:
 /var/lib/tazinst/packages-selection.diff")"
 	fi
 	cd "$path" || error8
@@ -2227,11 +2233,11 @@ case $1 in
 	clean)
 		clean "$2" ;;
 	version)
-		echo "$VERSION" ;;
+		printf "%s\n" "$VERSION" ;;
 	""|usage)
 		usage ;;
 	help)
 		help "$2" ;;
 	*)
-		usage_error ;;
+		usage_error "$1" ;;
 esac

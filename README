@@ -1,14 +1,14 @@
 SliTaz Installer
 ================================================================================
 
-Tazinst is the SliTaz installer written entirely in SHell script and usable from 
-the cmdline without dialog or any other gui-like interface! This installer
+Tazinst is the SliTaz installer written entirely in SHell script and usable
+from the cmdline without dialog or any other gui-like interface! This installer
 is able to perform an installation automatically based on a simple config file
 with clear variables such as: INST_TYPE="iso", TGT_PARTITION="/dev/hda1".
 
-With this way, it allows developers to create a different kind of frontend: 
-Dialog, CGI/web. Two frontends are included: slitaz-installer, a ncurses frontend,
-and a CGI/web frontend.
+With this way, it allows developers to create a different kind of frontend:
+Dialog, CGI/web. Two frontends are included: slitaz-installer, a ncurses
+frontend, and a CGI/web frontend.
 
 
 i18n
@@ -16,8 +16,8 @@ i18n
 Tazinst has been coded from the beginning with gettext support. Please
 forget 'echo' and use gettext, but remember that gettext "" is equivalent
 to echo -n. All translations go in the po/ folder.
- 
-To start a new translation please use msginit from the pot file directory. 
+
+To start a new translation please use msginit from the pot file directory.
 Example for French/France locale (fr_FR):
 
 $ msginit -l fr_FR -o fr.po -i tazinst.pot
