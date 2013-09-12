@@ -1,8 +1,8 @@
 # Russian translations for slitaz-installer package
-# Английские переводы для пакета slitaz-installer.
-# Copyright (C) 2013 THE slitaz-installer'S COPYRIGHT HOLDER
+# Copyright (C) 2013 SliTaz GNU/Linux
 # This file is distributed under the same license as the slitaz-installer package.
-# SliTaz User <al.bobylev@gmail.com>, 2013.
+# Aleksej Bobylev <al.bobylev@gmail.com>, 2013.
+# Hiri Hitiare <hitiare@mail.ru>, 2013.
 #
 msgid ""
 msgstr ""
@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-16 16:35+0000\n"
 "PO-Revision-Date: 2013-02-16 17:00-0000\n"
-"Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
-"Language-Team: Russian\n"
+"Last-Translator: Hiri Hitiare <hitiare@mail.ru>\n"
+"Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,8 +43,11 @@ msgid "Enter the partition where SliTaz Live is located:"
 msgstr "Введите раздел диска, где находится SliTaz Live:"
 
 #: slitaz-installer:33
-msgid "You have selected the option to install SliTaz from an ISO file located on a local disk."
-msgstr "Вы хотите установить SliTaz с ISO-образа, расположенного на локальном диске."
+msgid ""
+"You have selected the option to install SliTaz from an ISO file located on a "
+"local disk."
+msgstr ""
+"Вы хотите установить SliTaz с ISO-образа, расположенного на локальном диске."
 
 #: slitaz-installer:35
 msgid "Please, select a file below:"
@@ -76,11 +79,19 @@ msgstr "Укажите раздел, куда будет установлен Sl
 
 #: slitaz-installer:44
 msgid ""
-"The installer will upgrade the existing SliTaz system by saving all configuration files and the list of installed packages. Then, it will clean the partition and install the new version of SliTaz, restore the configuration files and reinstall any packages which are not present on the cdrom.\n"
+"The installer will upgrade the existing SliTaz system by saving all "
+"configuration files and the list of installed packages. Then, it will clean "
+"the partition and install the new version of SliTaz, restore the "
+"configuration files and reinstall any packages which are not present on the "
+"cdrom.\n"
 "You will need an active internet connection before upgrading."
 msgstr ""
-"Обновление существующей системы SliTaz: сначала будут сохранены все файлы настроек и список установленных пакетов. Затем, раздел будет очищен и установлена новая версия SliTaz, восстановлены файлы настроек и переустановлены все пакеты, отсутствующие на CD-ROM.\n"
-"Перед началом обновления убедитесь в наличии работающего соединения с интернетом."
+"Обновление существующей системы SliTaz: сначала будут сохранены все файлы "
+"настроек и список установленных пакетов. Затем, раздел будет очищен и "
+"установлена новая версия SliTaz, восстановлены файлы настроек и "
+"переустановлены все пакеты, отсутствующие на CD-ROM.\n"
+"Перед началом обновления убедитесь в наличии работающего соединения с "
+"интернетом."
 
 #: slitaz-installer:50
 msgid "Partition containing the system to upgrade:"
@@ -88,13 +99,15 @@ msgstr "Раздел, содержащий систему, которую тре
 
 #: slitaz-installer:52
 msgid ""
-"Only the filesystems actually installed on your system are listed. If you intend to use another filesystem, you have to install it before. Unless you know what you are doing, it's safe to use ext2, ext3 or ext4.\\n"
-"\\n"
-"\\Z2To format this partition, please select a filesystem below:"
+"Only the filesystems actually installed on your system are listed. If you "
+"intend to use another filesystem, you have to install it before. Unless you "
+"know what you are doing, it's safe to use ext2, ext3 or ext4.\\n\\n\\Z2To "
+"format this partition, please select a filesystem below:"
 msgstr ""
-"Список содержит только файловые системы, присутствующие на вашей системе. Если вы собираетесь использовать другую файловую систему, сначала вы должны создать ее. Если вы не знаете, что выбрать, хорошим решением будут ext2, ext3 или ext4.\\n"
-"\\n"
-"\\Z2В какую файловую систему форматировать этот раздел:"
+"Список содержит только файловые системы, присутствующие в вашей системе. "
+"Если вы собираетесь использовать другую файловую систему, сначала вы должны "
+"создать ее. Если вы не знаете, что выбрать, хорошим решением будут ext2, "
+"ext3 или ext4.\\n\\n\\Z2В какую файловую систему форматировать этот раздел:"
 
 #: slitaz-installer:58
 msgid "Separate /home partition"
@@ -106,22 +119,35 @@ msgstr "Выберите раздел:"
 
 #: slitaz-installer:61
 msgid ""
-"Hostname configuration allows you to specify the machine name. The hostname is used internally to identify the host on the network. This value can be changed after the system is installed.\\n"
-"\\n"
-"\\Z2Enter a hostname:\\Zn\\n"
+"Hostname configuration allows you to specify the machine name. The hostname "
+"is used internally to identify the host on the network. This value can be "
+"changed after the system is installed.\\n\\n\\Z2Enter a hostname:\\Zn\\n"
 msgstr ""
+"Здесь вы можете выбрать имя вашего хоста. Оно используется для идентификации "
+"в сети. Его можно изменить после установки.\\n\\n\\Z2Введите  имя хоста:\\Zn"
+"\\n"
 
 #: slitaz-installer:66
-msgid "The root administrator privilege lets you manage and configure the full system. A root user can damage your system so you should always setup a strong password with special characters and/or numbers."
+msgid ""
+"The root administrator privilege lets you manage and configure the full "
+"system. A root user can damage your system so you should always setup a "
+"strong password with special characters and/or numbers."
 msgstr ""
+"Для настройки системы нужны права root. В целях безопасности системы "
+"обязательно выберите стойкий пароль, содержащий специальные символы и/или "
+"цифры."
 
 #: slitaz-installer:70
 msgid "Enter the password for root:"
 msgstr "Введите пароль root:"
 
 #: slitaz-installer:72
-msgid "The default user for the system will have their personal files stored in /home/*user* (and will be automatically added to the audio group)"
+msgid ""
+"The default user for the system will have their personal files stored in /"
+"home/*user* (and will be automatically added to the audio group)"
 msgstr ""
+"Файлы пользователя будут храниться в папке /home/*имя_пользователя* (а сам "
+"он будет автоматически добавлен в группу audio)"
 
 #: slitaz-installer:74
 msgid "Enter the name of the first user:"
@@ -132,46 +158,75 @@ msgid "The password for default user"
 msgstr "Пароль первого пользователя"
 
 #: slitaz-installer:77
-msgid "It may be a security risk if too weak and should always be strong if you use a SSH connection through the web."
+msgid ""
+"It may be a security risk if too weak and should always be strong if you use "
+"a SSH connection through the web."
 msgstr ""
+"Опасно оставлять пароль слишком простым, и он обязательно должен быть "
+"надежным, если вы будете использовать SSH."
 
 #: slitaz-installer:79
 msgid "Enter the password for the default user:"
 msgstr "Введите пароль для первого пользователя:"
 
 #: slitaz-installer:81
-msgid "Installation is now finished, you can exit the installer or reboot on your new SliTaz GNU/Linux operating system"
+msgid ""
+"Installation is now finished, you can exit the installer or reboot on your "
+"new SliTaz GNU/Linux operating system"
 msgstr ""
+"Установка завершена, вы можете покинуть программу инсталляции, или "
+"перезагрузиться в свежеустановленную систему SliTaz GNU/Linux"
 
 #: slitaz-installer:87
 msgid ""
-"The next step lets you format the target partition. Choose between robust, stable and/or journaled filesystem. If the partition is already formated you can skip this stage, if not just accept.\\n"
-"\n"
-"Warning! formating a partition will destroy all current data.\\n"
-"\n"
+"The next step lets you format the target partition. Choose between robust, "
+"stable and/or journaled filesystem. If the partition is already formated you "
+"can skip this stage, if not just accept.\\n\n"
+"Warning! formating a partition will destroy all current data.\\n\n"
 "\\Z2Do you wish to format the partition ?\\Zn"
 msgstr ""
+"Теперь можно отформатировать раздел. Выберите между надежной, стабильной и/"
+"или журналируемой файловой системой. Вы можете пропустить этот шаг, "
+"например, если раздел уже отформатирован.\\n\n"
+"Внимание! Форматирование раздела уничтожит все текущие данные на нём.\\n"
+"\\Z2Хотите форматировать раздел?\\Zn"
 
 #: slitaz-installer:93
 msgid ""
-"On most GNU/Linux systems users personal files are stored in the directory /home. Home can be on a separate partition or another hard disk.\\n"
-"\n"
+"On most GNU/Linux systems users personal files are stored in the directory /"
+"home. Home can be on a separate partition or another hard disk.\\n\n"
 "\\Z2DO you want to use a separate Home partition ?\\Zn"
 msgstr ""
+"Обычно в системах GNU/Linux пользовательские файлы хранятся в папке /home. "
+"Эта папка может находиться на другом разделе жесткого диска, или вообще на "
+"другом диске.\\n\n"
+"\\Z2Использовать ли отдельный раздел для папки /home?\\Zn"
 
 #: slitaz-installer:98
 msgid ""
-"/home will be installed on a separate partition. The next step lets you format the /home partition. If the partition is already formated you can skip this stage, if not just accept. Warning formating a partition will destroy all current data.\\n"
-"\n"
+"/home will be installed on a separate partition. The next step lets you "
+"format the /home partition. If the partition is already formated you can "
+"skip this stage, if not just accept. Warning formating a partition will "
+"destroy all current data.\\n\n"
 "\\Z2Do you wish to format the /home partition ?\\Zn"
 msgstr ""
+"Папка /home будет установлена на отдельный раздел, сейчас речь идет о том, "
+"чтобы его отформатировать. Вы можете пропустить этот шаг, например, если он "
+"уже отформатирован. Внимание! Форматирование раздела уничтожит все текущие "
+"данные на нём.\\n\n"
+"\\Z2Хотите форматировать раздел /home?\\Zn"
 
 #: slitaz-installer:104
 msgid ""
-"You have now the option to install a bootloader which is capable of booting almost any kind of operating system.\\n"
-"\\n"
-"If you want to use an existing bootloader installation, skip this step and configure your bootloader to boot SliTaz (refer to your bootloader's documentation on how to do this)"
+"You have now the option to install a bootloader which is capable of booting "
+"almost any kind of operating system.\\n\\nIf you want to use an existing "
+"bootloader installation, skip this step and configure your bootloader to "
+"boot SliTaz (refer to your bootloader's documentation on how to do this)"
 msgstr ""
+"Можно установить загрузчик, который поддерживает загрузку практически любой "
+"операционной системы.\\n\\nЕсли вы хотите использовать существующий "
+"загрузчик, пропустите этот шаг и настройте ваш загрузчик для запуска SliTaz "
+"(обратитесь к документации Вашего загрузчика о том, как это сделать)"
 
 #: slitaz-installer:109
 msgid "Install a bootloader?"
@@ -179,21 +234,27 @@ msgstr "Установить загрузчик?"
 
 #: slitaz-installer:111
 msgid ""
-"Do you want to implement a dual-boot with Windows? At start-up, you will be asked whether you want to boot into Windows or SliTaz GNU/Linux.\\n"
-"\n"
+"Do you want to implement a dual-boot with Windows? At start-up, you will be "
+"asked whether you want to boot into Windows or SliTaz GNU/Linux.\\n\n"
 "\\Z2Install a dual-boot with Windows ?"
 msgstr ""
+"Хотите создать режим двойной загрузки с Windows? При включении компьютера "
+"будет возможность выбрать — загрузиться в Windows или SliTaz GNU/Linux.\\n\n"
+"\\Z2Создать двойную загрузку с Windows?"
 
 #: slitaz-installer:116
-msgid "Installation settings summary and last chance to cancel or restart all installation steps."
+msgid ""
+"Installation settings summary and last chance to cancel or restart all "
+"installation steps."
 msgstr ""
+"Итоговые настройки. Это последний шанс отменить, или начать все шаги сначала."
 
 #: slitaz-installer:120
 msgid "Sorry, no device, nor file found or available."
 msgstr ""
+"К сожалению, ни устройство, ни файл не найдены. Возможно, они недоступны."
 
-#: slitaz-installer:131
-#: slitaz-installer:140
+#: slitaz-installer:131 slitaz-installer:140
 msgid "Error 2: "
 msgstr "Ошибка 2: "
 
@@ -202,6 +263,8 @@ msgid ""
 "The lightweight SliTaz HDD installer 'tazinst' is missing.\n"
 "Check permissions, or reinstall the slitaz-tools package."
 msgstr ""
+"Не удалось запустить tazinst, легковесный установщик SliTaz.\n"
+"Проверьте права доступа или переустановите пакет slitaz-installer."
 
 #: slitaz-installer:268
 msgid "Mode"
@@ -215,8 +278,7 @@ msgstr "С носителя"
 msgid "To the disk"
 msgstr "На диск"
 
-#: slitaz-installer:280
-#: slitaz-installer:290
+#: slitaz-installer:280 slitaz-installer:290
 msgid "(Formatting as"
 msgstr "(форматировать в"
 
@@ -226,7 +288,7 @@ msgstr "(не форматировать)"
 
 #: slitaz-installer:285
 msgid "Separate /home is"
-msgstr "Отдельный раздел /home:"
+msgstr "Отдельный раздел /home"
 
 #: slitaz-installer:286
 msgid "No separate /home partition"
@@ -256,24 +318,19 @@ msgstr ", с загрузкой Windows®"
 msgid ", no dual-boot"
 msgstr ", без двойной загрузки"
 
-#: slitaz-installer:325
-#: slitaz-installer:379
+#: slitaz-installer:325 slitaz-installer:379
 msgid "Ok"
 msgstr "Ок"
 
-#: slitaz-installer:326
-#: slitaz-installer:353
-#: slitaz-installer:380
+#: slitaz-installer:326 slitaz-installer:353 slitaz-installer:380
 msgid "Cancel"
 msgstr "Отмена"
 
-#: slitaz-installer:352
-#: slitaz-installer:411
+#: slitaz-installer:352 slitaz-installer:411
 msgid "Yes"
 msgstr "Да"
 
-#: slitaz-installer:354
-#: slitaz-installer:412
+#: slitaz-installer:354 slitaz-installer:412
 msgid "No"
 msgstr "Нет"
 
