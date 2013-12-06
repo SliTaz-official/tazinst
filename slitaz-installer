@@ -52,7 +52,7 @@ You will need an active internet connection before upgrading.")\n \
 ROOT_FORMAT_MSG="\n$(gettext "Only the filesystems actually installed on your \
 system are listed. If you intend to use another filesystem, you have to \
 install it before. \
-Unless you know what you are doing, it's safe to use ext2, ext3 or ext4.\n\n\
+Unless you know what you are doing, it is safe to use ext2, ext3 or ext4.\n\n\
 \Z2To format this partition, please select a filesystem below:")\Zn\n"
 
 HOME_UUID_MSG="\n$(gettext "Separate /home partition")\n\n\
@@ -104,7 +104,7 @@ formating a partition will destroy all current data.\n
 ASK_BOOTLOADER="\n$(gettext "You have now the option to install a \
 bootloader which is capable of booting almost any kind of operating system.\n\n\
 If you want to use an existing bootloader installation, skip this step \
-and configure your bootloader to boot SliTaz (refer to your bootloader's \
+and configure your bootloader to boot SliTaz (refer to your bootloader \
 documentation on how to do this)").\n\n\
 \Z2$(gettext "Install a bootloader?")\Zn\n"
 
@@ -139,7 +139,7 @@ Check permissions, or reinstall the slitaz-tools package.")\n"
 		{ver=$0+0}{ if (ver < req) exit 1}') ; then
 		printf "$(gettext "Error 2: ")
 $(gettext "The lightweight SliTaz HDD installer tazinst ($version) is not
-at the required version ($TAZINST_REQUIRED_VERSION), use tazinst in a xterm or
+at the required version ($TAZINST_REQUIRED_VERSION), use tazinst in an xterm or
 reinstall the slitaz-tools package.")\n"
 		exit 2
 	fi

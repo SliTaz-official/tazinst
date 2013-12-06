@@ -177,7 +177,7 @@ new_file()
 	if [ -w "$install_file" ]; then
 		write_file "$install_file"
 	else
-		printf "%s\n" "$(gettext "Error: Can't create file.")" 1>&2
+		printf "%s\n" "$(gettext "Error: Cannot create file.")" 1>&2
 		exit 2
 	fi
 }
@@ -627,7 +627,7 @@ check_table()
 		fi
 	else
 		printf "%s\n" \
-	"$(gettext "Error: No disk selected, can't install any bootloader.")" 1>&2
+	"$(gettext "Error: No disk selected, cannot install any bootloader.")" 1>&2
 		exit 1
 	fi
 }
@@ -1283,7 +1283,7 @@ mount_iso()
 			error 3 "$(gettext "md5sum error, file corrupted.")"
 		fi
 	else
-		log "$SOURCE: $(gettext "md5 file not found, can't check integrity.")"
+		log "$SOURCE: $(gettext "md5 file not found, cannot check integrity.")"
 	fi
 	# mount ISO
 	if mount -o loop -t iso9660 "$SOURCE" \
