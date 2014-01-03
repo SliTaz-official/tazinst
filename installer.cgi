@@ -2,7 +2,7 @@
 #
 # Main CGI interface for Tazinst, the SliTaz installer.
 #
-# Copyright (C) 2012-2013 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2012-2014 SliTaz GNU/Linux - BSD License
 #
 # Authors : Dominique Corbex <domcox@slitaz.org>
 #

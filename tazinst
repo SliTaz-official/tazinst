@@ -5,7 +5,7 @@
 # few main variables, then all the functions and then the
 # full sequence of functions.
 #
-# (C) 2007-2013 SliTaz - GNU General Public License v3.
+# (C) 2007-2014 SliTaz - GNU General Public License v3.
 #
 # Authors : Christophe Lincoln <pankso@slitaz.org>
 #           Dominique Corbex <domcox@slitaz.org>
@@ -1013,6 +1013,7 @@ list()
 			printf "* usb:\n%s\n\n" "$(list usb)"
 			printf "* iso:\n%s\n\n" "$(list_iso)"
 			printf "* web:\n%s\n\n" "$(list_web)"
+			printf "* uuid:\n%s\n\n" "$(list_uuid)"
 			printf "* format:\n%s\n\n" "$(list_format)"
 			printf "* bootloader:\n%s\n\n" "$(list_bootloader)"
 			printf "* partition_table:\n%s\n\n" "$(list_partition_table)"
