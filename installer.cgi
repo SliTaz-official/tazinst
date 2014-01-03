@@ -11,7 +11,7 @@
 # restricted path
 PATH="/usr/sbin:/usr/bin:/sbin:/bin"
 
-VERSION=3.91
+VERSION=3.92
 
 # Common functions from libtazpanel
 . lib/libtazpanel
@@ -164,7 +164,7 @@ select_source()
 			"$(gettext 'Enter the partition where SliTaz Live is located on
  your USB Key')"
 		error="$?"
-		select "$(/usr/sbin/tazinst list usb "$INSTFILE")" \
+		select "$(/usr/sbin/tazinst list usb "$INSTFILE" | cut -d' ' -f2)" \
 			"$source" \
 			"SRC_USB"
 		error_msg "$error" \
@@ -272,7 +272,7 @@ select_home_uuid()
 {
 	local home_uuid="$(/usr/sbin/tazinst get home_uuid "$INSTFILE")"
 	comment "home_uuid selection"
-	h5 $(gettext "home partition")
+	h5 "$(gettext "home partition")"
 	label "home_uuid" \
 		"$(gettext 'Separate partition for /home:')" \
 		"$(gettext 'Specify the partition containing /home')"
@@ -296,7 +296,7 @@ select_hostname()
 {
 	local hostname="$(/usr/sbin/tazinst get hostname "$INSTFILE")" error
 	comment "hostname selection"
-	h5 $(gettext "Hostname")
+	h5 "$(gettext "Hostname")"
 	label "hostname" \
 		"$(gettext 'Set Hostname to:')" \
 		"$(gettext 'Hostname configuration allows you to specify the machine name')"
@@ -315,7 +315,7 @@ select_root_pwd()
 {
 	local root_pwd="$(/usr/sbin/tazinst get root_pwd "$INSTFILE")" error
 	comment "root_pwd selection"
-	h5 $(gettext "Root superuser")
+	h5 "$(gettext "Root superuser")"
 	label "root_pwd" \
 		"$(gettext 'Root passwd:')" \
 		"$(gettext 'Enter the password for root')"
@@ -333,7 +333,7 @@ select_user_login()
 {
 	local user_login="$(/usr/sbin/tazinst get user_login "$INSTFILE")" error
 	comment "user_login selection"
-	h5 $(gettext "User")
+	h5 "$(gettext "User")"
 	label "user_login" \
 		"$(gettext 'User login:')" \
 		"$(gettext 'Enter the name of the first user')"
@@ -369,7 +369,7 @@ select_bootloader()
 {
 	local bootloader="$(/usr/sbin/tazinst get bootloader "$INSTFILE")" error
 	comment "bootloader selection"
-	h5 $(gettext "Bootloader")
+	h5 "$(gettext "Bootloader")"
 	input "checkbox" \
 		"bootloader" \
 		"auto" \
@@ -450,7 +450,7 @@ select_settings()
 
 save_settings()
 {
-	h5 $(gettext "Checking settings...")
+	h5 "$(gettext "Checking settings...")"
 	# install type
 	/usr/sbin/tazinst set media "$(GET MEDIA)" "$INSTFILE"
 	# source File
