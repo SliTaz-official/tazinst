@@ -909,7 +909,7 @@ list_uuid()
 
 list_partition_table()
 {
-	/usr/sbin/parted -lm | \
+	/usr/sbin/parted -lm 2>&1 | \
 		/bin/busybox awk -F: '/^\/dev\//{printf "%s: %s\n", $1,$6}'
 }
 
@@ -938,7 +938,7 @@ list_bootloader()
 # list Windows partitions
 list_winboot()
 {
-	/usr/sbin/parted -lm | /bin/busybox awk '
+	/usr/sbin/parted -lm 2>&1 | /bin/busybox awk '
 	BEGIN{
 		FS=":"
 		disknum=-1
@@ -1087,7 +1087,7 @@ p_table()
 {
 	local uuid="$1" device
 	device="$(uuid2disk $uuid)"
-	printf "%s" "$(/usr/sbin/parted -lm | grep "$device" | \
+	printf "%s" "$(/usr/sbin/parted -lm 2>&1 | grep "$device" | \
 		cut -d':' -f6)"
 }
 
@@ -1373,6 +1373,10 @@ prepare_uuid()
 	log "$(gettext "Preparing target partition...")"
 	local uuid
 	# target may be in use
+	if mount | grep -q "$ROOT_UUID" ;then
+		log "$(gettext "Partition is already mounted, unmounting.")"
+		umount "$ROOT_UUID"
+	fi
 	mount | grep -q "$ROOT_UUID" && \
 		error 4 "$ROOT_UUID: $(gettext "Partition is already in use.")"
 	# Mount point can be already used.
@@ -1445,7 +1449,7 @@ umount_devices()
 
 end_of_install()
 {
-	log "\n$(gettext "Process completed. You can now restart (reboot)")"
+	log "$(gettext "Process completed. You can now restart (reboot)")"
 	log "$(gettext "from your SliTaz GNU/Linux system.")"
 	printf "%s\n" "=== Tazinst ended on $(date "+%x %X") ===" >> "$LOG"
 	unset LOGGING
@@ -1495,7 +1499,7 @@ disknum()
 {
 	local partition="$(uuid2dev $1)"
 	partition="${partition%[0-9]}"
-	/usr/sbin/parted -lm | grep "^/dev" | \
+	/usr/sbin/parted -lm 2>&1 | grep "^/dev" | \
 		/bin/busybox awk -v PART="$partition" '{if (match($0,PART)) print NR-1}'
 }
 
