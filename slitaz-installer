@@ -12,7 +12,7 @@
 TAZINST_REQUIRED_VERSION="2.98"
 BACKLIST="SliTaz GNU/Linux installer"
 DIALOG=dialog
-VERSION="3.92"
+VERSION="3.94"
 
 #--------------
 # msgs section

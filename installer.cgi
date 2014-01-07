@@ -11,7 +11,7 @@
 # restricted path
 PATH="/usr/sbin:/usr/bin:/sbin:/bin"
 
-VERSION=3.92
+VERSION=3.94
 
 # Common functions from libtazpanel
 . lib/libtazpanel

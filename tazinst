@@ -33,7 +33,7 @@ umask 0177
 [ -r /etc/slitaz/tazinst.conf ] && . /etc/slitaz/tazinst.conf
 
 # version
-readonly VERSION=3.92
+readonly VERSION=3.94
 
 # i18n
 . /usr/bin/gettext.sh
