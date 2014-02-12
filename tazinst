@@ -33,7 +33,7 @@ umask 0177
 [ -r /etc/slitaz/tazinst.conf ] && . /etc/slitaz/tazinst.conf
 
 # version
-readonly VERSION=3.94
+readonly VERSION=3.95
 
 # i18n
 . /usr/bin/gettext.sh
@@ -897,19 +897,19 @@ list_format()
 # list partitions
 list_uuid()
 {
-	/sbin/blkid | sort | /bin/busybox awk '
-		/UUID/ {
-			UUID=substr($0,index($0,"UUID="))
-			UUID=substr(UUID,1,index(UUID,"\" "))
-			gsub(/"/,"",UUID)
-			DEV=substr($1,1,index($1,":")-1)
-			printf "%s %s\n", UUID, DEV
-		}'
+	# list all drives but cdroms
+	/sbin/blkid -o export| /bin/busybox awk '
+		BEGIN{FS="="}
+		/DEVNAME/{dev=$2, type="unknown", label=""}
+		/LABEL/{label=$2" "}
+		/TYPE/{type=$2}
+		/PARTUUID/{if (type != "iso9660"){
+			printf "%s %s(%s)\n", dev, label, type}}' | sort -k 2
 }
 
 list_partition_table()
 {
-	/usr/sbin/parted -lm 2>&1 | \
+	/usr/sbin/parted -lms 2>&1 | \
 		/bin/busybox awk -F: '/^\/dev\//{printf "%s: %s\n", $1,$6}'
 }
 
@@ -938,7 +938,7 @@ list_bootloader()
 # list Windows partitions
 list_winboot()
 {
-	/usr/sbin/parted -lm 2>&1 | /bin/busybox awk '
+	/usr/sbin/parted -lms 2>&1 | /bin/busybox awk '
 	BEGIN{
 		FS=":"
 		disknum=-1
@@ -1087,7 +1087,7 @@ p_table()
 {
 	local uuid="$1" device
 	device="$(uuid2disk $uuid)"
-	printf "%s" "$(/usr/sbin/parted -lm 2>&1 | grep "$device" | \
+	printf "%s" "$(/usr/sbin/parted -lms 2>&1 | grep "$device" | \
 		cut -d':' -f6)"
 }
 
@@ -1499,7 +1499,7 @@ disknum()
 {
 	local partition="$(uuid2dev $1)"
 	partition="${partition%[0-9]}"
-	/usr/sbin/parted -lm 2>&1 | grep "^/dev" | \
+	/usr/sbin/parted -lms 2>&1 | grep "^/dev" | \
 		/bin/busybox awk -v PART="$partition" '{if (match($0,PART)) print NR-1}'
 }
 
@@ -1908,7 +1908,7 @@ pre_config_system()
 	# add root device to CHECK_FS in rcS.conf to check filesystem
 	# on each boot.
 	log "$(gettext "Adding / partition and CHECK_FS to file /etc/rcS.conf...")"
-	sed	-i s#'CHECK_FS=\"\"'#"CHECK_FS=\"$ROOT_UUID\""# etc/rcS.conf
+	sed	-i s#'CHECK_FS=\"\"'#"CHECK_FS=\"$(dev2uuid $ROOT_UUID)\""# etc/rcS.conf
 	# set hostname.
 	log "$(gettext "Configuring host name:") $HOSTNAME"
 	printf "%s\n" "$HOSTNAME" > etc/hostname

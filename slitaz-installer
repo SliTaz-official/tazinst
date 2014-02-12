@@ -12,7 +12,7 @@
 TAZINST_REQUIRED_VERSION="2.98"
 BACKLIST="SliTaz GNU/Linux installer"
 DIALOG=dialog
-VERSION="3.94"
+VERSION="3.95"
 
 #--------------
 # msgs section
@@ -322,8 +322,8 @@ dialog_menu()
 		--title " Select $option " \
 		--backtitle "$BACKLIST" \
 		--default-item "$(tazinst get "$option")" \
-		--ok-label "$(gettext "Ok")" \
-		--cancel-label "$(gettext "Cancel")" \
+		--ok-label "$(gettext "Next")" \
+		--cancel-label "$(gettext "Back")" \
 		--menu "$(msg $option)" 18 70 6 $items 2> "$tempfile"
 	retval="$?"
 	choice=$(cat "$tempfile")
@@ -350,7 +350,7 @@ dialog_yesno()
 		--title " Select $option " \
 		--backtitle "$BACKLIST" \
 		--ok-label "$(gettext "Yes")" \
-		--cancel-label "$(gettext "Cancel")" \
+		--cancel-label "$(gettext "Back")" \
 		--extra-button --extra-label "$(gettext "No")" \
 		--yesno "$(ask $option)" 18 70
 	retval="$?"
@@ -376,8 +376,8 @@ dialog_input()
 	$DIALOG \
 		--clear --colors \
 		--title " Select $option " \
-		--ok-label "$(gettext "Ok")" \
-		--cancel-label "$(gettext "Cancel")" \
+		--ok-label "$(gettext "Next")" \
+		--cancel-label "$(gettext "Back")" \
         --inputbox "$(msg $option)" 16 51 "$value"  2> "$tempfile"
 	retval="$?"
 	choice="$(cat $tempfile)"
@@ -416,7 +416,8 @@ summary()
 		0)	# yes
 			move up ;;
 		1)	# Cancel
-			move back ;;
+			gettext "Slitaz install cancelled."; echo
+			exit 1 ;;
 		3)	# no
 			return 3 ;;
 		255)# ESC pressed

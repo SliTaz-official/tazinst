@@ -11,7 +11,7 @@
 # restricted path
 PATH="/usr/sbin:/usr/bin:/sbin:/bin"
 
-VERSION=3.94
+VERSION=3.95
 
 # Common functions from libtazpanel
 . lib/libtazpanel
@@ -263,10 +263,10 @@ select_root_uuid()
 	select "$(/usr/sbin/tazinst list uuid "$INSTFILE")" \
 		"$root_uuid" \
 		"ROOT_UUID" \
-		2
+		0
 	error_msg "$error" \
 		"root_uuid" \
-		2
+		0
 	br
 }
 
@@ -295,7 +295,7 @@ select_home_uuid()
 	select "$(/usr/sbin/tazinst list uuid "$INSTFILE")" \
 		"$home_uuid" \
 		"HOME_UUID" \
-		2
+		0
 	br
 }
 
@@ -421,7 +421,7 @@ errors_msg()
 {
 	if [ "$CHECK" ]; then
 		echo '<span class="alert">'
-		p $(gettext "Errors found. Please check your settings.")
+		p "$(gettext "Errors found. Please check your settings.")"
 		echo '</span>'
 	fi
 }
@@ -1051,8 +1051,9 @@ case "$(GET page)" in
 		if ! (/usr/sbin/tazinst check all $INSTFILE > /dev/null); then
 			page_redirection "input&CHECK=yes"
 		else
-			tazinst_run && moveto_page home reboot \
-						|| moveto_page input failed
+#			tazinst_run && moveto_page home reboot \
+#						|| moveto_page input failed
+					 moveto_page input failed
 		fi
 		form_end
 		;;
