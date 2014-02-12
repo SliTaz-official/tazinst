@@ -1051,9 +1051,8 @@ case "$(GET page)" in
 		if ! (/usr/sbin/tazinst check all $INSTFILE > /dev/null); then
 			page_redirection "input&CHECK=yes"
 		else
-#			tazinst_run && moveto_page home reboot \
-#						|| moveto_page input failed
-					 moveto_page input failed
+			tazinst_run && moveto_page home reboot \
+						|| moveto_page input failed
 		fi
 		form_end
 		;;
