@@ -97,7 +97,7 @@ Slitaz system will be updated as long you have an active internet connection.")"
 }
 
 #--------------------
-# partitionning page
+# partitioning page
 #--------------------
 
 exec_gparted()
@@ -120,7 +120,7 @@ installed on your hard drive.")"
 plan to install and how much space you require for users. It's conceivable \
 that you could run a minimal SliTaz system in 300 megs or less, but 2 gigs \
 is indeed more comfy.")"
-	p "$(gettext "A separate home partition, and a partition that will be used \
+	p "$(gettext "A separate home partition and a partition that will be used \
 as Linux swap space may be created if needed. Slitaz detects and uses swap \
 partitions automatically.")"
 	close_div

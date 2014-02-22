@@ -767,7 +767,7 @@ root_pwd:$(gettext "Superuser password")
 user_login:$(gettext "First user name")
 user_pwd:$(gettext "First user password")
 bootloader:$(gettext "Install a bootloader")
-winboot:$(gettext "Partition to duaboot Windows from")"
+winboot:$(gettext "Partition to dualboot Windows from")"
 	printf "%s\n" "$(gettext "List of settings:")"
 	printf "%s" "$text" | \
 		/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}'
@@ -982,7 +982,7 @@ list_winboot()
 	END{printf "\n"}'
 }
 
-# list commmand
+# list command
 list()
 {
 	local ressource="$1"
