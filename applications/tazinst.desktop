@@ -4,6 +4,7 @@ Name=SliTaz Installer
 Name[pt]=Instalador do SliTaz
 Name[pt_BR]=Instalador do SliTaz
 Name[ru]=Установка SliTaz
+Name[zh_CN] = SliTaz 系统安装工具
 Icon=slitaz-icon
 Exec=browser http://tazpanel:82/installer.cgi
 Categories=System;
