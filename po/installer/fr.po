@@ -35,7 +35,7 @@ msgstr ""
 
 #: installer.cgi:56
 msgid "Which type of installation do you want to start?"
-msgstr ""
+msgstr "Quel type d'installation faut il lancer ?"
 
 #: installer.cgi:64
 msgid "Install"
@@ -178,6 +178,7 @@ msgstr "Démarrer Gparted"
 #: installer.cgi:135
 msgid "Launch GParted, the partition editor tool"
 msgstr ""
+msgstr "Lance GParted, l'éditeur de partition"
 
 #: installer.cgi:136
 msgid "Continue installation"
@@ -207,8 +208,9 @@ msgid "LiveUSB:"
 msgstr "LiveUSB"
 
 #: installer.cgi:173
+#, fuzzy
 msgid "Enter the partition where SliTaz Live is located on your USB Key"
-msgstr ""
+msgstr "Sur quelle partition de la clef USB se trouve SliTaz Live ?"
 
 #: installer.cgi:187
 #, fuzzy
@@ -362,10 +364,12 @@ msgid ""
 "At start-up, you will be asked whether you want to boot into Windows&trade; "
 "or SliTaz GNU/Linux."
 msgstr ""
+"Au démarage, on vous demandera de choisir entre Windows&trade; "
+"et SliTaz GNU/Linux."
 
 #: installer.cgi:416
 msgid "Errors found. Please check your settings."
-msgstr ""
+msgstr "Il y a des erreurs. Vérifiez vos saisies."
 
 #: installer.cgi:426
 #, fuzzy
@@ -384,11 +388,11 @@ msgstr "Vérification des mises à jours..."
 
 #: installer.cgi:533
 msgid "Errors encountered."
-msgstr ""
+msgstr "Des erreurs sont survenues."
 
 #: installer.cgi:546
 msgid "Process completed!"
-msgstr ""
+msgstr "C'est fini !"
 
 #: installer.cgi:552
 msgid ""
@@ -473,7 +477,7 @@ msgstr ""
 
 #: installer.cgi:654
 msgid "here"
-msgstr ""
+msgstr "ici"
 
 #: installer.cgi:669 installer.cgi:681 installer.cgi:694
 msgid "Tazinst Error"
@@ -523,7 +527,7 @@ msgstr "*"
 
 #: installer.cgi:899
 msgid "Do not format"
-msgstr ""
+msgstr "Ne pas formatter"
 
 #: installer.cgi:901
 msgid ""
