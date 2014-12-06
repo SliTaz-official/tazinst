@@ -1814,7 +1814,8 @@ install_kernel()
 		log "$(gettext "Kernel name not found, falling back to:") $(uname -r)"
 	fi
 	mkdir -p $TARGET_ROOT/boot || error8
-	cp $SOURCE_ROOT/boot/bzImage $TARGET_ROOT/boot/$KERNEL
+	cp $SOURCE_ROOT/boot/bzImage $TARGET_ROOT/boot/$KERNEL 2> /dev/null ||
+	cp $SOURCE_ROOT/boot/bzImage* $TARGET_ROOT/boot/$KERNEL
 	log "$(gettext "install_kernel:") $KERNEL"
 }
 

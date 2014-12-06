@@ -75,9 +75,11 @@ install: msgfmt
 	@echo "Installing slitaz-installer into $(DESTDIR)$(PREFIX)/sbin..."
 	mkdir -p $(DESTDIR)$(PREFIX)/sbin
 	install -m 0755 slitaz-installer $(DESTDIR)$(PREFIX)/sbin
+	-[ "$(VERSION)" ] && sed -i 's/^VERSION=["0-9].*/VERSION=$(VERSION)/' $(DESTDIR)$(PREFIX)/sbin/slitaz-installer
 	@echo "Installing installer.cgi into $(DESTDIR)$(TAZPANEL)..."
 	mkdir -p $(DESTDIR)$(TAZPANEL)/menu.d
 	install -m 0755 installer.cgi $(DESTDIR)$(TAZPANEL)
+	-[ "$(VERSION)" ] && sed -i 's/^VERSION=["0-9].*/VERSION="$(VERSION)"/' $(DESTDIR)$(TAZPANEL)/installer.cgi
 	@echo "Installing installer.menu into $(DESTDIR)$(TAZPANEL)/menu.d..."
 	ln -s ../installer.cgi $(DESTDIR)$(TAZPANEL)/menu.d/installer.cgi
 	@echo "Installing config file into $(DESTDIR)/etc/slitaz..."
