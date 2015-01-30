@@ -1815,7 +1815,7 @@ install_kernel()
 	fi
 	mkdir -p $TARGET_ROOT/boot || error8
 	for i in $SOURCE_ROOT/boot/bzImage* ; do
-		cp $i $TARGET_ROOT/boot/$KERNEL${i#*bzImage}
+		cp $i $TARGET_ROOT/boot/$KERNEL${i#*bzImage*}
 	done
 	log "$(gettext "install_kernel:") $KERNEL"
 }
