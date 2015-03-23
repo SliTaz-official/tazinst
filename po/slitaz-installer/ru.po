@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slitaz-installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-16 16:35+0000\n"
+"POT-Creation-Date: 2015-03-23 17:11+0100\n"
 "PO-Revision-Date: 2013-02-16 17:00-0000\n"
 "Last-Translator: Hiri Hitiare <hitiare@mail.ru>\n"
 "Language-Team: \n"
@@ -16,7 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: slitaz-installer:23
 msgid "Welcome to the slitaz-installer"
@@ -66,12 +67,8 @@ msgid "Select the source"
 msgstr "Выберите источник"
 
 #: slitaz-installer:42
-msgid ""
-"\\n"
-"Drive selection"
-msgstr ""
-"\\n"
-"Выбор привода"
+msgid "\\nDrive selection"
+msgstr "\\nВыбор привода"
 
 #: slitaz-installer:42
 msgid "Please specify the partition where to install SliTaz:"
@@ -98,10 +95,11 @@ msgid "Partition containing the system to upgrade:"
 msgstr "Раздел, содержащий систему, которую требуется обновить:"
 
 #: slitaz-installer:52
+#, fuzzy
 msgid ""
 "Only the filesystems actually installed on your system are listed. If you "
 "intend to use another filesystem, you have to install it before. Unless you "
-"know what you are doing, it's safe to use ext2, ext3 or ext4.\\n\\n\\Z2To "
+"know what you are doing, it is safe to use ext2, ext3 or ext4.\\n\\n\\Z2To "
 "format this partition, please select a filesystem below:"
 msgstr ""
 "Список содержит только файловые системы, присутствующие в вашей системе. "
@@ -217,11 +215,12 @@ msgstr ""
 "\\Z2Хотите форматировать раздел /home?\\Zn"
 
 #: slitaz-installer:104
+#, fuzzy
 msgid ""
 "You have now the option to install a bootloader which is capable of booting "
 "almost any kind of operating system.\\n\\nIf you want to use an existing "
 "bootloader installation, skip this step and configure your bootloader to "
-"boot SliTaz (refer to your bootloader's documentation on how to do this)"
+"boot SliTaz (refer to your bootloader documentation on how to do this)"
 msgstr ""
 "Можно установить загрузчик, который поддерживает загрузку практически любой "
 "операционной системы.\\n\\nЕсли вы хотите использовать существующий "
@@ -319,12 +318,12 @@ msgid ", no dual-boot"
 msgstr ", без двойной загрузки"
 
 #: slitaz-installer:325 slitaz-installer:379
-msgid "Ok"
-msgstr "Ок"
+msgid "Next"
+msgstr ""
 
 #: slitaz-installer:326 slitaz-installer:353 slitaz-installer:380
-msgid "Cancel"
-msgstr "Отмена"
+msgid "Back"
+msgstr ""
 
 #: slitaz-installer:352 slitaz-installer:411
 msgid "Yes"
@@ -334,3 +333,12 @@ msgstr "Да"
 msgid "No"
 msgstr "Нет"
 
+#: slitaz-installer:419
+msgid "Slitaz install cancelled."
+msgstr ""
+
+#~ msgid "Ok"
+#~ msgstr "Ок"
+
+#~ msgid "Cancel"
+#~ msgstr "Отмена"

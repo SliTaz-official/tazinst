@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TazInst\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-16 16:35+0000\n"
+"POT-Creation-Date: 2015-03-23 17:11+0100\n"
 "PO-Revision-Date: 2013-02-16 17:08-0000\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
@@ -15,250 +15,261 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: tazinst:60
+#: tazinst:59
 msgid "Fresh install on a HDD"
 msgstr ""
 
-#: tazinst:61
+#: tazinst:60
 msgid "Upgrade an existing system"
 msgstr "Обновить существующую систему"
 
-#: tazinst:65
+#: tazinst:64
 msgid "LiveCD"
 msgstr "LiveCD"
 
-#: tazinst:66
+#: tazinst:65
 msgid "LiveUSB"
 msgstr "LiveUSB"
 
-#: tazinst:67
+#: tazinst:66
 msgid "ISO image on a local drive"
 msgstr "ISO-образ на локальном приводе"
 
-#: tazinst:68
+#: tazinst:67
 msgid "ISO image on the Internet"
 msgstr "ISO-образ в интернете"
 
-#: tazinst:72
+#: tazinst:71
 msgid "B-tree file system (Oracle)"
 msgstr "файловая система B-tree (Oracle)"
 
-#: tazinst:73
+#: tazinst:72
 msgid "Second extended filesystem (Linux)"
 msgstr "вторая расширенная файловая система (Linux)"
 
-#: tazinst:74
+#: tazinst:73
 msgid "Third extended filesystem (Linux)"
 msgstr "третья расширенная файловая система (Linux)"
 
-#: tazinst:75
+#: tazinst:74
 msgid "Fourth extended file system (Linux)"
 msgstr "четвертая расширенная файловая система (Linux)"
 
-#: tazinst:76
+#: tazinst:75
 msgid "Journaled File System (IBM)"
 msgstr "журналируемая файловая система (IBM)"
 
-#: tazinst:77
+#: tazinst:76
 msgid "File system of the MINIX operating system"
 msgstr "файловая система операционной системы MINIX"
 
-#: tazinst:78
+#: tazinst:77
 msgid "Journaled computer file system (Namesys)"
 msgstr "журналируемая компьютерная файловая система (Namesys)"
 
-#: tazinst:79
+#: tazinst:78
 msgid "Journaling file system (Silicon Graphics, Inc.)"
 msgstr "журналируемая файловая система (Silicon Graphics, Inc.)"
 
-#: tazinst:83
+#: tazinst:82
 msgid "Automatic selection"
 msgstr "автоматический выбор"
 
-#: tazinst:84
-msgid "Grub legacy bootoader"
+#: tazinst:83
+#, fuzzy
+msgid "Grub legacy bootloader"
 msgstr "загрузчик Grub legacy"
 
-#: tazinst:85
+#: tazinst:84
 msgid "Lightweight bootloader"
 msgstr "легковесный загрузчик"
 
-#: tazinst:92
+#: tazinst:91
 msgid "Stable release"
 msgstr "стабильная версия"
 
-#: tazinst:94
+#: tazinst:93
 msgid "Stable version without nested subsets"
 msgstr "стабильная версия без вложенных систем"
 
-#: tazinst:96
+#: tazinst:95
 msgid "Stable text-only version (8.1MB)"
 msgstr "стабильная текстовая версия (8,1 МБ)"
 
-#: tazinst:98
+#: tazinst:97
 msgid "Stable basic graphic version without graphic apps"
 msgstr "стабильная основная графическая версия без графических программ"
 
-#: tazinst:100
+#: tazinst:99
 msgid "Stable basic graphic version with only Gtk"
 msgstr ""
 
-#: tazinst:102
+#: tazinst:101
 msgid "Development version for testing latest features"
 msgstr ""
 
-#: tazinst:104
+#: tazinst:103
 msgid "Bleeding edge development version updated every day"
 msgstr ""
 
-#: tazinst:121
+#: tazinst:114 tazinst:138 tazinst:150
+msgid "SliTaz GNU/Linux Installer - Version:"
+msgstr ""
+
+#: tazinst:116
 msgid "Usage"
 msgstr "Использование"
 
-#: tazinst:121
+#: tazinst:117
 msgid "tazinst [command] <setting> <value> <file>"
 msgstr "tazinst [команда] <параметр> <значение> <файл>"
 
-#: tazinst:123
+#: tazinst:119
 msgid "Commands"
 msgstr "Команды"
 
-#: tazinst:124
+#: tazinst:120
 msgid "Create a new install file."
 msgstr ""
 
-#: tazinst:125
+#: tazinst:121
 msgid "Change value of a setting."
 msgstr ""
 
-#: tazinst:126
+#: tazinst:122
 msgid "Clear a setting."
 msgstr ""
 
-#: tazinst:127
+#: tazinst:123
 msgid "Get the value of a setting."
 msgstr ""
 
-#: tazinst:128
+#: tazinst:124
 msgid "Check settings."
 msgstr ""
 
-#: tazinst:129
+#: tazinst:125
 msgid "Print a short help on settings"
 msgstr ""
 
-#: tazinst:130
+#: tazinst:126
 msgid "List system resources."
 msgstr ""
 
-#: tazinst:131
+#: tazinst:127
 msgid "Execute a SliTaz installation."
 msgstr ""
 
-#: tazinst:132
+#: tazinst:128
 msgid "Display log file contents."
 msgstr ""
 
-#: tazinst:133
+#: tazinst:129
 msgid "Clean install and log files."
 msgstr ""
 
-#: tazinst:134
+#: tazinst:130
 msgid "Print version and exit."
 msgstr ""
 
-#: tazinst:135
+#: tazinst:131
 msgid "Print this short usage."
 msgstr ""
 
-#: tazinst:146
-msgid "Error: Missing parameter."
+#: tazinst:141
+msgid "Unknown command!"
 msgstr ""
 
-#: tazinst:148
-msgid "Unknown command."
-msgstr ""
-
-#: tazinst:152
+#: tazinst:142
 msgid "Run"
 msgstr ""
 
-#: tazinst:152
-msgid "to get a list  of available commands"
+#: tazinst:143
+msgid "to get a list of available commands"
 msgstr ""
 
-#: tazinst:177
+#: tazinst:153
+msgid "Unknown option!"
+msgstr ""
+
+#: tazinst:154
+msgid "Please select one of these options"
+msgstr ""
+
+#: tazinst:173
 msgid "Warning: file already exists."
 msgstr ""
 
-#: tazinst:184
-msgid "Error: Can't create file."
+#: tazinst:180
+msgid "Error: Cannot create file."
 msgstr ""
 
-#: tazinst:282
-#: tazinst:287
+#: tazinst:278 tazinst:283
 msgid "Error: Unable to read install file"
 msgstr ""
 
-#: tazinst:392
+#: tazinst:389
 msgid "Error: Unable to write to install file."
 msgstr ""
 
-#: tazinst:446
-msgid "Deleting install file:"
+#: tazinst:443
+msgid "Deleting install file"
 msgstr ""
 
-#: tazinst:448
+#: tazinst:445
 msgid "Error: Unable to delete install file"
 msgstr ""
 
-#: tazinst:463
-msgid "You must be the root user (system administrator) to install SliTaz, please use 'su' to get a root SHell and restart installation."
+#: tazinst:460
+msgid ""
+"You must be the root user (system administrator) to install SliTaz, please "
+"use 'su' to get a root SHell and restart installation."
 msgstr ""
 
-#: tazinst:474
+#: tazinst:471
 msgid "Another instance of tazinst is running."
 msgstr ""
 
-#: tazinst:488
+#: tazinst:485
 msgid "Error:"
 msgstr ""
 
-#: tazinst:488
+#: tazinst:485
 msgid "Invalid keyword."
 msgstr ""
 
-#: tazinst:489
+#: tazinst:486
 msgid "Select one of these options:"
 msgstr ""
 
-#: tazinst:490
+#: tazinst:487
 msgid "For more information, see tazinst Manual."
 msgstr ""
 
-#: tazinst:504
+#: tazinst:502
 msgid "Error: Partition not found"
 msgstr ""
 
-#: tazinst:505
+#: tazinst:503
 msgid "To see available partitions, run"
 msgstr ""
 
-#: tazinst:519
+#: tazinst:518
 msgid "Error: Source file not found"
 msgstr ""
 
-#: tazinst:534
+#: tazinst:533
 msgid "Error: invalid URL"
 msgstr ""
 
 #: tazinst:549
-msgid "Error: multiple assignations for a disk. Please check your settings."
+msgid "Error: multiple assignations for a disk."
 msgstr ""
 
-#: tazinst:563
+#: tazinst:562
 msgid "Error: password too long"
 msgstr ""
 
@@ -274,476 +285,469 @@ msgstr ""
 msgid "Warning: no password!"
 msgstr ""
 
-#: tazinst:589
-msgid "Error: Too short."
-msgstr ""
-
-#: tazinst:593
+#: tazinst:594
 msgid "Error: Too long."
 msgstr ""
 
-#: tazinst:598
+#: tazinst:599
 msgid "Error: Invalid chars."
 msgstr ""
 
-#: tazinst:609
+#: tazinst:611
 msgid "Error: Dualboot set with no bootloader."
 msgstr ""
 
-#: tazinst:623
+#: tazinst:625
 msgid "Error: Unsupported Partition Table"
 msgstr ""
 
-#: tazinst:627
-msgid "Error: No disk selected, can't install any bootloader."
+#: tazinst:630
+msgid "Error: No disk selected, cannot install any bootloader."
 msgstr ""
 
-#: tazinst:745
+#: tazinst:748
 msgid "The Source setting depends on the type of media:"
 msgstr ""
 
-#: tazinst:749
-msgid "Name or URL of the image on the web. Type: tazinst help web"
+#: tazinst:752
+msgid "Name or URL of the image on the web."
 msgstr ""
 
-#: tazinst:755
-msgid "Mode of install"
-msgstr ""
-
-#: tazinst:756
-msgid "Media containing the SliTaz source files"
-msgstr ""
-
-#: tazinst:757
-msgid "Source file containing SliTaz"
+#: tazinst:753
+msgid "Type: tazinst help web"
 msgstr ""
 
 #: tazinst:758
-msgid "The name of the target partition"
+msgid "Mode of install"
 msgstr ""
 
 #: tazinst:759
-msgid "Format of the target partition"
+msgid "Media containing the SliTaz source files"
 msgstr ""
 
 #: tazinst:760
-msgid "Separate home partition"
+msgid "Source file containing SliTaz"
 msgstr ""
 
 #: tazinst:761
-msgid "Format of the root partition"
+msgid "The name of the target partition"
 msgstr ""
 
 #: tazinst:762
-#: tazinst:805
-msgid "Name of the system"
+msgid "Format of the target partition"
 msgstr ""
 
 #: tazinst:763
-#: tazinst:807
-msgid "Superuser password"
+msgid "Separate home partition"
 msgstr ""
 
 #: tazinst:764
-#: tazinst:809
+msgid "Format of the root partition"
+msgstr ""
+
+#: tazinst:765 tazinst:811
+msgid "Name of the system"
+msgstr ""
+
+#: tazinst:766 tazinst:813
+msgid "Superuser password"
+msgstr ""
+
+#: tazinst:767 tazinst:815
 msgid "First user name"
 msgstr ""
 
-#: tazinst:765
-#: tazinst:811
+#: tazinst:768 tazinst:817
 msgid "First user password"
 msgstr ""
 
-#: tazinst:766
+#: tazinst:769
 msgid "Install a bootloader"
 msgstr ""
 
-#: tazinst:767
-msgid "Partition to duaboot Windows from"
+#: tazinst:770
+msgid "Partition to dualboot Windows from"
 msgstr ""
 
-#: tazinst:768
+#: tazinst:771
 msgid "List of settings:"
 msgstr ""
 
-#: tazinst:786
-msgid "Automatically set"
-msgstr ""
+#: tazinst:790
+#, fuzzy
+msgid "CD. Automatically set"
+msgstr "автоматический выбор"
 
-#: tazinst:788
+#: tazinst:793
 msgid "USB partition. For a list, type: tazinst list usb"
 msgstr ""
 
-#: tazinst:790
+#: tazinst:796
 msgid "ISO file name. For a list, type: tazinst list iso"
 msgstr ""
 
-#: tazinst:816
+#: tazinst:822
 msgid "Partition containing Windows, or 'auto'"
 msgstr ""
 
-#: tazinst:1120
+#: tazinst:1127
 msgid "No mirror list found, run tazpkg recharge."
 msgstr ""
 
-#: tazinst:1132
+#: tazinst:1139
 msgid "Downloading:"
 msgstr ""
 
-#: tazinst:1139
+#: tazinst:1146
 msgid "Download completed."
 msgstr ""
 
-#: tazinst:1141
+#: tazinst:1148
 msgid "Download failed."
 msgstr ""
 
-#: tazinst:1150
+#: tazinst:1157
 msgid "Installing package to the current system:"
 msgstr ""
 
-#: tazinst:1160
+#: tazinst:1167
 msgid "Adding package to the target system:"
 msgstr ""
 
-#: tazinst:1201
+#: tazinst:1208
 msgid "Process not completed"
 msgstr ""
 
-#: tazinst:1202
-#: tazinst:1206
+#: tazinst:1209 tazinst:1213
 msgid "Error"
 msgstr ""
 
-#: tazinst:1218
+#: tazinst:1225
 msgid "Internal error"
 msgstr ""
 
-#: tazinst:1223
+#: tazinst:1230
 msgid "Cancelled by user"
 msgstr ""
 
-#: tazinst:1244
+#: tazinst:1251
 msgid "Using files from"
 msgstr ""
 
-#: tazinst:1246
+#: tazinst:1253
 msgid "Mount failed"
 msgstr ""
 
-#: tazinst:1255
+#: tazinst:1262
 msgid "Using files from USB device..."
 msgstr ""
 
-#: tazinst:1260
+#: tazinst:1267
 msgid "Using files from USB device"
 msgstr ""
 
-#: tazinst:1262
+#: tazinst:1269
 msgid "Failed to mount USB device"
 msgstr ""
 
-#: tazinst:1277
+#: tazinst:1284
 msgid "md5sum error, file corrupted."
 msgstr ""
 
-#: tazinst:1280
-msgid "md5 file not found, can't check integrity."
+#: tazinst:1287
+msgid "md5 file not found, cannot check integrity."
 msgstr ""
 
-#: tazinst:1285
+#: tazinst:1292
 msgid "Using files from ISO"
 msgstr ""
 
-#: tazinst:1287
+#: tazinst:1294
 msgid "Failed to mount ISO."
 msgstr ""
 
-#: tazinst:1309
-#: tazinst:1393
+#: tazinst:1316 tazinst:1404
 msgid "Creating mount point:"
 msgstr ""
 
-#: tazinst:1325
+#: tazinst:1332
 msgid "Checking installation media..."
 msgstr ""
 
-#: tazinst:1328
+#: tazinst:1335
 msgid "Invalid source"
 msgstr ""
 
-#: tazinst:1330
+#: tazinst:1337
 msgid "Installation media checked ok"
 msgstr ""
 
-#: tazinst:1342
+#: tazinst:1349
 msgid "Format"
 msgstr ""
 
-#: tazinst:1366
+#: tazinst:1373
 msgid "Preparing target partition..."
 msgstr ""
 
-#: tazinst:1370
+#: tazinst:1377
+msgid "Partition is already mounted, unmounting."
+msgstr ""
+
+#: tazinst:1381
 msgid "Partition is already in use."
 msgstr ""
 
-#: tazinst:1378
+#: tazinst:1389
 msgid "The partition will be cleaned..."
 msgstr ""
 
-#: tazinst:1387
+#: tazinst:1398
 msgid "The partition will be kept..."
 msgstr ""
 
-#: tazinst:1402
+#: tazinst:1413
 msgid "Unable to mount partition"
 msgstr ""
 
-#: tazinst:1416
+#: tazinst:1427
 msgid "Unmounting target partition:"
 msgstr ""
 
-#: tazinst:1422
+#: tazinst:1433
 msgid "Unmounting:"
 msgstr ""
 
-#: tazinst:1426
+#: tazinst:1437
 msgid "Unlinking:"
 msgstr ""
 
-#: tazinst:1432
+#: tazinst:1443
 msgid "Ejecting cdrom..."
 msgstr ""
 
-#: tazinst:1441
+#: tazinst:1452
 msgid "Process completed. You can now restart (reboot)"
 msgstr ""
 
-#: tazinst:1442
+#: tazinst:1453
 msgid "from your SliTaz GNU/Linux system."
 msgstr ""
 
-#: tazinst:1446
+#: tazinst:1457
 msgid "Copying log to /var/log/tazinst.log"
 msgstr ""
 
-#: tazinst:1482
+#: tazinst:1493
 msgid "No bootloader to install."
 msgstr ""
 
-#: tazinst:1576
-#: tazinst:1680
+#: tazinst:1587 tazinst:1691
 msgid "Enabling Windows dual-boot"
 msgstr ""
 
-#: tazinst:1599
+#: tazinst:1610
 msgid "Installing grub on:"
 msgstr ""
 
-#: tazinst:1604
+#: tazinst:1615
 msgid "Setting the boot flag"
 msgstr ""
 
-#: tazinst:1609
-#: tazinst:1737
+#: tazinst:1620 tazinst:1748
 msgid "Copying splash image"
 msgstr ""
 
-#: tazinst:1699
+#: tazinst:1710
 msgid "Installing syslinux"
 msgstr ""
 
-#: tazinst:1713
+#: tazinst:1724
 msgid "Setting the boot flag on"
 msgstr ""
 
-#: tazinst:1717
+#: tazinst:1728
 msgid "Installing mbr"
 msgstr ""
 
-#: tazinst:1721
+#: tazinst:1732
 msgid "Setting the legacy_boot flag on"
 msgstr ""
 
-#: tazinst:1730
+#: tazinst:1741
 msgid "Installing gptmbr"
 msgstr ""
 
-#: tazinst:1770
+#: tazinst:1781
 msgid "Cleaning the root partition"
 msgstr ""
 
-#: tazinst:1779
-#: tazinst:2051
+#: tazinst:1790 tazinst:2064
 msgid "keeping /home found on:"
 msgstr ""
 
-#: tazinst:1784
+#: tazinst:1795
 msgid "removing target:"
 msgstr ""
 
-#: tazinst:1803
+#: tazinst:1814
 msgid "Kernel name not found, falling back to:"
 msgstr ""
 
-#: tazinst:1807
+#: tazinst:1820
 msgid "install_kernel:"
 msgstr ""
 
-#: tazinst:1893
+#: tazinst:1906
 msgid "Restoring directory: /home..."
 msgstr ""
 
-#: tazinst:1899
+#: tazinst:1912
 msgid "Adding / partition and CHECK_FS to file /etc/rcS.conf..."
 msgstr ""
 
-#: tazinst:1902
+#: tazinst:1915
 msgid "Configuring host name:"
 msgstr ""
 
-#: tazinst:1965
+#: tazinst:1978
 msgid "Configuring partition to be used as /home:"
 msgstr ""
 
-#: tazinst:1984
+#: tazinst:1997
 msgid "Installing SliTaz on:"
 msgstr ""
 
-#: tazinst:1985
-#: tazinst:2164
+#: tazinst:1998 tazinst:2177
 msgid "Checking settings"
 msgstr ""
 
-#: tazinst:1989
-#: tazinst:2168
+#: tazinst:2002 tazinst:2181
 msgid "Preparing source media"
 msgstr ""
 
-#: tazinst:1992
-#: tazinst:2171
+#: tazinst:2005 tazinst:2184
 msgid "Preparing target disk"
 msgstr ""
 
-#: tazinst:1995
+#: tazinst:2008
 msgid "Cleaning the root partition if necessary"
 msgstr ""
 
-#: tazinst:1998
-#: tazinst:2180
+#: tazinst:2011 tazinst:2193
 msgid "Extracting the root system"
 msgstr ""
 
-#: tazinst:2001
-#: tazinst:2186
+#: tazinst:2014 tazinst:2199
 msgid "Installing the kernel"
 msgstr ""
 
-#: tazinst:2004
+#: tazinst:2017
 msgid "Preconfiguring the system"
 msgstr ""
 
-#: tazinst:2007
+#: tazinst:2020
 msgid "Configuring root and default user account"
 msgstr ""
 
-#: tazinst:2010
+#: tazinst:2023
 msgid "Configuring /home"
 msgstr ""
 
-#: tazinst:2013
+#: tazinst:2026
 msgid "Checking bootloader installation..."
 msgstr ""
 
-#: tazinst:2016
-#: tazinst:2195
+#: tazinst:2029 tazinst:2208
 msgid "Files installation completed"
 msgstr ""
 
-#: tazinst:2030
+#: tazinst:2043
 msgid "Preparing upgrade of SliTaz release:"
 msgstr ""
 
-#: tazinst:2032
-msgid "This partition doesn't appear to contain a valid SliTaz system, the file: /etc/slitaz-release doesn't exist."
+#: tazinst:2045
+msgid ""
+"This partition doesn't appear to contain a valid SliTaz system, the file: /"
+"etc/slitaz-release doesn't exist."
 msgstr ""
 
-#: tazinst:2055
+#: tazinst:2068
 msgid "keeping /etc found on:"
 msgstr ""
 
-#: tazinst:2059
+#: tazinst:2072
 msgid "keeping /var/www found on:"
 msgstr ""
 
-#: tazinst:2086
+#: tazinst:2099
 msgid "backups restored:"
 msgstr ""
 
-#: tazinst:2093
+#: tazinst:2106
 msgid "backups saved in /var/lib/tazinst"
 msgstr ""
 
-#: tazinst:2100
+#: tazinst:2113
 msgid "Checking the availability of packages..."
 msgstr ""
 
-#: tazinst:2113
+#: tazinst:2126
 msgid "Installing packages..."
 msgstr ""
 
-#: tazinst:2115
+#: tazinst:2128
 msgid "packages to install: 0"
 msgstr ""
 
-#: tazinst:2120
+#: tazinst:2133
 msgid "Installing:"
 msgstr ""
 
-#: tazinst:2129
+#: tazinst:2142
 msgid "Installation of packages complete..."
 msgstr ""
 
-#: tazinst:2138
+#: tazinst:2151
 msgid "Creating package lists..."
 msgstr ""
 
-#: tazinst:2140
+#: tazinst:2153
 msgid "packages-source.list: done"
 msgstr ""
 
-#: tazinst:2144
+#: tazinst:2157
 msgid "packages-selection.diff: done"
 msgstr ""
 
-#: tazinst:2151
+#: tazinst:2164
 msgid ""
-"The list of available packages on the mirror could not be downloaded. No missing packages will be reinstalled now, but you can do so later by looking at the following list:\n"
+"The list of available packages on the mirror could not be downloaded. No "
+"missing packages will be reinstalled now, but you can do so later by looking "
+"at the following list:\n"
 "/var/lib/tazinst/packages-selection.diff"
 msgstr ""
 
-#: tazinst:2163
+#: tazinst:2176
 msgid "Upgrading SliTaz on:"
 msgstr ""
 
-#: tazinst:2174
+#: tazinst:2187
 msgid "Searching for /etc/slitaz-release"
 msgstr ""
 
-#: tazinst:2177
+#: tazinst:2190
 msgid "Backup /etc, /home and the packages list"
 msgstr ""
 
-#: tazinst:2183
+#: tazinst:2196
 msgid "Restoring configuration files"
 msgstr ""
 
-#: tazinst:2189
+#: tazinst:2202
 msgid "Upgrading added packages"
 msgstr ""
 
-#: tazinst:2192
+#: tazinst:2205
 msgid "Bootloader"
 msgstr ""
-

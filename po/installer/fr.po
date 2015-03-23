@@ -173,7 +173,7 @@ msgstr ""
 #: installer.cgi:134
 #, fuzzy
 msgid "Execute GParted"
-msgstr "Démarrer Gparted"
+msgstr "Lancer Gparted"
 
 #: installer.cgi:135
 msgid "Launch GParted, the partition editor tool"
@@ -223,7 +223,7 @@ msgstr ""
 
 #: installer.cgi:195 installer.cgi:202
 msgid "Select an ISO or enter the full path to the ISO file"
-msgstr ""
+msgstr "Choisissez une ISO ou entrez le chemin vers le fichier ISO"
 
 #: installer.cgi:214
 msgid "Web:"
@@ -231,11 +231,11 @@ msgstr "Web:"
 
 #: installer.cgi:216
 msgid "Select a SliTaz version on the Web"
-msgstr ""
+msgstr "Choisissez une version de SliTaz sur le Web"
 
 #: installer.cgi:223 installer.cgi:230
 msgid "Select a version or enter the full url to an ISO file"
-msgstr ""
+msgstr "Choisissez une version ou entrez l'URL vers le fichier ISO"
 
 #: installer.cgi:246
 msgid "Existing SliTaz partition to upgrade:"
@@ -243,7 +243,7 @@ msgstr "Partition SliTaz existante à mettre à jour :"
 
 #: installer.cgi:247
 msgid "Specify the partition containing the system to upgrade"
-msgstr ""
+msgstr "Entrez la partition contenant le système à mettre à jour"
 
 #: installer.cgi:251
 msgid "Install Slitaz to partition:"
@@ -252,6 +252,7 @@ msgstr "Installer Slitaz sur la partition :"
 #: installer.cgi:252
 msgid "Specify the partition where to install SliTaz"
 msgstr ""
+msgstr "Entrez la partition où installer SliTaz"
 
 #: installer.cgi:276
 msgid "Options"
@@ -281,7 +282,7 @@ msgstr "Définir le nom du système :"
 
 #: installer.cgi:310
 msgid "Hostname configuration allows you to specify the machine name"
-msgstr ""
+msgstr "La configuration du Hostname vous permet de donner le nom de la machine"
 
 #: installer.cgi:316
 msgid "Name of your system"
@@ -289,7 +290,7 @@ msgstr "Nom du système"
 
 #: installer.cgi:326
 msgid "Root superuser"
-msgstr ""
+msgstr "administrateur Root"
 
 #: installer.cgi:328
 #, fuzzy
@@ -509,7 +510,7 @@ msgstr ""
 
 #: installer.cgi:685 installer.cgi:698
 msgid "Reinstall the slitaz-installer package, or use tazinst in CLI mode."
-msgstr ""
+msgstr "Réinstallez le paquet slitaz-installer, ou lancez tazinst en ligne de commande"
 
 #: installer.cgi:695
 #, fuzzy

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slitaz-installer \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-16 17:09+0000\n"
+"POT-Creation-Date: 2015-03-23 17:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,7 +89,7 @@ msgstr ""
 msgid ""
 "Only the filesystems actually installed on your system are listed. If you "
 "intend to use another filesystem, you have to install it before. Unless you "
-"know what you are doing, it's safe to use ext2, ext3 or ext4.\\n\\n\\Z2To "
+"know what you are doing, it is safe to use ext2, ext3 or ext4.\\n\\n\\Z2To "
 "format this partition, please select a filesystem below:"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgid ""
 "You have now the option to install a bootloader which is capable of booting "
 "almost any kind of operating system.\\n\\nIf you want to use an existing "
 "bootloader installation, skip this step and configure your bootloader to "
-"boot SliTaz (refer to your bootloader's documentation on how to do this)"
+"boot SliTaz (refer to your bootloader documentation on how to do this)"
 msgstr ""
 
 #: slitaz-installer:109
@@ -266,11 +266,11 @@ msgid ", no dual-boot"
 msgstr ""
 
 #: slitaz-installer:325 slitaz-installer:379
-msgid "Ok"
+msgid "Next"
 msgstr ""
 
 #: slitaz-installer:326 slitaz-installer:353 slitaz-installer:380
-msgid "Cancel"
+msgid "Back"
 msgstr ""
 
 #: slitaz-installer:352 slitaz-installer:411
@@ -279,4 +279,8 @@ msgstr ""
 
 #: slitaz-installer:354 slitaz-installer:412
 msgid "No"
+msgstr ""
+
+#: slitaz-installer:419
+msgid "Slitaz install cancelled."
 msgstr ""
