@@ -2,7 +2,7 @@
 #
 # Main CGI interface for Tazinst, the SliTaz installer.
 #
-# Copyright (C) 2012-2014 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2012-2015 SliTaz GNU/Linux - BSD License
 #
 # Authors : Dominique Corbex <domcox@slitaz.org>
 #
@@ -11,7 +11,7 @@
 # restricted path
 PATH="/usr/sbin:/usr/bin:/sbin:/bin"
 
-VERSION=3.96
+VERSION=3.98
 
 # Common functions from libtazpanel
 . lib/libtazpanel
@@ -34,14 +34,18 @@ INSTFILE=/root/tazinst.conf
 # menu
 #------
 case "$1" in
-menu)	[ "$REMOTE_USER" == "root" ] && cat << EOT
-<li><a href="/installer.cgi">$(gettext 'Install')</a>
-	<ul>
-		<li><a href="/installer.cgi?page=menu_install"><img
-			src="/styles/default/images/tux.png" />$(gettext 'Install SliTaz')</a></li>
-		<li><a href="/installer.cgi?page=menu_upgrade"><img
-			src="/styles/default/images/recharge.png" />$(gettext 'Upgrade system')</a></li>
-	</ul>
+	menu)
+		[ "$REMOTE_USER" == "root" ] && cat << EOT
+<li tabindex="0">
+	<span>$(gettext 'Install')</span>
+	<menu>
+		<li><a data-icon="install"
+			href="/installer.cgi">$(gettext 'Install')</a></li>
+		<li><a data-icon="slitaz"
+			href="/installer.cgi?page=menu_install">$(gettext 'Install SliTaz')</a></li>
+		<li><a data-icon="upgrade"
+			href="/installer.cgi?page=menu_upgrade">$(gettext 'Upgrade system')</a></li>
+	</menu>
 </li>
 EOT
 	exit
