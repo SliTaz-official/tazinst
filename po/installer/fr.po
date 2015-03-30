@@ -177,7 +177,6 @@ msgstr "Lancer Gparted"
 
 #: installer.cgi:135
 msgid "Launch GParted, the partition editor tool"
-msgstr ""
 msgstr "Lance GParted, l'éditeur de partition"
 
 #: installer.cgi:136
@@ -251,7 +250,6 @@ msgstr "Installer Slitaz sur la partition :"
 
 #: installer.cgi:252
 msgid "Specify the partition where to install SliTaz"
-msgstr ""
 msgstr "Entrez la partition où installer SliTaz"
 
 #: installer.cgi:276
