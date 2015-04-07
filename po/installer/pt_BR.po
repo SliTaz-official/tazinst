@@ -111,13 +111,13 @@ msgstr "Particionando"
 #: installer.cgi:114
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
-"Windows<sup>&trade;</sup>, or Linux, or another operating system. You'll "
+"Windows™, or Linux, or another operating system. You'll "
 "need to resize these partitions in order to make space for SliTaz GNU/Linux. "
 "SliTaz will co-exist with other operating systems already installed on your "
 "hard drive."
 msgstr ""
 "Na maioria dos sistemas o disco rígido possui uma partição dedicada ao "
-"Windows<sup>&trade;</sup>, ou Linux, ou outro sistema operacional. Será "
+"Windows™, ou Linux, ou outro sistema operacional. Será "
 "necessário redimensioar esta partição para liberar espaço para o SliTaz. A "
 "distribuição irá funcionar em conjunto com outro sistema operacional "
 "existente no dísco rígido."
@@ -341,10 +341,10 @@ msgstr "Habilitar Dual-Boot com Windows."
 
 #: installer.cgi:413
 msgid ""
-"At start-up, you will be asked whether you want to boot into Windows&trade; "
+"At start-up, you will be asked whether you want to boot into Windows™ "
 "or SliTaz GNU/Linux."
 msgstr ""
-"Será requisitado na inicialização se você deseja iniciar pelo Windows&trade; "
+"Será requisitado na inicialização se você deseja iniciar pelo Windows™ "
 "ou pelo SliTAz GNU/Lïnux."
 
 #: installer.cgi:424

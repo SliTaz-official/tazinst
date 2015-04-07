@@ -117,7 +117,7 @@ msgstr "Particionando"
 #, fuzzy
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
-"Windows<sup>&trade;</sup>, or Linux, or another operating system. You'll "
+"Windows™, or Linux, or another operating system. You'll "
 "need to resize these partitions in order to make space for SliTaz GNU/Linux. "
 "SliTaz will co-exist with other operating systems already installed on your "
 "hard drive."
@@ -364,7 +364,7 @@ msgstr "Habilitar Dual-Boot si tienes Windows"
 
 #: installer.cgi:413
 msgid ""
-"At start-up, you will be asked whether you want to boot into Windows&trade; "
+"At start-up, you will be asked whether you want to boot into Windows™ "
 "or SliTaz GNU/Linux."
 msgstr ""
 

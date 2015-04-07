@@ -30,9 +30,11 @@ TAZINST_MAXIMUM_VERSION="4.99"
 # tazinst setup file
 INSTFILE=/root/tazinst.conf
 
+
 #------
 # menu
 #------
+
 case "$1" in
 	menu)
 		[ "$REMOTE_USER" == "root" ] && cat << EOT
@@ -51,110 +53,147 @@ EOT
 	exit
 esac
 
+
 #-----------
 # home page
 #-----------
 
-select_action()
-{
-	comment "Welcome message"
-	open_div 'id="wrapper"'
-	h4 "$(gettext "Welcome to the Slitaz Installer!")"
-	p "$(gettext "The SliTaz Installer installs or upgrades SliTaz to a \
+select_action() {
+	cat <<EOT
+<!-- Welcome message -->
+
+<h2>$(gettext "Welcome to the Slitaz Installer!")</h2>
+
+<p>$(gettext "The SliTaz Installer installs or upgrades SliTaz to a \
 hard disk drive from a device like a Live-CD or LiveUSB key, from a SliTaz \
-ISO file, or from the web by downloading an ISO file.")"
-	h5 "$(gettext "Which type of installation do you want to start?")"
-	close_div
+ISO file, or from the web by downloading an ISO file.")</p>
+
+<p>$(gettext "Which type of installation do you want to start?")</p>
+EOT
 }
 
-select_install()
-{
-	comment "Install message"
-	open_div 'class="box"'
-	h4 "$(gettext 'Install')"
-	p "$(gettext "Install SliTaz on a partition of your hard disk drive. If \
+
+select_install() {
+	cat <<EOT
+<!-- Install message -->
+
+<section>
+	<header>$(gettext 'Install')</header>
+
+	<div>
+		<p>$(gettext "Install SliTaz on a partition of your hard disk drive. If \
 you decide to format your partition, all data will be lost. If you do not \
 format, all data except for any existing /home directory will be removed \
-(the home directory will be kept as is).")"
-	p "$(gettext "Before installation, you may need to create or resize \
+(the home directory will be kept as is).")</p>
+		<p>$(gettext "Before installation, you may need to create or resize \
 partitions on your hard disk drive in order to make space for SliTaz \
-GNU/Linux. You can graphically manage your partitions with Gparted")"
-	close_div
-	button "install" \
-		"$(gettext 'Install SliTaz')" \
-		"$(gettext 'Proceed to a new SliTaz installation')"
+GNU/Linux. You can graphically manage your partitions with Gparted")</p>
+	</div>
+
+	<footer>
+		<form>
+			<button name="page" value="install" data-icon="slitaz"
+				title="$(gettext 'Proceed to a new SliTaz installation')"
+				>$(gettext 'Install SliTaz')</button>
+		</form>
+	</footer>
+</section>
+EOT
 }
 
-select_upgrade()
-{
-	comment "Upgrade message"
-	open_div 'class="box"'
-	h4 "$(gettext 'Upgrade')"
-	p "$(gettext "Upgrade an already installed SliTaz system on your hard disk \
+
+select_upgrade() {
+	cat <<EOT
+<!-- Upgrade message -->
+
+<section>
+	<header>$(gettext 'Upgrade')</header>
+
+	<div>
+		<p>$(gettext "Upgrade an already installed SliTaz system on your hard disk \
 drive. Your /home /etc /var/www directories will be kept, all other \
 directories will be removed. Any additional packages added to your old \
-Slitaz system will be updated as long you have an active internet connection.")"
-	close_div
-	button "upgrade" \
-		"$(gettext 'Upgrade SliTaz')" \
-		"$(gettext 'Upgrade an existing SliTaz system')"
+Slitaz system will be updated as long you have an active internet connection.")</p>
+	</div>
+
+	<footer>
+		<form>
+			<button name="page" value="upgrade" data-icon="upgrade"
+				title="$(gettext 'Upgrade an existing SliTaz system')"
+				>$(gettext 'Upgrade SliTaz')</button>
+		</form>
+	</footer>
+</section>
+EOT
 }
+
 
 #--------------------
 # partitioning page
 #--------------------
 
-exec_gparted()
-{
+exec_gparted() {
 	/bin/su - -c \
 	"exec env DISPLAY=':0.0' XAUTHORITY='/var/run/slim.auth' /usr/sbin/gparted"
 }
 
-select_gparted()
-{
-	comment "GParted message"
-	h5 "$(gettext "Partitioning")"
-	open_div 'class="box"'
-	p "$(gettext "On most used systems, the hard drive is already dedicated to \
-partitions for Windows<sup>&trade;</sup>, or Linux, or another operating \
+
+select_gparted() {
+	cat <<EOT
+<!-- GParted message -->
+
+<section>
+	<header>$(gettext "Partitioning")</header>
+
+	<div>
+		<p>$(gettext "On most used systems, the hard drive is already dedicated to \
+partitions for Windows™, or Linux, or another operating \
 system. You'll need to resize these partitions in order to make space for \
 SliTaz GNU/Linux. SliTaz will co-exist with other operating systems already \
-installed on your hard drive.")"
-	p "$(gettext "The amount of space needed depends on how much software you \
+installed on your hard drive.")</p>
+	<p>$(gettext "The amount of space needed depends on how much software you \
 plan to install and how much space you require for users. It's conceivable \
 that you could run a minimal SliTaz system in 300 megs or less, but 2 gigs \
-is indeed more comfy.")"
-	p "$(gettext "A separate home partition and a partition that will be used \
+is indeed more comfy.")</p>
+	<p>$(gettext "A separate home partition and a partition that will be used \
 as Linux swap space may be created if needed. Slitaz detects and uses swap \
-partitions automatically.")"
-	close_div
-	open_div 'class="box"'
-	p "$(gettext "You can graphically manage your partitions with GParted. \
+partitions automatically.")</p>
+	<hr/>
+	<p>$(gettext "You can graphically manage your partitions with GParted. \
 GParted is a partition editor for graphically managing your disk partitions. \
 GParted allows you to create, destroy, resize and copy partitions without \
-data loss.")"
-	p "$(gettext "GParted supports ext2, ext3, ext4, linux swap, ntfs and \
+data loss.")</p>
+	<p>$(gettext "GParted supports ext2, ext3, ext4, linux swap, ntfs and \
 fat32 filesystems right out of the box. Support for xjs, jfs, hfs and other \
 filesystems is available as well but you first need to add drivers for these \
 filesystems by installing the related packages xfsprogs, jfsutils, linux-hfs \
-and so on.")"
-	close_div
-	comment "Launch GParted"
-	button "gparted" \
-		"$(gettext 'Execute GParted')" \
-		"$(gettext 'Launch GParted, the partition editor tool')"
-	h5 "$(gettext "Continue installation")"
-	p "$(gettext "Once you've made room for SliTaz on your drive, you should \
-be able to continue installation.")"
+and so on.")</p>
+	</div>
+
+	<footer>
+		<!-- Launch GParted -->
+		<form>
+			<button name="page" value="gparted" data-icon="hdd"
+				title="$(gettext 'Launch GParted, the partition editor tool')"
+				>$(gettext 'Execute GParted')</button>
+		</form>
+	</footer>
+</section>
+
+
+<h5>$(gettext "Continue installation")</h5>
+
+<p>$(gettext "Once you've made room for SliTaz on your drive, you should \
+be able to continue installation.")</p>
+EOT
 }
+
 
 #------------
 # input page
 #------------
 
-
-select_source()
-{
+select_source() {
 	local media="$(/usr/sbin/tazinst get media "$INSTFILE")"
 	local source="$(/usr/sbin/tazinst get source "$INSTFILE")"
 	local list_media="$(/usr/sbin/tazinst list media)"
@@ -283,16 +322,16 @@ select_root_format()
 		"ROOT_FORMAT"
 }
 
-select_options()
-{
-	printf '<h4 id="options">%s</h4>' "$(gettext 'Options')"
-}
-
-select_home_uuid()
-{
+select_home_uuid() {
 	local home_uuid="$(/usr/sbin/tazinst get home_uuid "$INSTFILE")"
-	comment "home_uuid selection"
-	h5 "$(gettext "home partition")"
+
+	cat <<EOT
+<!-- home_uuid selection -->
+
+<fieldset>
+	<legend>$(gettext "home partition")</legend>
+
+	$(
 	label "home_uuid" \
 		"$(gettext 'Separate partition for /home:')" \
 		"$(gettext 'Specify the partition containing /home')"
@@ -300,23 +339,34 @@ select_home_uuid()
 		"$home_uuid" \
 		"HOME_UUID" \
 		0
-	br
+	)
+	<br/>
+EOT
 }
 
 select_home_format()
 {
 	local home_format="$(/usr/sbin/tazinst get home_format "$INSTFILE")"
+
 	comment "home_format selection"
 	format "$(/usr/sbin/tazinst list format "$INSTFILE")" \
 		"$home_format" \
 		"HOME_FORMAT"
+	cat <<EOT
+</fieldset>
+EOT
 }
 
-select_hostname()
-{
+
+select_hostname() {
 	local hostname="$(/usr/sbin/tazinst get hostname "$INSTFILE")" error
-	comment "hostname selection"
-	h5 "$(gettext "Hostname")"
+
+	cat <<EOT
+<!-- hostname selection -->
+
+<fieldset>
+	<legend>$(gettext "Hostname")</legend>
+	$(
 	label "hostname" \
 		"$(gettext 'Set Hostname to:')" \
 		"$(gettext 'Hostname configuration allows you to specify the machine name')"
@@ -329,13 +379,21 @@ select_hostname()
 	error_msg "$error" \
 		"hostname" \
 		2
+	)
+</fieldset>
+EOT
 }
 
-select_root_pwd()
-{
+
+select_root_pwd() {
 	local root_pwd="$(/usr/sbin/tazinst get root_pwd "$INSTFILE")" error
-	comment "root_pwd selection"
-	h5 "$(gettext "Root superuser")"
+
+	cat <<EOT
+<!-- root_pwd selection -->
+
+<fieldset>
+	<legend>$(gettext "Root superuser")</legend>
+	$(
 	label "root_pwd" \
 		"$(gettext 'Root passwd:')" \
 		"$(gettext 'Enter the password for root')"
@@ -347,13 +405,21 @@ select_root_pwd()
 		"$(gettext 'Password of root')"
 	error_msg "$error" \
 		"root_pwd"
+	)
+</fieldset>
+EOT
 }
 
-select_user_login()
-{
+
+select_user_login() {
 	local user_login="$(/usr/sbin/tazinst get user_login "$INSTFILE")" error
-	comment "user_login selection"
-	h5 "$(gettext "User")"
+
+	cat <<EOT
+<!-- user_login selection -->
+
+<fieldset>
+	<legend>$(gettext "User")</legend>
+	$(
 	label "user_login" \
 		"$(gettext 'User login:')" \
 		"$(gettext 'Enter the name of the first user')"
@@ -366,12 +432,16 @@ select_user_login()
 	error_msg "$error" \
 		"user_login" \
 		2
-	br
+	)
+	<br/>
+EOT
 }
+
 
 select_user_pwd()
 {
 	local user_pwd="$(/usr/sbin/tazinst get user_pwd "$INSTFILE")" error
+
 	label "user_pwd" \
 		"$(gettext 'User passwd:')" \
 		"$(gettext 'The password for default user')"
@@ -383,13 +453,23 @@ select_user_pwd()
 		"$(gettext 'Password of the first user')"
 	error_msg "$error" \
 		"user_pwd"
+	cat <<EOT
+</fieldset>
+EOT
 }
+
 
 select_bootloader()
 {
 	local bootloader="$(/usr/sbin/tazinst get bootloader "$INSTFILE")" error
-	comment "bootloader selection"
-	h5 "$(gettext "Bootloader")"
+
+	cat <<EOT
+<!-- bootloader selection -->
+
+<fieldset>
+	<legend>$(gettext "Bootloader")</legend>
+
+	$(
 	input "checkbox" \
 		"bootloader" \
 		"auto" \
@@ -401,12 +481,16 @@ a bootloader by hand yourself.")"
 	error="$?"
 	error_msg "$error" \
 		"bootloader"
-	br
+	)
+	<br/>
+EOT
 }
+
 
 select_winboot()
 {
 	local winboot="$(/usr/sbin/tazinst get winboot "$INSTFILE")" error
+
 	comment "winboot selection"
 	input "checkbox" \
 		"winboot" \
@@ -415,11 +499,15 @@ select_winboot()
 	label "winboot" \
 		"$(gettext 'Enable Windows Dual-Boot.')" \
 		"$(gettext "At start-up, you will be asked whether you want to boot \
-into Windows&trade; or SliTaz GNU/Linux.")"
+into Windows™ or SliTaz GNU/Linux.")"
 	error="$?"
 	error_msg "$error" \
 		"winboot"
+	cat <<EOT
+</fieldset>
+EOT
 }
+
 
 errors_msg()
 {
@@ -430,39 +518,52 @@ errors_msg()
 	fi
 }
 
-select_settings()
-{
+
+select_settings() {
 	local settings="$(/usr/sbin/tazinst get settings "$INSTFILE")"
 	CHECK=$(GET CHECK)
 	errors_msg
-	h4 "$(gettext "Select source media:")"
-	open_div 'class="box"'
-	open_div 'class="media"'
-	select_source
-	close_div
-	close_div
-	h4 "$(gettext "Select destination")"
-	open_div 'class="box"'
-	select_root_uuid
-	printf '%s' "$settings" | grep -q "root_format" \
-		&& select_root_format
-	close_div
-	select_options
-	open_div 'class="options"'
+
+	cat<<EOT
+<fieldset>
+	<legend>$(gettext "Select source media:")</legend>
+
+	<div class="media">$(select_source)</div>
+</fieldset>
+
+
+<fieldset>
+	<legend>$(gettext "Select destination")</legend>
+
+	<div>$(
+		select_root_uuid
+		printf '%s' "$settings" | grep -q "root_format" && select_root_format
+	)</div>
+</fieldset>
+
+
+<fieldset id="options">
+	<legend>$(gettext 'Options')</legend>
+
+	<div class="options">$(
 	printf '%s' "$settings" | grep -q "home_uuid" && select_home_uuid
-	printf '%s' "$settings" | grep -q "home_format" \
-		&& select_home_format
+	printf '%s' "$settings" | grep -q "home_format" && select_home_format
 	printf '%s' "$settings" | grep -q "hostname" && select_hostname
 	printf '%s' "$settings" | grep -q "root_pwd" && select_root_pwd
 	printf '%s' "$settings" | grep -q "user_login" && select_user_login
 	printf '%s' "$settings" | grep -q "user_pwd" && select_user_pwd
-	close_div
-	open_div 'class="bootloader"'
+	)</div>
+
+	<div class="bootloader">$(
 	printf '%s' "$settings" | grep -q "bootloader" && select_bootloader
 	printf '%s' "$settings" | grep -q "winboot" && select_winboot
-	close_div
-	br
+	)</div>
+</fieldset>
+
+<br/>
+EOT
 }
+
 
 #--------------
 # execute page
@@ -471,8 +572,10 @@ select_settings()
 save_settings()
 {
 	h5 "$(gettext "Checking settings...")"
+
 	# install type
 	/usr/sbin/tazinst set media "$(GET MEDIA)" "$INSTFILE"
+
 	# source File
 	case "$(/usr/sbin/tazinst get media "$INSTFILE")" in
 		usb)
@@ -482,14 +585,18 @@ save_settings()
 		web)
 			/usr/sbin/tazinst set source "$(GET SRC_WEB)" "$INSTFILE" ;;
 	esac
+
 	# set defined url
 	[ $(GET URL) ] && SRC_WEB=$(GET URL)
+
 	# root Partition
 	/usr/sbin/tazinst set root_uuid "$(GET ROOT_UUID)" "$INSTFILE"
+
 	# format root partition
 	[ "$(GET ROOT_FORMAT)" ] \
 		&& /usr/sbin/tazinst set root_format "$(GET ROOT_FORMAT)" "$INSTFILE" \
 		|| /usr/sbin/tazinst unset root_format  "$INSTFILE"
+
 	# home Partition
 	if [ "$(GET HOME_UUID)" ] ; then
 		/usr/sbin/tazinst set home_uuid "$(GET HOME_UUID)" "$INSTFILE"
@@ -501,16 +608,22 @@ save_settings()
 		/usr/sbin/tazinst unset home_uuid "$INSTFILE"
 		/usr/sbin/tazinst unset home_format "$INSTFILE"
 	fi
+
 	# hostname
 	/usr/sbin/tazinst set hostname "$(GET HOSTNAME)" "$INSTFILE"
+
 	# root pwd
 	/usr/sbin/tazinst set root_pwd "$(GET ROOT_PWD)" "$INSTFILE"
+
 	# user Login
 	/usr/sbin/tazinst set user_login "$(GET USER_LOGIN)" "$INSTFILE"
+
 	# user Pwd
 	/usr/sbin/tazinst set user_pwd "$(GET USER_PWD)" "$INSTFILE"
+
 	# win Dual-Boot
 	/usr/sbin/tazinst set winboot "$(GET WINBOOT)" "$INSTFILE"
+
 	# bootloader
 	if [ "$(GET BOOTLOADER)" == "auto" ]; then
 		/usr/sbin/tazinst set bootloader "auto" "$INSTFILE"
@@ -520,6 +633,7 @@ save_settings()
 	fi
 	input_hidden "CHECK" "yes"
 }
+
 
 tazinst_run()
 {
@@ -568,6 +682,7 @@ or reboot on your new SliTaz GNU/Linux operating system.")
 
 }
 
+
 tazinst_log()
 {
 	h4 "$(gettext "Tazinst log")"
@@ -579,35 +694,38 @@ tazinst_log()
 # page navigation
 #-----------------
 
-display_mode()
-{
+display_mode() {
 	local mode="$(/usr/sbin/tazinst get mode "$INSTFILE")"
 	case $mode in
 		install)
-			open_div 'id="wrapper"'
-			h4 "$(gettext "Install SliTaz")"
-			p "$(gettext "You're going to install SliTaz on a partition of \
+			cat <<EOT
+<h2>$(gettext "Install SliTaz")</h2>
+
+<p>$(gettext "You're going to install SliTaz on a partition of \
 your hard disk drive. If you decide to format your HDD, all data will be \
 lost. If you do not format, all data except for any existing /home \
-directory will be removed (the home directory will be kept as is).")"
-			close_div
+directory will be removed (the home directory will be kept as is).")</p>
+EOT
 			;;
 		upgrade)
-			open_div 'id="wrapper"'
-			h4 "$(gettext "Upgrade SliTaz")"
-			p "$(gettext "You're going to upgrade an already installed SliTaz \
+			cat <<EOT
+<h2>$(gettext "Upgrade SliTaz")</h2>
+
+<p>$(gettext "You're going to upgrade an already installed SliTaz \
 system on your hard disk drive. Your /home /etc /var/www directories \
 will be kept, all other directories will be removed. Any additional \
 packages added to your old Slitaz system will be updated as long you \
-have an active internet connection.")"
-			close_div
+have an active internet connection.")</p>
+EOT
 			;;
 	esac
 }
 
+
 moveto_page()
 {
 	local back_page="$1" next_page="$2" back_msg next_msg
+
 	case "$back_page" in
 		partitioning)
 			back_msg=$(gettext 'Back to partitioning') ;;
@@ -616,6 +734,7 @@ moveto_page()
 		*)
 			back_msg=$(gettext 'Back to Installer Start Page') ;;
 	esac
+
 	case "$next_page" in
 		execute|run)
 			next_msg=$(gettext 'Proceed to SliTaz installation') ;;
@@ -628,27 +747,34 @@ moveto_page()
 		*)
 			next_msg=$(gettext 'Back to Installer Start Page') ;;
 	esac
-	hr
-	input_hidden "page" "$next_page"
-	a "$back_page" "$back_msg"
-	input "submit" \
-		"" \
-		"$next_msg"
+
+	cat <<EOT
+<hr/>
+<form>
+	<button name="page" value="$back_page" data-icon="back" >$back_msg</button>
+	<button name="page" value="$next_page" data-icon="start">$next_msg</button>
+</form>
+EOT
 }
 
-moveto_home()
-{
-	a "home" "$(gettext 'Back to Installer Start Page')"
+
+moveto_home() {
+	cat <<EOT
+<form>
+	<button name="page" value="home" data-icon="back"
+	>$(gettext 'Back to Installer Start Page')</button>
+</form>
+EOT
 }
 
-page_redirection()
-{
+
+page_redirection() {
 	local page="$1"
 	cat <<EOT
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title>$(gettext "A web page that points a browser to a different page after \
 2 seconds")</title>
 <meta http-equiv="refresh" content="0; URL=$SCRIPT_NAME?page=$1">
@@ -663,12 +789,12 @@ seconds, you may want to go there manually")
 EOT
 }
 
+
 #----------
 # checking
 #----------
 
-check_ressources()
-{
+check_ressources() {
 	local errorcode=0
 	comment "check_ressources"
 	if ! [ -x /usr/sbin/tazinst ] ; then
@@ -714,62 +840,51 @@ tazinst in CLI mode.")
 # html snippets
 #---------------
 
-br()
-{
+br() {
 	echo '<br />'
 }
 
-hr()
-{
+hr() {
 	echo '<hr />'
 }
 
-comment()
-{
+comment() {
 	printf '<!-- %s -->\n' "$@"
 }
 
-a()
-{
+a() {
 	local page="$1" text="$2"
 	printf '<a class="button" value="%s" href="%s?page=%s">%s</a>\n' \
 		"$page" "$SCRIPT_NAME" "$page" "$text"
 }
 
-button()
-{
+button() {
 	local action="$1" msg="$2" title="$3"
 	printf '<a class="button" href="%s?page=%s" title="%s">%s</a>\n' \
 		"$SCRIPT_NAME" "$action" "$title" "$msg"
 }
 
-open_div()
-{
+open_div() {
 	[ "$1" ] && printf '<div %s>\n' "$1" || echo '<div>'
 }
 
-close_div()
-{
+close_div() {
 	echo '</div>'
 }
 
-p()
-{
+p() {
 	printf '<p>%s</p>\n' "$@"
 }
 
-h4()
-{
+h4() {
 	printf '<h4>%s</h4>\n' "$@"
 }
 
-h5()
-{
+h5() {
 	printf '<h5>%s</h5>\n' "$@"
 }
 
-label()
-{
+label() {
 	local setting="$1" label="$2" title="$3" name="$4" error=0
 	[ -z "$name" ] && name="$setting"
 	printf '<label for="%s"' "$name"
@@ -790,8 +905,8 @@ label()
 	return "$error"
 }
 
-label_media()
-{
+
+label_media() {
 	local id="$1" label="$2" media="$3" title="$4" retcode=0
 	if [ "$media" == "$id" ]; then
 		label "source" \
@@ -807,8 +922,8 @@ label_media()
 	return "$retcode"
 }
 
-error_msg()
-{
+
+error_msg() {
 	local error="$1" setting="$2" line="$3"
 	if [ "$CHECK" ]; then
 		if [ "$error" -gt "0" ]; then
@@ -825,8 +940,8 @@ error_msg()
 	fi
 }
 
-select()
-{
+
+select() {
 	local list="$1" selected="$2" name="$3" type="$4"
 	printf '%s' "$list" | \
 		/bin/busybox awk -v SELECTED="$selected" -v NONE="$(gettext "None")" \
@@ -946,7 +1061,7 @@ add_style()
 {
 	printf '<!-- add specific styles -->
 <style type="text/css">
-	.box label {
+	section label {
 		display:inline-block;
 		vertical-align:middle;
 	    width: 130px;
@@ -961,7 +1076,7 @@ add_style()
 		vertical-align:middle;
 	    width: 140px;
 	}
-	.box .text {
+	.text {
 		width: 350px;
 	}
 	input {margin-bottom:3px;}

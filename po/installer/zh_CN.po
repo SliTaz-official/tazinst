@@ -95,12 +95,12 @@ msgstr "分区"
 #: installer.cgi:108
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
-"Windows<sup>&trade;</sup>, or Linux, or another operating system. You'll "
+"Windows™, or Linux, or another operating system. You'll "
 "need to resize these partitions in order to make space for SliTaz GNU/Linux. "
 "SliTaz will co-exist with other operating systems already installed on your "
 "hard drive."
 msgstr ""
-"大多数使用的系统，硬盘已经为 Windows<sup>&trade;</sup>,   Linux或其它系统分好"
+"大多数使用的系统，硬盘已经为 Windows™,   Linux或其它系统分好"
 "区了。你需要调整分区来预留空间给 SliTaz 系统。SliTaz 可以与你硬盘上的系统并存"
 "的。"
 
@@ -313,10 +313,10 @@ msgstr "开启 Windows 双重引导"
 
 #: installer.cgi:405
 msgid ""
-"At start-up, you will be asked whether you want to boot into Windows&trade; "
+"At start-up, you will be asked whether you want to boot into Windows™ "
 "or SliTaz GNU/Linux."
 msgstr ""
-"电脑开启时，你会被询问选择引导进入 Windows&trade 或 SliTaz GNU/Linux 。"
+"电脑开启时，你会被询问选择引导进入 Windows™ 或 SliTaz GNU/Linux 。"
 
 #: installer.cgi:416
 msgid "Errors found. Please check your settings."

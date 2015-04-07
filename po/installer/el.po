@@ -118,13 +118,13 @@ msgstr "Κατάτμηση"
 #, fuzzy
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
-"Windows<sup>&trade;</sup>, or Linux, or another operating system. You'll "
+"Windows™, or Linux, or another operating system. You'll "
 "need to resize these partitions in order to make space for SliTaz GNU/Linux. "
 "SliTaz will co-exist with other operating systems already installed on your "
 "hard drive."
 msgstr ""
 "Στα περισσότερα συστήματα που χρησιμοποιούνται, ο σκληρός δίσκος είναι ήδη "
-"αφιερωμένος σε διαμερίσματα των Windows<sup>&trade;</ sup>, ή Linux, ή "
+"αφιερωμένος σε διαμερίσματα των Windows™, ή Linux, ή "
 "κάποιο άλλο λειτουργικό σύστημα. Θα πρέπει να αλλάξετε το μέγεθος αυτών των "
 "διαμερισμάτων, ώστε να δημιουργηθεί χώρος για το sliTaz GNU/Linux. Το SliTaz "
 "θα συνυπάρχει με άλλα λειτουργικά συστήματα που έχουν ήδη εγκατασταθεί στον "
@@ -367,7 +367,7 @@ msgstr "Ενεργοποίηση διπλής εκκίνησης με Windows (d
 
 #: installer.cgi:413
 msgid ""
-"At start-up, you will be asked whether you want to boot into Windows&trade; "
+"At start-up, you will be asked whether you want to boot into Windows™ "
 "or SliTaz GNU/Linux."
 msgstr ""
 
