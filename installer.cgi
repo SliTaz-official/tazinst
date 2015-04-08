@@ -42,11 +42,11 @@ case "$1" in
 	<span>$(gettext 'Install')</span>
 	<menu>
 		<li><a data-icon="install"
-			href="/installer.cgi">$(gettext 'Install')</a></li>
+			href="installer.cgi">$(gettext 'Install')</a></li>
 		<li><a data-icon="slitaz"
-			href="/installer.cgi?page=install">$(gettext 'Install SliTaz')</a></li>
+			href="installer.cgi?page=install">$(gettext 'Install SliTaz')</a></li>
 		<li><a data-icon="upgrade"
-			href="/installer.cgi?page=upgrade">$(gettext 'Upgrade system')</a></li>
+			href="installer.cgi?page=upgrade">$(gettext 'Upgrade system')</a></li>
 	</menu>
 </li>
 EOT
