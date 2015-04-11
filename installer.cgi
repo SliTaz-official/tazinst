@@ -180,6 +180,24 @@ and so on.")</p>
 	</footer>
 </section>
 
+<section>
+	<header>$(gettext "Without Partitioning / Formating")</header>
+
+	<div>
+	<p>$(gettext "SliTaz and Windows™ can coexist in the same partition.")</p>
+	<p>$(gettext "Slitaz will be in the \slitaz directory like did UMSDOS \
+in the previous century...")</p>
+	</div>
+
+	<footer>
+		<form action="boot.cgi">
+			<input type="hidden" name="iso"/>
+			<input type="hidden" name="action" value="install"/>
+			<button data-icon="install">$(gettext 'Install')</button>
+		</form>
+	</footer>
+</section>
+
 
 <h5>$(gettext "Continue installation")</h5>
 
