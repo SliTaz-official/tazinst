@@ -37,16 +37,16 @@ INSTFILE=/root/tazinst.conf
 
 case "$1" in
 	menu)
-		[ "$REMOTE_USER" == "root" ] && cat << EOT
+		cat <<EOT
 <li tabindex="0">
 	<span>$(gettext 'Install')</span>
 	<menu>
 		<li><a data-icon="install"
-			href="installer.cgi">$(gettext 'Install')</a></li>
+			href="installer.cgi" data-root>$(gettext 'Install')</a></li>
 		<li><a data-icon="slitaz"
-			href="installer.cgi?page=install">$(gettext 'Install SliTaz')</a></li>
+			href="installer.cgi?page=install" data-root>$(gettext 'Install SliTaz')</a></li>
 		<li><a data-icon="upgrade"
-			href="installer.cgi?page=upgrade">$(gettext 'Upgrade system')</a></li>
+			href="installer.cgi?page=upgrade" data-root>$(gettext 'Upgrade system')</a></li>
 	</menu>
 </li>
 EOT
