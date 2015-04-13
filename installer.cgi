@@ -185,7 +185,7 @@ and so on.")</p>
 
 	<div>
 	<p>$(gettext "SliTaz and Windows™ can coexist in the same partition.")</p>
-	<p>$(gettext "Slitaz will be in the \slitaz directory like did UMSDOS \
+	<p>$(gettext "Slitaz will be in the \slitaz directory like UMSDOS did \
 in the previous century...")</p>
 	</div>
 
