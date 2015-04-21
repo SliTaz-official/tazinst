@@ -1807,15 +1807,14 @@ clean_target()
 install_kernel()
 {
 	if [ -d /$TARGET_ROOT/lib/modules ]; then
-		KERNEL=$(ls /$TARGET_ROOT/lib/modules | tail -1)
-		KERNEL="vmlinuz-$KERNEL"
+		KERNEL="vmlinuz-$(ls /$TARGET_ROOT/lib/modules | tail -1)"
 	else
 		KERNEL="vmlinuz-$(uname -r)"
 		log "$(gettext "Kernel name not found, falling back to:") $(uname -r)"
 	fi
 	mkdir -p $TARGET_ROOT/boot || error8
 	for i in $SOURCE_ROOT/boot/bzImage* ; do
-		cp $i $TARGET_ROOT/boot/${KERNEL/vmlinuz-/vmlinuz${i#*bzImage}-}
+		cp $i $TARGET_ROOT/boot/${KERNEL%slitaz*}slitaz${i#*bzImage}
 	done
 	log "$(gettext "install_kernel:") $KERNEL"
 }
