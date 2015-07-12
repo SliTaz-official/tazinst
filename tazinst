@@ -1842,7 +1842,7 @@ extract_loramfs()
 extract_first_loramfs()
 {
 	local path="$(pwd)"
-	(zcat $1 || /usr/bin/unlzma -c $1) | \
+	(zcat $1 || /usr/bin/unlzma < $1) | \
 		/bin/busybox cpio -i extractfs.cpio 2> /dev/null &&
 		( cd / ; /bin/busybox cpio -id ) < extractfs.cpio && \
 		rm -f extractfs.cpio
