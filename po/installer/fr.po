@@ -348,7 +348,7 @@ msgid ""
 "hand yourself."
 msgstr ""
 "Normalement vous devriez répondre oui, au mois que vous ne vouliez "
-"installer un chargeur d'amorçage vous même
+"installer un chargeur d'amorçage vous même"
 
 #: installer.cgi:518
 msgid "Enable Windows Dual-Boot."
@@ -523,7 +523,7 @@ msgid ""
 "To format this partition, select a filesystem, usually it's safe to use ext4"
 msgstr ""
 "Pour formater cette partition, choisissez un système de fichiers, "
-"ext4 est recommandé""
+"ext4 est recommandé"
 
 #: installer.cgi:1045
 msgid "Formatting option:"
