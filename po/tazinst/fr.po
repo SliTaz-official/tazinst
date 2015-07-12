@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-23 17:11+0100\n"
+"POT-Creation-Date: 2015-07-12 20:17+0200\n"
 "PO-Revision-Date: 2012-05-19 11:20+0200\n"
 "Last-Translator: Dominique Corbex <domcox@slitaz.org>\n"
 "Language-Team: French\n"
@@ -624,7 +624,7 @@ msgstr "Installe Grub"
 msgid "Cleaning the root partition"
 msgstr "Démontage de la partition:"
 
-#: tazinst:1790 tazinst:2064
+#: tazinst:1790 tazinst:2063
 msgid "keeping /home found on:"
 msgstr ""
 
@@ -632,89 +632,89 @@ msgstr ""
 msgid "removing target:"
 msgstr ""
 
-#: tazinst:1814
+#: tazinst:1813
 msgid "Kernel name not found, falling back to:"
 msgstr "Nom du noyau non trouvé, retour à:"
 
-#: tazinst:1820
+#: tazinst:1819
 msgid "install_kernel:"
 msgstr ""
 
-#: tazinst:1906
+#: tazinst:1905
 #, fuzzy
 msgid "Restoring directory: /home..."
 msgstr "Restauration de /etc, /home"
 
-#: tazinst:1912
+#: tazinst:1911
 msgid "Adding / partition and CHECK_FS to file /etc/rcS.conf..."
 msgstr ""
 
-#: tazinst:1915
+#: tazinst:1914
 msgid "Configuring host name:"
 msgstr "Configuration du Hostname :"
 
-#: tazinst:1978
+#: tazinst:1977
 msgid "Configuring partition to be used as /home:"
 msgstr "Configuration de la partition à utiliser comme /home:"
 
-#: tazinst:1997
+#: tazinst:1996
 msgid "Installing SliTaz on:"
 msgstr "Installation de SliTaz sur:"
 
-#: tazinst:1998 tazinst:2177
+#: tazinst:1997 tazinst:2176
 msgid "Checking settings"
 msgstr ""
 
-#: tazinst:2002 tazinst:2181
+#: tazinst:2001 tazinst:2180
 msgid "Preparing source media"
 msgstr ""
 
-#: tazinst:2005 tazinst:2184
+#: tazinst:2004 tazinst:2183
 msgid "Preparing target disk"
 msgstr ""
 
-#: tazinst:2008
+#: tazinst:2007
 msgid "Cleaning the root partition if necessary"
 msgstr ""
 
-#: tazinst:2011 tazinst:2193
+#: tazinst:2010 tazinst:2192
 msgid "Extracting the root system"
 msgstr ""
 
-#: tazinst:2014 tazinst:2199
+#: tazinst:2013 tazinst:2198
 #, fuzzy
 msgid "Installing the kernel"
 msgstr "Installation de SliTaz sur:"
 
-#: tazinst:2017
+#: tazinst:2016
 #, fuzzy
 msgid "Preconfiguring the system"
 msgstr "Configuration du Hostname :"
 
-#: tazinst:2020
+#: tazinst:2019
 #, fuzzy
 msgid "Configuring root and default user account"
 msgstr "Configuration des comptes de root et de l'utilisateur par défaut :"
 
-#: tazinst:2023
+#: tazinst:2022
 #, fuzzy
 msgid "Configuring /home"
 msgstr "Configuration du Hostname :"
 
-#: tazinst:2026
+#: tazinst:2025
 msgid "Checking bootloader installation..."
 msgstr ""
 
-#: tazinst:2029 tazinst:2208
+#: tazinst:2028 tazinst:2207
 #, fuzzy
 msgid "Files installation completed"
 msgstr "Installation annulée"
 
-#: tazinst:2043
+#: tazinst:2042
 msgid "Preparing upgrade of SliTaz release:"
 msgstr "Préparation de la mise à jour de la version de SliTaz :"
 
-#: tazinst:2045
+#: tazinst:2044
 msgid ""
 "This partition doesn't appear to contain a valid SliTaz system, the file: /"
 "etc/slitaz-release doesn't exist."
@@ -722,59 +722,59 @@ msgstr ""
 "Cette partition ne semble pas contenir un système SliTaz valide, le "
 "fichier: /etc/slitaz-release n'existe pas."
 
-#: tazinst:2068
+#: tazinst:2067
 msgid "keeping /etc found on:"
 msgstr ""
 
-#: tazinst:2072
+#: tazinst:2071
 msgid "keeping /var/www found on:"
 msgstr ""
 
-#: tazinst:2099
+#: tazinst:2098
 msgid "backups restored:"
 msgstr ""
 
-#: tazinst:2106
+#: tazinst:2105
 msgid "backups saved in /var/lib/tazinst"
 msgstr ""
 
-#: tazinst:2113
+#: tazinst:2112
 msgid "Checking the availability of packages..."
 msgstr ""
 
-#: tazinst:2126
+#: tazinst:2125
 #, fuzzy
 msgid "Installing packages..."
 msgstr "Mise à jour des paquets additionnels..."
 
-#: tazinst:2128
+#: tazinst:2127
 msgid "packages to install: 0"
 msgstr ""
 
-#: tazinst:2133
+#: tazinst:2132
 #, fuzzy
 msgid "Installing:"
 msgstr "Installation de SliTaz sur:"
 
-#: tazinst:2142
+#: tazinst:2141
 #, fuzzy
 msgid "Installation of packages complete..."
 msgstr "Installation annulée"
 
-#: tazinst:2151
+#: tazinst:2150
 #, fuzzy
 msgid "Creating package lists..."
 msgstr "Mise à jour des paquets additionnels..."
 
-#: tazinst:2153
+#: tazinst:2152
 msgid "packages-source.list: done"
 msgstr ""
 
-#: tazinst:2157
+#: tazinst:2156
 msgid "packages-selection.diff: done"
 msgstr ""
 
-#: tazinst:2164
+#: tazinst:2163
 #, fuzzy
 msgid ""
 "The list of available packages on the mirror could not be downloaded. No "
@@ -787,29 +787,29 @@ msgstr ""
 "possible de le faire ultérieurement à l'aide de la liste suivante : /var/lib/"
 "tazinst/packages-selection.diff"
 
-#: tazinst:2176
+#: tazinst:2175
 msgid "Upgrading SliTaz on:"
 msgstr "Mise à jour de SliTaz sur :"
 
-#: tazinst:2187
+#: tazinst:2186
 msgid "Searching for /etc/slitaz-release"
 msgstr ""
 
-#: tazinst:2190
+#: tazinst:2189
 msgid "Backup /etc, /home and the packages list"
 msgstr "Sauvegarde de /etc, /home et de la liste des paquets"
 
-#: tazinst:2196
+#: tazinst:2195
 #, fuzzy
 msgid "Restoring configuration files"
 msgstr "Restauration des fichiers de configuration..."
 
-#: tazinst:2202
+#: tazinst:2201
 #, fuzzy
 msgid "Upgrading added packages"
 msgstr "Mise à jour des paquets additionnels..."
 
-#: tazinst:2205
+#: tazinst:2204
 msgid "Bootloader"
 msgstr ""
 

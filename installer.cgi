@@ -147,7 +147,7 @@ select_gparted() {
 
 	<div>
 		<p>$(gettext "On most used systems, the hard drive is already dedicated to \
-partitions for Windows™, or Linux, or another operating \
+partitions for Windows&trade;, or Linux, or another operating \
 system. You'll need to resize these partitions in order to make space for \
 SliTaz GNU/Linux. SliTaz will co-exist with other operating systems already \
 installed on your hard drive.")</p>
@@ -184,7 +184,7 @@ and so on.")</p>
 	<header>$(gettext "Without Partitioning / Formating")</header>
 
 	<div>
-	<p>$(gettext "SliTaz and Windows™ can coexist in the same partition.")</p>
+	<p>$(gettext "SliTaz and Windows&trade; can coexist in the same partition.")</p>
 	<p>$(gettext "Slitaz will be in the \slitaz directory like UMSDOS did \
 in the previous century...")</p>
 	</div>
@@ -517,7 +517,7 @@ select_winboot()
 	label "winboot" \
 		"$(gettext 'Enable Windows Dual-Boot.')" \
 		"$(gettext "At start-up, you will be asked whether you want to boot \
-into Windows™ or SliTaz GNU/Linux.")"
+into Windows&trade; or SliTaz GNU/Linux.")"
 	error="$?"
 	error_msg "$error" \
 		"winboot"
