@@ -39,10 +39,10 @@ case "$1" in
 	menu)
 		cat <<EOT
 <li tabindex="0">
-	<span>$(gettext 'Install')</span>
+	<span>$(gettext 'Installation')</span>
 	<menu>
 		<li><a data-icon="install"
-			href="installer.cgi" data-root>$(gettext 'Install')</a></li>
+			href="installer.cgi" data-root>$(gettext 'Installation')</a></li>
 		<li><a data-icon="slitaz"
 			href="installer.cgi?page=install" data-root>$(gettext 'Install SliTaz')</a></li>
 		<li><a data-icon="upgrade"

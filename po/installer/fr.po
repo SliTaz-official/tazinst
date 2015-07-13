@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "La taille de l'espace nécessaire dépend du nombre de paquets destiné à être "
 "installé et de l'espace réservé aux utilisateurs. Il est tout à fait "
-"concevable d'installer un système minilal de SLitaz dans moins de 300 Mo, "
+"concevable d'installer un système minimal de SLitaz dans moins de 300 Mo, "
 "mais 2 Go seront très confortables. "
 
 #: installer.cgi:158
@@ -166,7 +166,7 @@ msgstr ""
 "ext4, swap, Windows&trade; ntfs et fat32. Les systèmes de fichiers xfs, jfs, hfs ou "
 "autres sont également disponibles mais il est nécessaire d'ajouter au "
 "préalables les drivers nécessaires en installant les paquets correspondants "
-"xfsprogs, jfsutils, linux-hfs etc.\""
+"xfsprogs, jfsutils, linux-hfs etc."
 
 #: installer.cgi:177
 msgid "Launch GParted, the partition editor tool"
@@ -527,7 +527,7 @@ msgstr ""
 
 #: installer.cgi:1045
 msgid "Formatting option:"
-msgstr "Option de formattage :"
+msgstr "Option de formattage"
 
 #~ msgid "Copyright"
 #~ msgstr "Licence d'utilisation"
