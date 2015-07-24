@@ -858,7 +858,7 @@ list_usb()
 			if readlink $DEV | grep -q usb; then
 				DEV=$(basename $DEV)
 				if [ -d /sys/block/${DEV}/${DEV}1 ]; then
-					/sbin/blkid /dev/$DEV* | /bin/busybox awk 'BEGIN{RS=" "}
+					/sbin/blkid /dev/$DEV* | tr ' ' '\n' | /bin/busybox awk '
 						/^\/dev\// {
 							DEV=$1
 							gsub(/:/,"",DEV)
