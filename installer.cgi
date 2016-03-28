@@ -656,7 +656,7 @@ save_settings()
 tazinst_run()
 {
 	local mode="$(/usr/sbin/tazinst get mode "$INSTFILE")" error
-	h4 "Proceeding to: $mode"
+	h4 "$(gettext 'Proceeding to:') $(gettext "$mode")"
 	/usr/sbin/tazinst execute "$INSTFILE" | /bin/busybox awk '{
 		num=$1+0
 		if (num>0 && num<=100){

@@ -11,7 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2014-01-15 17:09-0200\n"
 "Last-Translator: Pascal Bellard <pascal.bellard@slitaz.org>\n"
 "Language-Team: French <i18n@slitaz.org>\n"
-"Language: pt_BR\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,7 +31,7 @@ msgstr "SliTaz peut être installé depuis différents media."
 
 #: slitaz-installer:27
 msgid "Select a media from the following list:"
-msgstr "Sélectionnez un media depuis la liste suivante :"
+msgstr "Sélectionnez un media dans la liste suivante :"
 
 #: slitaz-installer:29
 msgid "You have selected the option to install SliTaz from an USB Key"
@@ -58,7 +58,7 @@ msgstr "Vous avez choisi d'installer SliTaz depuis le web"
 
 #: slitaz-installer:38
 msgid "Please, select a version:"
-msgstr "Vieullez choisir une version :"
+msgstr "Veuillez choisir une version :"
 
 #: slitaz-installer:40
 msgid "Select the source"
@@ -81,7 +81,7 @@ msgid ""
 "cdrom.\n"
 "You will need an active internet connection before upgrading."
 msgstr ""
-"L'installateur va mettre à jour un système SliTaz existant en "
+"L'installeur va mettre à jour un système SliTaz existant en "
 "sauvagardant tous les fichiers de configuration et la liste des paquets "
 "installés. Ensuite, il effacera la partition et installera la nouvelle "
 "version de SliTaz, restorera les fichiers de configuration et réinstallera "
@@ -101,7 +101,7 @@ msgid ""
 msgstr ""
 "Seuls les systèmes de fichiers installés sur votre système sont listés. "
 "Si vous voulez utiliser un autre système de fichiers, vous devez "
-"l'installer auparavent. A moins de savoir ce que vous faîtes, vous pouvez "
+"l'installer auparavant. A moins de savoir ce que vous faîtes, vous pouvez "
 "utiliser ext2, ext3 or ext4.\\n\\n\\Z2Pour formatter cette partition, "
 "veuillez choisir un des systèmes de fichiers ci-dessous :"
 
@@ -216,7 +216,6 @@ msgstr ""
 "\\Z2Voulez vous formater la partition /home ?\\Zn"
 
 #: slitaz-installer:104
-#, fuzzy
 msgid ""
 "You have now the option to install a bootloader which is capable of booting "
 "almost any kind of operating system.\\n\\nIf you want to use an existing "
@@ -264,7 +263,7 @@ msgid ""
 "The lightweight SliTaz HDD installer 'tazinst' is missing.\n"
 "Check permissions, or reinstall the slitaz-tools package."
 msgstr ""
-"Il manque 'tazinst', l'installateur SliTaz léger pour disque dur.\n"
+"Il manque 'tazinst', l'installeur SliTaz léger pour disque dur.\n"
 "Vérifiez les permissions, ou réinstallez le paquet tazinst."
 
 #: slitaz-installer:268

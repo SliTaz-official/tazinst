@@ -18,9 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: installer.cgi:20
-#, fuzzy
 msgid "TazPanel - Installer"
-msgstr "Installateur SliTaz"
+msgstr "TazPanel - Installeur"
 
 #: installer.cgi:42 installer.cgi:45 installer.cgi:81 installer.cgi:196
 msgid "Install"
@@ -31,14 +30,12 @@ msgid "Install SliTaz"
 msgstr "Installer SliTaz"
 
 #: installer.cgi:49
-#, fuzzy
 msgid "Upgrade system"
-msgstr "Mettre à jour"
+msgstr "Mettre à jour le système"
 
 #: installer.cgi:65
-#, fuzzy
 msgid "Welcome to the Slitaz Installer!"
-msgstr "Installateur SliTaz"
+msgstr "Bienvenue dans l'installeur SliTaz !"
 
 #: installer.cgi:67
 msgid ""
@@ -46,7 +43,7 @@ msgid ""
 "device like a Live-CD or LiveUSB key, from a SliTaz ISO file, or from the "
 "web by downloading an ISO file."
 msgstr ""
-"L'installateur de SliTaz installe ou met à jour Slitaz sur un disque dur "
+"L'installeur de SliTaz installe ou met à jour Slitaz sur un disque dur "
 "depuis un périphérique tel qu'un LiveCD ou une clé USB, depuis une image ISO "
 "de SliTaz, ou depuis le Web en téléchargeant une image ISO."
 
@@ -129,8 +126,8 @@ msgid ""
 "run a minimal SliTaz system in 300 megs or less, but 2 gigs is indeed more "
 "comfy."
 msgstr ""
-"La taille de l'espace nécessaire dépend du nombre de paquets destiné à être "
-"installé et de l'espace réservé aux utilisateurs. Il est tout à fait "
+"La taille de l'espace nécessaire dépend du nombre de paquets destinés à être "
+"installés et de l'espace réservé aux utilisateurs. Il est tout à fait "
 "concevable d'installer un système minimal de SLitaz dans moins de 300 Mo, "
 "mais 2 Go seront très confortables. "
 
@@ -141,7 +138,7 @@ msgid ""
 "automatically."
 msgstr ""
 "Une partition séparée pour /home, et une partition d'échange (swap) peuvent "
-"être crées si nécessaire. Slitaz détecte et utilise automatiquement les "
+"être créées si nécessaire. Slitaz détecte et utilise automatiquement les "
 "partitions swap."
 
 #: installer.cgi:162
@@ -150,10 +147,9 @@ msgid ""
 "partition editor for graphically managing your disk partitions. GParted "
 "allows you to create, destroy, resize and copy partitions without data loss."
 msgstr ""
-"Gérez graphiquement vos partitions avec Gparted. Gparted est un éditeur de "
-"partitions permettant de gérer graphiquement vos partitions. Gparted permet "
-"de créer, supprimer, redimensionner et recopier vos partitions sans perte de "
-"données."
+"Gérez graphiquement vos partitions avec l'éditeur de partitions Gparted. "
+"Gparted est permet de créer, supprimer, redimensionner et recopier vos "
+"partitions sans perte de données."
 
 #: installer.cgi:166
 msgid ""
@@ -235,7 +231,7 @@ msgstr "Choisissez une ISO ou entrez le chemin vers le fichier ISO"
 
 #: installer.cgi:283
 msgid "Web:"
-msgstr "Web:"
+msgstr "Web :"
 
 #: installer.cgi:285
 msgid "Select a SliTaz version on the Web"
@@ -296,7 +292,7 @@ msgstr "administrateur Root"
 
 #: installer.cgi:416
 msgid "Root passwd:"
-msgstr "Mot de passe de root:"
+msgstr "Mot de passe de root :"
 
 #: installer.cgi:417
 msgid "Enter the password for root"
@@ -312,7 +308,7 @@ msgstr "Utilisateur"
 
 #: installer.cgi:442
 msgid "User login:"
-msgstr "Identifiant de l'utilisateur:"
+msgstr "Identifiant de l'utilisateur :"
 
 #: installer.cgi:443
 msgid "Enter the name of the first user"
@@ -347,7 +343,7 @@ msgid ""
 "Usually you should answer yes, unless you want to install a bootloader by "
 "hand yourself."
 msgstr ""
-"Normalement vous devriez répondre oui, au mois que vous ne vouliez "
+"Normalement vous devriez répondre oui, à mois que vous ne vouliez "
 "installer un chargeur d'amorçage vous même"
 
 #: installer.cgi:518
@@ -394,7 +390,7 @@ msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
 "new SliTaz GNU/Linux operating system."
 msgstr ""
-"L'installation est maintenant terminée, vous pouvez quitter l'installateur "
+"L'installation est maintenant terminée, vous pouvez quitter l'installeur "
 "ou redémarrer sur votre nouveau système GNU/Linux."
 
 #: installer.cgi:706
@@ -432,7 +428,7 @@ msgstr "Retour au partitionnement"
 
 #: installer.cgi:751
 msgid "Back to entering settings"
-msgstr "Retour au partitionnement"
+msgstr "Retour aux paramétrages"
 
 #: installer.cgi:753 installer.cgi:766 installer.cgi:783
 msgid "Back to Installer Start Page"
@@ -440,7 +436,7 @@ msgstr "Retourner au début de l'installation"
 
 #: installer.cgi:758
 msgid "Proceed to SliTaz installation"
-msgstr "Procéder à l'installation de SliTaz"
+msgstr "Lancer l'installation de SliTaz"
 
 #: installer.cgi:760
 msgid "Installation complete. You can now restart"
@@ -479,7 +475,7 @@ msgid ""
 "<strong>tazinst</strong>, the backend to slitaz-installer is missing. Any "
 "installation can not be done without tazinst."
 msgstr ""
-"L'installateur léger de SliTaz n'a pas été trouvé. Aucune installation ne "
+"L'installeur léger de SliTaz n'a pas été trouvé. Aucune installation ne "
 "peut être entreprise sans <strong>tazinst</strong>."
 
 #: installer.cgi:822
@@ -492,7 +488,7 @@ msgid ""
 "<strong>tazinst</strong>, the slitaz-installer backend, is not at the "
 "minimum required version. Any installation cannot be done without tazinst."
 msgstr ""
-"L'installateur léger de SliTaz n'a pas la version minimum requise. "
+"L'installeur léger de SliTaz n'a pas la version minimum requise. "
 "Aucune installation ne peut être entreprise sans <strong>tazinst</strong>."
 
 #: installer.cgi:835 installer.cgi:848
@@ -507,7 +503,7 @@ msgid ""
 "version than the maximum authorized by the slitaz-installer. Any "
 "installation cannot be done."
 msgstr ""
-"L'installateur léger de SliTaz n'a pas la version maximum requise. "
+"L'installeur léger de SliTaz n'a pas la version maximum requise. "
 "Aucune installation ne peut être entreprise sans <strong>tazinst</strong>."
 
 #: installer.cgi:965 installer.cgi:1022

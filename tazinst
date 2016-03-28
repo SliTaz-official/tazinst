@@ -1259,7 +1259,7 @@ mount_usb()
 {
 	# /home is on LiveUSB
 	if [ -d /home/boot ]; then
-		log "$(gettext "Using files from USB device...")"
+		log "$(gettext "Using files from USB device")..."
 		ln -s /home/boot $SOURCE_ROOT/boot
 	else
 		# mount LiveUSB
