@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-12 20:17+0200\n"
-"PO-Revision-Date: 2014-01-14 22:11-0300\n"
-"Last-Translator: Claudinei Pereira <claudinei@slitaz.org>, 2014\n"
+"PO-Revision-Date: 2016-03-28 05:01-0300\n"
+"Last-Translator: Leonardo Laporte <hackdorte@sapo.pt>\n"
 "Language-Team: Portuguese <i18n@slitaz.org>\n"
-"Language: Brazilian Portuguese\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: installer.cgi:20
-#, fuzzy
 msgid "TazPanel - Installer"
-msgstr "Instalador do SliTaz"
+msgstr "TazPanel - Instalador"
 
 #: installer.cgi:42 installer.cgi:45 installer.cgi:81 installer.cgi:196
 msgid "Install"
@@ -31,9 +31,8 @@ msgid "Install SliTaz"
 msgstr "Instalar o SliTaz"
 
 #: installer.cgi:49
-#, fuzzy
 msgid "Upgrade system"
-msgstr "Atualizar"
+msgstr "Atualizar sistema"
 
 #: installer.cgi:65
 msgid "Welcome to the Slitaz Installer!"
@@ -54,14 +53,13 @@ msgid "Which type of installation do you want to start?"
 msgstr "Qual o tipo de instalação a ser iniciado?"
 
 #: installer.cgi:84
-#, fuzzy
 msgid ""
 "Install SliTaz on a partition of your hard disk drive. If you decide to "
 "format your partition, all data will be lost. If you do not format, all data "
 "except for any existing /home directory will be removed (the home directory "
 "will be kept as is)."
 msgstr ""
-"Instala o SliTaz numa partição do dísco rígido. Se você decidir formatar a "
+"Instala o SliTaz numa partição do disco rígido. Se você decidir formatar a "
 "partição, todos os dados serão perdidos. Se você não formatar, todos os "
 "dados a não ser os existentes no diretório /home serão removidos (os "
 "arquivos do /home serão mantidos como estão)."
@@ -109,7 +107,6 @@ msgid "Partitioning"
 msgstr "Particionando"
 
 #: installer.cgi:149
-#, fuzzy
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
 "Windows&trade;, or Linux, or another operating system. You'll need to resize "
@@ -118,9 +115,9 @@ msgid ""
 msgstr ""
 "Na maioria dos sistemas o disco rígido possui uma partição dedicada ao "
 "Windows&trade;, ou Linux, ou outro sistema operacional. Será necessário "
-"redimensioar esta partição para liberar espaço para o SliTaz. A distribuição "
-"irá funcionar em conjunto com outro sistema operacional existente no dísco "
-"rígido."
+"redimensionar esta partição para liberar espaço para o SliTaz. A "
+"distribuição irá funcionar em conjunto com outro sistema operacional "
+"existente no disco rígido."
 
 #: installer.cgi:154
 msgid ""
@@ -134,7 +131,6 @@ msgstr ""
 "SliTaz 300 MB livres são suficientes, porém 2G é o recomendado."
 
 #: installer.cgi:158
-#, fuzzy
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
 "space may be created if needed. Slitaz detects and uses swap partitions "
@@ -174,17 +170,17 @@ msgstr "Executar Gparted"
 
 #: installer.cgi:184
 msgid "Without Partitioning / Formating"
-msgstr ""
+msgstr "Sem partições / Formatação"
 
 #: installer.cgi:187
 msgid "SliTaz and Windows&trade; can coexist in the same partition."
-msgstr ""
+msgstr "Slitaz e Windows&trade; podem coexistir na mesma partição."
 
 #: installer.cgi:188
 msgid ""
 "Slitaz will be in the \\slitaz directory like UMSDOS did in the previous "
 "century..."
-msgstr ""
+msgstr "Slitaz estará no diretório \\slitaz como previsto anteriormente..."
 
 #: installer.cgi:202
 msgid "Continue installation"
@@ -211,11 +207,12 @@ msgid "LiveUSB:"
 msgstr "LiveUSB"
 
 #: installer.cgi:241
-#, fuzzy
 msgid ""
 "Enter the partition where SliTaz Live is located on\n"
 " your USB Key"
-msgstr "Informar a partição da mídia USB na qual o SliTaz Live está localizado"
+msgstr ""
+"Informe a partição da mídia USB onde o SliTaz Live\n"
+"está localizado"
 
 #: installer.cgi:256
 msgid "ISO file:"
@@ -350,13 +347,12 @@ msgid "Enable Windows Dual-Boot."
 msgstr "Habilitar Dual-Boot com Windows."
 
 #: installer.cgi:519
-#, fuzzy
 msgid ""
 "At start-up, you will be asked whether you want to boot into Windows&trade; "
 "or SliTaz GNU/Linux."
 msgstr ""
-"Será requisitado na inicialização se você deseja iniciar pelo Windows™ ou "
-"pelo SliTAz GNU/Lïnux."
+"Será requisitado na inicialização se você deseja iniciar pelo "
+"Windows&trade;  ou pelo Slitaz GNU/Linux."
 
 #: installer.cgi:534
 msgid "Errors found. Please check your settings."
@@ -399,7 +395,6 @@ msgid "Tazinst log"
 msgstr "Log do Tazinst"
 
 #: installer.cgi:722
-#, fuzzy
 msgid ""
 "You're going to install SliTaz on a partition of your hard disk drive. If "
 "you decide to format your HDD, all data will be lost. If you do not format, "
@@ -407,7 +402,7 @@ msgid ""
 "directory will be kept as is)."
 msgstr ""
 "Você está prestes a instalar o SliTaz numa partição do disco rígido. Se você "
-"decidir formadar o disco, todos os dados serão perdidos. Se você não "
+"decidir formatar o disco, todos os dados serão perdidos. Se você não "
 "formatar, todos os dados exceto os contidos no diretório /home serão "
 "removidos (os contidos em /home serão mantidos como estão)."
 
