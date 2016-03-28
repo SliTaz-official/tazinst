@@ -5,17 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: slitaz-installer \n"
+"Project-Id-Version: slitaz-installer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-23 17:11+0100\n"
-"PO-Revision-Date: 2014-01-15 17:09-0200\n"
-"Last-Translator: Claudinei Pereira <claudinei@slitaz.org>\n"
+"PO-Revision-Date: 2016-03-28 05:04-0300\n"
+"Last-Translator: Leonardo Laporte <hackdorte@sapo.pt>\n"
 "Language-Team: Brazilian Portuguese <i18n@slitaz.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: slitaz-installer:23
 msgid "Welcome to the slitaz-installer"
@@ -94,7 +95,6 @@ msgid "Partition containing the system to upgrade:"
 msgstr "Partição na qual se encontra o sistema a ser atualizado:"
 
 #: slitaz-installer:52
-#, fuzzy
 msgid ""
 "Only the filesystems actually installed on your system are listed. If you "
 "intend to use another filesystem, you have to install it before. Unless you "
@@ -104,7 +104,7 @@ msgstr ""
 "Somente os sistemas de arquivo existentes atualmente no sistema serão "
 "listados. Se você pretende utilizar outro sistema de arquivos, será "
 "necessário instalá-lo primeiro. A não ser que você saiba o que está fazendo, "
-"é seguro usar ext2, ext3 ou ext4.\\n\\n\\Z2Para formatar esta partição, "
+"é seguro usar ext2, ext3 ou ext4.\\n\\n\\Z2 Para formatar esta partição, "
 "selecione o sistema de arquivos abaixo:"
 
 #: slitaz-installer:58
@@ -216,7 +216,6 @@ msgstr ""
 "\\Z2Você deseja formatar a partição /home?\\Zn"
 
 #: slitaz-installer:104
-#, fuzzy
 msgid ""
 "You have now the option to install a bootloader which is capable of booting "
 "almost any kind of operating system.\\n\\nIf you want to use an existing "
@@ -224,8 +223,8 @@ msgid ""
 "boot SliTaz (refer to your bootloader documentation on how to do this)"
 msgstr ""
 "Você pode instalar o gerenciador de boot, que é capaz de iniciar "
-"praticamente todos os tipos de sistema operacional.\\n\\nSe você deseja usar "
-"um gerenciador de boot existente, pule este passo e configure seu "
+"praticamente todos os tipos de sistema operacional.\\n\\n Se você deseja "
+"usar um gerenciador de boot existente, pule este passo e configure seu "
 "gerenciador para iniciar o SliTaz (consulte a documentação do gerenciador de "
 "boot)"
 
@@ -321,11 +320,11 @@ msgstr ", sem dual-boot"
 
 #: slitaz-installer:325 slitaz-installer:379
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: slitaz-installer:326 slitaz-installer:353 slitaz-installer:380
 msgid "Back"
-msgstr ""
+msgstr "Voltar"
 
 #: slitaz-installer:352 slitaz-installer:411
 msgid "Yes"
@@ -337,7 +336,7 @@ msgstr "Não"
 
 #: slitaz-installer:419
 msgid "Slitaz install cancelled."
-msgstr ""
+msgstr "Instalação do Slitaz cancelada."
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
