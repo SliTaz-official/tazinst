@@ -334,7 +334,7 @@ msgid "No"
 msgstr "Нет"
 
 #: slitaz-installer:419
-msgid "Slitaz install cancelled."
+msgid "SliTaz install cancelled."
 msgstr ""
 
 #~ msgid "Ok"

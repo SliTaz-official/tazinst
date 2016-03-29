@@ -1,5 +1,5 @@
 # Simplified Chinese translations for slitaz-installer package.
-# Copyright (C) 2014 Slitaz Association
+# Copyright (C) 2014 SliTaz Association
 # This file is distributed under the same license as the slitaz-installer package.
 # Rhsky <rhsky@qq.com>, 2014.
 #

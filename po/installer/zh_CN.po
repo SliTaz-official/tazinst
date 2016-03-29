@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 1.6.5\n"
 
 #: installer.cgi:52
-msgid "Welcome to the Slitaz Installer!"
+msgid "Welcome to the SliTaz Installer!"
 msgstr "欢迎使用 SliTaz 安装工具！"
 
 #: installer.cgi:53
@@ -74,7 +74,7 @@ msgstr "升级"
 msgid ""
 "Upgrade an already installed SliTaz system on your hard disk drive. Your /"
 "home /etc /var/www directories will be kept, all other directories will be "
-"removed. Any additional packages added to your old Slitaz system will be "
+"removed. Any additional packages added to your old SliTaz system will be "
 "updated as long you have an active internet connection."
 msgstr ""
 "升级你硬盘上已安装的 SliTaz 系统。 你的 /home /etc /var/www 几个文件夹会保持"
@@ -86,7 +86,7 @@ msgstr "升级 SliTaz"
 
 #: installer.cgi:90
 msgid "Upgrade an existing SliTaz system"
-msgstr "升级已安装的 Slitaz 系统"
+msgstr "升级已安装的 SliTaz 系统"
 
 #: installer.cgi:106
 msgid "Partitioning"
@@ -117,7 +117,7 @@ msgstr ""
 #: installer.cgi:117
 msgid ""
 "A separate home partition, and a partition that will be used as Linux swap "
-"space may be created if needed. Slitaz detects and uses swap partitions "
+"space may be created if needed. SliTaz detects and uses swap partitions "
 "automatically."
 msgstr ""
 "单独的 home 分区 和 Linux Swap 分区需要的话会被创建。 SliTaz 会判断并自动调"
@@ -210,7 +210,7 @@ msgid "Specify the partition containing the system to upgrade"
 msgstr "指定存储系统的分区进行升级"
 
 #: installer.cgi:251
-msgid "Install Slitaz to partition:"
+msgid "Install SliTaz to partition:"
 msgstr "安装 SliTaz 系统岛分区："
 
 #: installer.cgi:252
@@ -368,7 +368,7 @@ msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
 "directories will be removed. Any additional packages added to your old "
-"Slitaz system will be updated as long you have an active internet connection."
+"SliTaz system will be updated as long you have an active internet connection."
 msgstr ""
 "你即将升级已经安装在你硬盘上的系统。你的 /home /etc /var/www 目录会被保留，其"
 "它目录都会被移除。你老系统中安装的软件包在联网时会自动升级。"

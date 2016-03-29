@@ -19,7 +19,7 @@ msgstr ""
 #: installer.cgi:20
 #, fuzzy
 msgid "TazPanel - Installer"
-msgstr "Instalador de Slitaz"
+msgstr "Instalador de SliTaz"
 
 #: installer.cgi:42 installer.cgi:45 installer.cgi:81 installer.cgi:196
 msgid "Install"
@@ -27,7 +27,7 @@ msgstr "Instalar"
 
 #: installer.cgi:47 installer.cgi:97 installer.cgi:720
 msgid "Install SliTaz"
-msgstr "Instalar Slitaz"
+msgstr "Instalar SliTaz"
 
 #: installer.cgi:49
 #, fuzzy
@@ -36,8 +36,8 @@ msgstr "Actualizar"
 
 #: installer.cgi:65
 #, fuzzy
-msgid "Welcome to the Slitaz Installer!"
-msgstr "Instalador de Slitaz"
+msgid "Welcome to the SliTaz Installer!"
+msgstr "Instalador de SliTaz"
 
 #: installer.cgi:67
 #, fuzzy
@@ -46,7 +46,7 @@ msgid ""
 "device like a Live-CD or LiveUSB key, from a SliTaz ISO file, or from the "
 "web by downloading an ISO file."
 msgstr ""
-"El instalador Slitaz Instala o actualiza su sistema desde un CD,USB,desde un "
+"El instalador SliTaz Instala o actualiza su sistema desde un CD,USB,desde un "
 "archivo ISO o directamente desde la web"
 
 #: installer.cgi:71
@@ -92,7 +92,7 @@ msgstr "Actualizar"
 msgid ""
 "Upgrade an already installed SliTaz system on your hard disk drive. Your /"
 "home /etc /var/www directories will be kept, all other directories will be "
-"removed. Any additional packages added to your old Slitaz system will be "
+"removed. Any additional packages added to your old SliTaz system will be "
 "updated as long you have an active internet connection."
 msgstr ""
 "Al actualizar el sistema instalado en el disco duro.los directorios /home /"
@@ -107,7 +107,7 @@ msgstr "Crear y manejar sistemas SliTaZ CD vivo o USB"
 
 #: installer.cgi:123 installer.cgi:730
 msgid "Upgrade SliTaz"
-msgstr "Actualizar Slitaz"
+msgstr "Actualizar SliTaz"
 
 #: installer.cgi:146
 msgid "Partitioning"
@@ -136,7 +136,7 @@ msgid ""
 "comfy."
 msgstr ""
 "La cantidad de espacio necesario depende de la cantidad de software que "
-"desee instalar y cuánto espacio necesita para los usuarios. Slitaz podría "
+"desee instalar y cuánto espacio necesita para los usuarios. SliTaz podría "
 "funcionar como sistema mínimo  en 300 megas o menos, pero es recomendable 2 "
 "gigas o mas dependiendo de sus necesidades de almacenamiento."
 
@@ -144,7 +144,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
-"space may be created if needed. Slitaz detects and uses swap partitions "
+"space may be created if needed. SliTaz detects and uses swap partitions "
 "automatically."
 msgstr ""
 "Una partición separada sera usada como /home y una partición que se "
@@ -196,7 +196,7 @@ msgstr ""
 
 #: installer.cgi:188
 msgid ""
-"Slitaz will be in the \\slitaz directory like UMSDOS did in the previous "
+"SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
 "century..."
 msgstr ""
 
@@ -265,8 +265,8 @@ msgid "Specify the partition containing the system to upgrade"
 msgstr ""
 
 #: installer.cgi:320
-msgid "Install Slitaz to partition:"
-msgstr "Instalar Slitaz en la partición:"
+msgid "Install SliTaz to partition:"
+msgstr "Instalar SliTaz en la partición:"
 
 #: installer.cgi:321
 msgid "Specify the partition where to install SliTaz"
@@ -384,7 +384,7 @@ msgstr ""
 #: installer.cgi:547
 #, fuzzy
 msgid "Select source media:"
-msgstr "Medio de origen de Slitaz"
+msgstr "Medio de origen de SliTaz"
 
 #: installer.cgi:554
 #, fuzzy
@@ -438,7 +438,7 @@ msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
 "directories will be removed. Any additional packages added to your old "
-"Slitaz system will be updated as long you have an active internet connection."
+"SliTaz system will be updated as long you have an active internet connection."
 msgstr ""
 "Usted va a actualizar un sistema  SliTaz en el disco duro.los directorios /"
 "home /etc /var/www, se mantienen,todos los demás directorios serán "
@@ -503,7 +503,7 @@ msgid ""
 "<strong>tazinst</strong>, the backend to slitaz-installer is missing. Any "
 "installation can not be done without tazinst."
 msgstr ""
-"<strong>tazinst</strong>, El instalador de Slitaz no se encuentra,no se "
+"<strong>tazinst</strong>, El instalador de SliTaz no se encuentra,no se "
 "puede realizar la instalacion sin tazinst."
 
 #: installer.cgi:822
@@ -517,7 +517,7 @@ msgid ""
 "<strong>tazinst</strong>, the slitaz-installer backend, is not at the "
 "minimum required version. Any installation cannot be done without tazinst."
 msgstr ""
-"<strong>tazinst</strong>, El instalador de Slitaz no se encuentra,no se "
+"<strong>tazinst</strong>, El instalador de SliTaz no se encuentra,no se "
 "puede realizar la instalacion sin tazinst."
 
 #: installer.cgi:835 installer.cgi:848
@@ -531,7 +531,7 @@ msgid ""
 "version than the maximum authorized by the slitaz-installer. Any "
 "installation cannot be done."
 msgstr ""
-"<strong>tazinst</strong>, El instalador de Slitaz no se encuentra,no se "
+"<strong>tazinst</strong>, El instalador de SliTaz no se encuentra,no se "
 "puede realizar la instalacion sin tazinst."
 
 #: installer.cgi:965 installer.cgi:1022

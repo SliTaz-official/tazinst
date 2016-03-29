@@ -35,7 +35,7 @@ msgid "Upgrade system"
 msgstr "Обновить"
 
 #: installer.cgi:65
-msgid "Welcome to the Slitaz Installer!"
+msgid "Welcome to the SliTaz Installer!"
 msgstr "Установка SliTaz"
 
 #: installer.cgi:67
@@ -89,7 +89,7 @@ msgstr "Обновить"
 msgid ""
 "Upgrade an already installed SliTaz system on your hard disk drive. Your /"
 "home /etc /var/www directories will be kept, all other directories will be "
-"removed. Any additional packages added to your old Slitaz system will be "
+"removed. Any additional packages added to your old SliTaz system will be "
 "updated as long you have an active internet connection."
 msgstr ""
 "Обновить систему SliTaz, установленную на жестком диске. Папки «/home», «/"
@@ -142,7 +142,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
-"space may be created if needed. Slitaz detects and uses swap partitions "
+"space may be created if needed. SliTaz detects and uses swap partitions "
 "automatically."
 msgstr ""
 "При необходимости будет создан отдельный раздел для домашних папок, а также "
@@ -191,7 +191,7 @@ msgstr ""
 
 #: installer.cgi:188
 msgid ""
-"Slitaz will be in the \\slitaz directory like UMSDOS did in the previous "
+"SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
 "century..."
 msgstr ""
 
@@ -260,7 +260,7 @@ msgid "Specify the partition containing the system to upgrade"
 msgstr ""
 
 #: installer.cgi:320
-msgid "Install Slitaz to partition:"
+msgid "Install SliTaz to partition:"
 msgstr "Установить SliTaz в раздел:"
 
 #: installer.cgi:321
@@ -433,7 +433,7 @@ msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
 "directories will be removed. Any additional packages added to your old "
-"Slitaz system will be updated as long you have an active internet connection."
+"SliTaz system will be updated as long you have an active internet connection."
 msgstr ""
 "Вы собираетесь обновить систему SliTaz, уже установленную на вашем жестком "
 "диске. Папки «/home», «/etc» и «/var/www» останутся нетронутыми, а все "

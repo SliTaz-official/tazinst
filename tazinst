@@ -5,7 +5,7 @@
 # few main variables, then all the functions and then the
 # full sequence of functions.
 #
-# (C) 2007-2014 SliTaz - GNU General Public License v3.
+# (C) 2007-2016 SliTaz - GNU General Public License v3.
 #
 # Authors : Christophe Lincoln <pankso@slitaz.org>
 #           Dominique Corbex <domcox@slitaz.org>
@@ -26,7 +26,7 @@
 PATH="/usr/sbin:/usr/bin:/sbin:/bin"
 umask 0177
 
-# read Slitaz conf
+# read SliTaz conf
 [ -r /etc/slitaz/slitaz.conf ] && . /etc/slitaz/slitaz.conf
 
 # read Tazinst conf
@@ -1310,7 +1310,7 @@ mount_web()
 	mount_iso
 }
 
-# set up source and check Slitaz' content
+# set up source and check SliTaz' content
 mount_source()
 {
 	log "$(gettext "Creating mount point:") $SOURCE_ROOT..."

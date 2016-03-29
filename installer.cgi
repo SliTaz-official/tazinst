@@ -2,7 +2,7 @@
 #
 # Main CGI interface for Tazinst, the SliTaz installer.
 #
-# Copyright (C) 2012-2015 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2012-2016 SliTaz GNU/Linux - BSD License
 #
 # Authors : Dominique Corbex <domcox@slitaz.org>
 #
@@ -62,7 +62,7 @@ select_action() {
 	cat <<EOT
 <!-- Welcome message -->
 
-<h2>$(gettext "Welcome to the Slitaz Installer!")</h2>
+<h2>$(gettext "Welcome to the SliTaz Installer!")</h2>
 
 <p>$(gettext "The SliTaz Installer installs or upgrades SliTaz to a \
 hard disk drive from a device like a Live-CD or LiveUSB key, from a SliTaz \
@@ -113,7 +113,7 @@ select_upgrade() {
 		<p>$(gettext "Upgrade an already installed SliTaz system on your hard disk \
 drive. Your /home /etc /var/www directories will be kept, all other \
 directories will be removed. Any additional packages added to your old \
-Slitaz system will be updated as long you have an active internet connection.")</p>
+SliTaz system will be updated as long you have an active internet connection.")</p>
 	</div>
 
 	<footer>
@@ -156,7 +156,7 @@ plan to install and how much space you require for users. It's conceivable \
 that you could run a minimal SliTaz system in 300 megs or less, but 2 gigs \
 is indeed more comfy.")</p>
 	<p>$(gettext "A separate home partition and a partition that will be used \
-as Linux swap space may be created if needed. Slitaz detects and uses swap \
+as Linux swap space may be created if needed. SliTaz detects and uses swap \
 partitions automatically.")</p>
 	<hr/>
 	<p>$(gettext "You can graphically manage your partitions with GParted. \
@@ -185,7 +185,7 @@ and so on.")</p>
 
 	<div>
 	<p>$(gettext "SliTaz and Windows&trade; can coexist in the same partition.")</p>
-	<p>$(gettext "Slitaz will be in the \slitaz directory like UMSDOS did \
+	<p>$(gettext "SliTaz will be in the \slitaz directory like UMSDOS did \
 in the previous century...")</p>
 	</div>
 
@@ -317,7 +317,7 @@ select_root_uuid()
 		error="$?"
 	else
 		label "root_uuid" \
-			"$(gettext 'Install Slitaz to partition:')" \
+			"$(gettext 'Install SliTaz to partition:')" \
 			"$(gettext 'Specify the partition where to install SliTaz')"
 		error="$?"
 	fi
@@ -732,7 +732,7 @@ EOT
 <p>$(gettext "You're going to upgrade an already installed SliTaz \
 system on your hard disk drive. Your /home /etc /var/www directories \
 will be kept, all other directories will be removed. Any additional \
-packages added to your old Slitaz system will be updated as long you \
+packages added to your old SliTaz system will be updated as long you \
 have an active internet connection.")</p>
 EOT
 			;;

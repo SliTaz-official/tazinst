@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>Tazinst Manual—Manual for “tazinst” installer</title>
-	<link rel="shortcut icon" href="favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="../slitaz-doc.css" />
-	<script type="text/javascript" src="../slitaz-doc.js"></script>
+	<meta charset="UTF-8">
+	<title>Tazinst Manual — Manual for “tazinst” installer</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="../slitaz-doc.css">
+	<script src="../slitaz-doc.js"></script>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 
 <h2>NAME</h2>
 
-<p>Tazinst—Tiny autonomous zone installer manager</p>
+<p>Tazinst — Tiny autonomous zone installer manager</p>
 
 
 <h2>SYNTAX</h2>
@@ -41,7 +41,7 @@ install a bootloader on the target disk. A dual-boot with an existing Windows™
 partition is possible—finding the Windows™ partition can either be done
 automatically or manually specified.</p>
 <p>Tazinst can also update SliTaz installed on a hard disk partition which is
-handy in case of version changes. In this case, Slitaz is updated, any data in
+handy in case of version changes. In this case, SliTaz is updated, any data in
 /home is preserved and additional packages are reinstalled on to the new
 version.</p>
 <p>Tazinst was created independently for the needs of the SliTaz GNU/Linux mini
@@ -432,7 +432,7 @@ existing data will be lost).</p>
 
 <p>How to upgrade an already installed SliTaz system on your hard disk drive.
 Your <code>/home /etc /var/www</code> directories will be kept, all other
-directories will be removed. Any additional packages added to your old Slitaz
+directories will be removed. Any additional packages added to your old SliTaz
 system will be updated as long you have an active internet connection.</p>
 
 <ol>
@@ -444,7 +444,7 @@ system will be updated as long you have an active internet connection.</p>
 		<pre># tazinst set media web</pre></li>
 	<li>Select the stable image:
 		<pre># tazinst set source stable</pre></li>
-	<li>Select the partition containing Slitaz to upgrade:
+	<li>Select the partition containing SliTaz to upgrade:
 		<pre># tazinst set root_uuid /dev/hda1</pre></li>
 	<li>Install a bootloader:
 		<pre># tazinst set bootloader auto</pre></li>

@@ -35,7 +35,7 @@ msgid "Upgrade system"
 msgstr "Atualizar sistema"
 
 #: installer.cgi:65
-msgid "Welcome to the Slitaz Installer!"
+msgid "Welcome to the SliTaz Installer!"
 msgstr "Bem vindo ao instalador do SliTaz"
 
 #: installer.cgi:67
@@ -86,7 +86,7 @@ msgstr "Atualizar"
 msgid ""
 "Upgrade an already installed SliTaz system on your hard disk drive. Your /"
 "home /etc /var/www directories will be kept, all other directories will be "
-"removed. Any additional packages added to your old Slitaz system will be "
+"removed. Any additional packages added to your old SliTaz system will be "
 "updated as long you have an active internet connection."
 msgstr ""
 "Atualiza uma instalação existente do SliTaz no disco rígido. Os diretórios /"
@@ -133,7 +133,7 @@ msgstr ""
 #: installer.cgi:158
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
-"space may be created if needed. Slitaz detects and uses swap partitions "
+"space may be created if needed. SliTaz detects and uses swap partitions "
 "automatically."
 msgstr ""
 "Uma partição home separada e uma partição para ser utilizada como swap podem "
@@ -174,13 +174,13 @@ msgstr "Sem partições / Formatação"
 
 #: installer.cgi:187
 msgid "SliTaz and Windows&trade; can coexist in the same partition."
-msgstr "Slitaz e Windows&trade; podem coexistir na mesma partição."
+msgstr "SliTaz e Windows&trade; podem coexistir na mesma partição."
 
 #: installer.cgi:188
 msgid ""
-"Slitaz will be in the \\slitaz directory like UMSDOS did in the previous "
+"SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
 "century..."
-msgstr "Slitaz estará no diretório \\slitaz como previsto anteriormente..."
+msgstr "SliTaz estará no diretório \\slitaz como previsto anteriormente..."
 
 #: installer.cgi:202
 msgid "Continue installation"
@@ -247,7 +247,7 @@ msgid "Specify the partition containing the system to upgrade"
 msgstr "Informar a partição na qual está o sistema a ser atualizado"
 
 #: installer.cgi:320
-msgid "Install Slitaz to partition:"
+msgid "Install SliTaz to partition:"
 msgstr "Instalar o SliTaz na partição:"
 
 #: installer.cgi:321
@@ -352,7 +352,7 @@ msgid ""
 "or SliTaz GNU/Linux."
 msgstr ""
 "Será requisitado na inicialização se você deseja iniciar pelo "
-"Windows&trade;  ou pelo Slitaz GNU/Linux."
+"Windows&trade; ou pelo SliTaz GNU/Linux."
 
 #: installer.cgi:534
 msgid "Errors found. Please check your settings."
@@ -411,7 +411,7 @@ msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
 "directories will be removed. Any additional packages added to your old "
-"Slitaz system will be updated as long you have an active internet connection."
+"SliTaz system will be updated as long you have an active internet connection."
 msgstr ""
 "Você está prestes a atualizar uma instalação do SliTaz em seu disco rígido. "
 "Os diretórios /home, /etc e /var/www serão mantidos, e os outros serão "

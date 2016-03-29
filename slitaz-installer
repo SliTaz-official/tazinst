@@ -3,7 +3,7 @@
 # slitaz-installer - A CLI frontend to tazinst, the
 # SliTaz GNU/Linux installer
 #
-# (C) 2007-2014 SliTaz - GNU General Public License v3.
+# (C) 2007-2016 SliTaz - GNU General Public License v3.
 #
 # Authors : Christophe Lincoln <pankso@slitaz.org>
 #           Dominique Corbex <domcox@slitaz.org>
@@ -416,7 +416,7 @@ summary()
 		0)	# yes
 			move up ;;
 		1)	# Cancel
-			gettext "Slitaz install cancelled."; echo
+			gettext "SliTaz install cancelled."; echo
 			exit 1 ;;
 		3)	# no
 			return 3 ;;
@@ -564,7 +564,7 @@ tazinst execute | awk 'BEGIN{
 	}
 	END{
 		print "XXX"
-	}' | $DIALOG --title "Slitaz-Installer" --gauge "Installing.." 20 70 0
+	}' | $DIALOG --title "SliTaz-Installer" --gauge "Installing.." 20 70 0
 
 
 # end_of_install

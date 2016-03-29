@@ -34,7 +34,7 @@ msgid "Upgrade system"
 msgstr "Mettre à jour le système"
 
 #: installer.cgi:65
-msgid "Welcome to the Slitaz Installer!"
+msgid "Welcome to the SliTaz Installer!"
 msgstr "Bienvenue dans l'installeur SliTaz !"
 
 #: installer.cgi:67
@@ -43,7 +43,7 @@ msgid ""
 "device like a Live-CD or LiveUSB key, from a SliTaz ISO file, or from the "
 "web by downloading an ISO file."
 msgstr ""
-"L'installeur de SliTaz installe ou met à jour Slitaz sur un disque dur "
+"L'installeur de SliTaz installe ou met à jour SliTaz sur un disque dur "
 "depuis un périphérique tel qu'un LiveCD ou une clé USB, depuis une image ISO "
 "de SliTaz, ou depuis le Web en téléchargeant une image ISO."
 
@@ -86,7 +86,7 @@ msgstr "Mettre à jour"
 msgid ""
 "Upgrade an already installed SliTaz system on your hard disk drive. Your /"
 "home /etc /var/www directories will be kept, all other directories will be "
-"removed. Any additional packages added to your old Slitaz system will be "
+"removed. Any additional packages added to your old SliTaz system will be "
 "updated as long you have an active internet connection."
 msgstr ""
 "Mettre à jour un système SliTaz déjà présent sur le disque dur. Les "
@@ -115,8 +115,8 @@ msgid ""
 msgstr ""
 "Sur la plupart des systèmes, le disque dur a déjà des partitions dédiées à "
 "Windows&trade;, ou Linux ou un autre système d'exploitation. Il est nécessaire de "
-"modifier la taille des partitions de façon à laisser une place à Slitaz GNU/"
-"Linux. Slitaz co-existera avec les autres systèmes d'exploitation déjà "
+"modifier la taille des partitions de façon à laisser une place à SliTaz GNU/"
+"Linux. SliTaz co-existera avec les autres systèmes d'exploitation déjà "
 "installés sur le disque dur."
 
 #: installer.cgi:154
@@ -134,11 +134,11 @@ msgstr ""
 #: installer.cgi:158
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
-"space may be created if needed. Slitaz detects and uses swap partitions "
+"space may be created if needed. SliTaz detects and uses swap partitions "
 "automatically."
 msgstr ""
 "Une partition séparée pour /home, et une partition d'échange (swap) peuvent "
-"être créées si nécessaire. Slitaz détecte et utilise automatiquement les "
+"être créées si nécessaire. SliTaz détecte et utilise automatiquement les "
 "partitions swap."
 
 #: installer.cgi:162
@@ -178,11 +178,11 @@ msgstr "Sans partitionner ni formater"
 
 #: installer.cgi:187
 msgid "SliTaz and Windows&trade; can coexist in the same partition."
-msgstr "Slitaz et Windows&trade; peuvent coexister dans la même partition."
+msgstr "SliTaz et Windows&trade; peuvent coexister dans la même partition."
 
 #: installer.cgi:188
 msgid ""
-"Slitaz will be in the \\slitaz directory like UMSDOS did in the previous "
+"SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
 "century..."
 msgstr "SliTaz sera dans le répertoire \\slitaz comme UMSDOS faisait au "
 "siècle dernier..."
@@ -196,7 +196,7 @@ msgid ""
 "Once you've made room for SliTaz on your drive, you should be able to "
 "continue installation."
 msgstr ""
-"Une fois que la place nécessaire à Slitaz sur le disque dur a été faite, il "
+"Une fois que la place nécessaire à SliTaz sur le disque dur a été faite, il "
 "est possible de continuer l'installation."
 
 #: installer.cgi:229
@@ -250,8 +250,8 @@ msgid "Specify the partition containing the system to upgrade"
 msgstr "Entrez la partition contenant le système à mettre à jour"
 
 #: installer.cgi:320
-msgid "Install Slitaz to partition:"
-msgstr "Installer Slitaz sur la partition :"
+msgid "Install SliTaz to partition:"
+msgstr "Installer SliTaz sur la partition :"
 
 #: installer.cgi:321
 msgid "Specify the partition where to install SliTaz"
@@ -363,7 +363,7 @@ msgstr "Il y a des erreurs. Vérifiez vos saisies."
 
 #: installer.cgi:547
 msgid "Select source media:"
-msgstr "Média source de Slitaz"
+msgstr "Média source de SliTaz"
 
 #: installer.cgi:554
 msgid "Select destination"
@@ -414,7 +414,7 @@ msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
 "directories will be removed. Any additional packages added to your old "
-"Slitaz system will be updated as long you have an active internet connection."
+"SliTaz system will be updated as long you have an active internet connection."
 msgstr ""
 "Vous allez mettre à jour un système SliTaz existant déjà sur une partition "
 "de votre disque dur. Les répertoires /home /etc et /var/www seront conservés, "
