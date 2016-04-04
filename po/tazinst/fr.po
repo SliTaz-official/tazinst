@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-12 20:17+0200\n"
+"POT-Creation-Date: 2016-04-04 11:45+0200\n"
 "PO-Revision-Date: 2012-05-19 11:20+0200\n"
 "Last-Translator: Dominique Corbex <domcox@slitaz.org>\n"
 "Language-Team: French\n"
@@ -123,7 +123,6 @@ msgid "Usage"
 msgstr "Usage"
 
 #: tazinst:117
-#, fuzzy
 msgid "tazinst [command] <setting> <value> <file>"
 msgstr "tazinst [commande] <paramétrage> <valeur> <fichier>"
 
@@ -440,11 +439,7 @@ msgstr "Utilise les fichiers de"
 msgid "Mount failed"
 msgstr "Échec du montage"
 
-#: tazinst:1262
-msgid "Using files from USB device..."
-msgstr "Utilise les fichiers du périphérique USB..."
-
-#: tazinst:1267
+#: tazinst:1262 tazinst:1267
 msgid "Using files from USB device"
 msgstr "Utilise les fichiers du périphérique USB"
 
@@ -577,7 +572,6 @@ msgid "Setting the legacy_boot flag on"
 msgstr "Activation du legacy_boot flag"
 
 #: tazinst:1741
-#, fuzzy
 msgid "Installing gptmbr"
 msgstr "Installe gptmbr"
 
@@ -760,6 +754,9 @@ msgstr "Mise à jour des paquets additionnels..."
 #: tazinst:2204
 msgid "Bootloader"
 msgstr "Amorceur"
+
+#~ msgid "Using files from USB device..."
+#~ msgstr "Utilise les fichiers du périphérique USB..."
 
 #~ msgid "Install SliTaz on HDD using setup file contents."
 #~ msgstr "Installe SliTaz sur HDD à l'aide d'un fichier de paramètres."

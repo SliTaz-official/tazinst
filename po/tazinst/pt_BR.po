@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tazinst\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-12 20:17+0200\n"
+"POT-Creation-Date: 2016-04-04 11:45+0200\n"
 "PO-Revision-Date: 2016-03-28 05:14-0300\n"
 "Last-Translator: Leonardo Laporte <hackdorte@sapo.pt>\n"
 "Language-Team: Brazilian Portuguese (i18n@slitaz.org>\n"
@@ -439,11 +439,7 @@ msgstr "Usando arquivos de"
 msgid "Mount failed"
 msgstr "Comando mount falhou"
 
-#: tazinst:1262
-msgid "Using files from USB device..."
-msgstr "Usando arquivos do dispositivo USB..."
-
-#: tazinst:1267
+#: tazinst:1262 tazinst:1267
 msgid "Using files from USB device"
 msgstr "Usando arquivos do dispositivo USB"
 
@@ -757,6 +753,9 @@ msgstr "Atualizando pacotes adicionados"
 #: tazinst:2204
 msgid "Bootloader"
 msgstr "Gerenciador de boot"
+
+#~ msgid "Using files from USB device..."
+#~ msgstr "Usando arquivos do dispositivo USB..."
 
 #~ msgid "Error: Missing parameter."
 #~ msgstr "Erro: parâmetro não encontrado."

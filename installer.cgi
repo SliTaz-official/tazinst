@@ -47,6 +47,8 @@ case "$1" in
 			href="installer.cgi?page=install" data-root>$(gettext 'Install SliTaz')</a></li>
 		<li><a data-icon="upgrade"
 			href="installer.cgi?page=upgrade" data-root>$(gettext 'Upgrade system')</a></li>
+		<li><a data-icon="slitaz"
+			href="installer.cgi?page=evaluate" data-root>$(gettext 'Evaluate SliTaz')</a></li>
 	</menu>
 </li>
 EOT
@@ -67,6 +69,9 @@ select_action() {
 <p>$(gettext "The SliTaz Installer installs or upgrades SliTaz to a \
 hard disk drive from a device like a Live-CD or LiveUSB key, from a SliTaz \
 ISO file, or from the web by downloading an ISO file.")</p>
+
+<p>$(gettext "Windows&trade; users can evaluate SliTaz in the directory \
+\\slitaz on their hard disk.")</p>
 
 <p>$(gettext "Which type of installation do you want to start?")</p>
 EOT
@@ -128,6 +133,50 @@ EOT
 }
 
 
+select_evaluate() {
+	cat <<EOT
+<!-- Evaluate message -->
+
+<section>
+	<header>$(gettext "Evaluate:") $(gettext "Without Partitioning / Formating")</header>
+
+	<div>
+	<p>$(gettext "SliTaz and Windows&trade; can coexist in the same partition.")</p>
+	<p>$(gettext "SliTaz will be in the \slitaz directory like UMSDOS did \
+in the previous century...")</p>
+	</div>
+
+	<footer>
+		<form action="boot.cgi">
+			<input type="hidden" name="iso"/>
+			<input type="hidden" name="action" value="install"/>
+			<table>
+			<tr><td>$(gettext 'ISO image file full path')
+				<span data-img="info" title="$(gettext 'set /dev/cdrom for a physical CD-ROM')"></span>
+			</td>
+			<td>$(file_chooser "iso" "")</td></tr>
+			<tr><td>$(gettext 'Target partition')</td>
+			<td><select name="instdev">
+				<option value="/dev/null">$(gettext 'Choose a partition')</option>
+EOT
+	blkid | grep -iE "(msdos|vfat|ntfs|ext[234]|xfs|btrfs)" | \
+		sed -e 's|[A-Z]*ID="[^"]*"||g;s| SEC[^ ]*||;s|LABEL=||;s|:||' \
+		    -e 's|TYPE="\([^"]*\)"|\1|;s|/dev/||' | \
+	while read dev label type; do
+		echo -n "<option value=\"/dev/$dev\">/dev/$dev $label $type "
+		echo "$(blk2h < /sys/block/${dev:0:3}/$dev/size)</option>"
+	done 
+	cat <<EOT
+			</select></td></tr>
+			</table>
+			<button data-icon="install">$(gettext 'Install')</button>
+		</form>
+	</footer>
+</section>
+EOT
+}
+
+
 #--------------------
 # partitioning page
 #--------------------
@@ -179,25 +228,6 @@ and so on.")</p>
 		</form>
 	</footer>
 </section>
-
-<section>
-	<header>$(gettext "Without Partitioning / Formating")</header>
-
-	<div>
-	<p>$(gettext "SliTaz and Windows&trade; can coexist in the same partition.")</p>
-	<p>$(gettext "SliTaz will be in the \slitaz directory like UMSDOS did \
-in the previous century...")</p>
-	</div>
-
-	<footer>
-		<form action="boot.cgi">
-			<input type="hidden" name="iso"/>
-			<input type="hidden" name="action" value="install"/>
-			<button data-icon="install">$(gettext 'Install')</button>
-		</form>
-	</footer>
-</section>
-
 
 <h5>$(gettext "Continue installation")</h5>
 
@@ -1147,6 +1177,11 @@ case "$(GET page)" in
 		select_action
 		select_install
 		select_upgrade
+		select_evaluate
+		;;
+	evaluate)
+		xhtml_header
+		select_evaluate
 		;;
 	install)
 		xhtml_header
