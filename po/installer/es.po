@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-04 11:45+0200\n"
+"POT-Creation-Date: 2016-04-04 19:19+0100\n"
 "PO-Revision-Date: 2012-06-11 03:13-0000\n"
 "Last-Translator: kevin fabian quintero <kefaquin@gmail.com>\n"
 "Language-Team: \n"
@@ -139,7 +139,7 @@ msgstr ""
 
 #: installer.cgi:145
 msgid ""
-"SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
+"SliTaz will be in the \\slitaz directory like UMSDOS were in the previous "
 "century..."
 msgstr ""
 
