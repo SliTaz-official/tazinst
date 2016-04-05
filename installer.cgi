@@ -142,7 +142,7 @@ select_evaluate() {
 
 	<div>
 	<p>$(gettext "SliTaz and Windows&trade; can coexist in the same partition.")</p>
-	<p>$(gettext "SliTaz will be in the \slitaz directory like UMSDOS were \
+	<p>$(gettext "SliTaz will be in the \slitaz directory like UMSDOS did \
 in the previous century...")</p>
 	</div>
 
