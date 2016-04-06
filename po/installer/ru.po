@@ -7,38 +7,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-05 19:03+0100\n"
-"PO-Revision-Date: 2013-02-16 13:13-0000\n"
+"POT-Creation-Date: 2016-04-04 19:19+0100\n"
+"PO-Revision-Date: 2016-04-05 10:51+0300\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
-"Language: Russian\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: installer.cgi:20
-#, fuzzy
 msgid "TazPanel - Installer"
-msgstr "Установщик SliTaz"
+msgstr "TazPanel — Установщик"
 
 #: installer.cgi:42 installer.cgi:45
-#, fuzzy
 msgid "Installation"
-msgstr "Установить"
+msgstr "Установка"
 
 #: installer.cgi:47 installer.cgi:102 installer.cgi:750
 msgid "Install SliTaz"
-msgstr "Установить SliTaz"
+msgstr "Установка SliTaz"
 
 #: installer.cgi:49
-#, fuzzy
 msgid "Upgrade system"
-msgstr "Обновить"
+msgstr "Обновление системы"
 
 #: installer.cgi:51
-#, fuzzy
 msgid "Evaluate SliTaz"
-msgstr "Обновить SliTaz"
+msgstr "Оценить SliTaz"
 
 #: installer.cgi:67
 msgid "Welcome to the SliTaz Installer!"
@@ -58,17 +57,18 @@ msgid ""
 "Windows&trade; users can evaluate SliTaz in the directory \\slitaz on their "
 "hard disk."
 msgstr ""
+"Пользователи Windows™ могут оценить SliTaz, установленный в папке \\slitaz "
+"на жестком диске."
 
 #: installer.cgi:76
 msgid "Which type of installation do you want to start?"
-msgstr ""
+msgstr "Выберите тип установки"
 
 #: installer.cgi:86 installer.cgi:172
 msgid "Install"
 msgstr "Установить"
 
 #: installer.cgi:89
-#, fuzzy
 msgid ""
 "Install SliTaz on a partition of your hard disk drive. If you decide to "
 "format your partition, all data will be lost. If you do not format, all data "
@@ -81,7 +81,6 @@ msgstr ""
 "папка останется нетронутой."
 
 #: installer.cgi:93
-#, fuzzy
 msgid ""
 "Before installation, you may need to create or resize partitions on your "
 "hard disk drive in order to make space for SliTaz GNU/Linux. You can "
@@ -92,7 +91,6 @@ msgstr ""
 "При помощи GPartEd вы можете управлять разделами в графической оболочке."
 
 #: installer.cgi:101
-#, fuzzy
 msgid "Proceed to a new SliTaz installation"
 msgstr "Перейти к установке SliTaz"
 
@@ -101,7 +99,6 @@ msgid "Upgrade"
 msgstr "Обновить"
 
 #: installer.cgi:118
-#, fuzzy
 msgid ""
 "Upgrade an already installed SliTaz system on your hard disk drive. Your /"
 "home /etc /var/www directories will be kept, all other directories will be "
@@ -114,9 +111,8 @@ msgstr ""
 "которые были добавлены в систему SliTaz, будут обновлены."
 
 #: installer.cgi:127
-#, fuzzy
 msgid "Upgrade an existing SliTaz system"
-msgstr "Создать систему LiveUSB SliTaz"
+msgstr "Обновить имеющуюся систему SliTaz"
 
 #: installer.cgi:128 installer.cgi:760
 msgid "Upgrade SliTaz"
@@ -124,46 +120,45 @@ msgstr "Обновить SliTaz"
 
 #: installer.cgi:141
 msgid "Evaluate:"
-msgstr ""
+msgstr "Оценить:"
 
 #: installer.cgi:141
 msgid "Without Partitioning / Formating"
-msgstr ""
+msgstr "без изменения разделов и форматирования"
 
 #: installer.cgi:144
 msgid "SliTaz and Windows&trade; can coexist in the same partition."
-msgstr ""
+msgstr "SliTaz и Windows™ могут сосуществовать на одном разделе диска."
 
 #: installer.cgi:145
 msgid ""
 "SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
 "century..."
 msgstr ""
+"SliTaz будет располагаться в папке \\slitaz как это было с UMSDOS в прошлом "
+"веке…"
 
 #: installer.cgi:154
 msgid "ISO image file full path"
-msgstr ""
+msgstr "Полный путь к образу ISO"
 
 #: installer.cgi:155
 msgid "set /dev/cdrom for a physical CD-ROM"
-msgstr ""
+msgstr "выберите /dev/cdrom для доступа к физическому CD-ROM"
 
 #: installer.cgi:158
-#, fuzzy
 msgid "Target partition"
-msgstr "домашняя папка"
+msgstr "Целевой раздел"
 
 #: installer.cgi:160
-#, fuzzy
 msgid "Choose a partition"
-msgstr "домашняя папка"
+msgstr "Выберите раздел"
 
 #: installer.cgi:195
 msgid "Partitioning"
 msgstr "Работа с разделами"
 
 #: installer.cgi:198
-#, fuzzy
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
 "Windows&trade;, or Linux, or another operating system. You'll need to resize "
@@ -171,13 +166,12 @@ msgid ""
 "exist with other operating systems already installed on your hard drive."
 msgstr ""
 "На большинстве существующих систем жесткий диск уже разбит на разделы для "
-"операционной системы Windows&trade;, Linux или какой-либо другой. Вам будет "
+"операционной системы Windows™, Linux или какой-либо другой. Вам будет "
 "необходимо изменить размер этих разделов, чтобы выделить место для SliTaz "
 "GNU/Linux. SliTaz будет сосуществовать с прочими системами, установленными "
 "на вашем жестком диске."
 
 #: installer.cgi:203
-#, fuzzy
 msgid ""
 "The amount of space needed depends on how much software you plan to install "
 "and how much space you require for users. It's conceivable that you could "
@@ -191,7 +185,6 @@ msgstr ""
 "удобнее."
 
 #: installer.cgi:207
-#, fuzzy
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
 "space may be created if needed. SliTaz detects and uses swap partitions "
@@ -202,7 +195,6 @@ msgstr ""
 "использует разделы swap автоматически."
 
 #: installer.cgi:211
-#, fuzzy
 msgid ""
 "You can graphically manage your partitions with GParted. GParted is a "
 "partition editor for graphically managing your disk partitions. GParted "
@@ -213,7 +205,6 @@ msgstr ""
 "размер и копировать разделы без потери данных."
 
 #: installer.cgi:215
-#, fuzzy
 msgid ""
 "GParted supports ext2, ext3, ext4, linux swap, ntfs and fat32 filesystems "
 "right out of the box. Support for xjs, jfs, hfs and other filesystems is "
@@ -238,7 +229,6 @@ msgid "Continue installation"
 msgstr "Продолжить установку"
 
 #: installer.cgi:234
-#, fuzzy
 msgid ""
 "Once you've made room for SliTaz on your drive, you should be able to "
 "continue installation."
@@ -251,9 +241,8 @@ msgid "LiveCD"
 msgstr "LiveCD"
 
 #: installer.cgi:261
-#, fuzzy
 msgid "Use the SliTaz LiveCD"
-msgstr "LiveUSB SliTaz"
+msgstr "Использовать LiveCD SliTaz"
 
 #: installer.cgi:269
 msgid "LiveUSB:"
@@ -263,7 +252,7 @@ msgstr "LiveUSB:"
 msgid ""
 "Enter the partition where SliTaz Live is located on\n"
 " your USB Key"
-msgstr ""
+msgstr "Введите раздел USB-накопителя, на котором находится SliTaz Live"
 
 #: installer.cgi:286
 msgid "ISO file:"
@@ -283,11 +272,12 @@ msgstr "Веб:"
 
 #: installer.cgi:315
 msgid "Select a SliTaz version on the Web"
-msgstr ""
+msgstr "Выберите версию SliTaz в интернете"
 
 #: installer.cgi:322 installer.cgi:329
 msgid "Select a version or enter the full url to an ISO file"
 msgstr ""
+"Выберите версию либо введите URL, по которому можно получить файл образа ISO"
 
 #: installer.cgi:345
 msgid "Existing SliTaz partition to upgrade:"
@@ -295,7 +285,7 @@ msgstr "Существующий радел SliTaz для обновления:"
 
 #: installer.cgi:346
 msgid "Specify the partition containing the system to upgrade"
-msgstr ""
+msgstr "Укажите раздел, на котором находится обновляемая система"
 
 #: installer.cgi:350
 msgid "Install SliTaz to partition:"
@@ -303,21 +293,19 @@ msgstr "Установить SliTaz в раздел:"
 
 #: installer.cgi:351
 msgid "Specify the partition where to install SliTaz"
-msgstr ""
+msgstr "Укажите раздел, на который будет установлен SliTaz"
 
 #: installer.cgi:380
 msgid "home partition"
 msgstr "домашняя папка"
 
 #: installer.cgi:384
-#, fuzzy
 msgid "Separate partition for /home:"
-msgstr "Использовать отдельный раздел для /home:"
+msgstr "Отдельный раздел для /home:"
 
 #: installer.cgi:385
-#, fuzzy
 msgid "Specify the partition containing /home"
-msgstr "Использовать отдельный раздел для /home:"
+msgstr "Укажите раздел для /home"
 
 #: installer.cgi:416
 msgid "Hostname"
@@ -329,7 +317,7 @@ msgstr "Установить имя хоста:"
 
 #: installer.cgi:420
 msgid "Hostname configuration allows you to specify the machine name"
-msgstr ""
+msgstr "Настройка имени хоста позволяет указать имя машины"
 
 #: installer.cgi:426
 msgid "Name of your system"
@@ -337,16 +325,15 @@ msgstr "Название вашей системы"
 
 #: installer.cgi:443
 msgid "Root superuser"
-msgstr ""
+msgstr "Администратор root"
 
 #: installer.cgi:446
 msgid "Root passwd:"
 msgstr "Пароль root:"
 
 #: installer.cgi:447
-#, fuzzy
 msgid "Enter the password for root"
-msgstr "Ошибка пароля пользователя"
+msgstr "Введите пароль root"
 
 #: installer.cgi:453
 msgid "Password of root"
@@ -361,9 +348,8 @@ msgid "User login:"
 msgstr "Логин пользователя:"
 
 #: installer.cgi:473
-#, fuzzy
 msgid "Enter the name of the first user"
-msgstr "Имя первого пользователя"
+msgstr "Введите имя первого пользователя"
 
 #: installer.cgi:479
 msgid "Name of the first user"
@@ -374,31 +360,28 @@ msgid "User passwd:"
 msgstr "Пароль пользователя:"
 
 #: installer.cgi:495
-#, fuzzy
 msgid "The password for default user"
-msgstr "Пароль первого пользователя"
+msgstr "Пароль пользователя по умолчанию"
 
 #: installer.cgi:501
 msgid "Password of the first user"
 msgstr "Пароль первого пользователя"
 
 #: installer.cgi:518
-#, fuzzy
 msgid "Bootloader"
 msgstr "Загрузчик"
 
 #: installer.cgi:526
 msgid "Install a bootloader."
-msgstr ""
+msgstr "Установка загрузчика."
 
 #: installer.cgi:527
-#, fuzzy
 msgid ""
 "Usually you should answer yes, unless you want to install a bootloader by "
 "hand yourself."
 msgstr ""
-"Установить загрузчик GRUB. Отвечайте «да», за исключением случая, когда вы "
-"хотите установить GRUB вручную."
+"Отвечайте «да», за исключением случая, когда вы хотите установить загрузчик "
+"вручную."
 
 #: installer.cgi:548
 msgid "Enable Windows Dual-Boot."
@@ -409,37 +392,36 @@ msgid ""
 "At start-up, you will be asked whether you want to boot into Windows&trade; "
 "or SliTaz GNU/Linux."
 msgstr ""
+"При загрузке вас спросят, хотите ли вы перейти к загрузке Windows™ или "
+"SliTaz GNU/Linux."
 
 #: installer.cgi:564
 msgid "Errors found. Please check your settings."
-msgstr ""
+msgstr "Были обнаружены ошибки. Проверьте ваши настройки."
 
 #: installer.cgi:577
-#, fuzzy
 msgid "Select source media:"
-msgstr "Источник SliTaz"
+msgstr "Выбор исходного носителя:"
 
 #: installer.cgi:584
-#, fuzzy
 msgid "Select destination"
-msgstr "Отмеченное:"
+msgstr "Выбор назначения"
 
 #: installer.cgi:594
 msgid "Options"
 msgstr "Параметры"
 
 #: installer.cgi:622
-#, fuzzy
 msgid "Checking settings..."
-msgstr "Проверка обновлений…"
+msgstr "Проверка настроек…"
 
 #: installer.cgi:689
 msgid "Proceeding to:"
-msgstr ""
+msgstr "Перейти к:"
 
 #: installer.cgi:707
 msgid "Errors encountered."
-msgstr ""
+msgstr "Что-то пошло не так."
 
 #: installer.cgi:720
 msgid "Process completed!"
@@ -450,13 +432,14 @@ msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
 "new SliTaz GNU/Linux operating system."
 msgstr ""
+"Установка завершена, вы можете покинуть установщик или перезагрузить "
+"компьютер с новой операционной системой SliTaz GNU/Linux."
 
 #: installer.cgi:736
 msgid "Tazinst log"
 msgstr "Журнал TazInst"
 
 #: installer.cgi:752
-#, fuzzy
 msgid ""
 "You're going to install SliTaz on a partition of your hard disk drive. If "
 "you decide to format your HDD, all data will be lost. If you do not format, "
@@ -470,7 +453,6 @@ msgstr ""
 "нетронутой."
 
 #: installer.cgi:762
-#, fuzzy
 msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
@@ -512,7 +494,7 @@ msgstr "Продолжить установку"
 
 #: installer.cgi:826
 msgid "A web page that points a browser to a different page after 2 seconds"
-msgstr "Страница переадресации (подождите 2 секунды)"
+msgstr "Переход (подождите 2 секунды)"
 
 #: installer.cgi:832
 msgid ""
@@ -524,49 +506,47 @@ msgstr ""
 
 #: installer.cgi:834
 msgid "here"
-msgstr ""
+msgstr "(перейти)"
 
 #: installer.cgi:849 installer.cgi:861 installer.cgi:874
 msgid "Tazinst Error"
 msgstr "Ошибка TazInst"
 
 #: installer.cgi:850
-#, fuzzy
 msgid ""
 "<strong>tazinst</strong>, the backend to slitaz-installer is missing. Any "
 "installation can not be done without tazinst."
 msgstr ""
-"Отсутствует <strong>tazinst</strong>, легковесный установщик SliTaz на "
-"жесткий диск. Без tazinst ничего не удастся установить."
+"Отсутствует <strong>tazinst</strong>, установщик SliTaz на жесткий диск. Без "
+"tazinst ничего не удастся установить."
 
 #: installer.cgi:852
-#, fuzzy
 msgid "Check tazinst permissions, or reinstall the slitaz-installer package."
 msgstr ""
-"Проверьте права доступа tazinst, либо переустановите пакет slitaz-tools:"
+"Проверьте права доступа tazinst, либо переустановите пакет slitaz-installer:"
 
 #: installer.cgi:862
-#, fuzzy
 msgid ""
 "<strong>tazinst</strong>, the slitaz-installer backend, is not at the "
 "minimum required version. Any installation cannot be done without tazinst."
 msgstr ""
-"Отсутствует <strong>tazinst</strong>, легковесный установщик SliTaz на "
-"жесткий диск. Без tazinst ничего не удастся установить."
+"<strong>tazinst</strong>, установщик SliTaz на жесткий диск, старее "
+"минимально необходимой версии. Без tazinst ничего не удастся установить."
 
 #: installer.cgi:865 installer.cgi:878
 msgid "Reinstall the slitaz-installer package, or use tazinst in CLI mode."
 msgstr ""
+"Переустановите пакет slitaz-installer, либо используйте tazinst в консольном "
+"режиме."
 
 #: installer.cgi:875
-#, fuzzy
 msgid ""
 "<strong>tazinst</strong>, the slitaz-installer backend, is at a higher "
 "version than the maximum authorized by the slitaz-installer. Any "
 "installation cannot be done."
 msgstr ""
-"Отсутствует <strong>tazinst</strong>, легковесный установщик SliTaz на "
-"жесткий диск. Без tazinst ничего не удастся установить."
+"<strong>tazinst</strong>, установщик SliTaz на жесткий диск, более новой "
+"версии, чем поддерживается slitaz-installer. Ничего не удастся установить."
 
 #: installer.cgi:995 installer.cgi:1052
 msgid "None"
@@ -580,11 +560,12 @@ msgstr "Не форматировать"
 msgid ""
 "To format this partition, select a filesystem, usually it's safe to use ext4"
 msgstr ""
+"Для форматирования этого раздела выберите тип файловой системы; обычно "
+"безопасно использовать ext4"
 
 #: installer.cgi:1075
-#, fuzzy
 msgid "Formatting option:"
-msgstr "Форматировать раздел как:"
+msgstr "Вариант форматирования:"
 
 #~ msgid "Copyright"
 #~ msgstr "Авторское право"

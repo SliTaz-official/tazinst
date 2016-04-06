@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: slitaz-installer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-23 17:11+0100\n"
-"PO-Revision-Date: 2013-02-16 17:00-0000\n"
-"Last-Translator: Hiri Hitiare <hitiare@mail.ru>\n"
+"PO-Revision-Date: 2016-04-05 10:55+0300\n"
+"Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: slitaz-installer:23
 msgid "Welcome to the slitaz-installer"
@@ -95,7 +96,6 @@ msgid "Partition containing the system to upgrade:"
 msgstr "Раздел, содержащий систему, которую требуется обновить:"
 
 #: slitaz-installer:52
-#, fuzzy
 msgid ""
 "Only the filesystems actually installed on your system are listed. If you "
 "intend to use another filesystem, you have to install it before. Unless you "
@@ -215,7 +215,6 @@ msgstr ""
 "\\Z2Хотите форматировать раздел /home?\\Zn"
 
 #: slitaz-installer:104
-#, fuzzy
 msgid ""
 "You have now the option to install a bootloader which is capable of booting "
 "almost any kind of operating system.\\n\\nIf you want to use an existing "
@@ -311,7 +310,7 @@ msgstr "Загрузчик не установлен"
 
 #: slitaz-installer:304
 msgid ", with Windows dual-boot"
-msgstr ", с загрузкой Windows®"
+msgstr ", с загрузкой Windows™"
 
 #: slitaz-installer:305
 msgid ", no dual-boot"
@@ -319,11 +318,11 @@ msgstr ", без двойной загрузки"
 
 #: slitaz-installer:325 slitaz-installer:379
 msgid "Next"
-msgstr ""
+msgstr "Дальше"
 
 #: slitaz-installer:326 slitaz-installer:353 slitaz-installer:380
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: slitaz-installer:352 slitaz-installer:411
 msgid "Yes"
@@ -335,7 +334,7 @@ msgstr "Нет"
 
 #: slitaz-installer:419
 msgid "SliTaz install cancelled."
-msgstr ""
+msgstr "Установка SliTaz отменена."
 
 #~ msgid "Ok"
 #~ msgstr "Ок"
