@@ -207,9 +207,8 @@ msgid "Error: Unable to read install file."
 msgstr "Erreur : Impossible de lire le fichier d'installation."
 
 #: tazinst:355
-#, fuzzy
 msgid "Error: '%s' unknown setting."
-msgstr "'%s' : Option inconnue !"
+msgstr "Erreur : '%s' option inconnue !"
 
 #: tazinst:383
 msgid "Error: Unable to write to install file."
@@ -286,11 +285,11 @@ msgstr "Attention : pas mot de passe !"
 
 #: tazinst:590
 msgid "%s Error: Too short."
-msgstr ""
+msgstr "%s Erreur : Trop court."
 
 #: tazinst:594
 msgid "%s Error: Too long."
-msgstr "%s Erreur : Trop long"
+msgstr "%s Erreur : Trop long."
 
 #: tazinst:599
 msgid "%s Error: Invalid chars."
@@ -410,7 +409,7 @@ msgstr "Installation du paquet sur le système actuel : %s."
 
 #: tazinst:1159
 msgid "Cannot install %s."
-msgstr ""
+msgstr "Ne peut pas installer %s."
 
 #: tazinst:1167
 msgid "Adding package %s to the target system..."
@@ -418,7 +417,7 @@ msgstr "Ajout du paquet sur le syst..me cible : %s..."
 
 #: tazinst:1182
 msgid "=== Tazinst: started on %s ==="
-msgstr ""
+msgstr "=== Tazinst : début à %s ==="
 
 #: tazinst:1208
 msgid "Process not completed"
@@ -430,7 +429,7 @@ msgstr "Erreur : %s"
 
 #: tazinst:1216
 msgid "=== Tazinst error on %s ==="
-msgstr ""
+msgstr "=== Tazinst : erreur à %s ==="
 
 #: tazinst:1225
 msgid "Internal error"
@@ -497,9 +496,8 @@ msgid "Format %s (%s)"
 msgstr ""
 
 #: tazinst:1354 tazinst:1366
-#, fuzzy
 msgid "Formatting has failed"
-msgstr "Formatage de la partition principale :"
+msgstr "Le ormatage a échoué"
 
 #: tazinst:1373
 msgid "Preparing target partition..."
@@ -551,7 +549,7 @@ msgstr ""
 
 #: tazinst:1454
 msgid "=== Tazinst ended on %s ==="
-msgstr ""
+msgstr "=== Tazinst arrêt à %s ==="
 
 #: tazinst:1457
 msgid "Copying log to %s"
@@ -570,9 +568,8 @@ msgid "Installing GRUB on: %s"
 msgstr "Installation de grub sur : %s"
 
 #: tazinst:1611
-#, fuzzy
 msgid "GRUB not found"
-msgstr "URL non trouvée"
+msgstr "GRUB introuvable"
 
 #: tazinst:1615
 msgid "Setting the boot flag"
@@ -587,18 +584,16 @@ msgid "Installing Syslinux"
 msgstr "Installation de syslinux"
 
 #: tazinst:1720
-#, fuzzy
 msgid "Syslinux not found"
-msgstr "URL non trouvée"
+msgstr "Syslinux introuvable"
 
 #: tazinst:1724
 msgid "Setting the boot flag on"
 msgstr "Activation du boot flag"
 
 #: tazinst:1727
-#, fuzzy
 msgid "mbr.bin not found"
-msgstr "URL non trouvée"
+msgstr "mbr.bin introuvable"
 
 #: tazinst:1728
 msgid "Installing MBR"
@@ -613,9 +608,8 @@ msgid "Installing GPTMBR"
 msgstr "Installe gptmbr"
 
 #: tazinst:1742
-#, fuzzy
 msgid "gptmbr.bin not found"
-msgstr "URL non trouvée"
+msgstr "gptmbr.bin introuvable"
 
 #: tazinst:1781
 msgid "Cleaning the root partition (%s)..."

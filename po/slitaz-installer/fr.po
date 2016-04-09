@@ -275,7 +275,7 @@ msgstr ""
 
 #: slitaz-installer:118
 msgid "Go and install SliTaz?"
-msgstr ""
+msgstr "Continue et installe SliTaz ?"
 
 #: slitaz-installer:120
 msgid "Sorry, no device, nor file found or available."
@@ -298,10 +298,12 @@ msgid ""
 "The lightweight SliTaz HDD installer tazinst (%s) is not at the required "
 "version (%s)."
 msgstr ""
+"L'installaleur rapide sur disque SliTaz tazinst (%s) n'a pas la bonne "
+"version (%s)."
 
 #: slitaz-installer:143
 msgid "Use %s in an xterm or reinstall the %s package."
-msgstr ""
+msgstr "Lancer %s dans un xterm ou réinstallez le paquet %s."
 
 #: slitaz-installer:268
 msgid "Mode: %s"
@@ -337,7 +339,7 @@ msgstr "(Pas de formatage de /home)"
 
 #: slitaz-installer:293
 msgid "Hostname: %s"
-msgstr ""
+msgstr "Nom de la machine : %s"
 
 #: slitaz-installer:295
 msgid "User login: %s"
@@ -362,7 +364,7 @@ msgstr ", sans double boot"
 #: slitaz-installer:322 slitaz-installer:336 slitaz-installer:350
 #: slitaz-installer:378 slitaz-installer:391
 msgid "Select %s"
-msgstr ""
+msgstr "Choisir %s"
 
 #: slitaz-installer:325 slitaz-installer:379
 msgid "Next"
@@ -382,7 +384,7 @@ msgstr "Non"
 
 #: slitaz-installer:409
 msgid "Summary"
-msgstr ""
+msgstr "Récapitulation"
 
 #: slitaz-installer:419
 msgid "SliTaz install cancelled."
@@ -390,31 +392,31 @@ msgstr "Installation de SliTaz avortée."
 
 #: slitaz-installer:567
 msgid "SliTaz Installer"
-msgstr ""
+msgstr "Installaleur SliTaz"
 
 #: slitaz-installer:567
 msgid "Installing..."
-msgstr ""
+msgstr "Installation..."
 
 #: slitaz-installer:573
 msgid "Installation complete"
-msgstr ""
+msgstr "Installation terminée"
 
 #: slitaz-installer:575
 msgid "Exit"
-msgstr ""
+msgstr "Sortir"
 
 #: slitaz-installer:576
 msgid "Reboot"
-msgstr ""
+msgstr "Redémarrer"
 
 #: slitaz-installer:585 slitaz-installer:597
 msgid "ESC pressed."
-msgstr ""
+msgstr "Interruption par ESC."
 
 #: slitaz-installer:588
 msgid "Process not completed"
-msgstr ""
+msgstr "Installation interrérompue"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
