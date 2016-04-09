@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TazInst\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-04 11:45+0200\n"
+"POT-Creation-Date: 2016-04-09 16:49+0300\n"
 "PO-Revision-Date: 2016-04-06 09:48+0300\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
@@ -82,8 +82,8 @@ msgid "Automatic selection"
 msgstr "автоматический выбор"
 
 #: tazinst:83
-msgid "Grub legacy bootloader"
-msgstr "загрузчик Grub legacy"
+msgid "GRUB legacy bootloader"
+msgstr "загрузчик GRUB legacy"
 
 #: tazinst:84
 msgid "Lightweight bootloader"
@@ -106,7 +106,7 @@ msgid "Stable basic graphic version without graphic apps"
 msgstr "стабильная основная графическая версия без графических программ"
 
 #: tazinst:99
-msgid "Stable basic graphic version with only Gtk"
+msgid "Stable basic graphic version with only GTK"
 msgstr "стабильная основная графическая версия только с GTK"
 
 #: tazinst:101
@@ -118,88 +118,84 @@ msgid "Bleeding edge development version updated every day"
 msgstr "свежайшая нестабильная версия, обновляющаяся ежедневно"
 
 #: tazinst:114 tazinst:138 tazinst:150
-msgid "SliTaz GNU/Linux Installer - Version:"
-msgstr "Установщик SliTaz GNU/Linux, версия"
+msgid "SliTaz GNU/Linux Installer - Version: %s"
+msgstr "Установщик SliTaz GNU/Linux, версия %s"
+
+#: tazinst:115
+msgid "Usage:"
+msgstr "Использование:"
 
 #: tazinst:116
-msgid "Usage"
-msgstr "Использование"
+msgid "%s [command] <setting> <value> <file>"
+msgstr "%s [команда] <параметр> <значение> <файл>"
 
 #: tazinst:117
-msgid "tazinst [command] <setting> <value> <file>"
-msgstr "tazinst [команда] <параметр> <значение> <файл>"
+msgid "Commands:"
+msgstr "Команды:"
 
 #: tazinst:119
-msgid "Commands"
-msgstr "Команды"
-
-#: tazinst:120
 msgid "Create a new install file."
 msgstr "Создать новый файл установки."
 
-#: tazinst:121
+#: tazinst:120
 msgid "Change value of a setting."
 msgstr "Изменить значение параметра."
 
-#: tazinst:122
+#: tazinst:121
 msgid "Clear a setting."
 msgstr "Очистить параметр."
 
-#: tazinst:123
+#: tazinst:122
 msgid "Get the value of a setting."
 msgstr "Получить значение параметра."
 
-#: tazinst:124
+#: tazinst:123
 msgid "Check settings."
 msgstr "Проверить параметры."
 
-#: tazinst:125
+#: tazinst:124
 msgid "Print a short help on settings"
 msgstr "Выдать короткую справку о параметрах"
 
-#: tazinst:126
+#: tazinst:125
 msgid "List system resources."
 msgstr "Список системных ресурсов."
 
-#: tazinst:127
+#: tazinst:126
 msgid "Execute a SliTaz installation."
 msgstr "Запустить установку SliTaz."
 
-#: tazinst:128
+#: tazinst:127
 msgid "Display log file contents."
 msgstr "Показать содержимое журнала."
 
-#: tazinst:129
+#: tazinst:128
 msgid "Clean install and log files."
 msgstr "Очистить файлы установки и журнала."
 
-#: tazinst:130
+#: tazinst:129
 msgid "Print version and exit."
 msgstr "Показать версию и выйти."
 
-#: tazinst:131
+#: tazinst:130
 msgid "Print this short usage."
 msgstr "Показать эту короткую справку об использовании."
 
-#: tazinst:141
-msgid "Unknown command!"
-msgstr "Неизвестная команда!"
+#: tazinst:140
+msgid "'%s': Unknown command!"
+msgstr "Неизвестная команда «%s»!"
 
 #: tazinst:142
-msgid "Run"
-msgstr "Запустите"
+msgid "Run: '%s' to get a list of available commands."
+msgstr "Запустите «%s», чтобы получить список доступных команд."
 
-#: tazinst:143
-msgid "to get a list of available commands"
-msgstr ", чтобы получить список доступных команд"
-
-#: tazinst:153
-msgid "Unknown option!"
-msgstr "Неизвестный параметр!"
+#: tazinst:152
+msgid "'%s': Unknown option!"
+msgstr "Неизвестный параметр «%s»!"
 
 #: tazinst:154
-msgid "Please select one of these options"
-msgstr "Выберите один из параметров"
+msgid "Please select one of these options:"
+msgstr "Выберите один из параметров:"
 
 #: tazinst:173
 msgid "Warning: file already exists."
@@ -210,20 +206,24 @@ msgid "Error: Cannot create file."
 msgstr "Ошибка: Не удалось создать файл."
 
 #: tazinst:278 tazinst:283
-msgid "Error: Unable to read install file"
-msgstr "Ошибка: Не удалось прочитать установочный файл"
+msgid "Error: Unable to read install file."
+msgstr "Ошибка: Не удалось прочитать установочный файл."
 
-#: tazinst:389
+#: tazinst:355
+msgid "Error: '%s' unknown setting."
+msgstr "Ошибка: Неизвестная настройка «%s»."
+
+#: tazinst:383
 msgid "Error: Unable to write to install file."
 msgstr "Ошибка: Не удалось записать установочный файл."
 
 #: tazinst:443
-msgid "Deleting install file"
-msgstr "Удаление установочного файла"
+msgid "Deleting install file: %s"
+msgstr "Удаление установочного файла %s"
 
 #: tazinst:445
-msgid "Error: Unable to delete install file"
-msgstr "Ошибка: Не удалось удалить установочный файл"
+msgid "Error: Unable to delete install file."
+msgstr "Ошибка: Не удалось удалить установочный файл."
 
 #: tazinst:460
 msgid ""
@@ -239,46 +239,42 @@ msgid "Another instance of tazinst is running."
 msgstr "Tazinst уже был запущен."
 
 #: tazinst:485
-msgid "Error:"
-msgstr "Ошибка:"
-
-#: tazinst:485
-msgid "Invalid keyword."
-msgstr "Недопустимое ключевое слово."
+msgid "Error: '%s' Invalid keyword."
+msgstr "Ошибка: Недопустимое ключевое слово «%s»."
 
 #: tazinst:486
-msgid "Select one of these options:"
-msgstr "Выберите один из параметров:"
+msgid "Select one of these options: %s."
+msgstr "Выберите один из параметров: %s."
 
 #: tazinst:487
 msgid "For more information, see tazinst Manual."
 msgstr "Просмотрите руководство TazInst, чтобы получить больше информации."
 
 #: tazinst:502
-msgid "Error: Partition not found"
-msgstr "Ошибка: Раздел не найден"
+msgid "Error: Partition not found."
+msgstr "Ошибка: Раздел не найден."
 
 #: tazinst:503
-msgid "To see available partitions, run"
-msgstr "Запустите, чтобы увидеть доступные разделы"
+msgid "To see available partitions, run '%s'."
+msgstr "Запустите «%s», чтобы увидеть доступные разделы."
 
 #: tazinst:518
-msgid "Error: Source file not found"
-msgstr "Ошибка: файл источника не найден"
+msgid "Error: Source file not found."
+msgstr "Ошибка: файл источника не найден."
 
 #: tazinst:533
-msgid "Error: invalid URL"
-msgstr "Ошибка: недопустимый URL"
+msgid "Error: invalid URL."
+msgstr "Ошибка: недопустимый URL."
 
-#: tazinst:549
+#: tazinst:548
 msgid "Error: multiple assignations for a disk."
 msgstr "Ошибка: множественные назначения для диска."
 
 #: tazinst:562
-msgid "Error: password too long"
-msgstr "Ошибка: пароль слишком длинный"
+msgid "Error: password too long."
+msgstr "Ошибка: пароль слишком длинный."
 
-#: tazinst:568
+#: tazinst:567
 msgid "Error: Unallowed characters in password."
 msgstr "Ошибка: неразрешенные символы в пароле."
 
@@ -290,21 +286,25 @@ msgstr "Предупреждение: короткий пароль!"
 msgid "Warning: no password!"
 msgstr "Предупреждение: нет пароля!"
 
+#: tazinst:590
+msgid "%s Error: Too short."
+msgstr "%s Ошибка: слишком коротко."
+
 #: tazinst:594
-msgid "Error: Too long."
-msgstr "Ошибка: слишком длинно."
+msgid "%s Error: Too long."
+msgstr "%s Ошибка: слишком длинно."
 
 #: tazinst:599
-msgid "Error: Invalid chars."
-msgstr "Ошибка: недопустимые символы."
+msgid "%s Error: Invalid chars."
+msgstr "%s Ошибка: недопустимые символы."
 
 #: tazinst:611
 msgid "Error: Dualboot set with no bootloader."
 msgstr "Ошибка: включена двойная загрузка без загрузчика."
 
 #: tazinst:625
-msgid "Error: Unsupported Partition Table"
-msgstr "Ошибка: неподдерживаемая таблица разделов"
+msgid "Error: Unsupported Partition Table."
+msgstr "Ошибка: неподдерживаемая таблица разделов."
 
 #: tazinst:630
 msgid "Error: No disk selected, cannot install any bootloader."
@@ -319,113 +319,120 @@ msgid "Name or URL of the image on the web."
 msgstr "Название или URL образа в интернете."
 
 #: tazinst:753
-msgid "Type: tazinst help web"
-msgstr "Напечатайте: tazinst help web"
+msgid "Type: %s"
+msgstr "Напечатайте: %s"
 
 #: tazinst:758
+msgid "List of settings:"
+msgstr "Список параметров:"
+
+#: tazinst:760
 msgid "Mode of install"
 msgstr "Режим установки"
 
-#: tazinst:759
+#: tazinst:761
 msgid "Media containing the SliTaz source files"
 msgstr "Носитель, содержащий исходные файлы SliTaz"
 
-#: tazinst:760
+#: tazinst:762
 msgid "Source file containing SliTaz"
 msgstr "Исходный файл, содержащий SliTaz"
 
-#: tazinst:761
+#: tazinst:763
 msgid "The name of the target partition"
 msgstr "Название целевого раздела"
 
-#: tazinst:762
+#: tazinst:764
 msgid "Format of the target partition"
 msgstr "Формат целевого раздела"
 
-#: tazinst:763
+#: tazinst:765
 msgid "Separate home partition"
 msgstr "Отдельный домашний раздел"
 
-#: tazinst:764
+#: tazinst:766
 msgid "Format of the root partition"
 msgstr "Формат корневого раздела"
 
-#: tazinst:765 tazinst:811
+#: tazinst:767 tazinst:811
 msgid "Name of the system"
 msgstr "Название системы"
 
-#: tazinst:766 tazinst:813
+#: tazinst:768 tazinst:813
 msgid "Superuser password"
 msgstr "Пароль администратора"
 
-#: tazinst:767 tazinst:815
+#: tazinst:769 tazinst:815
 msgid "First user name"
 msgstr "Логин первого пользователя"
 
-#: tazinst:768 tazinst:817
+#: tazinst:770 tazinst:817
 msgid "First user password"
 msgstr "Пароль первого пользователя"
 
-#: tazinst:769
+#: tazinst:771
 msgid "Install a bootloader"
 msgstr "Установить загрузчик"
 
-#: tazinst:770
+#: tazinst:772
 msgid "Partition to dualboot Windows from"
 msgstr "Раздел из которого будет двойная загрузка Windows"
-
-#: tazinst:771
-msgid "List of settings:"
-msgstr "Список параметров:"
 
 #: tazinst:790
 msgid "CD. Automatically set"
 msgstr "Компакт-диск. Автоматически установлено"
 
 #: tazinst:793
-msgid "USB partition. For a list, type: tazinst list usb"
-msgstr "Раздел USB. Чтобы получить список, напечатайте: tazinst list usb"
+msgid "USB partition. For a list, type: %s"
+msgstr "Раздел USB. Чтобы получить список, напечатайте: %s"
 
 #: tazinst:796
-msgid "ISO file name. For a list, type: tazinst list iso"
-msgstr ""
-"Название файла ISO. Чтобы получить список, напечатайте: tazinst list iso"
+msgid "ISO file name. For a list, type: %s"
+msgstr "Название файла ISO. Чтобы получить список, напечатайте: %s"
 
 #: tazinst:822
 msgid "Partition containing Windows, or 'auto'"
 msgstr "Раздел, содержащий Windows, или «auto»"
 
 #: tazinst:1127
-msgid "No mirror list found, run tazpkg recharge."
-msgstr "Список зеркал не найден, запустите tazpkg recharge."
+msgid "No mirror list found, run %s."
+msgstr "Список зеркал не найден, запустите %s."
 
 #: tazinst:1139
-msgid "Downloading:"
-msgstr "Загружается:"
+msgid "Downloading: %s"
+msgstr "Загружается: %s"
 
 #: tazinst:1146
 msgid "Download completed."
 msgstr "Загрузка завершена."
 
-#: tazinst:1148
-msgid "Download failed."
-msgstr "Ошибка загрузки."
-
 #: tazinst:1157
-msgid "Installing package to the current system:"
-msgstr "Установка пакета на текущую систему:"
+msgid "Installing package %s to the current system."
+msgstr "Установка пакета %s на текущую систему."
+
+#: tazinst:1159
+msgid "Cannot install %s."
+msgstr "Не удалось установить %s."
 
 #: tazinst:1167
-msgid "Adding package to the target system:"
-msgstr "Добавление пакета в целевую систему:"
+msgid "Adding package %s to the target system..."
+msgstr "Добавление пакета %s на целевую систему…"
+
+#: tazinst:1182
+msgid "=== Tazinst: started on %s ==="
+msgstr "=== Tazinst запущен %s ==="
 
 #: tazinst:1208
 msgid "Process not completed"
 msgstr "Процесс не завершен"
 
 #: tazinst:1209 tazinst:1213
-msgid "Error"
-msgstr "Ошибка"
+msgid "Error: %s"
+msgstr "Ошибка: %s"
+
+#: tazinst:1216
+msgid "=== Tazinst error on %s ==="
+msgstr "=== Ошибка tazinst %s ==="
 
 #: tazinst:1225
 msgid "Internal error"
@@ -436,40 +443,45 @@ msgid "Cancelled by user"
 msgstr "Отменено пользователем"
 
 #: tazinst:1251
-msgid "Using files from"
-msgstr "Используя файлы из"
+msgid "Using files from %s."
+msgstr "Используются файлы из %s."
 
 #: tazinst:1253
-msgid "Mount failed"
-msgstr "Подключение не удалось"
+msgid "%s: Mount failed."
+msgstr "Подключение %s не удалось."
 
-#: tazinst:1262 tazinst:1267
-msgid "Using files from USB device"
-msgstr "Используя файлы с накопителя USB"
+#: tazinst:1262
+msgid "Using files from USB device..."
+msgstr "Используются файлы с накопителя USB…"
+
+#: tazinst:1267
+msgid "Using files from USB device %s."
+msgstr "Используются файлы с накопителя USB %s."
 
 #: tazinst:1269
-msgid "Failed to mount USB device"
-msgstr "Не удалось подключить накопитель USB"
+msgid "%s: Failed to mount USB device."
+msgstr "Не удалось подключить накопитель USB %s."
 
 #: tazinst:1284
 msgid "md5sum error, file corrupted."
 msgstr "Ошибка контрольной суммы, файл поврежден."
 
 #: tazinst:1287
-msgid "md5 file not found, cannot check integrity."
-msgstr "Файл контрольной суммы не найден, проверить целостность невозможно."
+msgid "%s: md5 file not found, cannot check integrity."
+msgstr ""
+"Файл контрольной суммы не найден на %s, проверить целостность невозможно."
 
 #: tazinst:1292
-msgid "Using files from ISO"
-msgstr "Используя файлы из ISO"
+msgid "Using files from ISO %s."
+msgstr "Используются файлы из ISO %s."
 
 #: tazinst:1294
-msgid "Failed to mount ISO."
-msgstr "Не удалось подключить ISO."
+msgid "%s: Failed to mount ISO."
+msgstr "Не удалось подключить ISO %s."
 
 #: tazinst:1316 tazinst:1404
-msgid "Creating mount point:"
-msgstr "Создание точки подключения:"
+msgid "Creating mount point: %s..."
+msgstr "Создание точки подключения %s…"
 
 #: tazinst:1332
 msgid "Checking installation media..."
@@ -484,8 +496,12 @@ msgid "Installation media checked ok"
 msgstr "Установочный носитель в порядке"
 
 #: tazinst:1349
-msgid "Format"
-msgstr "Форматирование"
+msgid "Format %s (%s)"
+msgstr "Форматирование %s (%s)"
+
+#: tazinst:1354 tazinst:1366
+msgid "Formatting has failed"
+msgstr "Форматирование завершилось ошибкой"
 
 #: tazinst:1373
 msgid "Preparing target partition..."
@@ -500,44 +516,48 @@ msgid "Partition is already in use."
 msgstr "Раздел уже используется."
 
 #: tazinst:1389
-msgid "The partition will be cleaned..."
-msgstr "Раздел будет очищен…"
+msgid "%s: The partition will be cleaned..."
+msgstr "Раздел %s будет очищен…"
 
 #: tazinst:1398
-msgid "The partition will be kept..."
-msgstr "Раздел будет сохранен…"
+msgid "%s: The partition will be kept..."
+msgstr "Раздел %s будет сохранен…"
 
 #: tazinst:1413
-msgid "Unable to mount partition"
-msgstr "Не удалось подключить раздел"
+msgid "%s: Unable to mount partition"
+msgstr "Не удалось подключить раздел %s"
 
 #: tazinst:1427
-msgid "Unmounting target partition:"
-msgstr "Отключение целевого раздела:"
+msgid "Unmounting target partition: %s"
+msgstr "Отключение целевого раздела %s"
 
 #: tazinst:1433
-msgid "Unmounting:"
-msgstr "Отключение:"
+msgid "Unmounting: %s"
+msgstr "Отключение %s"
 
 #: tazinst:1437
-msgid "Unlinking:"
-msgstr "Удаление ссылки:"
+msgid "Unlinking: %s"
+msgstr "Удаление ссылки %s"
 
 #: tazinst:1443
-msgid "Ejecting cdrom..."
+msgid "Ejecting CD-ROM..."
 msgstr "Извлечение CD-ROM…"
 
 #: tazinst:1452
-msgid "Process completed. You can now restart (reboot)"
-msgstr "Процесс завершен. Теперь вы можете перезагрузить"
+msgid ""
+"Process completed. You can now restart (reboot) from your SliTaz GNU/Linux "
+"system."
+msgstr ""
+"Процесс завершен. Теперь вы можете перезагрузить вашу систему SliTaz GNU/"
+"Linux."
 
-#: tazinst:1453
-msgid "from your SliTaz GNU/Linux system."
-msgstr "вашу систему SliTaz GNU/Linux."
+#: tazinst:1454
+msgid "=== Tazinst ended on %s ==="
+msgstr "=== Tazinst завершен %s ==="
 
 #: tazinst:1457
-msgid "Copying log to /var/log/tazinst.log"
-msgstr "Копирование журнала в /var/log/tazinst.log"
+msgid "Copying log to %s"
+msgstr "Копирование журнала в %s"
 
 #: tazinst:1493
 msgid "No bootloader to install."
@@ -548,8 +568,12 @@ msgid "Enabling Windows dual-boot"
 msgstr "Включение двойной загрузки Windows"
 
 #: tazinst:1610
-msgid "Installing grub on:"
-msgstr "Установка GRUB на:"
+msgid "Installing GRUB on: %s"
+msgstr "Установка GRUB на %s"
+
+#: tazinst:1611
+msgid "GRUB not found"
+msgstr "GRUB не обнаружен"
 
 #: tazinst:1615
 msgid "Setting the boot flag"
@@ -560,15 +584,23 @@ msgid "Copying splash image"
 msgstr "Копирование изображения заставки"
 
 #: tazinst:1710
-msgid "Installing syslinux"
-msgstr "Установка syslinux"
+msgid "Installing Syslinux"
+msgstr "Установка Syslinux"
+
+#: tazinst:1720
+msgid "Syslinux not found"
+msgstr "Syslinux не обнаружен"
 
 #: tazinst:1724
 msgid "Setting the boot flag on"
 msgstr "Включение загрузочного флага"
 
+#: tazinst:1727
+msgid "mbr.bin not found"
+msgstr "Файл mbr.bin не обнаружен"
+
 #: tazinst:1728
-msgid "Installing mbr"
+msgid "Installing MBR"
 msgstr "Установка MBR"
 
 #: tazinst:1732
@@ -576,84 +608,88 @@ msgid "Setting the legacy_boot flag on"
 msgstr "Включение флага legacy_boot"
 
 #: tazinst:1741
-msgid "Installing gptmbr"
+msgid "Installing GPTMBR"
 msgstr "Установка GPTMBR"
 
+#: tazinst:1742
+msgid "gptmbr.bin not found"
+msgstr "Файл gptmbr.bin не обнаружен"
+
 #: tazinst:1781
-msgid "Cleaning the root partition"
-msgstr "Очистка корневого раздела"
+msgid "Cleaning the root partition (%s)..."
+msgstr "Очистка корневого раздела (%s)…"
 
 #: tazinst:1790 tazinst:2063
-msgid "keeping /home found on:"
-msgstr "не будет удалена папка /home, найденная на:"
+msgid "keeping /home found on: %s"
+msgstr "не будет удалена папка /home, найденная на %s"
 
-#: tazinst:1795
-msgid "removing target:"
-msgstr "удаление цели:"
+#: tazinst:1795 tazinst:2077
+msgid "removing target: %s"
+msgstr "удаление цели %s"
 
 #: tazinst:1813
-msgid "Kernel name not found, falling back to:"
-msgstr "Название ядра не найдено, откат к:"
+msgid "Kernel name not found, falling back to: %s"
+msgstr "Название ядра не найдено, принимается название %s"
 
 #: tazinst:1819
-msgid "install_kernel:"
-msgstr "install_kernel:"
+msgid "install_kernel: %s"
+msgstr "install_kernel %s"
 
 #: tazinst:1905
 msgid "Restoring directory: /home..."
 msgstr "Восстановление папки /home…"
 
 #: tazinst:1911
-msgid "Adding / partition and CHECK_FS to file /etc/rcS.conf..."
-msgstr "Добавление корневого раздела и CHECK_FS в файл /etc/rcS.conf…"
+msgid "Adding / partition and CHECK_FS to file %s..."
+msgstr "Добавление корневого раздела и CHECK_FS в файл %s…"
 
 #: tazinst:1914
-msgid "Configuring host name:"
-msgstr "Настройка названия хоста:"
+msgid "Configuring host name: %s"
+msgstr "Настройка названия хоста: %s"
 
 #: tazinst:1977
-msgid "Configuring partition to be used as /home:"
-msgstr "Настройка раздела для использования как /home:"
+msgid "Configuring partition to be used as /home: %s"
+msgstr "Настройка раздела %s для использования как /home"
 
 #: tazinst:1996
-msgid "Installing SliTaz on:"
-msgstr "Установка SliTaz на:"
+msgid "Installing SliTaz on: %s"
+msgstr "Установка SliTaz на %s"
 
 #: tazinst:1997 tazinst:2176
-msgid "Checking settings"
-msgstr "Проверка настроек"
+msgid "Checking settings..."
+msgstr "Проверка настроек…"
 
 #: tazinst:2001 tazinst:2180
-msgid "Preparing source media"
-msgstr "Подготовка исходного носителя"
+msgid "Preparing source media..."
+msgstr "Подготовка исходного носителя…"
 
 #: tazinst:2004 tazinst:2183
-msgid "Preparing target disk"
-msgstr "Подготовка целевого диска"
+msgid "Preparing target disk..."
+msgstr "Подготовка целевого диска…"
 
 #: tazinst:2007
-msgid "Cleaning the root partition if necessary"
-msgstr "Очистка корневого раздела при необходимости"
+msgid "Cleaning the root partition if necessary..."
+msgstr "Очистка корневого раздела при необходимости…"
 
 #: tazinst:2010 tazinst:2192
-msgid "Extracting the root system"
-msgstr "Извлечение корневой системы"
+msgid "Extracting the root system..."
+msgstr "Извлечение корневой системы…"
 
 #: tazinst:2013 tazinst:2198
-msgid "Installing the kernel"
-msgstr "Установка ядра"
+msgid "Installing the Kernel..."
+msgstr "Установка ядра…"
 
 #: tazinst:2016
-msgid "Preconfiguring the system"
-msgstr "Перенастройка системы"
+msgid "Preconfiguring the system..."
+msgstr "Перенастройка системы…"
 
 #: tazinst:2019
-msgid "Configuring root and default user account"
-msgstr "Настройка учетных записей root и пользователя по умолчанию"
+msgid "Configuring root and default user account..."
+msgstr "Настройка учетных записей root и пользователя по умолчанию…"
 
 #: tazinst:2022
-msgid "Configuring /home"
-msgstr "Настройка /home"
+msgid "Configuring /home..."
+msgstr "Настройка /home…"
 
 #: tazinst:2025
 msgid "Checking bootloader installation..."
@@ -664,32 +700,32 @@ msgid "Files installation completed"
 msgstr "Установка файлов завершена"
 
 #: tazinst:2042
-msgid "Preparing upgrade of SliTaz release:"
-msgstr "Подготовка к обновлению выпуска SliTaz:"
+msgid "Preparing upgrade of SliTaz release: %s"
+msgstr "Подготовка к обновлению выпуска SliTaz %s"
 
 #: tazinst:2044
 msgid ""
-"This partition doesn't appear to contain a valid SliTaz system, the file: /"
-"etc/slitaz-release doesn't exist."
+"%s: This partition doesn't appear to contain a valid SliTaz system, the "
+"file: %s doesn't exist."
 msgstr ""
-"Похоже, что этот раздел не содержит допустимую систему SliTaz, отсутствует "
-"файл /etc/slitaz-release."
+"Похоже, что раздел %s не содержит допустимую систему SliTaz, отсутствует "
+"файл %s."
 
 #: tazinst:2067
-msgid "keeping /etc found on:"
-msgstr "не будет удалена папка /etc, найденная на:"
+msgid "keeping /etc found on: %s"
+msgstr "не будет удалена папка /etc, найденная на %s"
 
 #: tazinst:2071
-msgid "keeping /var/www found on:"
-msgstr "не будет удалена папка /var/www, найденная на:"
+msgid "keeping /var/www found on: %s"
+msgstr "не будет удалена папка /var/www, найденная на: %s"
 
 #: tazinst:2098
-msgid "backups restored:"
-msgstr "резервные копии восстановлены:"
+msgid "backups restored: %s"
+msgstr "резервные копии восстановлены %s"
 
 #: tazinst:2105
-msgid "backups saved in /var/lib/tazinst"
-msgstr "резервные копии сохранены в папке /var/lib/tazinst"
+msgid "backups saved in %s"
+msgstr "резервные копии сохранены в папке %s"
 
 #: tazinst:2112
 msgid "Checking the availability of packages..."
@@ -704,8 +740,8 @@ msgid "packages to install: 0"
 msgstr "ничего не нужно устанавливать"
 
 #: tazinst:2132
-msgid "Installing:"
-msgstr "Установка:"
+msgid "Installing: %s..."
+msgstr "Установка %s…"
 
 #: tazinst:2141
 msgid "Installation of packages complete..."
@@ -715,46 +751,43 @@ msgstr "Установка пакетов завершена…"
 msgid "Creating package lists..."
 msgstr "Создание списка пакетов…"
 
-#: tazinst:2152
-msgid "packages-source.list: done"
-msgstr "packages-source.list: готово"
-
-#: tazinst:2156
-msgid "packages-selection.diff: done"
-msgstr "packages-selection.diff: готово"
+#: tazinst:2152 tazinst:2156
+msgid "%s: done"
+msgstr "%s: готово"
 
 #: tazinst:2163
 msgid ""
 "The list of available packages on the mirror could not be downloaded. No "
 "missing packages will be reinstalled now, but you can do so later by looking "
-"at the following list:\n"
-"/var/lib/tazinst/packages-selection.diff"
+"at the following list:"
 msgstr ""
 "Список пакетов, доступных на зеркале, не может быть загружен. Отсутствующие "
 "пакеты сейчас не будут переустановлены, но это можно сделать позже, "
-"просмотрев следующий список:\n"
-"/var/lib/tazinst/packages-selection.diff"
+"просмотрев следующий список:"
 
 #: tazinst:2175
-msgid "Upgrading SliTaz on:"
-msgstr "Обновление SliTaz на:"
+msgid "Upgrading SliTaz on: %s"
+msgstr "Обновление SliTaz на %s"
 
 #: tazinst:2186
-msgid "Searching for /etc/slitaz-release"
-msgstr "Поиск файла /etc/slitaz-release"
+msgid "Searching for %s..."
+msgstr "Поиск файла %s…"
 
 #: tazinst:2189
-msgid "Backup /etc, /home and the packages list"
-msgstr "Сохранение резервной копии /etc, /home и списка пакетов"
+msgid "Backup /etc, /home and the packages list..."
+msgstr "Сохранение резервной копии /etc, /home и списка пакетов…"
 
 #: tazinst:2195
-msgid "Restoring configuration files"
-msgstr "Восстановление конфигурационных файлов"
+msgid "Restoring configuration files..."
+msgstr "Восстановление конфигурационных файлов…"
 
 #: tazinst:2201
-msgid "Upgrading added packages"
-msgstr "Обновление добавленных пакетов"
+msgid "Upgrading added packages..."
+msgstr "Обновление добавленных пакетов…"
 
 #: tazinst:2204
-msgid "Bootloader"
-msgstr "Загрузчик"
+msgid "Bootloader..."
+msgstr "Загрузчик…"
+
+#~ msgid "Download failed."
+#~ msgstr "Ошибка загрузки."

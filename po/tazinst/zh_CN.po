@@ -79,8 +79,8 @@ msgid "Automatic selection"
 msgstr "自动选择"
 
 #: tazinst:84
-msgid "Grub legacy bootoader"
-msgstr "Grub 引导"
+msgid "GRUB legacy bootoader"
+msgstr "GRUB 引导"
 
 #: tazinst:85
 msgid "Lightweight bootloader"
@@ -103,7 +103,7 @@ msgid "Stable basic graphic version without graphic apps"
 msgstr "无图形应用图形界面稳定版本"
 
 #: tazinst:100
-msgid "Stable basic graphic version with only Gtk"
+msgid "Stable basic graphic version with only GTK"
 msgstr "只有 GTK 基本图形稳定版本"
 
 #: tazinst:102
@@ -114,17 +114,17 @@ msgstr "最新特性测试开发版本"
 msgid "Bleeding edge development version updated every day"
 msgstr "每日尝鲜开发版本"
 
-#: tazinst:121
-msgid "Usage"
-msgstr "用法"
+#: tazinst:115
+msgid "Usage:"
+msgstr "用法："
 
 #: tazinst:121
-msgid "tazinst [command] <setting> <value> <file>"
-msgstr "tazinst [command] <setting> <value> <file>"
+msgid "%s [command] <setting> <value> <file>"
+msgstr "%s [command] <setting> <value> <file>"
 
 #: tazinst:123
-msgid "Commands"
-msgstr "命令"
+msgid "Commands:"
+msgstr "命令："
 
 #: tazinst:124
 msgid "Create a new install file."
@@ -178,17 +178,13 @@ msgstr "打印这个简短用法"
 msgid "Error: Missing parameter."
 msgstr "错误：参数丢失"
 
-#: tazinst:148
+#: tazinst:140
 msgid "Unknown command."
 msgstr "未知命令"
 
-#: tazinst:152
-msgid "Run"
-msgstr "运行"
-
-#: tazinst:152
-msgid "to get a list  of available commands"
-msgstr "获取可用命令列表"
+#: tazinst:142
+msgid "Run: '%s' to get a list  of available commands"
+msgstr "运行：%s 获取可用命令列表"
 
 #: tazinst:177
 msgid "Warning: file already exists."
@@ -199,7 +195,7 @@ msgid "Error: Can't create file."
 msgstr "错误：文件不能创建"
 
 #: tazinst:282 tazinst:287
-msgid "Error: Unable to read install file"
+msgid "Error: Unable to read install file."
 msgstr "错误：不能读取安装文件"
 
 #: tazinst:392
@@ -207,11 +203,11 @@ msgid "Error: Unable to write to install file."
 msgstr "错误：不能写入安装文件"
 
 #: tazinst:446
-msgid "Deleting install file:"
-msgstr "删除安装文件："
+msgid "Deleting install file: %s"
+msgstr "删除安装文件：%s"
 
 #: tazinst:448
-msgid "Error: Unable to delete install file"
+msgid "Error: Unable to delete install file."
 msgstr "错误：不能删除安装文件"
 
 #: tazinst:463
@@ -227,35 +223,31 @@ msgid "Another instance of tazinst is running."
 msgstr "另一个 tazinst 已在运行。"
 
 #: tazinst:488
-msgid "Error:"
-msgstr "错误："
-
-#: tazinst:488
-msgid "Invalid keyword."
-msgstr "无效的关键字"
+msgid "Error: '%s' Invalid keyword."
+msgstr "错误：%s 无效的关键字"
 
 #: tazinst:489
-msgid "Select one of these options:"
-msgstr "请选择一个选项："
+msgid "Select one of these options: %s."
+msgstr "请选择一个选项：%s"
 
 #: tazinst:490
 msgid "For more information, see tazinst Manual."
 msgstr "可以通过查看 tazinst 手册来获取更多信息。"
 
 #: tazinst:504
-msgid "Error: Partition not found"
+msgid "Error: Partition not found."
 msgstr "错误：未发现分区"
 
 #: tazinst:505
-msgid "To see available partitions, run"
-msgstr "运行，查看可用分区"
+msgid "To see available partitions, run '%s'."
+msgstr "运行，查看可用分区 %s"
 
 #: tazinst:519
-msgid "Error: Source file not found"
+msgid "Error: Source file not found."
 msgstr "错误：源文件未找到"
 
 #: tazinst:534
-msgid "Error: invalid URL"
+msgid "Error: invalid URL."
 msgstr "错误：无效的链接"
 
 #: tazinst:549
@@ -263,7 +255,7 @@ msgid "Error: multiple assignations for a disk. Please check your settings."
 msgstr "错误：多个磁盘分配，请检查你的设置。"
 
 #: tazinst:563
-msgid "Error: password too long"
+msgid "Error: password too long."
 msgstr "错误：密码过长"
 
 #: tazinst:568
@@ -278,24 +270,24 @@ msgstr "注意：密码过短！"
 msgid "Warning: no password!"
 msgstr "注意：空密码！"
 
-#: tazinst:589
-msgid "Error: Too short."
-msgstr "错误：太短。"
+#: tazinst:590
+msgid "%s Error: Too short."
+msgstr "%s 错误：太短。"
 
-#: tazinst:593
-msgid "Error: Too long."
-msgstr "错误：太长。"
+#: tazinst:594
+msgid "%s Error: Too long."
+msgstr "%s 错误：太长。"
 
-#: tazinst:598
-msgid "Error: Invalid chars."
-msgstr "错误：无效字符"
+#: tazinst:599
+msgid "%s Error: Invalid chars."
+msgstr "%s 错误：无效字符"
 
 #: tazinst:609
 msgid "Error: Dualboot set with no bootloader."
 msgstr "错误：双引导设置缺少引导器"
 
 #: tazinst:623
-msgid "Error: Unsupported Partition Table"
+msgid "Error: Unsupported Partition Table."
 msgstr "错误：不支持的分区表"
 
 #: tazinst:627
@@ -306,9 +298,13 @@ msgstr "错误：磁盘未选择，不能安装引导"
 msgid "The Source setting depends on the type of media:"
 msgstr "源设置依赖于媒介类型："
 
-#: tazinst:749
-msgid "Name or URL of the image on the web. Type: tazinst help web"
-msgstr "网络镜像名字或链接。请输入： tazinst help web"
+#: tazinst:752
+msgid "Name or URL of the image on the web."
+msgstr "网络镜像名字或链接。"
+
+#: tazinst:753
+msgid "Type: %s"
+msgstr "请输入：%s"
 
 #: tazinst:755
 msgid "Mode of install"
@@ -371,24 +367,25 @@ msgid "Automatically set"
 msgstr "自动设置"
 
 #: tazinst:788
-msgid "USB partition. For a list, type: tazinst list usb"
-msgstr "USB 分区。获取列表请输入： tazinst list usb"
+msgid "USB partition. For a list, type: %s"
+msgstr "USB 分区。获取列表请输入：%s"
 
 #: tazinst:790
-msgid "ISO file name. For a list, type: tazinst list iso"
-msgstr "镜像文件名字。获取列表请输入： tazinst list iso"
+msgid "ISO file name. For a list, type: %s"
+msgstr "镜像文件名字。获取列表请输入：%s"
 
 #: tazinst:816
 msgid "Partition containing Windows, or 'auto'"
 msgstr "含 Windows 分区或“auto”"
 
 #: tazinst:1120
-msgid "No mirror list found, run tazpkg recharge."
+#, fuzzy
+msgid "No mirror list found, run %s."
 msgstr "没有找到镜像列表，请运行  tazpkg 重新获取"
 
 #: tazinst:1132
-msgid "Downloading:"
-msgstr "下载中："
+msgid "Downloading: %s"
+msgstr "下载中：%s"
 
 #: tazinst:1139
 msgid "Download completed."
@@ -399,20 +396,26 @@ msgid "Download failed."
 msgstr "下载失败"
 
 #: tazinst:1150
-msgid "Installing package to the current system:"
-msgstr "安装软件包到现在的系统"
+#, fuzzy
+msgid "Installing package %s to the current system."
+msgstr "安装软件包到现在的系统%s"
+
+#: tazinst:1159
+msgid "Cannot install %s."
+msgstr ""
 
 #: tazinst:1160
-msgid "Adding package to the target system:"
-msgstr "添加软件包到目的系统"
+#, fuzzy
+msgid "Adding package %s to the target system..."
+msgstr "添加软件包到目的系统%s"
 
 #: tazinst:1201
 msgid "Process not completed"
 msgstr "过程未完成"
 
 #: tazinst:1202 tazinst:1206
-msgid "Error"
-msgstr "错误"
+msgid "Error: %s"
+msgstr "错误：%s"
 
 #: tazinst:1218
 msgid "Internal error"
@@ -423,44 +426,44 @@ msgid "Cancelled by user"
 msgstr "用户取消"
 
 #: tazinst:1244
-msgid "Using files from"
-msgstr "使用的文件来自"
+msgid "Using files from %s."
+msgstr "使用的文件来自%s"
 
 #: tazinst:1246
-msgid "Mount failed"
-msgstr "挂载失败"
+msgid "%s: Mount failed"
+msgstr "%s：挂载失败"
 
 #: tazinst:1255
 msgid "Using files from USB device..."
 msgstr "使用 USB 设备的文件……"
 
 #: tazinst:1260
-msgid "Using files from USB device"
-msgstr "使用 USB 设备的文件"
+msgid "Using files from USB device %s."
+msgstr "使用 USB 设备的文件%s"
 
 #: tazinst:1262
-msgid "Failed to mount USB device"
-msgstr "挂载 USB 设备失败"
+msgid "%s: Failed to mount USB device."
+msgstr "%s：挂载 USB 设备失败"
 
 #: tazinst:1277
 msgid "md5sum error, file corrupted."
 msgstr "md5sum 验证错误，文件已损坏"
 
 #: tazinst:1280
-msgid "md5 file not found, can't check integrity."
-msgstr "md5 文件未发现，不能验证完整性"
+msgid "%s: md5 file not found, cannot check integrity."
+msgstr "%s：md5 文件未发现，不能验证完整性"
 
 #: tazinst:1285
-msgid "Using files from ISO"
-msgstr "使用 ISO 镜像文件"
+msgid "Using files from ISO %s."
+msgstr "使用 ISO 镜像文件 %s"
 
 #: tazinst:1287
-msgid "Failed to mount ISO."
-msgstr "加载镜像文件失败"
+msgid "%s: Failed to mount ISO."
+msgstr "%s：加载镜像文件失败"
 
 #: tazinst:1309 tazinst:1393
-msgid "Creating mount point:"
-msgstr "创建挂载点："
+msgid "Creating mount point: %s..."
+msgstr "创建挂载点：%s"
 
 #: tazinst:1325
 msgid "Checking installation media..."
@@ -475,56 +478,54 @@ msgid "Installation media checked ok"
 msgstr "安装媒介检查正常"
 
 #: tazinst:1342
-msgid "Format"
-msgstr "格式化"
+msgid "Format %s (%s)"
+msgstr "格式化 %s （%s）"
 
 #: tazinst:1366
 msgid "Preparing target partition..."
-msgstr "准备目的分区"
+msgstr "准备目的分区……"
 
 #: tazinst:1370
 msgid "Partition is already in use."
 msgstr "分区已使用"
 
 #: tazinst:1378
-msgid "The partition will be cleaned..."
-msgstr "分区即将被清理……"
+msgid "%s: The partition will be cleaned..."
+msgstr "%s：分区即将被清理……"
 
 #: tazinst:1387
-msgid "The partition will be kept..."
-msgstr "分区保持……"
+msgid "%s: The partition will be kept..."
+msgstr "%s：分区保持……"
 
 #: tazinst:1402
-msgid "Unable to mount partition"
-msgstr "无法挂载分区"
+msgid "%s: Unable to mount partition"
+msgstr "%s：无法挂载分区"
 
 #: tazinst:1416
-msgid "Unmounting target partition:"
-msgstr "卸载目的分区："
+msgid "Unmounting target partition: %s"
+msgstr "卸载目的分区：%s"
 
 #: tazinst:1422
-msgid "Unmounting:"
-msgstr "卸载："
+msgid "Unmounting: %s"
+msgstr "卸载：%s"
 
 #: tazinst:1426
-msgid "Unlinking:"
-msgstr "解开："
+msgid "Unlinking: %s"
+msgstr "解开：%s"
 
 #: tazinst:1432
-msgid "Ejecting cdrom..."
+msgid "Ejecting CD-ROM..."
 msgstr "弹出光驱……"
 
 #: tazinst:1441
-msgid "Process completed. You can now restart (reboot)"
-msgstr "过程完成。可以重启系统了。"
-
-#: tazinst:1442
-msgid "from your SliTaz GNU/Linux system."
-msgstr "来自你的 SliTaz 系统"
+msgid ""
+"Process completed. You can now restart (reboot) from your SliTaz GNU/Linux "
+"system."
+msgstr "过程完成。可以重启系统了。来自你的 SliTaz 系统"
 
 #: tazinst:1446
-msgid "Copying log to /var/log/tazinst.log"
-msgstr "复制日志到  /var/log/tazinst.log"
+msgid "Copying log to %s"
+msgstr "复制日志到 %s"
 
 #: tazinst:1482
 msgid "No bootloader to install."
@@ -535,8 +536,8 @@ msgid "Enabling Windows dual-boot"
 msgstr "开启 Windows 双引导"
 
 #: tazinst:1599
-msgid "Installing grub on:"
-msgstr "安装 grub 到："
+msgid "Installing GRUB on: %s"
+msgstr "安装 grub 到：%s"
 
 #: tazinst:1604
 msgid "Setting the boot flag"
@@ -547,7 +548,7 @@ msgid "Copying splash image"
 msgstr "复制 splash 镜像"
 
 #: tazinst:1699
-msgid "Installing syslinux"
+msgid "Installing Syslinux"
 msgstr "安装 syslinux"
 
 #: tazinst:1713
@@ -555,7 +556,7 @@ msgid "Setting the boot flag on"
 msgstr "设置启动标示"
 
 #: tazinst:1717
-msgid "Installing mbr"
+msgid "Installing MBR"
 msgstr "安装 mbr"
 
 #: tazinst:1721
@@ -563,84 +564,84 @@ msgid "Setting the legacy_boot flag on"
 msgstr "设置启动标示"
 
 #: tazinst:1730
-msgid "Installing gptmbr"
+msgid "Installing GPTMBR"
 msgstr "安装 gptmbr"
 
 #: tazinst:1770
-msgid "Cleaning the root partition"
-msgstr "清除根分区"
+msgid "Cleaning the root partition (%s)..."
+msgstr "清除根分区（%s）……"
 
 #: tazinst:1779 tazinst:2051
-msgid "keeping /home found on:"
-msgstr "：保留 /home 到"
+msgid "keeping /home found on: %s"
+msgstr "：保留 /home 到：%s"
 
-#: tazinst:1784
-msgid "removing target:"
-msgstr "移除目标："
+#: tazinst:1784 tazinst:2077
+msgid "removing target: %s"
+msgstr "移除目标：%s"
 
 #: tazinst:1803
-msgid "Kernel name not found, falling back to:"
-msgstr "找不到内核，回滚到："
+msgid "Kernel name not found, falling back to: %s"
+msgstr "找不到内核，回滚到：%s"
 
 #: tazinst:1807
-msgid "install_kernel:"
-msgstr "安装内核："
+msgid "install_kernel: %s"
+msgstr "安装内核：%s"
 
 #: tazinst:1893
 msgid "Restoring directory: /home..."
 msgstr "恢复 /home 目录……"
 
 #: tazinst:1899
-msgid "Adding / partition and CHECK_FS to file /etc/rcS.conf..."
-msgstr "添加 /  分区并检查  /etc/rcS.conf……"
+msgid "Adding / partition and CHECK_FS to file %s..."
+msgstr "添加 / 分区并检查 %s……"
 
 #: tazinst:1902
-msgid "Configuring host name:"
-msgstr "设置主机名："
+msgid "Configuring host name: %s"
+msgstr "设置主机名：%s"
 
 #: tazinst:1965
-msgid "Configuring partition to be used as /home:"
-msgstr "设置 /home 分区"
+msgid "Configuring partition to be used as /home: %s"
+msgstr "设置 /home 分区：%s"
 
 #: tazinst:1984
-msgid "Installing SliTaz on:"
-msgstr "安装 SliTaz 到："
+msgid "Installing SliTaz on: %s"
+msgstr "安装 SliTaz 到：%s"
 
 #: tazinst:1985 tazinst:2164
-msgid "Checking settings"
-msgstr "检查设置"
+msgid "Checking settings..."
+msgstr "检查设置……"
 
 #: tazinst:1989 tazinst:2168
-msgid "Preparing source media"
-msgstr "准备源媒介"
+msgid "Preparing source media..."
+msgstr "准备源媒介……"
 
 #: tazinst:1992 tazinst:2171
-msgid "Preparing target disk"
-msgstr "准备安装目的磁盘"
+msgid "Preparing target disk..."
+msgstr "准备安装目的磁盘……"
 
 #: tazinst:1995
-msgid "Cleaning the root partition if necessary"
-msgstr "如有必要，清除根分区"
+msgid "Cleaning the root partition if necessary..."
+msgstr "如有必要，清除根分区……"
 
 #: tazinst:1998 tazinst:2180
-msgid "Extracting the root system"
-msgstr "解压根系统"
+msgid "Extracting the root system..."
+msgstr "解压根系统……"
 
 #: tazinst:2001 tazinst:2186
-msgid "Installing the kernel"
-msgstr "安装内核"
+msgid "Installing the Kernel..."
+msgstr "安装内核……"
 
 #: tazinst:2004
-msgid "Preconfiguring the system"
-msgstr "重设系统"
+msgid "Preconfiguring the system..."
+msgstr "重设系统……"
 
 #: tazinst:2007
-msgid "Configuring root and default user account"
-msgstr "设置根用户和默认用户"
+msgid "Configuring root and default user account..."
+msgstr "设置根用户和默认用户……"
 
 #: tazinst:2010
-msgid "Configuring /home"
-msgstr "设置 /home"
+msgid "Configuring /home..."
+msgstr "设置 /home……"
 
 #: tazinst:2013
 msgid "Checking bootloader installation..."
@@ -651,30 +652,30 @@ msgid "Files installation completed"
 msgstr "文件安装完成"
 
 #: tazinst:2030
-msgid "Preparing upgrade of SliTaz release:"
-msgstr "准备升级 SliTaz ："
+msgid "Preparing upgrade of SliTaz release: %s"
+msgstr "准备升级 SliTaz ：%s"
 
 #: tazinst:2032
 msgid ""
-"This partition doesn't appear to contain a valid SliTaz system, the file: /"
-"etc/slitaz-release doesn't exist."
-msgstr "这个分区没有安装有效地 SliTaz 系统，/etc/slitaz-release 不存在"
+"%s: This partition doesn't appear to contain a valid SliTaz system, the "
+"file: %s doesn't exist."
+msgstr "%s：这个分区没有安装有效地 SliTaz 系统，%s 不存在"
 
 #: tazinst:2055
-msgid "keeping /etc found on:"
-msgstr "保留  /etc 到："
+msgid "keeping /etc found on: %s"
+msgstr "保留  /etc 到：%s"
 
 #: tazinst:2059
-msgid "keeping /var/www found on:"
-msgstr "保留 /var/www  到："
+msgid "keeping /var/www found on: %s"
+msgstr "保留 /var/www  到：%s"
 
 #: tazinst:2086
-msgid "backups restored:"
-msgstr "备份恢复到："
+msgid "backups restored: %s"
+msgstr "备份恢复到：%s"
 
 #: tazinst:2093
-msgid "backups saved in /var/lib/tazinst"
-msgstr "备份保存在 /var/lib/tazinst "
+msgid "backups saved in %s"
+msgstr "备份保存在 %s"
 
 #: tazinst:2100
 msgid "Checking the availability of packages..."
@@ -689,8 +690,8 @@ msgid "packages to install: 0"
 msgstr "已安装软件：0"
 
 #: tazinst:2120
-msgid "Installing:"
-msgstr "安装："
+msgid "Installing: %s..."
+msgstr "安装：%s……"
 
 #: tazinst:2129
 msgid "Installation of packages complete..."
@@ -700,44 +701,39 @@ msgstr "软件包安装完成……"
 msgid "Creating package lists..."
 msgstr "创建软件包列表……"
 
-#: tazinst:2140
-msgid "packages-source.list: done"
-msgstr "软件包源列表 ; 完成"
-
-#: tazinst:2144
-msgid "packages-selection.diff: done"
-msgstr "软件包差异：完成"
+#: tazinst:2152 tazinst:2156
+msgid "%s: done"
+msgstr "%s：完成"
 
 #: tazinst:2151
 msgid ""
 "The list of available packages on the mirror could not be downloaded. No "
 "missing packages will be reinstalled now, but you can do so later by looking "
-"at the following list:\n"
-"/var/lib/tazinst/packages-selection.diff"
+"at the following list:"
 msgstr ""
-"镜像上的软件包列表无法下载。现在不能安装丢失的软件，但你可以稍后通过检查 /"
-"var/lib/tazinst/packages-selection.diff 来完成。"
+"镜像上的软件包列表无法下载。现在不能安装丢失的软件，但你可以稍后通过检查来完"
+"成："
 
 #: tazinst:2163
-msgid "Upgrading SliTaz on:"
-msgstr "升级 SliTaz ："
+msgid "Upgrading SliTaz on: %s"
+msgstr "升级 SliTaz ：%s"
 
 #: tazinst:2174
-msgid "Searching for /etc/slitaz-release"
-msgstr "搜索 /etc/slitaz-release"
+msgid "Searching for %s..."
+msgstr "搜索 %s……"
 
 #: tazinst:2177
-msgid "Backup /etc, /home and the packages list"
-msgstr "备份  /etc, /home 和软件宝列表"
+msgid "Backup /etc, /home and the packages list..."
+msgstr "备份  /etc, /home 和软件宝列表……"
 
 #: tazinst:2183
-msgid "Restoring configuration files"
-msgstr "恢复配置文件"
+msgid "Restoring configuration files..."
+msgstr "恢复配置文件……"
 
 #: tazinst:2189
-msgid "Upgrading added packages"
-msgstr "升级额外的软件包"
+msgid "Upgrading added packages..."
+msgstr "升级额外的软件包……"
 
 #: tazinst:2192
-msgid "Bootloader"
-msgstr "引导"
+msgid "Bootloader..."
+msgstr "引导……"

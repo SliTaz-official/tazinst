@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-04 19:19+0100\n"
+"POT-Creation-Date: 2016-04-09 17:07+0300\n"
 "PO-Revision-Date: 2016-04-05 10:51+0300\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
@@ -119,12 +119,8 @@ msgid "Upgrade SliTaz"
 msgstr "Обновить SliTaz"
 
 #: installer.cgi:141
-msgid "Evaluate:"
-msgstr "Оценить:"
-
-#: installer.cgi:141
-msgid "Without Partitioning / Formating"
-msgstr "без изменения разделов и форматирования"
+msgid "Evaluate: Without Partitioning / Formating"
+msgstr "Оценить: без изменения разделов и форматирования"
 
 #: installer.cgi:144
 msgid "SliTaz and Windows&trade; can coexist in the same partition."
@@ -132,19 +128,17 @@ msgstr "SliTaz и Windows™ могут сосуществовать на одн
 
 #: installer.cgi:145
 msgid ""
-"SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
-"century..."
+"SliTaz will be in the %s directory like UMSDOS did in the previous century..."
 msgstr ""
-"SliTaz будет располагаться в папке \\slitaz как это было с UMSDOS в прошлом "
-"веке…"
+"SliTaz будет располагаться в папке %s как это было с UMSDOS в прошлом веке…"
 
 #: installer.cgi:154
 msgid "ISO image file full path"
 msgstr "Полный путь к образу ISO"
 
 #: installer.cgi:155
-msgid "set /dev/cdrom for a physical CD-ROM"
-msgstr "выберите /dev/cdrom для доступа к физическому CD-ROM"
+msgid "set %s for a physical CD-ROM"
+msgstr "выберите %s для доступа к физическому CD-ROM"
 
 #: installer.cgi:158
 msgid "Target partition"
@@ -249,9 +243,7 @@ msgid "LiveUSB:"
 msgstr "LiveUSB:"
 
 #: installer.cgi:271
-msgid ""
-"Enter the partition where SliTaz Live is located on\n"
-" your USB Key"
+msgid "Enter the partition where SliTaz Live is located on your USB Key"
 msgstr "Введите раздел USB-накопителя, на котором находится SliTaz Live"
 
 #: installer.cgi:286
@@ -275,7 +267,7 @@ msgid "Select a SliTaz version on the Web"
 msgstr "Выберите версию SliTaz в интернете"
 
 #: installer.cgi:322 installer.cgi:329
-msgid "Select a version or enter the full url to an ISO file"
+msgid "Select a version or enter the full URL to an ISO file"
 msgstr ""
 "Выберите версию либо введите URL, по которому можно получить файл образа ISO"
 
@@ -300,12 +292,12 @@ msgid "home partition"
 msgstr "домашняя папка"
 
 #: installer.cgi:384
-msgid "Separate partition for /home:"
-msgstr "Отдельный раздел для /home:"
+msgid "Separate partition for %s:"
+msgstr "Отдельный раздел для %s:"
 
 #: installer.cgi:385
-msgid "Specify the partition containing /home"
-msgstr "Укажите раздел для /home"
+msgid "Specify the partition containing %s"
+msgstr "Укажите раздел для %s"
 
 #: installer.cgi:416
 msgid "Hostname"
@@ -328,7 +320,7 @@ msgid "Root superuser"
 msgstr "Администратор root"
 
 #: installer.cgi:446
-msgid "Root passwd:"
+msgid "Root password:"
 msgstr "Пароль root:"
 
 #: installer.cgi:447
@@ -356,7 +348,7 @@ msgid "Name of the first user"
 msgstr "Имя первого пользователя"
 
 #: installer.cgi:494
-msgid "User passwd:"
+msgid "User password:"
 msgstr "Пароль пользователя:"
 
 #: installer.cgi:495
@@ -416,8 +408,8 @@ msgid "Checking settings..."
 msgstr "Проверка настроек…"
 
 #: installer.cgi:689
-msgid "Proceeding to:"
-msgstr "Перейти к:"
+msgid "Proceeding to: %s"
+msgstr "Переход к %s"
 
 #: installer.cgi:707
 msgid "Errors encountered."
@@ -499,54 +491,44 @@ msgstr "Переход (подождите 2 секунды)"
 #: installer.cgi:832
 msgid ""
 "If your browser doesn't automatically redirect within a few seconds, you may "
-"want to go there manually"
+"want to go there manually [here]"
 msgstr ""
 "Если через несколько секунд ваш браузер не перейдет дальше автоматически, "
-"сделайте это вручную"
-
-#: installer.cgi:834
-msgid "here"
-msgstr "(перейти)"
+"сделайте это вручную ([перейти])"
 
 #: installer.cgi:849 installer.cgi:861 installer.cgi:874
 msgid "Tazinst Error"
 msgstr "Ошибка TazInst"
 
 #: installer.cgi:850
-msgid ""
-"<strong>tazinst</strong>, the backend to slitaz-installer is missing. Any "
-"installation can not be done without tazinst."
-msgstr ""
-"Отсутствует <strong>tazinst</strong>, установщик SliTaz на жесткий диск. Без "
-"tazinst ничего не удастся установить."
+msgid "%s, the backend to %s is missing."
+msgstr "Отсутствует %s, бэкенд к %s."
+
+#: installer.cgi:851 installer.cgi:864
+msgid "Any installation can not be done without %s."
+msgstr "Без %s ничего не удастся установить."
 
 #: installer.cgi:852
-msgid "Check tazinst permissions, or reinstall the slitaz-installer package."
-msgstr ""
-"Проверьте права доступа tazinst, либо переустановите пакет slitaz-installer:"
+msgid "Check %s permissions, or reinstall the %s package."
+msgstr "Проверьте права доступа %s, либо переустановите пакет %s."
 
 #: installer.cgi:862
-msgid ""
-"<strong>tazinst</strong>, the slitaz-installer backend, is not at the "
-"minimum required version. Any installation cannot be done without tazinst."
-msgstr ""
-"<strong>tazinst</strong>, установщик SliTaz на жесткий диск, старее "
-"минимально необходимой версии. Без tazinst ничего не удастся установить."
+msgid "%s, the %s backend, is not at the minimum required version."
+msgstr "%s, бэкенд к %s, старее минимально необходимой версии."
 
 #: installer.cgi:865 installer.cgi:878
-msgid "Reinstall the slitaz-installer package, or use tazinst in CLI mode."
-msgstr ""
-"Переустановите пакет slitaz-installer, либо используйте tazinst в консольном "
-"режиме."
+msgid "Reinstall the %s package, or use %s in CLI mode."
+msgstr "Переустановите пакет %s, либо используйте %s в консольном режиме."
 
 #: installer.cgi:875
 msgid ""
-"<strong>tazinst</strong>, the slitaz-installer backend, is at a higher "
-"version than the maximum authorized by the slitaz-installer. Any "
-"installation cannot be done."
-msgstr ""
-"<strong>tazinst</strong>, установщик SliTaz на жесткий диск, более новой "
-"версии, чем поддерживается slitaz-installer. Ничего не удастся установить."
+"%s, the %s backend, is at a higher version than the maximum authorized by "
+"the %s."
+msgstr "%s, бэкенд %s, более новой версии, чем поддерживается %s."
+
+#: installer.cgi:877
+msgid "Any installation cannot be done."
+msgstr "Ничего не удастся установить."
 
 #: installer.cgi:995 installer.cgi:1052
 msgid "None"

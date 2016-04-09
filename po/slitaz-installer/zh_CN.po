@@ -19,8 +19,8 @@ msgstr ""
 "Language: zh_CN\n"
 
 #: slitaz-installer:23
-msgid "Welcome to the slitaz-installer"
-msgstr "欢迎使用 slitaz-installer"
+msgid "Welcome to the slitaz-installer."
+msgstr "欢迎使用 slitaz-installer。"
 
 #: slitaz-installer:24
 msgid "Which type of installation do you want to start?"
@@ -35,37 +35,37 @@ msgid "Select a media from the following list:"
 msgstr "请从下面的列表中选择一个媒介："
 
 #: slitaz-installer:29
-msgid "You have selected the option to install SliTaz from an USB Key"
-msgstr "你选择了一个选项来从 USB设备中安装系统"
+msgid "You have selected the option to install SliTaz from an USB Key."
+msgstr "你选择了一个选项来从 USB设备中安装系统。"
 
-#: slitaz-installer:31
+#: slitaz-installer:30
 msgid "Enter the partition where SliTaz Live is located:"
 msgstr "请输入 SliTaz Live 系统所在位置："
 
-#: slitaz-installer:33
+#: slitaz-installer:32
 msgid ""
 "You have selected the option to install SliTaz from an ISO file located on a "
 "local disk."
 msgstr "你选择了一个选项从本地硬盘的 ISO 文件来安装系统"
 
-#: slitaz-installer:35
+#: slitaz-installer:34
 msgid "Please, select a file below:"
 msgstr "请从下面选择一个文件："
 
-#: slitaz-installer:37
-msgid "You have selected the option to install SliTaz from the web"
-msgstr "你已经选择了从网络安装系统"
+#: slitaz-installer:36
+msgid "You have selected the option to install SliTaz from the web."
+msgstr "你已经选择了从网络安装系统。"
 
-#: slitaz-installer:38
+#: slitaz-installer:37
 msgid "Please, select a version:"
 msgstr "请选择一个版本："
 
-#: slitaz-installer:40
-msgid "Select the source"
-msgstr "请选择源"
+#: slitaz-installer:39
+msgid "Select the source:"
+msgstr "请选择源："
 
-#: slitaz-installer:42
-msgid "\\nDrive selection"
+#: slitaz-installer:41
+msgid "Drive selection"
 msgstr "盘区选择"
 
 #: slitaz-installer:42
@@ -78,12 +78,15 @@ msgid ""
 "configuration files and the list of installed packages. Then, it will clean "
 "the partition and install the new version of SliTaz, restore the "
 "configuration files and reinstall any packages which are not present on the "
-"cdrom.\n"
-"You will need an active internet connection before upgrading."
+"CD-ROM."
 msgstr ""
 "安装工具会升级已经存在的 SliTaz 系统，保存所有的配置文件和已经安装的软件包列"
 "表。然后它会清空分区并安装新版本的 SliTaz 系统，重新载入配置文件，重新安装光"
-"盘镜像中不存在的软件包。升级前，你需要有效地网络连接。"
+"盘镜像中不存在的软件包。"
+
+#: slitaz-installer:49
+msgid "You will need an active internet connection before upgrading."
+msgstr "升级前，你需要有效地网络连接。"
 
 #: slitaz-installer:50
 msgid "Partition containing the system to upgrade:"
@@ -93,12 +96,14 @@ msgstr "已安装系统分区的升级："
 msgid ""
 "Only the filesystems actually installed on your system are listed. If you "
 "intend to use another filesystem, you have to install it before. Unless you "
-"know what you are doing, it's safe to use ext2, ext3 or ext4.\\n\\n\\Z2To "
-"format this partition, please select a filesystem below:"
+"know what you are doing, it's safe to use ext2, ext3 or ext4."
 msgstr ""
 "只有你系统中已经安装的文件系统格式被列出。如果你想使用其它的文件系统，你需要"
-"提前安装。除非你知道你在做什么，安全起见，请使用 ext2, ext3  或 ext4。请选择"
-"下列的文件格式来格式化分区："
+"提前安装。除非你知道你在做什么，安全起见，请使用 ext2, ext3  或 ext4。"
+
+#: slitaz-installer:56
+msgid "To format this partition, please select a filesystem below:"
+msgstr "请选择下列的文件格式来格式化分区："
 
 #: slitaz-installer:58
 msgid "Separate /home partition"
@@ -112,10 +117,14 @@ msgstr "请选择使用的分区："
 msgid ""
 "Hostname configuration allows you to specify the machine name. The hostname "
 "is used internally to identify the host on the network. This value can be "
-"changed after the system is installed.\\n\\n\\Z2Enter a hostname:\\Zn\\n"
+"changed after the system is installed."
 msgstr ""
 "主机名是用来指定机器的名字。主机名是用来在网络上辨识主机的。它可以在系统安装"
-"完后修改。请输入一个主机名："
+"完后修改。"
+
+#: slitaz-installer:64
+msgid "Enter a hostname:"
+msgstr "请输入一个主机名："
 
 #: slitaz-installer:66
 msgid ""
@@ -126,11 +135,11 @@ msgstr ""
 "根管理员允许你管理和配置整个系统。根用户可以破坏你的系统，因此你应该设置一个"
 "使用特殊字符或数字的强密码。"
 
-#: slitaz-installer:70
+#: slitaz-installer:69
 msgid "Enter the password for root:"
 msgstr "请输入跟用户密码："
 
-#: slitaz-installer:72
+#: slitaz-installer:71
 msgid ""
 "The default user for the system will have their personal files stored in /"
 "home/*user* (and will be automatically added to the audio group)"
@@ -143,8 +152,8 @@ msgid "Enter the name of the first user:"
 msgstr "请输入第一个用户名："
 
 #: slitaz-installer:76
-msgid "The password for default user"
-msgstr "默认用户密码"
+msgid "The password for default user."
+msgstr "默认用户密码。"
 
 #: slitaz-installer:77
 msgid ""
@@ -159,49 +168,65 @@ msgstr "请输入默认用户的密码："
 #: slitaz-installer:81
 msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
-"new SliTaz GNU/Linux operating system"
+"new SliTaz GNU/Linux operating system."
 msgstr "安装已经完成了，你可以退出你的安装软件或重启你新的 SliTaz系统了。"
 
 #: slitaz-installer:87
 msgid ""
 "The next step lets you format the target partition. Choose between robust, "
 "stable and/or journaled filesystem. If the partition is already formated you "
-"can skip this stage, if not just accept.\\n\n"
-"Warning! formating a partition will destroy all current data.\\n\n"
-"\\Z2Do you wish to format the partition ?\\Zn"
+"can skip this stage, if not just accept."
 msgstr ""
 "下一步是格式化你的目的分区。请选择兼顾坚强、稳定或有日志功能的文件系统。如果"
-"你已经分区了，请跳过本步骤。注意：格式化分区会丢失现有数据。"
+"你已经分区了，请跳过本步骤。"
+
+#: slitaz-installer:90 slitaz-installer:101
+msgid "Warning! formating a partition will destroy all current data."
+msgstr "注意：格式化分区会丢失现有数据。"
+
+#: slitaz-installer:91
+msgid "Do you wish to format the partition?"
+msgstr ""
 
 #: slitaz-installer:93
 msgid ""
 "On most GNU/Linux systems users personal files are stored in the directory /"
-"home. Home can be on a separate partition or another hard disk.\\n\n"
-"\\Z2DO you want to use a separate Home partition ?\\Zn"
+"home. Home can be on a separate partition or another hard disk."
 msgstr ""
 "大多数 GNU/Linux 系统用户个人文件存储在 /home 目录下。 Home 目录可以放在单独"
-"的分区uo其它硬盘上。你想要使用单独的 Home 分区吗？"
+"的分区uo其它硬盘上。"
+
+#: slitaz-installer:96
+msgid "Do you want to use a separate Home partition?"
+msgstr "你想要使用单独的 Home 分区吗？"
 
 #: slitaz-installer:98
 msgid ""
 "/home will be installed on a separate partition. The next step lets you "
 "format the /home partition. If the partition is already formated you can "
-"skip this stage, if not just accept. Warning formating a partition will "
-"destroy all current data.\\n\n"
-"\\Z2Do you wish to format the /home partition ?\\Zn"
+"skip this stage, if not just accept."
 msgstr ""
 "/home 即将被安装在单独的分区。下一步需要你格式化 /home 分区。 如果你已经格式"
-"化，请跳过此步。注意：格式化分区会消除所有现存数据。你想格式化 /home 分区吗？"
+"化，请跳过此步。"
+
+#: slitaz-installer:102
+msgid "Do you wish to format the /home partition?"
+msgstr "你想格式化 /home 分区吗？"
 
 #: slitaz-installer:104
 msgid ""
 "You have now the option to install a bootloader which is capable of booting "
-"almost any kind of operating system.\\n\\nIf you want to use an existing "
-"bootloader installation, skip this step and configure your bootloader to "
-"boot SliTaz (refer to your bootloader's documentation on how to do this)"
+"almost any kind of operating system."
+msgstr "你需要选择安装一个兼容大多数系统的引导。"
+
+#: slitaz-installer:106
+msgid ""
+"If you want to use an existing bootloader installation, skip this step and "
+"configure your bootloader to boot SliTaz (refer to your bootloader's "
+"documentation on how to do this)."
 msgstr ""
-"你需要选择安装一个兼容大多数系统的引导。如果你想使用已经存在的引导，请跳过此"
-"步并配置引导来启动 SliTaz （请参考你的引导软件文档来操作）。"
+"如果你想使用已经存在的引导，请跳过此步并配置引导来启动 SliTaz （请参考你的引"
+"导软件文档来操作）。"
 
 #: slitaz-installer:109
 msgid "Install a bootloader?"
@@ -210,11 +235,14 @@ msgstr "安装引导吗？"
 #: slitaz-installer:111
 msgid ""
 "Do you want to implement a dual-boot with Windows? At start-up, you will be "
-"asked whether you want to boot into Windows or SliTaz GNU/Linux.\\n\n"
-"\\Z2Install a dual-boot with Windows ?"
+"asked whether you want to boot into Windows or SliTaz GNU/Linux."
 msgstr ""
 "你想实现和 Windows 系统双系统引导吗？开机时，你会被询问引导到 Windows 还是"
-"SliTaz 系统。安装与 Windows 的双引导？"
+"SliTaz 系统。"
+
+#: slitaz-installer:114
+msgid "Install a dual-boot with Windows?"
+msgstr "安装与 Windows 的双引导？"
 
 #: slitaz-installer:116
 msgid ""
@@ -222,43 +250,60 @@ msgid ""
 "installation steps."
 msgstr "安装设置汇总，也是最后取消或重启安装过程的机会。"
 
+#: slitaz-installer:118
+msgid "Go and install SliTaz?"
+msgstr ""
+
 #: slitaz-installer:120
 msgid "Sorry, no device, nor file found or available."
 msgstr "对不起，没有发现设备或文件。"
 
 #: slitaz-installer:131 slitaz-installer:140
-msgid "Error 2: "
+msgid "Error 2:"
 msgstr "错误2："
 
 #: slitaz-installer:132
 msgid ""
-"The lightweight SliTaz HDD installer 'tazinst' is missing.\n"
-"Check permissions, or reinstall the slitaz-tools package."
-msgstr "轻量级 SliTaz 硬盘安装工具 tazinst 丢失。请检查权限或重新安装工具包。"
+"The lightweight SliTaz HDD installer '%s' is missing."
+msgstr "轻量级 SliTaz 硬盘安装工具 %s 丢失。"
+
+#: slitaz-installer:133
+msgid "Check permissions, or reinstall the %s package."
+msgstr "请检查权限或重新安装工具包 %s 。"
+
+#: slitaz-installer:141
+msgid ""
+"The lightweight SliTaz HDD installer tazinst (%s) is not at the required "
+"version (%s)."
+msgstr ""
+
+#: slitaz-installer:143
+msgid "Use %s in an xterm or reinstall the %s package."
+msgstr ""
 
 #: slitaz-installer:268
-msgid "Mode"
-msgstr "模式"
+msgid "Mode: %s"
+msgstr "模式：%s"
 
 #: slitaz-installer:271
-msgid "From media"
-msgstr "从媒介"
+msgid "From media: %s"
+msgstr "从媒介：%s"
 
 #: slitaz-installer:276
-msgid "To the disk"
-msgstr "到硬盘上"
+msgid "To the disk: %s"
+msgstr "到硬盘上：%s"
 
 #: slitaz-installer:280 slitaz-installer:290
-msgid "(Formatting as"
-msgstr "格式化为"
+msgid "(Formatting as %s)"
+msgstr "（格式化为%s）"
 
 #: slitaz-installer:281
 msgid "(No formatting)"
 msgstr "（不格式化）"
 
 #: slitaz-installer:285
-msgid "Separate /home is"
-msgstr "单独 /home 为"
+msgid "Separate /home is: %s"
+msgstr "单独 /home 为：%s"
 
 #: slitaz-installer:286
 msgid "No separate /home partition"
@@ -268,9 +313,13 @@ msgstr "没有 /home 分区"
 msgid "(No /home formatting)"
 msgstr "（不格式化 /home）"
 
+#: slitaz-installer:293
+msgid "Hostname: %s"
+msgstr ""
+
 #: slitaz-installer:295
-msgid "User login"
-msgstr "用户登录"
+msgid "User login: %s"
+msgstr "用户登录：%s"
 
 #: slitaz-installer:299
 msgid "Bootloader: installed"
@@ -288,6 +337,11 @@ msgstr "Windows 双引导"
 msgid ", no dual-boot"
 msgstr "无双引导"
 
+#: slitaz-installer:322 slitaz-installer:336 slitaz-installer:350
+#: slitaz-installer:378 slitaz-installer:391
+msgid "Select %s"
+msgstr ""
+
 #: slitaz-installer:325 slitaz-installer:379
 msgid "Ok"
 msgstr "确认"
@@ -303,3 +357,35 @@ msgstr "是"
 #: slitaz-installer:354 slitaz-installer:412
 msgid "No"
 msgstr "否"
+
+#: slitaz-installer:409
+msgid "Summary"
+msgstr ""
+
+#: slitaz-installer:567
+msgid "SliTaz Installer"
+msgstr ""
+
+#: slitaz-installer:567
+msgid "Installing..."
+msgstr ""
+
+#: slitaz-installer:573
+msgid "Installation complete"
+msgstr ""
+
+#: slitaz-installer:575
+msgid "Exit"
+msgstr ""
+
+#: slitaz-installer:576
+msgid "Reboot"
+msgstr ""
+
+#: slitaz-installer:585 slitaz-installer:597
+msgid "ESC pressed."
+msgstr ""
+
+#: slitaz-installer:588
+msgid "Process not completed"
+msgstr ""

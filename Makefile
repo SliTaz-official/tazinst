@@ -19,14 +19,17 @@ pot:
 	xgettext -o po/tazinst/tazinst.pot -L Shell \
 		--package-name="TazInst" \
 		--package-version="$(VERSION)" \
+		-k_ -k_n \
 		./tazinst
 	xgettext -o po/slitaz-installer/slitaz-installer.pot -L Shell \
 		--package-name="slitaz-installer" \
 		--package-version="$(VERSION)" \
+		-k_ -k_n \
 		./slitaz-installer
 	xgettext -o po/installer/installer.pot -L Shell \
 		--package-name="installer.cgi" \
 		--package-version="$(VERSION)" \
+		-k_ -k_n \
 		./installer.cgi
 
 msgmerge:

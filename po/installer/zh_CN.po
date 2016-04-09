@@ -198,7 +198,7 @@ msgid "Select a SliTaz version on the Web"
 msgstr "从网站上选择一个 SliTaz 版本"
 
 #: installer.cgi:223 installer.cgi:230
-msgid "Select a version or enter the full url to an ISO file"
+msgid "Select a version or enter the full URL to an ISO file"
 msgstr "选择版本或输入完整镜像文件链接"
 
 #: installer.cgi:246
@@ -226,12 +226,12 @@ msgid "home partition"
 msgstr "home 分区"
 
 #: installer.cgi:285
-msgid "Separate partition for /home:"
-msgstr "单独的 /home 分区"
+msgid "Separate partition for %s:"
+msgstr "单独的 %s 分区"
 
 #: installer.cgi:286
-msgid "Specify the partition containing /home"
-msgstr "指定含有 /home 的分区"
+msgid "Specify the partition containing %s"
+msgstr "指定含有 %s 的分区"
 
 #: installer.cgi:307
 msgid "Hostname"
@@ -254,7 +254,7 @@ msgid "Root superuser"
 msgstr "Root 超级用户"
 
 #: installer.cgi:328
-msgid "Root passwd:"
+msgid "Root password:"
 msgstr "Root 密码："
 
 #: installer.cgi:329
@@ -282,7 +282,7 @@ msgid "Name of the first user"
 msgstr "第一个用户名"
 
 #: installer.cgi:364
-msgid "User passwd:"
+msgid "User password:"
 msgstr "用户密码："
 
 #: installer.cgi:365
@@ -420,37 +420,35 @@ msgid "Tazinst Error"
 msgstr "Tazinst 错误"
 
 #: installer.cgi:670
-msgid ""
-"<strong>tazinst</strong>, the backend to slitaz-installer is missing. Any "
-"installation can not be done without tazinst."
-msgstr ""
-"<strong>tazinst</strong>,  slitaz-installer 安装工具的后台进程丢失. 没有 "
-"tazinst ,任何安装都不能完成的."
+msgid "%s, the backend to %s is missing."
+msgstr "%s, %s 安装工具的后台进程丢失."
+
+#: installer.cgi:671 installer.cgi:864
+msgid "Any installation can not be done without %s."
+msgstr "没有 %s,任何安装都不能完成的."
 
 #: installer.cgi:672
-msgid "Check tazinst permissions, or reinstall the slitaz-installer package."
-msgstr "检察 tazinst  权限,或重新安装  slitaz-installer 软件包。"
+msgid "Check %s permissions, or reinstall the %s package."
+msgstr "检察 %s 权限,或重新安装 %s 软件包。"
 
 #: installer.cgi:682
-msgid ""
-"<strong>tazinst</strong>, the slitaz-installer backend, is not at the "
-"minimum required version. Any installation cannot be done without tazinst."
-msgstr ""
-"<strong>tazinst</strong>, slitaz-installer 软件后台进程，不是要求的最低版本，"
-"没有 tazinst ,任何安装都不能完成的."
+msgid "%s, the %s backend, is not at the minimum required version."
+msgstr "%s, %s 软件后台进程，不是要求的最低版本。"
 
 #: installer.cgi:685 installer.cgi:698
-msgid "Reinstall the slitaz-installer package, or use tazinst in CLI mode."
-msgstr "重新安装 slitaz-installer 软件包或使用 tazinst 的 CLI 模式"
+msgid "Reinstall the %s package, or use %s in CLI mode."
+msgstr "重新安装 %s 软件包或使用 %s 的 CLI 模式"
 
 #: installer.cgi:695
 msgid ""
-"<strong>tazinst</strong>, the slitaz-installer backend, is at a higher "
-"version than the maximum authorized by the slitaz-installer. Any "
-"installation cannot be done."
-msgstr ""
-"<strong>tazinst</strong>, slitaz-installer 软件后台进程，版本已经高过 slitaz-"
-"installer 要求版本。没有 tazinst ,任何安装都不能完成的."
+"%s, the %s backend, is at a higher version than the maximum authorized by "
+"the %s."
+msgstr "%s, %s 软件后台进程，版本已经高过 %s 要求版本。"
+
+#: installer.cgi:697
+#, fuzzy
+msgid "Any installation cannot be done."
+msgstr "没有 tazinst ,任何安装都不能完成的."
 
 #: installer.cgi:825 installer.cgi:873
 msgid "None"

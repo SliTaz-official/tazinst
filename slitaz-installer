@@ -17,107 +17,107 @@ VERSION="3.96"
 #--------------
 # msgs section
 #--------------
-
+. /lib/libtaz.sh
 # info msgs
 
-MODE_MSG="\n$(gettext "Welcome to the slitaz-installer").\n
-\Z2$(gettext "Which type of installation do you want to start?")\Zn\n"
+MODE_MSG="\n$(_ 'Welcome to the slitaz-installer.')\n
+\Z2$(_ 'Which type of installation do you want to start?')\Zn\n"
 
-MEDIA_MSG="\n$(gettext "SliTaz can be installed from different media.")\n\n\
-\Z2$(gettext "Select a media from the following list:")\Zn\n"
+MEDIA_MSG="\n$(_ 'SliTaz can be installed from different media.')\n
+\Z2$(_ 'Select a media from the following list:')\Zn\n"
 
-SOURCE_USB_MSG="\n$(gettext "You have selected the option to install SliTaz \
-from an USB Key")\n\n\
-\Z2$(gettext "Enter the partition where SliTaz Live is located:"):\Zn\n"
+SOURCE_USB_MSG="\n$(_ 'You have selected the option to install SliTaz from an USB Key.')\n
+\Z2$(_ 'Enter the partition where SliTaz Live is located:')\Zn\n"
 
-SOURCE_ISO_MSG="\n$(gettext "You have selected the option to install SliTaz \
-from an ISO file located on a local disk.")\n\n\
-\Z2$(gettext "Please, select a file below:")\Zn\n"
+SOURCE_ISO_MSG="\n$(_ "You have selected the option to install SliTaz \
+from an ISO file located on a local disk.")\n
+\Z2$(_ 'Please, select a file below:')\Zn\n"
 
-SOURCE_WEB_MSG="\n$(gettext "You have selected the option to install SliTaz \
-from the web")\n\n\\Z2$(gettext "Please, select a version:")\Zn\n"
+SOURCE_WEB_MSG="\n$(_ 'You have selected the option to install SliTaz from the web.')\n
+\\Z2$(_ 'Please, select a version:')\Zn\n"
 
-SOURCE_DEF_MSG="\n$(gettext "Select the source"):\n"
+SOURCE_DEF_MSG="\n$(_ 'Select the source:')\n"
 
-ROOT_UUID_DEFAULT_MSG="$(gettext "\nDrive selection")\n\n\Z2$(gettext "Please specify the partition where to install SliTaz:")\Zn\n"
+ROOT_UUID_DEFAULT_MSG="\n$(_ 'Drive selection')\n
+\Z2$(_ 'Please specify the partition where to install SliTaz:')\Zn\n"
 
-ROOT_UUID_UPGRADE_MSG="$(gettext "The installer will upgrade the existing \
+ROOT_UUID_UPGRADE_MSG="$(_ "The installer will upgrade the existing \
 SliTaz system by saving all configuration files and the list of installed \
 packages. Then, it will clean the partition and install the new version \
 of SliTaz, restore the configuration files and reinstall any packages which \
-are not present on the cdrom.
-You will need an active internet connection before upgrading.")\n \
-\Z2$(gettext "Partition containing the system to upgrade:")\Zn\n"
+are not present on the CD-ROM.")
+$(_ 'You will need an active internet connection before upgrading.')
+\Z2$(_ 'Partition containing the system to upgrade:')\Zn\n"
 
-ROOT_FORMAT_MSG="\n$(gettext "Only the filesystems actually installed on your \
+ROOT_FORMAT_MSG="\n$(_ "Only the filesystems actually installed on your \
 system are listed. If you intend to use another filesystem, you have to \
-install it before. \
-Unless you know what you are doing, it is safe to use ext2, ext3 or ext4.\n\n\
-\Z2To format this partition, please select a filesystem below:")\Zn\n"
+install it before. Unless you know what you are doing, it is safe to use ext2, \
+ext3 or ext4.")\n
+\Z2$(_ 'To format this partition, please select a filesystem below:')\Zn\n"
 
-HOME_UUID_MSG="\n$(gettext "Separate /home partition")\n\n\
-\Z2$(gettext "Please, select the partition to use:")\Zn\n"
+HOME_UUID_MSG="\n$(_ 'Separate /home partition')\n
+\Z2$(_ 'Please, select the partition to use:')\Zn\n"
 
-HOSTNAME_MSG="\n$(gettext "Hostname configuration allows you to specify the \
+HOSTNAME_MSG="\n$(_ "Hostname configuration allows you to specify the \
 machine name. The hostname is used internally to identify the host on the \
-network. This value can be changed after the system is installed.\n\n\
-\Z2Enter a hostname:\Zn\n")"
+network. This value can be changed after the system is installed.")\n
+\Z2$(_ 'Enter a hostname:')\Zn\n)"
 
-ROOT_PWD_MSG="\n$(gettext "The root administrator privilege lets you manage \
+ROOT_PWD_MSG="\n$(_ "The root administrator privilege lets you manage \
 and configure the full system. A root user can damage your system so you \
-should always setup a strong password with special characters and/or numbers.\
-")\n\n\
-\Z2$(gettext "Enter the password for root:")\Zn\n"
+should always setup a strong password with special characters and/or numbers.")\n
+\Z2$(_ 'Enter the password for root:')\Zn\n"
 
-USER_LOGIN_MSG="\n$(gettext "The default user for the system will have their \
+USER_LOGIN_MSG="\n$(_ "The default user for the system will have their \
 personal files stored in /home/*user* (and will be automatically added to the \
-audio group)")\n\n\Z2$(gettext "Enter the name of the first user:")\Zn\n"
+audio group)")\n
+\Z2$(_ 'Enter the name of the first user:')\Zn\n"
 
-USER_PWD_MSG="\n$(gettext "The password for default user").
-$(gettext "It may be a security risk if too weak and should always be strong \
+USER_PWD_MSG="\n$(_ 'The password for default user.')
+$(_ "It may be a security risk if too weak and should always be strong \
 if you use a SSH connection through the web.")\n
-\Z2$(gettext "Enter the password for the default user:")\Zn\n"
+\Z2$(_ 'Enter the password for the default user:')\Zn\n"
 
-END_OF_INSTALL_MSG="\n$(gettext "Installation is now finished, you can exit \
-the installer or reboot on your new SliTaz GNU/Linux operating system")."
+END_OF_INSTALL_MSG="\n$(_ "Installation is now finished, you can exit \
+the installer or reboot on your new SliTaz GNU/Linux operating system.")"
 
 
 # questions msgs
 
-ASK_ROOT_FORMAT="\n$(gettext "The next step lets you format the target \
+ASK_ROOT_FORMAT="\n$(_ "The next step lets you format the target \
 partition. Choose between robust, stable and/or journaled filesystem. If the \
-partition is already formated you can skip this stage, if not just accept.\n
-Warning! formating a partition will destroy all current data.\n
-\Z2Do you wish to format the partition ?\Zn")"
+partition is already formated you can skip this stage, if not just accept.")\n
+$(_ 'Warning! formating a partition will destroy all current data.')\n
+\Z2$(_ 'Do you wish to format the partition?')\Zn)"
 
-ASK_HOME_UUID="\n$(gettext "On most GNU/Linux systems users personal \
+ASK_HOME_UUID="\n$(_ "On most GNU/Linux systems users personal \
 files are stored in the directory /home. Home can be on a separate partition \
-or another hard disk.\n
-\Z2DO you want to use a separate Home partition ?\Zn")"
+or another hard disk.")\n
+\Z2$(_ 'Do you want to use a separate Home partition?')\Zn)"
 
-ASK_HOME_FORMAT="\n$(gettext "/home will be installed on a separate partition. \
+ASK_HOME_FORMAT="\n$(_ "/home will be installed on a separate partition. \
 The next step lets you format the /home partition. If the partition \
-is already formated you can skip this stage, if not just accept. Warning \
-formating a partition will destroy all current data.\n
-\Z2Do you wish to format the /home partition ?\Zn")"
+is already formated you can skip this stage, if not just accept.")
+$(_ 'Warning! formating a partition will destroy all current data.')\n
+\Z2$(_ 'Do you wish to format the /home partition?')\Zn)"
 
-ASK_BOOTLOADER="\n$(gettext "You have now the option to install a \
-bootloader which is capable of booting almost any kind of operating system.\n\n\
-If you want to use an existing bootloader installation, skip this step \
+ASK_BOOTLOADER="\n$(_ "You have now the option to install a \
+bootloader which is capable of booting almost any kind of operating system.")\n
+$(_ "If you want to use an existing bootloader installation, skip this step \
 and configure your bootloader to boot SliTaz (refer to your bootloader \
-documentation on how to do this)").\n\n\
-\Z2$(gettext "Install a bootloader?")\Zn\n"
+documentation on how to do this).")\n
+\Z2$(_ 'Install a bootloader?')\Zn\n"
 
-ASK_WINBOOT="\n$(gettext "Do you want to implement a dual-boot with \
+ASK_WINBOOT="\n$(_ "Do you want to implement a dual-boot with \
 Windows? At start-up, you will be asked whether you want to boot into \
-Windows or SliTaz GNU/Linux.\n
-\Z2Install a dual-boot with Windows ?")\n"
+Windows or SliTaz GNU/Linux.")\n
+\Z2$(_ 'Install a dual-boot with Windows?')\n"
 
-ASK_SUMMARY="$(gettext "Installation settings summary and last chance to \
+ASK_SUMMARY="$(_ "Installation settings summary and last chance to \
 cancel or restart all installation steps.")\n
-\Z2Go and install SliTaz?\Zn\n\n"
+\Z2$(_ 'Go and install SliTaz?')\Zn\n\n"
 
-EMPTY_MENU_MSG="\n$(gettext "Sorry, no device, nor file found or available.")"
+EMPTY_MENU_MSG="\n$(_ 'Sorry, no device, nor file found or available.')"
 
 #---------------"
 # check section
@@ -128,20 +128,20 @@ check_tazinst()
 	local version
 	# search for tazinst
 	if ! [ -x /usr/sbin/tazinst ] ; then
-		printf "$(gettext "Error 2: ")
-$(gettext "The lightweight SliTaz HDD installer 'tazinst' is missing.
-Check permissions, or reinstall the slitaz-tools package.")\n"
-		exit 2
+		_ 'Error 2:'
+		_ "The lightweight SliTaz HDD installer '%s' is missing." 'tazinst'
+		_ 'Check permissions, or reinstall the %s package.' 'slitaz-installer'
+		newline; exit 2
 	fi
 	# check version
 	version=$(tazinst version | tr -d '[:alpha:]')
 	if ! (echo "$version" | awk -v req="$TAZINST_REQUIRED_VERSION" '
 		{ver=$0+0}{ if (ver < req) exit 1}') ; then
-		printf "$(gettext "Error 2: ")
-$(gettext "The lightweight SliTaz HDD installer tazinst ($version) is not
-at the required version ($TAZINST_REQUIRED_VERSION), use tazinst in an xterm or
-reinstall the slitaz-tools package.")\n"
-		exit 2
+		_ 'Error 2:'
+		_ 'The lightweight SliTaz HDD installer tazinst (%s) is not at the required version (%s).' \
+			"$version" "$TAZINST_REQUIRED_VERSION"
+		_ 'Use %s in an xterm or reinstall the %s package.' 'tazinst' 'slitaz-installer'
+		newline; exit 2
 	fi
 }
 
@@ -157,7 +157,7 @@ msg()
 	mode)
 		printf "$MODE_MSG" ;;
 	media)
-		printf "$MEDIA_MSG"	;;
+		printf "$MEDIA_MSG" ;;
 	source)
 		local media="$(tazinst get media)"
 		case "$media" in
@@ -172,8 +172,8 @@ msg()
 		esac ;;
 	root_uuid)
 		local mode="$(tazinst get mode)"
-		[ "$mode" = "upgrade" ] && printf "$ROOT_UUID_UPGRADE_MSG" \
-								|| printf "$ROOT_UUID_DEFAULT_MSG" ;;
+		if [ "$mode" == 'upgrade' ]; then printf "$ROOT_UUID_UPGRADE_MSG";
+			else printf "$ROOT_UUID_DEFAULT_MSG"; fi ;;
 	root_format|home_format)
 		printf "$ROOT_FORMAT_MSG" ;;
 	home_uuid)
@@ -265,44 +265,44 @@ summary_list()
 		case "$option" in
 		mode)
 			local mode="$(tazinst get mode)"
-			printf "\n\n$(gettext "Mode"): "
-			printf "$(tazinst help mode | grep "$mode")" ;;
+			printf "\n\n$(_ 'Mode: %s')" \
+				"$(tazinst help mode | grep "$mode")" ;;
 		media)
-			printf "\n$(gettext "From media"): $(tazinst get media)" ;;
+			printf "\n$(_ 'From media: %s')" "$(tazinst get media)" ;;
 		source)
 			local source="$(tazinst get source)"
 			[ -n "$source" ] && printf " ($source)" ;;
 		root_uuid)
-			printf "\n$(gettext "To the disk"): $(tazinst get root_uuid)" ;;
+			printf "\n$(_ 'To the disk: %s')" "$(tazinst get root_uuid)" ;;
 		root_format)
 			local root_format="$(tazinst get root_format)"
-			[ -n "$root_format" ] \
-				&& printf " $(gettext "(Formatting as"): $root_format)" \
-				|| printf " $(gettext "(No formatting)")" ;;
+			if [ -n "$root_format" ];
+				then printf " $(_ '(Formatting as %s)' "$root_format")";
+				else printf " $(_ '(No formatting)')"; fi ;;
 		home_uuid)
 			local home_uuid="$(tazinst get home_uuid)"
-			[ -n "$home_uuid" ] \
-				&& printf "\n$(gettext "Separate /home is"): $home_uuid" \
-				|| printf "\n$(gettext "No separate /home partition")" ;;
+			if [ -n "$home_uuid" ];
+				then printf "\n$(_ 'Separate /home is: %s' "$home_uuid")";
+				else printf "\n$(_ 'No separate /home partition')"; fi ;;
 		home_format)
 			local home_format="$(tazinst get home_format)"
-			[ -n "$home_uuid" ] && ([ -n "$home_format" ] \
-				&& printf " $(gettext "(Formatting as"): $home_format)" \
-				|| printf " $(gettext "(No /home formatting)")";) ;;
+			if [ -n "$home_uuid" ]; then if [ -n "$home_format" ];
+					then printf " $(_ '(Formatting as %s)' "$home_format")";
+					else printf " $(_ '(No /home formatting)')"; fi; fi ;;
 		hostname)
-			printf "\nHostname: $(tazinst get hostname)" ;;
+			printf "\n$(_ 'Hostname: %s' "$(tazinst get hostname)")" ;;
 		user_login)
-			printf "\n$(gettext "User login"): $(tazinst get user_login)" ;;
+			printf "\n$(_ 'User login: %s' "$(tazinst get user_login)")" ;;
 		bootloader)
 			local bootloader="$(tazinst get bootloader)"
-			[ -n "$bootloader" ] \
-				&& printf "\n$(gettext "Bootloader: installed")" \
-				|| printf "\n$(gettext "No bootloader installed")" ;;
+			if [ -n "$bootloader" ];
+				then printf "\n$(_ 'Bootloader: installed')";
+				else printf "\n$(_ 'No bootloader installed')"; fi ;;
 		winboot)
 			local winboot="$(tazinst get winboot)"
-			[ -n "$winboot" ] \
-				&& printf "$(gettext ", with Windows dual-boot")" \
-				|| printf "$(gettext ", no dual-boot")" ;;
+			if [ -n "$winboot" ];
+				then printf "$(_ ", with Windows dual-boot")";
+				else printf "$(_ ", no dual-boot")"; fi ;;
 		esac
 	done
 }
@@ -319,11 +319,11 @@ dialog_menu()
 	trap "rm -f $tempfile ; exit 1" $sighup $sigint $sigquit
 	"$DIALOG" \
 		--clear --colors \
-		--title " Select $option " \
+		--title " $(_ 'Select %s' "$option") " \
 		--backtitle "$BACKLIST" \
 		--default-item "$(tazinst get "$option")" \
-		--ok-label "$(gettext "Next")" \
-		--cancel-label "$(gettext "Back")" \
+		--ok-label "$(_ 'Next')" \
+		--cancel-label "$(_ 'Back')" \
 		--menu "$(msg $option)" 18 70 6 $items 2> "$tempfile"
 	retval="$?"
 	choice=$(cat "$tempfile")
@@ -333,7 +333,7 @@ dialog_menu()
 			# a '$choice' was selected
 			tazinst set "$option" "$choice" && move up || \
 			"$DIALOG" \
-				--title " Select $option " --clear \
+				--title " $(_ 'Select %s' "$option") " --clear \
     	    	--msgbox "\n$(tazinst check "$option" 2>&1)" 10 41 ;;
 		 1|255)
 			# voluntary exit or ESC pressed
@@ -347,11 +347,11 @@ dialog_yesno()
 	local option="$1"
 	"$DIALOG" \
 		--clear --colors \
-		--title " Select $option " \
+		--title " $(_ 'Select %s' "$option") " \
 		--backtitle "$BACKLIST" \
-		--ok-label "$(gettext "Yes")" \
-		--cancel-label "$(gettext "Back")" \
-		--extra-button --extra-label "$(gettext "No")" \
+		--ok-label "$(_ 'Yes')" \
+		--cancel-label "$(_ 'Back')" \
+		--extra-button --extra-label "$(_ 'No')" \
 		--yesno "$(ask $option)" 18 70
 	retval="$?"
 	case "$retval" in
@@ -375,9 +375,9 @@ dialog_input()
 	trap "rm -f $tempfile; exit 1" $sighup $sigint $sigquit
 	$DIALOG \
 		--clear --colors \
-		--title " Select $option " \
-		--ok-label "$(gettext "Next")" \
-		--cancel-label "$(gettext "Back")" \
+		--title " $(_ 'Select %s' "$option") " \
+		--ok-label "$(_ 'Next')" \
+		--cancel-label "$(_ 'Back')" \
         --inputbox "$(msg $option)" 16 51 "$value"  2> "$tempfile"
 	retval="$?"
 	choice="$(cat $tempfile)"
@@ -388,7 +388,7 @@ dialog_input()
 			retcode=$?
 			[ "$retcode" -gt "0" ] && \
 				"$DIALOG" \
-					--title " Select $option " --clear \
+					--title " $(_ 'Select %s' "$option") " --clear \
     		    	--msgbox "\n$(tazinst check "$option" 2>&1)" 10 41
 			# continue if no error (0) or only warning (>127)
 			[ "$retcode" -le "0" ] && move up
@@ -406,17 +406,17 @@ summary()
 {
 	"$DIALOG" \
 		--clear --colors \
-		--title " Summary " \
+		--title " $(_ 'Summary') " \
 		--backtitle "$BACKLIST" \
-		--yes-label "$(gettext "Yes")" \
-		--no-label "$(gettext "No")" \
+		--yes-label "$(_ 'Yes')" \
+		--no-label "$(_ 'No')" \
 		--yesno "$(ask summary)$(summary_list)" 18 70
 	retval="$?"
 	case "$retval" in
 		0)	# yes
 			move up ;;
 		1)	# Cancel
-			gettext "SliTaz install cancelled."; echo
+			_ 'SliTaz install cancelled.'; echo
 			exit 1 ;;
 		3)	# no
 			return 3 ;;
@@ -564,16 +564,16 @@ tazinst execute | awk 'BEGIN{
 	}
 	END{
 		print "XXX"
-	}' | $DIALOG --title "SliTaz-Installer" --gauge "Installing.." 20 70 0
+	}' | $DIALOG --title " $(_ 'SliTaz Installer') " --gauge "$(_ 'Installing...')" 20 70 0
 
 
 # end_of_install
 if tazinst log | grep -q "x-x-" ; then
 	tazinst clean
-	$DIALOG --title " Installation complete " \
+	$DIALOG --title " $(_ 'Installation complete') " \
 		--backtitle "$BACKLIST" \
-		--yes-label "Exit" \
-		--no-label "Reboot" \
+		--yes-label "$(_ 'Exit')" \
+		--no-label "$(_ 'Reboot')" \
 		--clear --colors --yesno "$END_OF_INSTALL_MSG" 18 70
 	retval=$?
 	case $retval in
@@ -582,10 +582,10 @@ if tazinst log | grep -q "x-x-" ; then
 		1)
 			reboot || reboot -f ;;
 		255)
-			echo -e "ESC pressed.\n" && exit 0 ;;
+			_ 'ESC pressed.'; newline; exit 0 ;;
 	esac
 else
-	$DIALOG --title " Process not completed " \
+	$DIALOG --title " $(_ 'Process not completed') " \
 		--backtitle "$BACKLIST" \
 		--clear --msgbox \
 		"$(tazinst log | awk '$1 == "-x-x-",$1 == "x-x-x"')" 18 70
@@ -594,6 +594,6 @@ else
 		0)
 			exit 0 ;;
 		255)
-			echo -e "ESC pressed.\n" && exit 0 ;;
+			_ 'ESC pressed.'; newline; exit 0 ;;
 	esac
 fi

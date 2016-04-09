@@ -36,9 +36,9 @@ umask 0177
 readonly VERSION=3.95
 
 # i18n
-. /usr/bin/gettext.sh
-TEXTDOMAIN='tazinst'
-export TEXTDOMAIN
+. /lib/libtaz.sh
+export TEXTDOMAIN='tazinst'
+
 
 # files
 readonly DEFAULT_INSTALL_FILE=./tazinst.rc
@@ -56,51 +56,51 @@ bootloader winboot"
 
 # modes (key:help)
 readonly LST_MODE="
-install:$(gettext 'Fresh install on a HDD')
-upgrade:$(gettext 'Upgrade an existing system')"
+install:$(_ 'Fresh install on a HDD')
+upgrade:$(_ 'Upgrade an existing system')"
 
 # media (key:help)
 readonly LST_MEDIA="
-cdrom:$(gettext 'LiveCD')
-usb:$(gettext 'LiveUSB')
-iso:$(gettext 'ISO image on a local drive')
-web:$(gettext 'ISO image on the Internet')"
+cdrom:$(_ 'LiveCD')
+usb:$(_ 'LiveUSB')
+iso:$(_ 'ISO image on a local drive')
+web:$(_ 'ISO image on the Internet')"
 
 # formats (key:help)
 readonly LST_FORMAT="
-btrfs:$(gettext 'B-tree file system (Oracle)')
-ext2:$(gettext 'Second extended filesystem (Linux)')
-ext3:$(gettext 'Third extended filesystem (Linux)')
-ext4:$(gettext 'Fourth extended file system (Linux)')
-jfs:$(gettext 'Journaled File System (IBM)')
-minix:$(gettext 'File system of the MINIX operating system')
-reiser4:$(gettext 'Journaled computer file system (Namesys)')
-xfs:$(gettext 'Journaling file system (Silicon Graphics, Inc.)')"
+btrfs:$(_ 'B-tree file system (Oracle)')
+ext2:$(_ 'Second extended filesystem (Linux)')
+ext3:$(_ 'Third extended filesystem (Linux)')
+ext4:$(_ 'Fourth extended file system (Linux)')
+jfs:$(_ 'Journaled File System (IBM)')
+minix:$(_ 'File system of the MINIX operating system')
+reiser4:$(_ 'Journaled computer file system (Namesys)')
+xfs:$(_ 'Journaling file system (Silicon Graphics, Inc.)')"
 
 # bootloaders (key:help)
 readonly LST_BOOTLOADER="
-auto:$(gettext 'Automatic selection')
-grub:$(gettext 'Grub legacy bootloader')
-syslinux:$(gettext 'Lightweight bootloader')"
+auto:$(_ 'Automatic selection')
+grub:$(_ 'GRUB legacy bootloader')
+syslinux:$(_ 'Lightweight bootloader')"
 
 # predefined iso (key:url:help)
 SLITAZ_VERSION="${SLITAZ_VERSION:-cooking}"
-[ "$SLITAZ_VERSION" = "cooking" ] && SLITAZ_VERSION="$(($(date "+%y")-8)).0"
+[ "$SLITAZ_VERSION" == 'cooking' ] && SLITAZ_VERSION="$(($(date "+%y")-8)).0"
 [ -n "$URL_ISO" ] && readonly LST_WEB="$URL_ISO" || readonly LST_WEB="
 stable:iso/stable/slitaz-$SLITAZ_VERSION.iso \
-:$(gettext 'Stable release') $SLITAZ_VERSION
+:$(_ 'Stable release') $SLITAZ_VERSION
 core:iso/stable/flavors/slitaz-$SLITAZ_VERSION-core.iso \
-:$(gettext 'Stable version without nested subsets')
+:$(_ 'Stable version without nested subsets')
 base:iso/stable/flavors/slitaz-$SLITAZ_VERSION-base.iso \
-:$(gettext 'Stable text-only version (8.1MB)')
+:$(_ 'Stable text-only version (8.1MB)')
 justx:iso/stable/flavors/slitaz-$SLITAZ_VERSION-justx.iso \
-:$(gettext 'Stable basic graphic version without graphic apps')
+:$(_ 'Stable basic graphic version without graphic apps')
 gtkonly:iso/stable/flavors/slitaz-$SLITAZ_VERSION-gtkonly.iso \
-:$(gettext 'Stable basic graphic version with only Gtk')
+:$(_ 'Stable basic graphic version with only GTK')
 cooking:iso/cooking/slitaz-cooking.iso \
-:$(gettext 'Development version for testing latest features')
+:$(_ 'Development version for testing latest features')
 rolling:iso/rolling/slitaz-rolling.iso \
-:$(gettext 'Bleeding edge development version updated every day')
+:$(_ 'Bleeding edge development version updated every day')
 "
 
 
@@ -111,48 +111,48 @@ rolling:iso/rolling/slitaz-rolling.iso \
 # print a short help
 usage()
 {
-	gettext "SliTaz GNU/Linux Installer - Version:"
-	printf ' %s\n' $VERSION
-	echo -e "\033[1m"; gettext 'Usage'; echo -e '\033[0m:'
-	echo -n '  '; gettext 'tazinst [command] <setting> <value> <file>'; echo
-
-	echo -e "\033[1m"; gettext 'Commands'; echo -e '\033[0m:'
-	printf "  %-12s" "new";		gettext "Create a new install file."; echo
-	printf "  %-12s" "set";   	gettext "Change value of a setting."; echo
- 	printf "  %-12s" "unset"; 	gettext "Clear a setting."; echo
-	printf "  %-12s" "get";   	gettext "Get the value of a setting."; echo
-	printf "  %-12s" "check"; 	gettext "Check settings."; echo
-	printf "  %-12s" "help";  	gettext "Print a short help on settings"; echo
-	printf "  %-12s" "list";  	gettext "List system resources."; echo
-	printf "  %-12s" "execute";	gettext "Execute a SliTaz installation."; echo
-	printf "  %-12s" "log";   	gettext "Display log file contents."; echo
-	printf "  %-12s" "clean"; 	gettext "Clean install and log files."; echo
-	printf "  %-12s" "version";	gettext "Print version and exit."; echo
-	printf "  %-12s" "usage";  	gettext "Print this short usage."; echo
+	_ 'SliTaz GNU/Linux Installer - Version: %s' "$VERSION"
+	newline; boldify "$(_ 'Usage:')"
+	echo -n '  '; _ '%s [command] <setting> <value> <file>' 'tazinst'
+	newline; boldify "$(_ 'Commands:')"
+	optlist "\
+new		$(_ 'Create a new install file.')
+set		$(_ 'Change value of a setting.')
+unset	$(_ 'Clear a setting.')
+get		$(_ 'Get the value of a setting.')
+check	$(_ 'Check settings.')
+help	$(_ 'Print a short help on settings')
+list	$(_ 'List system resources.')
+execute	$(_ 'Execute a SliTaz installation.')
+log		$(_ 'Display log file contents.')
+clean	$(_ 'Clean install and log files.')
+version	$(_ 'Print version and exit.')
+usage	$(_ 'Print this short usage.')
+"
 	exit 0
 }
 
 usage_error()
 {
 	local cmd="$1" script="$(basename $0)"
-	gettext "SliTaz GNU/Linux Installer - Version:"
-	printf ' %s\n' $VERSION
-	printf "\n'%s': " "$cmd"
-	gettext 'Unknown command!'; echo
-	gettext 'Run'; printf ": '%s' " "$script help"
-	gettext "to get a list of available commands"; echo -e ".\n"
+	_ 'SliTaz GNU/Linux Installer - Version: %s' "$VERSION"
+	newline
+	_ "'%s': Unknown command!" "$cmd"
+
+	_ "Run: '%s' to get a list of available commands." "$script help"
 	exit 1
 }
+
 
 option_error()
 {
 	local option="$1" list="$2"
-	gettext "SliTaz GNU/Linux Installer - Version:"
-	printf ' %s\n' $VERSION
-	printf "\n'%s': " "$option"
-	gettext 'Unknown option!'; echo
-	gettext "Please select one of these options"
-	printf ":\n  %s\n\n" "$list"
+	_ 'SliTaz GNU/Linux Installer - Version: %s' "$VERSION"
+	newline
+	_ "'%s': Unknown option!" "$option"
+
+	_ 'Please select one of these options:'
+	printf "  %s\n\n" "$list"
 	exit 1
 }
 
@@ -170,14 +170,14 @@ new_file()
 	local install_file=$1
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	if [ -e "$install_file" ]; then
-		printf "%s\n" "$(gettext "Warning: file already exists.")" 1>&2
+		_ 'Warning: file already exists.' 1>&2
 		exit 0
 	fi
 	[ -n "$install_file" ] && touch "$install_file"
 	if [ -w "$install_file" ]; then
 		write_file "$install_file"
 	else
-		printf "%s\n" "$(gettext "Error: Cannot create file.")" 1>&2
+		_ 'Error: Cannot create file.' 1>&2
 		exit 2
 	fi
 }
@@ -186,7 +186,7 @@ new_file()
 write_file()
 {
 	local install_file="$1"
-	cat > "$install_file" << EOT
+	cat > "$install_file" <<EOT
 # SliTaz GNU/Linux Installer - Version: $VERSION
 #
 # Install file.
@@ -275,12 +275,12 @@ read_file()
 	local install_file="$1"
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
 	if ! [ -r "$install_file" ]; then
-		printf "%s\n" "$(gettext "Error: Unable to read install file")" 1>&2
+		_ 'Error: Unable to read install file.' 1>&2
 		exit 2
 	fi
 	#
 	if ! CONTENTS="$(cat "$install_file")"; then
-		printf "%s\n" "$(gettext "Error: Unable to read install file")" 1>&2
+		_ 'Error: Unable to read install file.' 1>&2
 		exit 2
 	fi
 }
@@ -328,25 +328,20 @@ get()
 		egrep -q "$(regex "$SETTINGS")"; then
 			get_value "$setting"
 	else
-		if [ "$setting" = "all" ]; then
-			printf "%-15s: %s\n" "mode" "$(get_value mode)"
-			printf "%-15s: %s\n" "media" "$(get_value media)"
-			printf "%-15s: %s\n" "source" "$(get_value source)"
-			printf "%-15s: %s\n" "root_uuid" "$(get_value root_uuid)"
-			printf "%-15s: %s\n" "root_format" "$(get_value root_format)"
-			printf "%-15s: %s\n" "home_uuid"   "$(get_value home_uuid)"
-			printf "%-15s: %s\n" "home_format" "$(get_value home_format)"
-			printf "%-15s: %s\n" "hostname" "$(get_value hostname)"
-			printf "%-15s: %s\n" "root_pwd" "$(get_value root_pwd)"
-			printf "%-15s: %s\n" "user_login" "$(get_value user_login)"
-			printf "%-15s: %s\n" "user_pwd" "$(get_value user_pwd)"
-			printf "%-15s: %s\n" "bootloader" "$(get_value bootloader)"
-			printf "%-15s: %s\n" "winboot" "$(get_value winboot)"
-		elif [ "$setting" = "settings" ]; then
-			get_settings
-		else
-			option_error "$1" "$SETTINGS"
-		fi
+		case "$setting" in
+			all)
+				for i in mode media source root_uuid root_format home_uuid home_format \
+					hostname root_pwd user_login user_pwd bootloader winboot; do
+					printf "%-15s: %s\n" "$i" "$(get_value $i)"
+				done
+				;;
+			settings)
+				get_settings
+				;;
+			*)
+				option_error "$1" "$SETTINGS"
+				;;
+		esac
 	fi
 }
 
@@ -357,7 +352,7 @@ change()
 	# validate setting
 	if ! printf "%s" "$setting" | \
 			egrep -q "$(regex "$SETTINGS")"; then
-		printf "%s\n" "$(gettext "Error: '$setting' unknown setting.")" 1>&2
+		_ "Error: '%s' unknown setting." "$setting" 1>&2
 		exit 1
 	fi
 	# and file
@@ -385,8 +380,7 @@ change()
 		read_file "$install_file"
 		check "$setting"
 	else
-		printf "%s\n" \
-			"$(gettext "Error: Unable to write to install file.")" 1>&2
+		_ 'Error: Unable to write to install file.' 1>&2
 		exit 2
 	fi
 }
@@ -430,6 +424,12 @@ load_settings()
 		|| unset WINBOOT
 }
 
+
+
+
+
+
+
 # clean command
 clean()
 {
@@ -440,9 +440,9 @@ clean()
 	# rm install file
 	local install_file="$1"
 	[ -z "$install_file" ] && install_file="$DEFAULT_INSTALL_FILE"
-	printf "%s: %s\n" "$(gettext "Deleting install file")" "$install_file"
+	_ 'Deleting install file: %s' "$install_file"
 	if ! [ -w "$install_file" ]; then
-		printf "%s\n" "$(gettext "Error: Unable to delete install file")" 1>&2
+		_ 'Error: Unable to delete install file.' 1>&2
 		exit 2
 	else
 		rm -f "$install_file"
@@ -456,10 +456,10 @@ clean()
 # exit if user is not root.
 check_root()
 {
-	if test $(id -u) != 0 ; then
-		echo $(gettext "You must be the root user (system administrator) \
+	if [ $(id -u) -ne 0 ]; then
+		_ "You must be the root user (system administrator) \
 to install SliTaz, please use 'su' to get a root SHell and restart \
-installation.") 1>&2
+installation." 1>&2
 		exit 1
 	fi
 }
@@ -468,7 +468,7 @@ installation.") 1>&2
 check_instance()
 {
 	if [ -e "$LOCK" ]; then
-		printf "%s\n" $(gettext "Another instance of tazinst is running.") 1>&2
+		_ 'Another instance of tazinst is running.' 1>&2
 		exit 7
 	else
 		printf "%s" "$$" > $LOCK
@@ -482,9 +482,9 @@ check_key()
 	if ! printf "%s" "$keyword" | \
 			egrep -q "$(regex "$keylist")"; then
 		msg="$setting=$keyword
-$(gettext 'Error:') '$keyword' $(gettext 'Invalid keyword.')
-$(gettext 'Select one of these options:') $keylist
-$(gettext 'For more information, see tazinst Manual.')"
+$(_ "Error: '%s' Invalid keyword." "$keyword")
+$(_ 'Select one of these options: %s.' "$keylist")
+$(_ 'For more information, see tazinst Manual.')"
 		printf "%s\n" "$msg" 1>&2
 		exit 1
 	fi
@@ -499,8 +499,8 @@ check_uuid()
 	done
 	if [ "$found" != "1" ]; then
 		msg="$(gettext "$setting")=$value
-$(gettext 'Error: Partition not found')
-$(gettext 'To see available partitions, run') 'tazinst list uuid'."
+$(_ 'Error: Partition not found.')
+$(_ "To see available partitions, run '%s'." 'tazinst list uuid')"
 		printf "%s\n" "$msg" 1>&2
 		exit 1
 	fi
@@ -515,7 +515,7 @@ check_source()
 			check_uuid source ;;
 		iso)
 			if [ ! -r "$source" ]; then
-				printf "%s.\n" "$(gettext "Error: Source file not found")" 1>&2
+				_ 'Error: Source file not found.' 1>&2
 				exit 1
 			fi ;;
 		web)
@@ -530,7 +530,7 @@ check_source()
 			printf "%s" "$source" | \
 				egrep -q "$regexp" && valid=$(($valid+1))
 			if [ "$valid" -le "0" ]; then
-				printf "%s.\n" "$(gettext "Error: invalid URL")" 1>&2
+				_ 'Error: invalid URL.' 1>&2
 				exit 1
 			fi
 	esac
@@ -545,11 +545,11 @@ check_uuid_mix()
 	nodup="$(printf "%s" "$list" | /bin/busybox awk 'BEGIN{RS=" "}{print $0}' \
 		| sort | uniq | wc -w)"
 	if [ "$all" != "$nodup" ]; then
-		printf "%s\n" \
-			"$(gettext "Error: multiple assignations for a disk.")" 1>&2
+		_ 'Error: multiple assignations for a disk.' 1>&2
 		exit 1
 	fi
 }
+
 
 # exit if a password is invalid
 check_password()
@@ -559,13 +559,13 @@ check_password()
 	local errcode=0
 	# too long
 	if [ "${#pass}" -ge 40 ]; then
-		printf "%s\n" "$(gettext "Error: password too long")" 1>&2
+		_ 'Error: password too long.' 1>&2
 		exit 1
 	fi
 	# bad chars
 	if ! (printf "%s" "$pass" | egrep -q "$invalid"); then
-		printf "%s\n" \
-			"$(gettext "Error: Unallowed characters in password.")" 1>&2
+		_ 'Error: Unallowed characters in password.' 1>&2
+
 		exit 1
 	fi
 	# short pwd
@@ -574,9 +574,9 @@ check_password()
 	[ -z "$pass" ] && errcode=129
 	case "$errcode" in
 		128)
-			printf "%s\n" "$(gettext "Warning: short password!")" 1>&2 ;;
+			_ 'Warning: short password!' 1>&2 ;;
 		129)
-			printf "%s\n" "$(gettext "Warning: no password!")" 1>&2 ;;
+			_ 'Warning: no password!' 1>&2 ;;
 	esac
 	return "$errcode"
 }
@@ -586,17 +586,17 @@ check_name()
 {
 	local name="$1" value="$(get "$1")" msg
 	msg="$name=$value"
- 	if [ "${#value}" -lt 2 ]; then
-		printf "%s %s\n" "$msg"	"(gettext "Error: Too short.")\n" 1>&2
+	if [ "${#value}" -lt 2 ]; then
+		_ '%s Error: Too short.' "$msg" 1>&2
 		exit 1
 	fi
 	if [ "${#value}" -gt 32 ]; then
-		printf "%s %s\n" "$msg" "$(gettext "Error: Too long.")\n" 1>&2
+		_ '%s Error: Too long.' "$msg" 1>&2
 		exit 1
 	fi
 	if printf "%s" "$value" | \
 			grep -q "[[:space:]\&\"\'\(\)\|\*\\#\`\+\:/;<>]"; then
-		printf "%s %s\n" "$msg" "$(gettext "Error: Invalid chars.")\n" 1>&2
+		_ '%s Error: Invalid chars.' "$msg" 1>&2
 		exit 1
 	fi
 }
@@ -607,8 +607,8 @@ check_boot_mix()
 	local bootloader=$(get bootloader)
 	local winboot=$(get winboot)
 	if [ -z "$bootloader" ] && [ -n "$winboot" ]; then
-		printf "%s\n" \
-			"$(gettext "Error: Dualboot set with no bootloader.")" 1>&2
+
+		_ 'Error: Dualboot set with no bootloader.' 1>&2
 		exit 1
 	fi
 }
@@ -622,12 +622,12 @@ check_table()
 	if [ "$(/sbin/blkid | grep -c "$uuid")" == "1" ]; then
 		if ! printf "%s" "$(p_table $uuid)" | \
 				egrep -q "$(regex "$pt_list")"; then
-			printf "%s\n" "$(gettext "Error: Unsupported Partition Table")" 1>&2
+			_ 'Error: Unsupported Partition Table.' 1>&2
 			exit 1
 		fi
 	else
-		printf "%s\n" \
-	"$(gettext "Error: No disk selected, cannot install any bootloader.")" 1>&2
+
+		_ 'Error: No disk selected, cannot install any bootloader.' 1>&2
 		exit 1
 	fi
 }
@@ -744,33 +744,33 @@ check()
 
 help_source()
 {
-	printf "%s\n" \
-		"$(gettext "The Source setting depends on the type of media:")"
+
+	_ 'The Source setting depends on the type of media:'
 	printf "%-12s%s\n" "cdrom" "$(help cdrom)"
 	printf "%-12s%s\n" "usb" "$(help usb)"
 	printf "%-12s%s\n" "iso" "$(help iso)"
-	printf "%-12s%s" "web" "$(gettext "Name or URL of the image on the web.")"
-	printf "%s\n" "$(gettext "Type: tazinst help web")"
+	printf "%-12s%s" "web" "$(_ 'Name or URL of the image on the web.')"
+	printf "%s\n" "$(_ 'Type: %s' 'tazinst help web')"
 }
 
 help_all()
 {
-	local text="mode:$(gettext "Mode of install")
-media:$(gettext "Media containing the SliTaz source files")
-source:$(gettext "Source file containing SliTaz")
-root_uuid:$(gettext "The name of the target partition")
-root_format:$(gettext "Format of the target partition")
-home_uuid:$(gettext "Separate home partition")
-home_format:$(gettext "Format of the root partition")
-hostname:$(gettext "Name of the system")
-root_pwd:$(gettext "Superuser password")
-user_login:$(gettext "First user name")
-user_pwd:$(gettext "First user password")
-bootloader:$(gettext "Install a bootloader")
-winboot:$(gettext "Partition to dualboot Windows from")"
-	printf "%s\n" "$(gettext "List of settings:")"
-	printf "%s" "$text" | \
-		/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}'
+	_ 'List of settings:'
+	optlist "\
+mode		$(_ 'Mode of install')
+media		$(_ 'Media containing the SliTaz source files')
+source		$(_ 'Source file containing SliTaz')
+root_uuid	$(_ 'The name of the target partition')
+root_format	$(_ 'Format of the target partition')
+home_uuid	$(_ 'Separate home partition')
+home_format	$(_ 'Format of the root partition')
+hostname	$(_ 'Name of the system')
+root_pwd	$(_ 'Superuser password')
+user_login	$(_ 'First user name')
+user_pwd	$(_ 'First user password')
+bootloader	$(_ 'Install a bootloader')
+winboot		$(_ 'Partition to dualboot Windows from')
+"
 }
 
 # help command
@@ -787,13 +787,13 @@ help()
 	source)
 		help_source ;;
 	cdrom)
-		printf "%s\n" "$(gettext "CD. Automatically set")" ;;
+		_ 'CD. Automatically set' ;;
 	usb)
-		printf "%s\n" \
-			"$(gettext "USB partition. For a list, type: tazinst list usb")" ;;
+
+		_ 'USB partition. For a list, type: %s' 'tazinst list usb' ;;
 	iso)
-		printf "%s\n" \
-			"$(gettext "ISO file name. For a list, type: tazinst list iso")" ;;
+
+		_ 'ISO file name. For a list, type: %s' 'tazinst list iso' ;;
 	web)
 		printf "%s" "$LST_WEB" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $3}' ;;
@@ -808,20 +808,20 @@ help()
 		printf "%s" "$LST_FORMAT" | \
 				/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}' ;;
 	hostname)
-		printf "%s\n" "$(gettext "Name of the system")" ;;
+		_ 'Name of the system' ;;
 	root_pwd)
-		printf "%s\n" "$(gettext "Superuser password")" ;;
+		_ 'Superuser password' ;;
 	user_login)
-		printf "%s\n" "$(gettext "First user name")" ;;
+		_ 'First user name' ;;
 	user_pwd)
-		printf "%s\n" "$(gettext "First user password")" ;;
+		_ 'First user password' ;;
 	bootloader)
 		printf "%s" "$LST_BOOTLOADER" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n",$1,$2}' ;;
 	winboot)
-		printf "%s\n" "$(gettext "Partition containing Windows, or 'auto'")" ;;
+		_ "Partition containing Windows, or 'auto'" ;;
 	""|all)
-	help_all ;;
+		help_all ;;
 	*)
 		option_error "$setting" "$SETTINGS" ;;
 	esac
@@ -883,14 +883,14 @@ list_iso()
 list_format()
 {
 	local fs
-	type mkfs.btrfs > /dev/null && fs="btrfs"
-	type mkfs.ext2  > /dev/null && fs="$fs ext2"
-	type mkfs.ext3  > /dev/null && fs="$fs ext3"
-	type mkfs.ext4  > /dev/null && fs="$fs ext4"
-	type mkfs.jfs > /dev/null && fs="$fs jfs"
-	type mkfs.minix > /dev/null && fs="$fs minix"
+	type mkfs.btrfs   > /dev/null && fs="btrfs"
+	type mkfs.ext2    > /dev/null && fs="$fs ext2"
+	type mkfs.ext3    > /dev/null && fs="$fs ext3"
+	type mkfs.ext4    > /dev/null && fs="$fs ext4"
+	type mkfs.jfs     > /dev/null && fs="$fs jfs"
+	type mkfs.minix   > /dev/null && fs="$fs minix"
 	type mkfs.reiser4 > /dev/null && fs="$fs reiser4"
-	type mkfs.xfs > /dev/null && fs="$fs xfs"
+	type mkfs.xfs     > /dev/null && fs="$fs xfs"
 	printf "%s" "$fs" | sed 's/^\s//'
 }
 
@@ -1124,7 +1124,7 @@ randomize_mirrors()
 				printf "%05.0f %s \n",rand()*99999, $0;
 			}' | sort -n | sed 's/^[0-9]* //' )"
 	else
-		log "$(gettext "No mirror list found, run tazpkg recharge.")"
+		log "$(_ 'No mirror list found, run %s.' 'tazpkg recharge')"
 		list_mirrors="http://mirror.slitaz.org/"
 	fi
 	MIRRORS="$list_mirrors"
@@ -1136,16 +1136,16 @@ dnl()
 	local file="$1" mirror transfer=0 oldfile
 	mkdir -p /tmp/tazinst
 	for mirror in $MIRRORS; do
-		log "$(gettext "Downloading:") $mirror$file"
+		log "$(_ 'Downloading: %s' "$mirror$file")"
 		oldfile="$(printf "%s" $file | \
 			/bin/busybox awk 'BEGIN{RS="/"}{text=$1}END{print text}')"
 		[ -e "/tmp/tazinst/$oldfile" ] && rm -f "/tmp/tazinst/$oldfile"
 		/bin/busybox wget $mirror$file -P /tmp/tazinst && transfer=1 && break
 	done
 	if [ "$transfer" -gt "0" ];then
-		log "$(gettext "Download completed.")"
+		log "$(_ 'Download completed.')"
 	else
-		error 5 "$file: $(gettext "Download failed.")"
+		error 5 "(_ '%s: Download failed.' "$file")"
 	fi
 }
 
@@ -1154,9 +1154,9 @@ need_package()
 {
 	local pkg="$1"
 	if [ ! -d /var/lib/tazpkg/installed/$pkg ]; then
-		log "$(gettext "Installing package to the current system:") $pkg"
+		log "$(_ 'Installing package %s to the current system.' "$pkg")"
 		[ -z "$RECHARGE" ] && RECHARGE=true && /usr/bin/tazpkg recharge
-		/usr/bin/tazpkg get-install "$pkg" || error 5 "Cannot install $pkg"
+		/usr/bin/tazpkg get-install "$pkg" || error 5 "$(_ 'Cannot install %s.' "$pkg")"
 	fi
 }
 
@@ -1164,7 +1164,7 @@ need_package()
 add_pkg()
 {
 	local pkg="$1"
-	log "$(gettext "Adding package to the target system:") $pkg..."
+	log "$(_ 'Adding package %s to the target system...' "$pkg")"
 	[ -z "$RECHARGE" ] && RECHARGE=true && /usr/bin/tazpkg recharge
 	/usr/bin/tazpkg get "$pkg" >> "$LOG"  2>> "$LOG"
 	yes "" | /usr/bin/tazpkg install $pkg.tazpkg \
@@ -1179,7 +1179,7 @@ add_pkg()
 # start log
 log_open()
 {
-	printf "%s\n" "=== Tazinst: started on $(date "+%x %X") ===" > "$LOG"
+	_ '=== Tazinst: started on %s ===' "$(date "+%x %X")" > "$LOG"
 	LOGGING="true"
 }
 
@@ -1205,15 +1205,15 @@ log(){
 # print an error msg & exit
 error()
 {
-	local error="$1" msg="$2" cancel="$(gettext "Process not completed")"
-	printf "%s: %s\n%s\n" "$(gettext "Error")" "$msg" "$cancel" 1>&2
+	local error="$1" msg="$2" cancel="$(_ 'Process not completed')"
+	_ 'Error: %s' "$msg" >&2; echo "$cancel" >&2
 	if [ -n "$LOGGING" ]; then
 		# 1st pattern
 		echo "-x-x- " >> "$LOG"
-		printf "%s: %s\n%s\n" "$(gettext "Error")" "$msg" "$cancel" >> "$LOG"
+		_ 'Error: %s' "$msg" >> "$LOG"; echo "$cancel" >> "$LOG"
 		# 2nd pattern
 		echo "x-x-x " >> "$LOG"
-		printf "=== Tazinst error on $(date "+%x %X") ===\n" >> "$LOG"
+		_ '=== Tazinst error on %s ===' "$(date "+%x %X")" >> "$LOG"
 	fi
 	unset LOGGING
 	umount_devices
@@ -1222,12 +1222,12 @@ error()
 
 error8()
 {
-	error 8 "$(gettext "Internal error")"
+	error 8 "$(_ 'Internal error')"
 }
 
 error9()
 {
-	error 9 "$(gettext "Cancelled by user")"
+	error 9 "$(_ 'Cancelled by user')"
 }
 
 #------------------
@@ -1248,9 +1248,9 @@ mount_cdrom()
 	local cdrom=/dev/$drive
 	# mount cdrom
 	if mount -t iso9660 "$cdrom" "$SOURCE_ROOT" 2>>"$LOG"; then
-		log "$(gettext "Using files from") $cdrom."
+		log "$(_ 'Using files from %s.' "$cdrom")"
 	else
-		error 3 "$cdrom: $(gettext "Mount failed")."
+		error 3 "$(_ '%s: Mount failed.' "$cdrom")"
 	fi
 }
 
@@ -1259,14 +1259,14 @@ mount_usb()
 {
 	# /home is on LiveUSB
 	if [ -d /home/boot ]; then
-		log "$(gettext "Using files from USB device")..."
+		log "$(_ 'Using files from USB device...')"
 		ln -s /home/boot $SOURCE_ROOT/boot
 	else
 		# mount LiveUSB
 		if mount "$SOURCE" "$SOURCE_ROOT" 2>>"$LOG"; then
-			log "$(gettext "Using files from USB device") $SOURCE."
+			log "$(_ 'Using files from USB device %s.' "$SOURCE")"
 		else
-			error 3 "$SOURCE: $(gettext "Failed to mount USB device")."
+			error 3 "$(_ '%s: Failed to mount USB device.' "$SOURCE")"
 		fi
 	fi
 }
@@ -1281,17 +1281,17 @@ mount_iso()
 		local md5calc="$(md5sum $SOURCE | cut -d' ' -f1)"
 		if [ ! "$md5calc" = "$md5ref" ]; then
 			log "md5sum iso=$md5ref md5sum tazinst=$md5calc"
-			error 3 "$(gettext "md5sum error, file corrupted.")"
+			error 3 "$(_ 'md5sum error, file corrupted.')"
 		fi
 	else
-		log "$SOURCE: $(gettext "md5 file not found, cannot check integrity.")"
+		log "$(_ '%s: md5 file not found, cannot check integrity.' "$SOURCE")"
 	fi
 	# mount ISO
 	if mount -o loop -t iso9660 "$SOURCE" \
 			"$SOURCE_ROOT" 2>>"$LOG"; then
-		log "$(gettext "Using files from ISO") $SOURCE."
+		log "$(_ 'Using files from ISO %s.' "$SOURCE")"
 	else
-		error 3 "$SOURCE: $(gettext "Failed to mount ISO.")"
+		error 3 "$(_ '%s: Failed to mount ISO.' "$SOURCE")"
 	fi
 }
 
@@ -1313,7 +1313,7 @@ mount_web()
 # set up source and check SliTaz' content
 mount_source()
 {
-	log "$(gettext "Creating mount point:") $SOURCE_ROOT..."
+	log "$(_ 'Creating mount point: %s...' "$SOURCE_ROOT")"
 	mkdir -p "$SOURCE_ROOT"
 	case "$MEDIA" in
 	cdrom)
@@ -1329,12 +1329,12 @@ mount_source()
 	esac
 
 	#  exit if no rootfs.gz found.
-	log "$(gettext "Checking installation media...")"
+	log "$(_ 'Checking installation media...')"
 	if [ ! -f $SOURCE_ROOT/boot/rootfs.gz -a \
 		 ! -f $SOURCE_ROOT/boot/rootfs1.gz ]; then
-		error 3 $(gettext "Invalid source")
+		error 3 "$(_ 'Invalid source')"
 	else
-		log "$(gettext "Installation media checked ok")"
+		log "$(_ 'Installation media checked ok')"
 	fi
 }
 
@@ -1346,12 +1346,12 @@ mount_source()
 format()
 {
 	local uuid="$1" fmt="$2" dest="$3" dev format
-	log "$(gettext "Format") $uuid ($fmt)"
+	log "$(_ 'Format %s (%s)' "$uuid" "$fmt")"
 	format="mkfs.$fmt"
 	if (printf "%s" "$uuid" | grep -q "UUID="); then
 		# case UUID=
 		dev="$(uuid2dev $uuid)"
-		"$format" "$dev" >>"$LOG" 2>>"$LOG" || error 4 "Formatting has failed"
+		"$format" "$dev" >>"$LOG" 2>>"$LOG" || error 4 "$(_ 'Formatting has failed')"
 		# uuid has changed
 		case "$dest" in
 		root_uuid)
@@ -1363,22 +1363,22 @@ format()
 		esac
 	else
 		# case /dev/xxxx
-		"$format" $uuid >>"$LOG" 2>>"$LOG" || error 4 "Formatting has failed"
+		"$format" $uuid >>"$LOG" 2>>"$LOG" || error 4 "$(_ 'Formatting has failed')"
 	fi
 }
 
 # prepare partitions
 prepare_uuid()
 {
-	log "$(gettext "Preparing target partition...")"
+	log "$(_ 'Preparing target partition...')"
 	local uuid
 	# target may be in use
 	if mount | grep -q "$ROOT_UUID" ;then
-		log "$(gettext "Partition is already mounted, unmounting.")"
+		log "$(_ 'Partition is already mounted, unmounting.')"
 		umount "$ROOT_UUID"
 	fi
 	mount | grep -q "$ROOT_UUID" && \
-		error 4 "$ROOT_UUID: $(gettext "Partition is already in use.")"
+		error 4 "$ROOT_UUID: $(_ 'Partition is already in use.')"
 	# Mount point can be already used.
 	mount | grep -q "$TARGET_ROOT" && \
 		umount "$TARGET_ROOT" 2>>"$LOG"
@@ -1386,7 +1386,7 @@ prepare_uuid()
 	# Formatting root partition
 	case "$ROOT_FORMAT" in
 		"")
-			log "$ROOT_UUID: $(gettext "The partition will be cleaned...")" ;;
+			log "$(_ '%s: The partition will be cleaned...' "$ROOT_UUID")" ;;
 		*)
 			format "$ROOT_UUID" "$ROOT_FORMAT" root_uuid
 	esac
@@ -1395,13 +1395,13 @@ prepare_uuid()
 	if [ -n "$HOME_UUID" ]; then
 		case "$HOME_FORMAT" in
 			"")
-				log "$HOME_UUID $(gettext "The partition will be kept...")" ;;
+				log "$(_ '%s: The partition will be kept...' "$HOME_UUID")" ;;
 			*)
 				format "$HOME_UUID" "$HOME_FORMAT" home_uuid
 		esac
 	fi
 
-	log "$(gettext "Creating mount point:") $TARGET_ROOT"
+	log "$(_ 'Creating mount point: %s...' "$TARGET_ROOT")"
 	mkdir -p "$TARGET_ROOT" >> "$LOG" || error8
 	# Mount target.
 	local mount_fs="$ROOT_FORMAT"
@@ -1410,7 +1410,7 @@ prepare_uuid()
 			"$TARGET_ROOT" >>"$LOG" 2>>"$LOG"
 	if [ $(mount | \
 			grep -c "mnt/target") == "0" ]; then
-		error 4 "$ROOT_UUID: $(gettext "Unable to mount partition")"
+		error 4 "$(_ '%s: Unable to mount partition' "$ROOT_UUID")"
 	fi
 }
 
@@ -1424,23 +1424,23 @@ umount_devices()
 {
 	# umount target
 	if mount | grep -q "$TARGET_ROOT"; then
-		log "$(gettext "Unmounting target partition:") $ROOT_UUID"
+		log "$(_ 'Unmounting target partition: %s' "$ROOT_UUID")"
 		umount -l "$TARGET_ROOT" 2>>$LOG
 	fi
 
 	# umount source
 	if mount | grep -q "$SOURCE_ROOT"; then
-		log "$(gettext "Unmounting:") $SOURCE_ROOT"
+		log "$(_ 'Unmounting: %s' "$SOURCE_ROOT")"
 		umount -l "$SOURCE_ROOT"
 	fi
 	if [ -h $SOURCE_ROOT/boot ]; then
-		log "$(gettext "Unlinking:") $SOURCE_ROOT"
+		log "$(_ 'Unlinking: %s' "$SOURCE_ROOT")"
 		rm -f $SOURCE_ROOT/boot
 	fi
 
 	# eject cd
 	if [ "$SOURCE" == "cdrom" ]; then
-		gettext "Ejecting cdrom..."
+		_ 'Ejecting CD-ROM...'
 		eject
 	fi
 	# remove lock file
@@ -1449,12 +1449,12 @@ umount_devices()
 
 end_of_install()
 {
-	log "$(gettext "Process completed. You can now restart (reboot)")"
-	log "$(gettext "from your SliTaz GNU/Linux system.")"
-	printf "%s\n" "=== Tazinst ended on $(date "+%x %X") ===" >> "$LOG"
+	log "$(_ 'Process completed. You can now restart (reboot) from your SliTaz GNU/Linux system.' |\
+		fold -s)"
+	_ '=== Tazinst ended on %s ===' "$(date "+%x %X")" >> "$LOG"
 	unset LOGGING
 	# saving log
-	log "$(gettext "Copying log to /var/log/tazinst.log")"
+	log "$(_ 'Copying log to %s' '/var/log/tazinst.log')"
 	cp -a "$LOG" $TARGET_ROOT/var/log
 	umount_devices
 }
@@ -1490,7 +1490,7 @@ bootloader()
 			syslinux_install ;;
 		*)
 			syslinux_config
-			log "$(gettext "No bootloader to install.")" ;;
+			log "$(_ 'No bootloader to install.')" ;;
 	esac
 }
 
@@ -1558,7 +1558,7 @@ grub_config()
 			$TARGET_ROOT/boot/grub/menu.bak
 	# create the target GRUB configuration.
 	mkdir -p $TARGET_ROOT/boot/grub || error8
-	cat > $TARGET_ROOT/boot/grub/menu.lst << _EOF_
+	cat > $TARGET_ROOT/boot/grub/menu.lst <<_EOF_
 # /boot/grub/menu.lst: GRUB boot loader configuration.
 #
 
@@ -1584,8 +1584,8 @@ _EOF_
 
 	local winpart="$(winboot_uuid)"
 	if [ -n "$winpart" ]; then
-		log "$(gettext "Enabling Windows dual-boot")"
-		cat >> $TARGET_ROOT/boot/grub/menu.lst << _EOF_
+		log "$(_ 'Enabling Windows dual-boot')"
+		cat >> $TARGET_ROOT/boot/grub/menu.lst <<_EOF_
 # For booting Windows :
 #
 title Microsoft Windows
@@ -1607,17 +1607,17 @@ grub_install()
 {
 	# install grub
 	local target_disk="$(uuid2disk $ROOT_UUID)"
-	log "$(gettext "Installing grub on:") $target_disk"
-	/usr/sbin/grub-install --version >> "$LOG" || error 5 "grub not found"
+	log "$(_ 'Installing GRUB on: %s' "$target_disk")"
+	/usr/sbin/grub-install --version >> "$LOG" || error 5 "$(_ 'GRUB not found')"
 	/usr/sbin/grub-install --no-floppy \
 			--root-directory=$TARGET_ROOT $target_disk >>"$LOG" 2>>"$LOG"
 	# set boot flag
-	log "$(gettext "Setting the boot flag")"
+	log "$(_ 'Setting the boot flag')"
 	/usr/sbin/parted "$(uuid2disk $ROOT_UUID)" \
 		set "$(($(partnum $ROOT_UUID)+1))" boot on 2>> "$LOG"
 	# splash image
 	if [ -f "$SOURCE_ROOT/boot/grub/splash.xpm.gz" ]; then
-		log "$(gettext "Copying splash image")"
+		log "$(_ 'Copying splash image')"
 		mkdir -p $TARGET_ROOT/boot/grub
 		cp $SOURCE_ROOT/boot/grub/splash.xpm.gz \
 			$TARGET_ROOT/boot/grub
@@ -1640,7 +1640,7 @@ syslinux_config()
 			$TARGET_ROOT/boot/syslinux/syslinux.bak
 	# create the target syslinux configuration.
 	mkdir -p $TARGET_ROOT/boot/syslinux || error8
-	cat > $TARGET_ROOT/boot/syslinux/syslinux.cfg << EOF
+	cat > $TARGET_ROOT/boot/syslinux/syslinux.cfg <<EOF
 # use a boot menu
 UI vesamenu.c32
 
@@ -1666,10 +1666,10 @@ MENU CMDLINEROW 16
 
 # Menu colors
 MENU COLOR border       *       #00000000 #00000000 none
-MENU COLOR title	    *       #ffffffff #00000000 *
+MENU COLOR title        *       #ffffffff #00000000 *
 MENU COLOR sel          0       #ffffffff #00000000 none
 MENU COLOR unsel        0       #50ffffff #00000000 none
-MENU COLOR help 	    *       #ffffffff #00000000 *
+MENU COLOR help         *       #ffffffff #00000000 *
 MENU COLOR timeout_msg  37;40   #80ffffff #00000000 std
 MENU COLOR timeout      1;37;40 #c0ffffff #00000000 std
 MENU COLOR msg07        37;40   #90ffffff #a0000000 std
@@ -1688,8 +1688,8 @@ LABEL cmdline
 EOF
 	local winpart="$(winboot_uuid)"
 	if [ -n "$winpart" ]; then
-		log "$(gettext "Enabling Windows dual-boot")"
-		cat >> $TARGET_ROOT/boot/syslinux/syslinux.cfg << EOF
+		log "$(_ 'Enabling Windows dual-boot')"
+		cat >> $TARGET_ROOT/boot/syslinux/syslinux.cfg <<EOF
 LABEL windows
 	MENU LABEL Windows
 	COM32 chain.c32
@@ -1707,7 +1707,7 @@ EOF
 # install syslinux
 syslinux_install()
 {
-	log "$(gettext "Installing syslinux")"
+	log "$(_ 'Installing Syslinux')"
 	# needed tools
 	local dir disk="$(uuid2disk $ROOT_UUID)"
 	for dir in /home/boot/extlinux /home/boot/syslinux /boot/syslinux; do
@@ -1717,19 +1717,19 @@ syslinux_install()
 	/usr/bin/lzma d /usr/share/boot/chain.c32.lzma \
 		$TARGET_ROOT/boot/syslinux/chain.c32 2>> "$LOG"
 	# install syslinux
-	/bin/syslinux -version >> "$LOG" || error 5 "syslinux not found"
+	/bin/syslinux -version >> "$LOG" || error 5 "$(_ 'Syslinux not found')"
 	/bin/extlinux --install $TARGET_ROOT/boot/syslinux >> "$LOG" 2>> "$LOG"
 	case "$(p_table $ROOT_UUID)" in
 		msdos)
-			log "$(gettext "Setting the boot flag on")"
+			log "$(_ 'Setting the boot flag on')"
 			/usr/sbin/parted "$disk" \
 				set "$(($(partnum $ROOT_UUID)+1))" boot on 2>> "$LOG"
-			[ -r /usr/share/boot/mbr.bin ] || error 5 "mbr.bin not found"
-			log "$(gettext "Installing mbr")"
+			[ -r /usr/share/boot/mbr.bin ] || error 5 "$(_ 'mbr.bin not found')"
+			log "$(_ 'Installing MBR')"
 			dd bs=440 count=1 conv=notrunc \
 				if=/usr/share/boot/mbr.bin 	of=$disk >> "$LOG" ;;
 		gpt)
-			log "$(gettext "Setting the legacy_boot flag on")"
+			log "$(_ 'Setting the legacy_boot flag on')"
 			# remove old boot flag
 			local oldboot="$(parted $disk print \
 				| grep boot | /bin/busybox awk '{print $1}')"
@@ -1738,14 +1738,14 @@ syslinux_install()
 			# set boot flag
 			/usr/sbin/parted "$disk" \
 				set "$(($(partnum $ROOT_UUID)+1))" legacy_boot on 2>> "$LOG"
-			log "$(gettext "Installing gptmbr")"
-			[ -r /usr/share/boot/gptmbr.bin ] || error 5 "gptmbr.bin not found"
+			log "$(_ 'Installing GPTMBR')"
+			[ -r /usr/share/boot/gptmbr.bin ] || error 5 "$(_ 'gptmbr.bin not found')"
 			dd bs=440 conv=notrunc count=1 \
 				if=/usr/share/boot/gptmbr.bin of=$disk >> "$LOG" ;;
 	esac
 	# splash image
 	if [ -f "$SOURCE_ROOT/boot/isolinux/splash.jpg" ]; then
-		log "$(gettext "Copying splash image")"
+		log "$(_ 'Copying splash image')"
 		cp -a $SOURCE_ROOT/boot/isolinux/splash.jpg \
 			$TARGET_ROOT/boot/syslinux
 	fi
@@ -1778,7 +1778,7 @@ clean_target()
 {
 	if [ -z "$ROOT_FORMAT" ]; then
 		# partition was not formatted
-		log "$(gettext "Cleaning the root partition") ($ROOT_UUID)..."
+		log "$(_ 'Cleaning the root partition (%s)...' "$ROOT_UUID")"
 		# keep /home in case of reinstall.
 		local path="$(pwd)"
 		cd "$TARGET_ROOT" || error8
@@ -1787,12 +1787,12 @@ clean_target()
 		do
 			case "$dir" in
 				home)
-					log "$(gettext "keeping /home found on:") $ROOT_UUID"
+					log "$(_ 'keeping /home found on: %s' "$ROOT_UUID")"
 					mv home home.bak ;;
 				lost+found)
 					continue ;;
 				*)
-					log "$(gettext "removing target:") $dir"
+					log "$(_ 'removing target: %s' "$dir")"
 					rm -rf "$dir" 2>>"$LOG" ;;
 			esac
 		done
@@ -1810,13 +1810,13 @@ install_kernel()
 		KERNEL="vmlinuz-$(ls /$TARGET_ROOT/lib/modules | tail -1)"
 	else
 		KERNEL="vmlinuz-$(uname -r)"
-		log "$(gettext "Kernel name not found, falling back to:") $(uname -r)"
+		log "$(_ 'Kernel name not found, falling back to: %s' "$(uname -r)")"
 	fi
 	mkdir -p $TARGET_ROOT/boot || error8
 	for i in $SOURCE_ROOT/boot/bzImage* ; do
 		cp $i $TARGET_ROOT/boot/${KERNEL%slitaz*}slitaz${i#*bzImage}
 	done
-	log "$(gettext "install_kernel:") $KERNEL"
+	log "$(_ 'install_kernel: %s' "$KERNEL")"
 }
 
 # extract packed rootfs: squashfs or cromfs
@@ -1902,16 +1902,16 @@ pre_config_system()
 	# restore backup of existing /home if exists.
 	# (created by prepare_target_dev)
 	if [ -d home.bak ]; then
-		log "$(gettext "Restoring directory: /home...")"
+		log "$(_ 'Restoring directory: /home...')"
 		rm -rf home
 		mv home.bak home
 	fi
 	# add root device to CHECK_FS in rcS.conf to check filesystem
 	# on each boot.
-	log "$(gettext "Adding / partition and CHECK_FS to file /etc/rcS.conf...")"
+	log "$(_ 'Adding / partition and CHECK_FS to file %s...' '/etc/rcS.conf')"
 	sed	-i s#'CHECK_FS=\"\"'#"CHECK_FS=\"$(dev2uuid $ROOT_UUID)\""# etc/rcS.conf
 	# set hostname.
-	log "$(gettext "Configuring host name:") $HOSTNAME"
+	log "$(_ 'Configuring host name: %s' "$HOSTNAME")"
 	printf "%s\n" "$HOSTNAME" > etc/hostname
 	printf "%s\n" "127.0.0.1	localhost $HOSTNAME tazpanel" > etc/hosts
 	cd "$path" || error8
@@ -1974,7 +1974,7 @@ home_config()
 		local home_fs="$HOME_FORMAT"
 		[ -z "$home_fs" ] && home_fs="$(filesys $HOME_UUID)"
 		# manage /home
-		log "$(gettext "Configuring partition to be used as /home:") $HOME_UUID"
+		log "$(_ 'Configuring partition to be used as /home: %s' "$HOME_UUID")"
 		mv home/$USER_LOGIN tmp
 		mount -t "$home_fs" "$HOME_UUID" home >> "$LOG" 2>> "$LOG"
 		if [ -d $TARGET_ROOT/home/$USER_LOGIN ]; then
@@ -1993,39 +1993,39 @@ home_config()
 install()
 {
 	log_open
-	log "1 $(gettext "Installing SliTaz on:") $(get root_uuid)"
-	log "5 $(gettext "Checking settings")..."
+	log "1 $(_ 'Installing SliTaz on: %s' "$(get root_uuid)")"
+	log "5 $(_ 'Checking settings...')"
 	check all >> "$LOG" 2>> "$LOG"
 	load_settings
 
-	log "10 $(gettext "Preparing source media")..."
+	log "10 $(_ 'Preparing source media...')"
 	mount_source
 
-	log "20 $(gettext "Preparing target disk")..."
+	log "20 $(_ 'Preparing target disk...')"
 	prepare_uuid
 
-	log "30 $(gettext "Cleaning the root partition if necessary")..."
+	log "30 $(_ 'Cleaning the root partition if necessary...')"
 	clean_target
 
-	log "40 $(gettext "Extracting the root system")..."
+	log "40 $(_ 'Extracting the root system...')"
 	extract_rootfs $SOURCE_ROOT/boot
 
-	log "50 $(gettext "Installing the kernel")..."
+	log "50 $(_ 'Installing the Kernel...')"
 	install_kernel
 
-	log "60 $(gettext "Preconfiguring the system")..."
+	log "60 $(_ 'Preconfiguring the system...')"
 	pre_config_system
 
-	log "70 $(gettext "Configuring root and default user account")..."
+	log "70 $(_ 'Configuring root and default user account...')"
 	users_settings
 
-	log "80 $(gettext "Configuring /home")..."
+	log "80 $(_ 'Configuring /home...')"
 	home_config
 
-	log "90 $(gettext "Checking bootloader installation...")"
+	log "90 $(_ 'Checking bootloader installation...')"
 	bootloader
 
-	log "100 $(gettext "Files installation completed")"
+	log "100 $(_ 'Files installation completed')"
 	end_of_install
 }
 
@@ -2039,10 +2039,10 @@ check_release()
 {
 	if [ -f $TARGET_ROOT/etc/slitaz-release ]; then
 		local release="$(cat $TARGET_ROOT/etc/slitaz-release)"
-		log "$(gettext "Preparing upgrade of SliTaz release:") $release"
+		log "$(_ 'Preparing upgrade of SliTaz release: %s' "$release")"
 	else
-		error 6 "$ROOT_UUID: $(gettext "This partition doesn't appear to \
-contain a valid SliTaz system, the file: /etc/slitaz-release doesn't exist.")"
+		error 6 "$(_ "%s: This partition doesn't appear to contain a valid \
+SliTaz system, the file: %s doesn't exist." "$ROOT_UUID" '/etc/slitaz-release')"
 	fi
 }
 
@@ -2060,21 +2060,21 @@ backup_files()
 				rm -rf boot/vmlinuz-* ;;
 			home)
 				mv home home.bak
-				log "$(gettext "keeping /home found on:") $ROOT_UUID" ;;
+				log "$(_ 'keeping /home found on: %s' "$ROOT_UUID")" ;;
 			etc)
 				/bin/busybox tar czf etc.tar.gz etc
 				mv etc etc.bak
-				log "$(gettext "keeping /etc found on:") $ROOT_UUID" ;;
+				log "$(_ 'keeping /etc found on: %s' "$ROOT_UUID")" ;;
 			var)
 				if [ -d var/www ]; then
 					mv var/www www.bak
-					log "$(gettext "keeping /var/www found on:") $ROOT_UUID"
+					log "$(_ 'keeping /var/www found on: %s' "$ROOT_UUID")"
 				fi
 				rm -rf var 2>>"$LOG" ;;
 			lost+found)
 				continue ;;
 			*)
-				log "$(gettext "removing target: $dir")"
+				log "$(_ 'removing target: %s' "$dir")"
 				rm -rf "$dir" 2>>"$LOG" ;;
 		esac
 	done
@@ -2095,21 +2095,21 @@ restore_files()
 		rm -rf $TARGET_ROOT/var/www
 		mv $TARGET_ROOT/www.bak $TARGET_ROOT/var/www
 	fi
-	log "$(gettext "backups restored:") $(date)"
+	log "$(_ 'backups restored: %s' "$(date)")"
 
 	# /var/lib/slitaz-installer
 	mkdir -p $TARGET_ROOT/var/lib/tazinst && \
 	mv $TARGET_ROOT/etc.tar.gz $TARGET_ROOT/var/lib/tazinst && \
 	mv $TARGET_ROOT/home/packages-selection.list \
 		$TARGET_ROOT/var/lib/tazinst \
-		&& log "$(gettext "backups saved in /var/lib/tazinst")"
+		&& log "$(_ 'backups saved in %s' '/var/lib/tazinst')"
 }
 
 # upgrade added pkgs
 install_pkgs()
 {
 	# check if the pkg is on the mirror.
-	log "$(gettext "Checking the availability of packages...")"
+	log "$(_ 'Checking the availability of packages...')"
 	touch packages-to-install.list
 	packages=0
 	diff="$(cat packages-selection.diff | sort)"
@@ -2122,14 +2122,14 @@ install_pkgs()
 	done
 
 	# install packages.
-	log "$(gettext "Installing packages...")"
+	log "$(_ 'Installing packages...')"
 	if [ "$packages" == "0" ]; then
-		log "$(gettext "packages to install: 0")"
+		log "$(_ 'packages to install: 0')"
 	else
 		# get-install all missing pkgs.
 		for pkg in $(cat packages-to-install.list)
 		do
-			log "$(gettext "Installing:") $pkg..."
+			log "$(_ 'Installing: %s...' "$pkg")"
 			# get install package and answer yes in case of dependencies.
 			pkgname="$(grep ^$pkg /var/lib/tazpkg/packages.list)"
 			/usr/bin/tazpkg get "$pkg" >/dev/null 2>/dev/null
@@ -2138,7 +2138,7 @@ install_pkgs()
 			rm -f $pkgname.tazpkg
 		done
 	fi
-	log "$(gettext "Installation of packages complete...")"
+	log "$(_ 'Installation of packages complete...')"
 }
 
 # search for added pkgs
@@ -2147,23 +2147,23 @@ update_pkgs()
 	local path="$(pwd)"
 	cd $TARGET_ROOT/var/lib/tazinst || error8
 	# LiveCD packages list.
-	log "$(gettext "Creating package lists...")"
+	log "$(_ 'Creating package lists...')"
 	ls -1 $TARGET_ROOT/var/lib/tazpkg/installed > packages-source.list || error8
-	log "$(gettext "packages-source.list: done")"
+	log "$(_ '%s: done' 'packages-source.list')"
 	# diff
 	/bin/busybox diff packages-source.list packages-selection.list | \
 		grep ^+[a-z] | sed s/^+// > packages-selection.diff
-	log "$(gettext "packages-selection.diff: done")"
+	log "$(_ '%s: done' 'packages-selection.diff')"
 	# get mirror list.
 	/usr/bin/tazpkg recharge >>$LOG 2>>$LOG
 	if [ -f /var/lib/tazpkg/packages.list ]; then
 		install_pkgs
 	else
 		touch packages-to-install.list
-		printf "%s\n" "$(gettext "The list of available packages on the mirror \
-could not be downloaded. No missing packages will be reinstalled now, but you \
-can do so later by looking at the following list:
-/var/lib/tazinst/packages-selection.diff")"
+		longline "$(_ "The list of available packages on the mirror could not \
+be downloaded. No missing packages will be reinstalled now, but you can do so \
+later by looking at the following list:")"
+		echo '/var/lib/tazinst/packages-selection.diff'
 	fi
 	cd "$path" || error8
 }
@@ -2172,39 +2172,39 @@ can do so later by looking at the following list:
 upgrade()
 {
 	log_open
-	log "1 $(gettext "Upgrading SliTaz on:") $(get root_uuid)"
-	log "5 $(gettext "Checking settings")..."
+	log "1 $(_ 'Upgrading SliTaz on: %s' "$(get root_uuid)")"
+	log "5 $(_ 'Checking settings...')"
 	check all >> "$LOG"
 	load_settings
 
-	log "10 $(gettext "Preparing source media")..."
+	log "10 $(_ 'Preparing source media...')"
 	mount_source
 
-	log "20 $(gettext "Preparing target disk")..."
+	log "20 $(_ 'Preparing target disk...')"
 	prepare_uuid
 
-	log "30 $(gettext "Searching for /etc/slitaz-release")..."
+	log "30 $(_ 'Searching for %s...' '/etc/slitaz-release')"
 	check_release
 
-	log "40 $(gettext "Backup /etc, /home and the packages list")..."
+	log "40 $(_ 'Backup /etc, /home and the packages list...')"
 	backup_files
 
-	log "50 $(gettext "Extracting the root system")..."
+	log "50 $(_ 'Extracting the root system...')"
 	extract_rootfs $SOURCE_ROOT/boot
 
-	log "60 $(gettext "Restoring configuration files")..."
+	log "60 $(_ 'Restoring configuration files...')"
 	restore_files
 
-	log "70 $(gettext "Installing the kernel")..."
+	log "70 $(_ 'Installing the Kernel...')"
 	install_kernel
 
-	log "80 $(gettext "Upgrading added packages")..."
+	log "80 $(_ 'Upgrading added packages...')"
 	update_pkgs
 
-	log "90 $(gettext "Bootloader")..."
+	log "90 $(_ 'Bootloader...')"
 	bootloader
 
-	log "100 $(gettext "Files installation completed")"
+	log "100 $(_ 'Files installation completed')"
 	end_of_install
 }
 

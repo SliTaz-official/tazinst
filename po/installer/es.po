@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-05 19:03+0100\n"
+"POT-Creation-Date: 2016-04-09 17:07+0300\n"
 "PO-Revision-Date: 2012-06-11 03:13-0000\n"
 "Last-Translator: kevin fabian quintero <kefaquin@gmail.com>\n"
 "Language-Team: \n"
@@ -126,11 +126,7 @@ msgid "Upgrade SliTaz"
 msgstr "Actualizar SliTaz"
 
 #: installer.cgi:141
-msgid "Evaluate:"
-msgstr ""
-
-#: installer.cgi:141
-msgid "Without Partitioning / Formating"
+msgid "Evaluate: Without Partitioning / Formating"
 msgstr ""
 
 #: installer.cgi:144
@@ -139,8 +135,7 @@ msgstr ""
 
 #: installer.cgi:145
 msgid ""
-"SliTaz will be in the \\slitaz directory like UMSDOS did in the previous "
-"century..."
+"SliTaz will be in the %s directory like UMSDOS did in the previous century..."
 msgstr ""
 
 #: installer.cgi:154
@@ -148,7 +143,7 @@ msgid "ISO image file full path"
 msgstr ""
 
 #: installer.cgi:155
-msgid "set /dev/cdrom for a physical CD-ROM"
+msgid "set %s for a physical CD-ROM"
 msgstr ""
 
 #: installer.cgi:158
@@ -265,9 +260,7 @@ msgid "LiveUSB:"
 msgstr "USB Vivo:"
 
 #: installer.cgi:271
-msgid ""
-"Enter the partition where SliTaz Live is located on\n"
-" your USB Key"
+msgid "Enter the partition where SliTaz Live is located on your USB Key"
 msgstr ""
 
 #: installer.cgi:286
@@ -291,7 +284,7 @@ msgid "Select a SliTaz version on the Web"
 msgstr ""
 
 #: installer.cgi:322 installer.cgi:329
-msgid "Select a version or enter the full url to an ISO file"
+msgid "Select a version or enter the full URL to an ISO file"
 msgstr ""
 
 #: installer.cgi:345
@@ -315,14 +308,13 @@ msgid "home partition"
 msgstr "Partición Home"
 
 #: installer.cgi:384
-#, fuzzy
-msgid "Separate partition for /home:"
-msgstr "Usar otra partición para /home:"
+msgid "Separate partition for %s:"
+msgstr "Usar otra partición para %s:"
 
 #: installer.cgi:385
 #, fuzzy
-msgid "Specify the partition containing /home"
-msgstr "Usar otra partición para /home:"
+msgid "Specify the partition containing %s"
+msgstr "Usar otra partición para %s:"
 
 #: installer.cgi:416
 msgid "Hostname"
@@ -345,7 +337,7 @@ msgid "Root superuser"
 msgstr ""
 
 #: installer.cgi:446
-msgid "Root passwd:"
+msgid "Root password:"
 msgstr "Contraseña Root:"
 
 #: installer.cgi:447
@@ -375,7 +367,7 @@ msgid "Name of the first user"
 msgstr "Nombre de usuario"
 
 #: installer.cgi:494
-msgid "User passwd:"
+msgid "User password:"
 msgstr "Contraseña de usuario:"
 
 #: installer.cgi:495
@@ -439,7 +431,7 @@ msgid "Checking settings..."
 msgstr "Comprobar actualizaciónes..."
 
 #: installer.cgi:689
-msgid "Proceeding to:"
+msgid "Proceeding to: %s"
 msgstr ""
 
 #: installer.cgi:707
@@ -526,14 +518,10 @@ msgstr ""
 #: installer.cgi:832
 msgid ""
 "If your browser doesn't automatically redirect within a few seconds, you may "
-"want to go there manually"
+"want to go there manually [here]"
 msgstr ""
 "Si su navegador no lo redirige de manera automatica en unos segundos,usted "
-"puede ir de manera manual"
-
-#: installer.cgi:834
-msgid "here"
-msgstr ""
+"puede ir de manera manual [here]"
 
 #: installer.cgi:849 installer.cgi:861 installer.cgi:874
 msgid "Tazinst Error"
@@ -541,40 +529,37 @@ msgstr "Error de Tazinst"
 
 #: installer.cgi:850
 #, fuzzy
-msgid ""
-"<strong>tazinst</strong>, the backend to slitaz-installer is missing. Any "
-"installation can not be done without tazinst."
-msgstr ""
-"<strong>tazinst</strong>, El instalador de SliTaz no se encuentra,no se "
-"puede realizar la instalacion sin tazinst."
+msgid "%s, the backend to %s is missing."
+msgstr "%s, El instalador de SliTaz (%s) no se encuentra."
+
+#: installer.cgi:851 installer.cgi:864
+msgid "Any installation can not be done without %s."
+msgstr "No se puede realizar la instalacion sin %s."
 
 #: installer.cgi:852
-#, fuzzy
-msgid "Check tazinst permissions, or reinstall the slitaz-installer package."
-msgstr "Verifique los permisos tazinst' , o reinstale el paquete slitaz-tools:"
+msgid "Check %s permissions, or reinstall the %s package."
+msgstr "Verifique los permisos %s, o reinstale el paquete %s."
 
 #: installer.cgi:862
 #, fuzzy
-msgid ""
-"<strong>tazinst</strong>, the slitaz-installer backend, is not at the "
-"minimum required version. Any installation cannot be done without tazinst."
-msgstr ""
-"<strong>tazinst</strong>, El instalador de SliTaz no se encuentra,no se "
-"puede realizar la instalacion sin tazinst."
+msgid "%s, the %s backend, is not at the minimum required version."
+msgstr "%s, El instalador de SliTaz (%s) no se encuentra."
 
 #: installer.cgi:865 installer.cgi:878
-msgid "Reinstall the slitaz-installer package, or use tazinst in CLI mode."
+msgid "Reinstall the %s package, or use %s in CLI mode."
 msgstr ""
 
 #: installer.cgi:875
 #, fuzzy
 msgid ""
-"<strong>tazinst</strong>, the slitaz-installer backend, is at a higher "
-"version than the maximum authorized by the slitaz-installer. Any "
-"installation cannot be done."
-msgstr ""
-"<strong>tazinst</strong>, El instalador de SliTaz no se encuentra,no se "
-"puede realizar la instalacion sin tazinst."
+"%s, the %s backend, is at a higher version than the maximum authorized by "
+"the %s."
+msgstr "%s, El instalador de SliTaz (%s) no se encuentra."
+
+#: installer.cgi:877
+#, fuzzy
+msgid "Any installation cannot be done."
+msgstr "No se puede realizar la instalacion."
 
 #: installer.cgi:995 installer.cgi:1052
 msgid "None"
