@@ -135,7 +135,8 @@ msgstr ""
 
 #: installer.cgi:145
 msgid ""
-"SliTaz will be in the %s directory like UMSDOS did in the previous century..."
+"SliTaz will be in the %s directory like UMSDOS used to do in the previous "
+"century..."
 msgstr ""
 
 #: installer.cgi:154

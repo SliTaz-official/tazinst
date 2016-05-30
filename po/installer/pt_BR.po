@@ -129,7 +129,8 @@ msgstr "SliTaz e Windows&trade; podem coexistir na mesma partição."
 #: installer.cgi:145
 #, fuzzy
 msgid ""
-"SliTaz will be in the %s directory like UMSDOS did in the previous century..."
+"SliTaz will be in the %s directory like UMSDOS used to do in the previous "
+"century..."
 msgstr "SliTaz estará no diretório %s como previsto anteriormente..."
 
 #: installer.cgi:154
