@@ -1578,7 +1578,7 @@ splashimage=/boot/grub/splash.xpm.gz
 #
 title SliTaz GNU/Linux $(cat $TARGET_ROOT/etc/slitaz-release) (Kernel $KERNEL)
 root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
-kernel /boot/$KERNEL root=$(rootdev $ROOT_UUID) quiet $(rootdelay)
+kernel /boot/$KERNEL root=$(rootdev $ROOT_UUID) video=-32 quiet $(rootdelay)
 
 _EOF_
 
@@ -1679,7 +1679,7 @@ MENU COLOR tabmsg       31;40   #30ffffff #00000000 std
 LABEL slitaz
 	MENU LABEL SliTaz GNU/Linux $version
 	LINUX /boot/$KERNEL
-	APPEND root=$(rootdev $ROOT_UUID) quiet $(rootdelay)
+	APPEND root=$(rootdev $ROOT_UUID) video=-32 quiet $(rootdelay)
 
 LABEL cmdline
 	MENU LABEL Command Line
