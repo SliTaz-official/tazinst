@@ -7,5 +7,5 @@ Name[pt_BR]=Instalador do SliTaz
 Name[ru]=Установка SliTaz
 Name[zh_CN] = SliTaz 系统安装工具
 Icon=slitaz-icon
-Exec=sh -c "subox tazpanel installer || subox terminal -e slitaz-installer"
+Exec=sh -c "which tazpanel && subox tazpanel installer || subox terminal -e slitaz-installer"
 Categories=System;
