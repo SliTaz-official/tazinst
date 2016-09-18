@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-09 17:07+0300\n"
-"PO-Revision-Date: 2016-04-04 11:45+0200\n"
+"PO-Revision-Date: 2016-09-18 11:45+0200\n"
 "Last-Translator: Pascal Bellard <pascal.bellard@slitaz.org>\n"
 "Language-Team: French\n"
 "Language: French\n"
@@ -502,9 +502,8 @@ msgid "Tazinst Error"
 msgstr "Erreur de Tazinst"
 
 #: installer.cgi:850
-#, fuzzy
 msgid "%s, the backend to %s is missing."
-msgstr "%s, L'installeur léger de SliTaz (%s) n'a pas été trouvé."
+msgstr "%s, l'installeur léger de SliTaz (%s) n'a pas été trouvé."
 
 #: installer.cgi:851 installer.cgi:864
 msgid "Any installation can not be done without %s."
@@ -515,10 +514,9 @@ msgid "Check %s permissions, or reinstall the %s package."
 msgstr "Vérifiez les permissions de %s, ou réinstallez le paquet %s."
 
 #: installer.cgi:862
-#, fuzzy
 msgid "%s, the %s backend, is not at the minimum required version."
 msgstr ""
-"%s, L'installeur léger de SliTaz (%s) n'a pas la version minimum requise."
+"%s, l'installeur léger de SliTaz (%s) n'a pas la version minimum requise."
 
 #: installer.cgi:865 installer.cgi:878
 msgid "Reinstall the %s package, or use %s in CLI mode."
