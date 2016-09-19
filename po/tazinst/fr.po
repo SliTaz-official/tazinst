@@ -28,11 +28,11 @@ msgstr "Mise à jour d'un système"
 
 #: tazinst:64
 msgid "LiveCD"
-msgstr ""
+msgstr "LiveCD"
 
 #: tazinst:65
 msgid "LiveUSB"
-msgstr ""
+msgstr "LiveUSB"
 
 #: tazinst:66
 msgid "ISO image on a local drive"
@@ -493,7 +493,7 @@ msgstr "Vérification du media d'installation réussie"
 
 #: tazinst:1349
 msgid "Format %s (%s)"
-msgstr ""
+msgstr "Format %s (%s)"
 
 #: tazinst:1354 tazinst:1366
 msgid "Formatting has failed"
