@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: slitaz-installer \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-09 17:07+0300\n"
-"PO-Revision-Date: 2016-10-30 15:38+0100\n"
+"PO-Revision-Date: 2016-11-25 17:48+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -39,14 +39,14 @@ msgstr "Sie haben SliTaz-Installation von einem USB-Speichermedium gewählt."
 
 #: slitaz-installer:30
 msgid "Enter the partition where SliTaz Live is located:"
-msgstr "Geben Sie an, in welcher Partition sich 'SliTaz Live' befindet:"
+msgstr "Geben Sie an, in welcher Partition sich 'SliTaz-Direktstart' befindet:"
 
 #: slitaz-installer:32
 msgid ""
 "You have selected the option to install SliTaz from an ISO file located on a "
 "local disk."
 msgstr ""
-"Sie haben SliTaz-Installation von einem ISO-Abbild von einer lakalen Platte gewählt."
+"Sie haben SliTaz-Installation von einem ISO-Abbild von einer lokalen Platte gewählt."
 
 #: slitaz-installer:34
 msgid "Please, select a file below:"
@@ -180,7 +180,7 @@ msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
 "new SliTaz GNU/Linux operating system."
 msgstr ""
-"Die Installation ist jetzt erledigt. Sie können die Installationsprozedur "
+"Die Installation ist jetzt abgeschlossen. Sie können die Installationsprozedur "
 "beenden oder Ihr neues SliTaz-GNU/Linux-System laden."
 
 #: slitaz-installer:87
@@ -278,7 +278,7 @@ msgstr "SliTaz jetzt installieren?"
 
 #: slitaz-installer:120
 msgid "Sorry, no device, nor file found or available."
-msgstr "Weder ein Gerät verfügbar noch eine Datei gefunden."
+msgstr "Es ist weder ein Gerät verfügbar noch eine Datei gefunden worden."
 
 #: slitaz-installer:131 slitaz-installer:140
 msgid "Error 2:"
@@ -395,7 +395,7 @@ msgstr "SliTaz-Installationsprozedur"
 
 #: slitaz-installer:567
 msgid "Installing..."
-msgstr "Installiere..."
+msgstr "Es wird installiert..."
 
 #: slitaz-installer:573
 msgid "Installation complete"
