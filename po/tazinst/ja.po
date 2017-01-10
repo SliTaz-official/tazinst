@@ -1,0 +1,786 @@
+# Japanese translations for the tazinst package.
+# Copyright (C) 2017 SliTaz
+# This file is distributed under the same license as the tazinst package.
+# BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <balloonakafusen AT gmail DOT com>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TazInst\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-02 18:51+0900\n"
+"PO-Revision-Date: 2017-01-08 15:20+0900\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <balloonakafusen　AT "
+"gmail DOT com>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja_JP\n"
+
+#: tazinst:59
+msgid "Fresh install on a HDD"
+msgstr "ブートローダーをインストールします。"
+
+#: tazinst:60
+msgid "Upgrade an existing system"
+msgstr "既存のシステムをアップグレードします"
+
+#: tazinst:64
+msgid "LiveCD"
+msgstr "LiveCD"
+
+#: tazinst:65
+msgid "LiveUSB"
+msgstr "LiveUSB:"
+
+#: tazinst:66
+msgid "ISO image on a local drive"
+msgstr "ローカルドライブ上の ISO イメージ"
+
+#: tazinst:67
+msgid "ISO image on the Internet"
+msgstr "インターネット上の ISO イメージ"
+
+#: tazinst:71
+msgid "B-tree file system (Oracle)"
+msgstr "B-treeファイルシステム (Oracle)"
+
+#: tazinst:72
+msgid "Second extended filesystem (Linux)"
+msgstr "2 番目の拡張ファイルシステム (Linux)"
+
+#: tazinst:73
+msgid "Third extended filesystem (Linux)"
+msgstr "3 番目の拡張ファイルシステム (Linux)"
+
+#: tazinst:74
+msgid "Fourth extended file system (Linux)"
+msgstr "4 番目の拡張ファイルシステム (Linux)"
+
+#: tazinst:75
+msgid "Journaled File System (IBM)"
+msgstr "ジャーナルファイルシステム（IBM）"
+
+#: tazinst:76
+msgid "File system of the MINIX operating system"
+msgstr "MINIX オペレーティングシステムのファイルシステム"
+
+#: tazinst:77
+msgid "Journaled computer file system (Namesys)"
+msgstr "ジャーナリングコンピュータファイルシステム (Namesys)"
+
+#: tazinst:78
+msgid "Journaling file system (Silicon Graphics, Inc.)"
+msgstr "ジャーナリングファイルシステム (Silicon Graphics、Inc.)"
+
+#: tazinst:82
+msgid "Automatic selection"
+msgstr "自動選択"
+
+#: tazinst:83
+msgid "GRUB legacy bootloader"
+msgstr "旧版 GRUB ブートローダー"
+
+#: tazinst:84
+msgid "Lightweight bootloader"
+msgstr "軽量ブートローダー"
+
+#: tazinst:91
+msgid "Stable release"
+msgstr "安定版"
+
+#: tazinst:93
+msgid "Stable version without nested subsets"
+msgstr "ネストサブセットのない安定版"
+
+#: tazinst:95
+msgid "Stable text-only version (8.1MB)"
+msgstr "テキストのみ安定版 ((8.1MB)"
+
+#: tazinst:97
+msgid "Stable basic graphic version without graphic apps"
+msgstr "グラフィックアプリなし 安定基本グラフィック版"
+
+#: tazinst:99
+msgid "Stable basic graphic version with only GTK"
+msgstr "GTK のみの安定基本グラフィック版"
+
+#: tazinst:101
+msgid "Development version for testing latest features"
+msgstr "最新機能をテストするための開発版"
+
+#: tazinst:103
+msgid "Bleeding edge development version updated every day"
+msgstr "毎日更新されている Bleeding edge 開発版"
+
+#: tazinst:114 tazinst:138 tazinst:150
+msgid "SliTaz GNU/Linux Installer - Version: %s"
+msgstr "SliTaz GNU/Linux インストーラー - バージョン: %s"
+
+#: tazinst:115
+msgid "Usage:"
+msgstr "用途:"
+
+#: tazinst:116
+msgid "%s [command] <setting> <value> <file>"
+msgstr "%s [コマンド] <設定> <値> <ファイル>"
+
+#: tazinst:117
+msgid "Commands:"
+msgstr "コマンド:"
+
+#: tazinst:119
+msgid "Create a new install file."
+msgstr "新しいインストールファイルを生成します。"
+
+#: tazinst:120
+msgid "Change value of a setting."
+msgstr "設定の値を変更します。"
+
+#: tazinst:121
+msgid "Clear a setting."
+msgstr "設定をクリアします。"
+
+#: tazinst:122
+msgid "Get the value of a setting."
+msgstr "設定の値を取得します。"
+
+#: tazinst:123
+msgid "Check settings."
+msgstr "設定を確認します。"
+
+#: tazinst:124
+msgid "Print a short help on settings"
+msgstr "設定に関する簡単なヘルプを表示"
+
+#: tazinst:125
+msgid "List system resources."
+msgstr "システムリソースを一覧表示します。"
+
+#: tazinst:126
+msgid "Execute a SliTaz installation."
+msgstr "SliTaz インストールを実行します。"
+
+#: tazinst:127
+msgid "Display log file contents."
+msgstr "ログファイルの内容を表示します。"
+
+#: tazinst:128
+msgid "Clean install and log files."
+msgstr "クリーンインストールとログファイルを出力します。"
+
+#: tazinst:129
+msgid "Print version and exit."
+msgstr "バージョンを表示し終了します。"
+
+#: tazinst:130
+msgid "Print this short usage."
+msgstr "短い使用法を出力します。"
+
+#: tazinst:140
+msgid "'%s': Unknown command!"
+msgstr "'%s': コマンドが不明です！"
+
+#: tazinst:142
+msgid "Run: '%s' to get a list of available commands."
+msgstr "実行: '%s' をクリックすると利用可能なコマンドのリストが表示されます。"
+
+#: tazinst:152
+msgid "'%s': Unknown option!"
+msgstr "'%s': オプションが不明です！"
+
+#: tazinst:154
+msgid "Please select one of these options:"
+msgstr "次いずれかのオプションを選択して下さい:"
+
+#: tazinst:173
+msgid "Warning: file already exists."
+msgstr "警告: ファイルは既に存在します。"
+
+#: tazinst:180
+msgid "Error: Cannot create file."
+msgstr "エラー: ファイルを作成できません。"
+
+#: tazinst:278 tazinst:283
+msgid "Error: Unable to read install file."
+msgstr "エラー: インストールファイルを読み込めません。"
+
+#: tazinst:355
+msgid "Error: '%s' unknown setting."
+msgstr "エラー： '%' の設定が不明です。"
+
+#: tazinst:383
+msgid "Error: Unable to write to install file."
+msgstr "エラー: インストールファイルに書き込めません。"
+
+#: tazinst:443
+msgid "Deleting install file: %s"
+msgstr "インストールファイルの削除中: %s"
+
+#: tazinst:445
+msgid "Error: Unable to delete install file."
+msgstr "エラー: インストールファイルを削除できません。"
+
+#: tazinst:460
+msgid ""
+"You must be the root user (system administrator) to install SliTaz, please "
+"use 'su' to get a root SHell and restart installation."
+msgstr ""
+"SliTaz をインストールするには、root ユーザー(システム管理者)でなければなりま"
+"せん。su を使用して riit SHell を取得し、インストールを再開してください。"
+
+#: tazinst:471
+msgid "Another instance of tazinst is running."
+msgstr "tazinst の別インスタンスが実行中です。"
+
+#: tazinst:485
+msgid "Error: '%s' Invalid keyword."
+msgstr "エラー： '%s' キーワードが無効です。"
+
+#: tazinst:486
+msgid "Select one of these options: %s."
+msgstr "次いずれかのオプションを選択してください: %s"
+
+#: tazinst:487
+msgid "For more information, see tazinst Manual."
+msgstr "詳細は tazinst Manual を参照して下さい。"
+
+#: tazinst:502
+msgid "Error: Partition not found."
+msgstr "エラー: パーティションが見つかりません。"
+
+#: tazinst:503
+msgid "To see available partitions, run '%s'."
+msgstr "使用可能なパーティションを表示するには、 '%s' を実行してください。"
+
+#: tazinst:518
+msgid "Error: Source file not found."
+msgstr "エラー: ソースファイルが見つかりません。"
+
+#: tazinst:533
+msgid "Error: invalid URL."
+msgstr "エラー：URL が無効です。"
+
+#: tazinst:548
+msgid "Error: multiple assignations for a disk."
+msgstr "エラー：ディスクが複数割り当てられています。"
+
+#: tazinst:562
+msgid "Error: password too long."
+msgstr "エラー: パスワードが長すぎます。"
+
+#: tazinst:567
+msgid "Error: Unallowed characters in password."
+msgstr "エラー: パスワードに使用できない文字があります。"
+
+#: tazinst:577
+msgid "Warning: short password!"
+msgstr "警告: パスワードが短すぎます！"
+
+#: tazinst:579
+msgid "Warning: no password!"
+msgstr "警告: パスワードがありません！"
+
+#: tazinst:590
+msgid "%s Error: Too short."
+msgstr "%s エラー: 短すぎます。"
+
+#: tazinst:594
+msgid "%s Error: Too long."
+msgstr "%s エラー: 長過ぎます。"
+
+#: tazinst:599
+msgid "%s Error: Invalid chars."
+msgstr "%s エラー: 使用できない文字があります。"
+
+#: tazinst:611
+msgid "Error: Dualboot set with no bootloader."
+msgstr "エラー: デュアルブートでブートローダが設定されていません。"
+
+#: tazinst:625
+msgid "Error: Unsupported Partition Table."
+msgstr "エラー: パーティションテーブルが対応していません。"
+
+#: tazinst:630
+msgid "Error: No disk selected, cannot install any bootloader."
+msgstr ""
+"エラー: ディスクが選択されていないためブートローダーをインストールできませ"
+"ん。"
+
+#: tazinst:748
+msgid "The Source setting depends on the type of media:"
+msgstr "ソース設定はメディアの種類によって異なります。"
+
+#: tazinst:752
+msgid "Name or URL of the image on the web."
+msgstr "Web　上の画像の名前または URL。"
+
+#: tazinst:753
+msgid "Type: %s"
+msgstr "種類: %s"
+
+#: tazinst:758
+msgid "List of settings:"
+msgstr "設定のリスト:"
+
+#: tazinst:760
+msgid "Mode of install"
+msgstr "インストールモード"
+
+#: tazinst:761
+msgid "Media containing the SliTaz source files"
+msgstr "SliTaz　ソースファイルを含むメディア"
+
+#: tazinst:762
+msgid "Source file containing SliTaz"
+msgstr "SliTaz　を含むソースファイル"
+
+#: tazinst:763
+msgid "The name of the target partition"
+msgstr "対象パーティションの名前"
+
+#: tazinst:764
+msgid "Format of the target partition"
+msgstr "対象パーティションのフォーマット"
+
+#: tazinst:765
+msgid "Separate home partition"
+msgstr "分割 home パーティション"
+
+#: tazinst:766
+msgid "Format of the root partition"
+msgstr "root パーティションのフォーマット"
+
+#: tazinst:767 tazinst:811
+msgid "Name of the system"
+msgstr "システムの名前"
+
+#: tazinst:768 tazinst:813
+msgid "Superuser password"
+msgstr "スーパーユーザーのパスワード"
+
+#: tazinst:769 tazinst:815
+msgid "First user name"
+msgstr "最初のユーザー名"
+
+#: tazinst:770 tazinst:817
+msgid "First user password"
+msgstr "最初のユーザーパスワード"
+
+#: tazinst:771
+msgid "Install a bootloader"
+msgstr "ブートローダーのインストール"
+
+#: tazinst:772
+msgid "Partition to dualboot Windows from"
+msgstr "Windows パーティションへデュアルブート"
+
+#: tazinst:790
+msgid "CD. Automatically set"
+msgstr "CD 自動設定"
+
+#: tazinst:793
+msgid "USB partition. For a list, type: %s"
+msgstr "USB　パーティション。 リストには次を入力: ％s"
+
+#: tazinst:796
+msgid "ISO file name. For a list, type: %s"
+msgstr "ISO ファイル名。エリストには次を入力: %s"
+
+#: tazinst:822
+msgid "Partition containing Windows, or 'auto'"
+msgstr "Windows を含むパーティションまたは 'auto'"
+
+#: tazinst:1127
+msgid "No mirror list found, run %s."
+msgstr "ミラーリストが見つかりません。 %s を実行して下さい。"
+
+#: tazinst:1139
+msgid "Downloading: %s"
+msgstr "ダウンロード中: %s"
+
+#: tazinst:1146
+msgid "Download completed."
+msgstr "ダウンロードが完了しました。"
+
+#: tazinst:1157
+msgid "Installing package %s to the current system."
+msgstr "現在のシステムへパッケージ %s をインストール中。"
+
+#: tazinst:1159
+msgid "Cannot install %s."
+msgstr "5s をインストールできません"
+
+#: tazinst:1167
+msgid "Adding package %s to the target system..."
+msgstr "対象システムへパッケージ %s を追加中..."
+
+#: tazinst:1182
+msgid "=== Tazinst: started on %s ==="
+msgstr "=== Tazinst: %s を開始しました ==="
+
+#: tazinst:1208
+msgid "Process not completed"
+msgstr "プロセスは完了していません"
+
+#: tazinst:1209 tazinst:1213
+msgid "Error: %s"
+msgstr "エラー: %s"
+
+#: tazinst:1216
+msgid "=== Tazinst error on %s ==="
+msgstr "=== Tazinst %s エラー ==="
+
+#: tazinst:1225
+msgid "Internal error"
+msgstr "内部エラー"
+
+#: tazinst:1230
+msgid "Cancelled by user"
+msgstr "ユーザーによってキャンセル"
+
+#: tazinst:1251
+msgid "Using files from %s."
+msgstr "%s がファイルを使用しています。"
+
+#: tazinst:1253
+msgid "%s: Mount failed."
+msgstr "%s: マウントに失敗しました。"
+
+#: tazinst:1262
+msgid "Using files from USB device..."
+msgstr "USB デバイスからファイルを使用中..."
+
+#: tazinst:1267
+msgid "Using files from USB device %s."
+msgstr "USB デバイス ％s のファイルを使用しています。"
+
+#: tazinst:1269
+msgid "%s: Failed to mount USB device."
+msgstr "%s: USB デバイスのマウントに失敗しました。"
+
+#: tazinst:1284
+msgid "md5sum error, file corrupted."
+msgstr "md5sum エラー。ファイルが壊れています。"
+
+#: tazinst:1287
+msgid "%s: md5 file not found, cannot check integrity."
+msgstr "%s: md5 ファイルが見つかりません。整合性を確認できません。"
+
+#: tazinst:1292
+msgid "Using files from ISO %s."
+msgstr "ISO %s からファイルを使用しています。"
+
+#: tazinst:1294
+msgid "%s: Failed to mount ISO."
+msgstr "%s: ISO のマウントに失敗しました。"
+
+#: tazinst:1316 tazinst:1404
+msgid "Creating mount point: %s..."
+msgstr "マウントポイントの作成中: %s..."
+
+#: tazinst:1332
+msgid "Checking installation media..."
+msgstr "インストールメディアの確認中..."
+
+#: tazinst:1335
+msgid "Invalid source"
+msgstr "ソースが無効です"
+
+#: tazinst:1337
+msgid "Installation media checked ok"
+msgstr "インストールメディアを正常確認しました"
+
+#: tazinst:1349
+msgid "Format %s (%s)"
+msgstr "フォーマット %s (%s)"
+
+#: tazinst:1354 tazinst:1366
+msgid "Formatting has failed"
+msgstr "フォーマットに失敗しました"
+
+#: tazinst:1373
+msgid "Preparing target partition..."
+msgstr "対象パーティションの準備中..."
+
+#: tazinst:1377
+msgid "Partition is already mounted, unmounting."
+msgstr "パーティションはすでにマウントしています。マウント解除します。"
+
+#: tazinst:1381
+msgid "Partition is already in use."
+msgstr "パーティションはすでに使用しています。"
+
+#: tazinst:1389
+msgid "%s: The partition will be cleaned..."
+msgstr "%s: パーティションはクリーンされます..."
+
+#: tazinst:1398
+msgid "%s: The partition will be kept..."
+msgstr "%s: パーティションは保持されます..."
+
+#: tazinst:1413
+msgid "%s: Unable to mount partition"
+msgstr "%s: パーティションをマウントできません"
+
+#: tazinst:1427
+msgid "Unmounting target partition: %s"
+msgstr "対象パーティションのマウント解除中: %s"
+
+#: tazinst:1433
+msgid "Unmounting: %s"
+msgstr "マウント解除中: %s"
+
+#: tazinst:1437
+msgid "Unlinking: %s"
+msgstr "リンク解除中: %s"
+
+#: tazinst:1443
+msgid "Ejecting CD-ROM..."
+msgstr "CD-ROM を取り出し中..."
+
+#: tazinst:1452
+msgid ""
+"Process completed. You can now restart (reboot) from your SliTaz GNU/Linux "
+"system."
+msgstr "作業が完了しました。 SliTaz GNU/Linux　システムから再起動できます。"
+
+#: tazinst:1454
+msgid "=== Tazinst ended on %s ==="
+msgstr "=== Tazinst %s 完了 ==="
+
+#: tazinst:1457
+msgid "Copying log to %s"
+msgstr "ログを %s へコピー中"
+
+#: tazinst:1493
+msgid "No bootloader to install."
+msgstr "ブートローダーをインストールできません"
+
+#: tazinst:1587 tazinst:1691
+msgid "Enabling Windows dual-boot"
+msgstr "Windows ヂュアルブートを有効"
+
+#: tazinst:1610
+msgid "Installing GRUB on: %s"
+msgstr "GRUB をインストール中: %s"
+
+#: tazinst:1611
+msgid "GRUB not found"
+msgstr "GRUB が見つかりません"
+
+#: tazinst:1615
+msgid "Setting the boot flag"
+msgstr "起動フラグの設定中"
+
+#: tazinst:1620 tazinst:1748
+msgid "Copying splash image"
+msgstr "起動画像をコピー中"
+
+#: tazinst:1710
+msgid "Installing Syslinux"
+msgstr "Syslinux をインストール中"
+
+#: tazinst:1720
+msgid "Syslinux not found"
+msgstr "Syslinux が見つかりません"
+
+#: tazinst:1724
+msgid "Setting the boot flag on"
+msgstr "起動フラグを設定中"
+
+#: tazinst:1727
+msgid "mbr.bin not found"
+msgstr "mbr.bin が見つかりません"
+
+#: tazinst:1728
+msgid "Installing MBR"
+msgstr "MBR へインストール中"
+
+#: tazinst:1732
+msgid "Setting the legacy_boot flag on"
+msgstr "legacy_boot フラグを設定中"
+
+#: tazinst:1741
+msgid "Installing GPTMBR"
+msgstr "GPTMBR へインストール中"
+
+#: tazinst:1742
+msgid "gptmbr.bin not found"
+msgstr "gptmbr.bin が見つかりません"
+
+#: tazinst:1781
+msgid "Cleaning the root partition (%s)..."
+msgstr "root パーティションをクリーン中 (%s)..."
+
+#: tazinst:1790 tazinst:2063
+msgid "keeping /home found on: %s"
+msgstr "見つけた /home を保持します: %s"
+
+#: tazinst:1795 tazinst:2077
+msgid "removing target: %s"
+msgstr "対象を削除中: %s"
+
+#: tazinst:1813
+msgid "Kernel name not found, falling back to: %s"
+msgstr "カーネル名が見つかりません。戻します: %s"
+
+#: tazinst:1819
+msgid "install_kernel: %s"
+msgstr "カーネルインストール: %s"
+
+#: tazinst:1905
+msgid "Restoring directory: /home..."
+msgstr "ディレクトリを復旧中: /home..."
+
+#: tazinst:1911
+msgid "Adding / partition and CHECK_FS to file %s..."
+msgstr "ファイル %s へ追加・パーティション設定・確認中..."
+
+#: tazinst:1914
+msgid "Configuring host name: %s"
+msgstr "ホスト名を設定中: %s"
+
+#: tazinst:1977
+msgid "Configuring partition to be used as /home: %s"
+msgstr "使用 /home パーティションを設定中: %s"
+
+#: tazinst:1996
+msgid "Installing SliTaz on: %s"
+msgstr "SliTaz をインストール中: %s"
+
+#: tazinst:1997 tazinst:2176
+msgid "Checking settings..."
+msgstr "設定を確認中..."
+
+#: tazinst:2001 tazinst:2180
+msgid "Preparing source media..."
+msgstr "ソースメディアを準備中..."
+
+#: tazinst:2004 tazinst:2183
+msgid "Preparing target disk..."
+msgstr "対象ディスクを準備中..."
+
+#: tazinst:2007
+msgid "Cleaning the root partition if necessary..."
+msgstr "必要な場合は root パーティションをクリーン中..."
+
+#: tazinst:2010 tazinst:2192
+msgid "Extracting the root system..."
+msgstr "root システムの抽出中..."
+
+#: tazinst:2013 tazinst:2198
+msgid "Installing the Kernel..."
+msgstr "カーネルをインストール中..."
+
+#: tazinst:2016
+msgid "Preconfiguring the system..."
+msgstr "システムの事前設定中..."
+
+#: tazinst:2019
+msgid "Configuring root and default user account..."
+msgstr "root とデフォルトユーザーアカウントの設定中..."
+
+#: tazinst:2022
+msgid "Configuring /home..."
+msgstr "/home を設定中..."
+
+#: tazinst:2025
+msgid "Checking bootloader installation..."
+msgstr "ブートローダーのインストールを確認中..."
+
+#: tazinst:2028 tazinst:2207
+msgid "Files installation completed"
+msgstr "ファイルインストールが完了しました"
+
+#: tazinst:2042
+msgid "Preparing upgrade of SliTaz release: %s"
+msgstr "SliTaz リリースのアップグレード準備中: %s"
+
+#: tazinst:2044
+msgid ""
+"%s: This partition doesn't appear to contain a valid SliTaz system, the "
+"file: %s doesn't exist."
+msgstr ""
+"%s: このパーティションに有効な SliTaz システムが含まれていないようです。ファ"
+"イル %s は存在しません。"
+
+#: tazinst:2067
+msgid "keeping /etc found on: %s"
+msgstr "見つけた /etc を維持します: &s"
+
+#: tazinst:2071
+msgid "keeping /var/www found on: %s"
+msgstr "見つけた /var/www を維持します: %s"
+
+#: tazinst:2098
+msgid "backups restored: %s"
+msgstr "バックアップを復旧しました: %s"
+
+#: tazinst:2105
+msgid "backups saved in %s"
+msgstr "バックアップを %s へ保存しました"
+
+#: tazinst:2112
+msgid "Checking the availability of packages..."
+msgstr "有効なパッケージを確認中..."
+
+#: tazinst:2125
+msgid "Installing packages..."
+msgstr "パッケージをインストール中..."
+
+#: tazinst:2127
+msgid "packages to install: 0"
+msgstr "インストールするパッケージ: 0"
+
+#: tazinst:2132
+msgid "Installing: %s..."
+msgstr "インストール中: %s..."
+
+#: tazinst:2141
+msgid "Installation of packages complete..."
+msgstr "パッケージのインストールが完了しました..."
+
+#: tazinst:2150
+msgid "Creating package lists..."
+msgstr "パッケージ一覧の生成中..."
+
+#: tazinst:2152 tazinst:2156
+msgid "%s: done"
+msgstr "%s: 完了"
+
+#: tazinst:2163
+msgid ""
+"The list of available packages on the mirror could not be downloaded. No "
+"missing packages will be reinstalled now, but you can do so later by looking "
+"at the following list:"
+msgstr ""
+"ミラー上の利用可能なパッケージのリストをダウンロードできませんでした。 不足"
+"パッケージは今すぐ再インストールされることはありませんが、後で次のリストを参"
+"照してパッケージを再インストールすることができます："
+
+#: tazinst:2175
+msgid "Upgrading SliTaz on: %s"
+msgstr "SlTaz をアップグレード中: %s"
+
+#: tazinst:2186
+msgid "Searching for %s..."
+msgstr "%s を検索中..."
+
+#: tazinst:2189
+msgid "Backup /etc, /home and the packages list..."
+msgstr "/etc /home パッケージリストのバックアップ..."
+
+#: tazinst:2195
+msgid "Restoring configuration files..."
+msgstr "設定ファイルの復旧中..."
+
+#: tazinst:2201
+msgid "Upgrading added packages..."
+msgstr "追加パッケージのアップグレード中..."
+
+#: tazinst:2204
+msgid "Bootloader..."
+msgstr "ブートローダー..."

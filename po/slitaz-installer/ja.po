@@ -1,0 +1,418 @@
+# Japanese translations for the tazinst package.
+# Copyright (C) 2017 SliTaz
+# This file is distributed under the same license as the tazinst package.
+# BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <balloonakafusen AT gmail DOT com>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: slitaz-installer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-02 18:38+0900\n"
+"PO-Revision-Date: 2017-01-05 22:59+0900\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <balloonakafusen　AT "
+"gmail DOT com>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja_JP\n"
+
+#: slitaz-installer:23
+msgid "Welcome to the slitaz-installer."
+msgstr "slitaz-installer へようこそ。"
+
+#: slitaz-installer:24
+msgid "Which type of installation do you want to start?"
+msgstr "どの種類のインストールを開始しますか？"
+
+#: slitaz-installer:26
+msgid "SliTaz can be installed from different media."
+msgstr "SliTaz　は異なるメディアからインストールできます。"
+
+#: slitaz-installer:27
+msgid "Select a media from the following list:"
+msgstr "次の一覧からメディアを選択して下さい:"
+
+#: slitaz-installer:29
+msgid "You have selected the option to install SliTaz from an USB Key."
+msgstr "USB キーから SliTaz をインストールするオプションを選択しました。"
+
+#: slitaz-installer:30
+msgid "Enter the partition where SliTaz Live is located:"
+msgstr "SliTaz Live が存在するパーティションを入力して下さい:"
+
+#: slitaz-installer:32
+msgid ""
+"You have selected the option to install SliTaz from an ISO file located on a "
+"local disk."
+msgstr ""
+"ローカルディスクにある ISO ファイルから SliTaz をインストールするオプションを"
+"選択しました。"
+
+#: slitaz-installer:34
+msgid "Please, select a file below:"
+msgstr "次のファイルを選択してください："
+
+#: slitaz-installer:36
+msgid "You have selected the option to install SliTaz from the web."
+msgstr "Web から SliTaz をインストールするオプションを選択しました。"
+
+#: slitaz-installer:37
+msgid "Please, select a version:"
+msgstr "バージョンを選択して下さい:"
+
+#: slitaz-installer:39
+msgid "Select the source:"
+msgstr "ソースを選択して下さい:"
+
+#: slitaz-installer:41
+msgid "Drive selection"
+msgstr "ドライブの選択"
+
+#: slitaz-installer:42
+msgid "Please specify the partition where to install SliTaz:"
+msgstr "SliTaz をインストールするパーティションを指定して下さい:"
+
+#: slitaz-installer:44
+msgid ""
+"The installer will upgrade the existing SliTaz system by saving all "
+"configuration files and the list of installed packages. Then, it will clean "
+"the partition and install the new version of SliTaz, restore the "
+"configuration files and reinstall any packages which are not present on the "
+"CD-ROM."
+msgstr ""
+"インストーラはすべての設定ファイルとインストールされているパッケージのリスト"
+"を保存して、既存の SliTaz システムをアップグレードします。 次にパーティション"
+"をクリーニングし、新しいバージョンの SliTaz をインストールし、構成ファイルを"
+"復元し、CD-ROM に存在しないパッケージを再インストールします。"
+
+#: slitaz-installer:49
+msgid "You will need an active internet connection before upgrading."
+msgstr "アップグレードする前に有効なインターネット接続が必要です。"
+
+#: slitaz-installer:50
+msgid "Partition containing the system to upgrade:"
+msgstr "アップグレードするシステムを含むパーティション:"
+
+#: slitaz-installer:52
+msgid ""
+"Only the filesystems actually installed on your system are listed. If you "
+"intend to use another filesystem, you have to install it before. Unless you "
+"know what you are doing, it is safe to use ext2, ext3 or ext4."
+msgstr ""
+"システムに実際にインストールされているファイルシステムだけが一覧表示されま"
+"す。 別のファイルシステムを使うつもりなら、それを前もってインストールする必要"
+"があります。 何をしているのか分からない限り、ext2、ext3、ext4 の使用が安全で"
+"す。"
+
+#: slitaz-installer:56
+msgid "To format this partition, please select a filesystem below:"
+msgstr "このパーティションをフォーマットするファイルシステムを選択して下さい:"
+
+#: slitaz-installer:58
+msgid "Separate /home partition"
+msgstr "分割 /home パーティション"
+
+#: slitaz-installer:59
+msgid "Please, select the partition to use:"
+msgstr "使用するパーティションを選択して下さい:"
+
+#: slitaz-installer:61
+msgid ""
+"Hostname configuration allows you to specify the machine name. The hostname "
+"is used internally to identify the host on the network. This value can be "
+"changed after the system is installed."
+msgstr ""
+"ホスト名の設定では、マシン名を指定することができます。 ホスト名はネットワーク"
+"上のホストを識別するため、内部的に使用されます。 この名前はシステムのインス"
+"トール後に変更できます。"
+
+#: slitaz-installer:64
+msgid "Enter a hostname:"
+msgstr "ホスト名を入力:"
+
+#: slitaz-installer:66
+msgid ""
+"The root administrator privilege lets you manage and configure the full "
+"system. A root user can damage your system so you should always setup a "
+"strong password with special characters and/or numbers."
+msgstr ""
+"root 管理者権限を使用するとシステム全体を管理・設定できます。 root ユーザーが"
+"システムに損害を与える可能性があるため、特別な文字や数字で常に強力なパスワー"
+"ドを設定する必要があります。"
+
+#: slitaz-installer:69
+msgid "Enter the password for root:"
+msgstr "root のパスワードを入力:"
+
+#: slitaz-installer:71
+msgid ""
+"The default user for the system will have their personal files stored in /"
+"home/*user* (and will be automatically added to the audio group)"
+msgstr ""
+"システムのデフォルトユーザーは、個人用ファイルを /home/*ユーザー* へ保存しま"
+"す（オーディオグループに自動的に追加されます）"
+
+#: slitaz-installer:74
+msgid "Enter the name of the first user:"
+msgstr "最初のユーザー名を入力:"
+
+#: slitaz-installer:76
+msgid "The password for default user."
+msgstr "デフォルトユーザーのパスワード。"
+
+#: slitaz-installer:77
+msgid ""
+"It may be a security risk if too weak and should always be strong if you use "
+"a SSH connection through the web."
+msgstr ""
+"弱すぎるとセキュリティ上の危険があります。Web 経由で SSH 接続を使用する場合"
+"は、常に強くする必要があります。"
+
+#: slitaz-installer:79
+msgid "Enter the password for the default user:"
+msgstr "デフオルトユーザーのパスワードを入力:"
+
+#: slitaz-installer:81
+msgid ""
+"Installation is now finished, you can exit the installer or reboot on your "
+"new SliTaz GNU/Linux operating system."
+msgstr ""
+"インストールが完了しました。インストーラを終了するか、新しい SliTaz GNU/"
+"Linux オペレーティングシステムで再起動する事ができます。"
+
+#: slitaz-installer:87
+msgid ""
+"The next step lets you format the target partition. Choose between robust, "
+"stable and/or journaled filesystem. If the partition is already formated you "
+"can skip this stage, if not just accept."
+msgstr ""
+"次のステップでは、対象のパーティションをフォーマットできます。 強健・安定・"
+"ジャーナリング対応のファイルシステムを選択します。 パーティションが既にフォー"
+"マットされていて、これを受け入れない場合はこのステップをスキップできます。"
+
+#: slitaz-installer:90 slitaz-installer:101
+msgid "Warning! formating a partition will destroy all current data."
+msgstr ""
+"警告！ パーティションをフォーマットすると、現在のすべてのデータが破壊されま"
+"す。"
+
+#: slitaz-installer:91
+msgid "Do you wish to format the partition?"
+msgstr "パーティションをフォーマットしますか？"
+
+#: slitaz-installer:93
+msgid ""
+"On most GNU/Linux systems users personal files are stored in the directory /"
+"home. Home can be on a separate partition or another hard disk."
+msgstr ""
+"ほとんどの GNU/Linux システムでは、個人用ファイルを /home ディレクトリへ保存"
+"します。 ホーム（home）は別のパーティションまたは別のハードディスク上に置くこ"
+"とができます。"
+
+#: slitaz-installer:96
+msgid "Do you want to use a separate Home partition?"
+msgstr "分割されたホームパーティションを使用しますか？"
+
+#: slitaz-installer:98
+msgid ""
+"/home will be installed on a separate partition. The next step lets you "
+"format the /home partition. If the partition is already formated you can "
+"skip this stage, if not just accept."
+msgstr ""
+"/home は別のパーティションにインストールされます。 次のステップでは /home "
+"パーティションをフォーマットできます。 パーティションが既にフォーマットされて"
+"いて、これを受け入れない場合はこのステップをスキップできます。"
+
+#: slitaz-installer:102
+msgid "Do you wish to format the /home partition?"
+msgstr "/home　パーティションをフォーマットしますか？"
+
+#: slitaz-installer:104
+msgid ""
+"You have now the option to install a bootloader which is capable of booting "
+"almost any kind of operating system."
+msgstr ""
+"ほぼすべての種類のオペレーティングシステムをブートできるブートローダをインス"
+"トールするオプションがあります。"
+
+#: slitaz-installer:106
+msgid ""
+"If you want to use an existing bootloader installation, skip this step and "
+"configure your bootloader to boot SliTaz (refer to your bootloader "
+"documentation on how to do this)."
+msgstr ""
+"既存するブートローダのインストールを使用する場合は、この手順をスキップして　"
+"SliTaz　を起動するようにブートローダを設定して下さい。（ブートローダのマニュ"
+"アルを参照して下さい）"
+
+#: slitaz-installer:109
+msgid "Install a bootloader?"
+msgstr "ブートローダーをインストールしますか？"
+
+#: slitaz-installer:111
+msgid ""
+"Do you want to implement a dual-boot with Windows? At start-up, you will be "
+"asked whether you want to boot into Windows or SliTaz GNU/Linux."
+msgstr ""
+"Windows　とのデュアルブートを実装しますか？ 起動時に Windows または SliTaz "
+"GNU/Linux から起動するかどうかを尋ねられます。"
+
+#: slitaz-installer:114
+msgid "Install a dual-boot with Windows?"
+msgstr "Windows とのデュアルブートをインストールしますか？"
+
+#: slitaz-installer:116
+msgid ""
+"Installation settings summary and last chance to cancel or restart all "
+"installation steps."
+msgstr ""
+"インストール設定の内容とすべてのインストール手順をキャンセル・再開する最後の"
+"機会です。"
+
+#: slitaz-installer:118
+msgid "Go and install SliTaz?"
+msgstr "SliTaz をインストールしますか？"
+
+#: slitaz-installer:120
+msgid "Sorry, no device, nor file found or available."
+msgstr "申し訳ありません。デバイス・ファイルが見つかりません。"
+
+#: slitaz-installer:131 slitaz-installer:140
+msgid "Error 2:"
+msgstr "エラー 2:"
+
+#: slitaz-installer:132
+msgid "The lightweight SliTaz HDD installer '%s' is missing."
+msgstr "軽量 SliTaz HDDインストーラ '%s' が欠落しています。"
+
+#: slitaz-installer:133
+msgid "Check permissions, or reinstall the %s package."
+msgstr "権限を確認するか、%s パッケージを再インストールしてください。"
+
+#: slitaz-installer:141
+msgid ""
+"The lightweight SliTaz HDD installer tazinst (%s) is not at the required "
+"version (%s)."
+msgstr ""
+"軽量 SliTaz HDD インストーラー tazinst (%s) は、必須バージョン (%s) ではあり"
+"ません。"
+
+#: slitaz-installer:143
+msgid "Use %s in an xterm or reinstall the %s package."
+msgstr "xterm　で %s を使用するか、%s パッケージを再インストールしてください。"
+
+#: slitaz-installer:268
+msgid "Mode: %s"
+msgstr "モード: %s"
+
+#: slitaz-installer:271
+msgid "From media: %s"
+msgstr "元のメディア: %s"
+
+#: slitaz-installer:276
+msgid "To the disk: %s"
+msgstr "ディスク先: %s"
+
+#: slitaz-installer:280 slitaz-installer:290
+msgid "(Formatting as %s)"
+msgstr "(%s　でフォーマット中)"
+
+#: slitaz-installer:281
+msgid "(No formatting)"
+msgstr "(フォーマットなし)"
+
+#: slitaz-installer:285
+msgid "Separate /home is: %s"
+msgstr "分割 /home: %s"
+
+#: slitaz-installer:286
+msgid "No separate /home partition"
+msgstr "分割 /home パーティションなし"
+
+#: slitaz-installer:291
+msgid "(No /home formatting)"
+msgstr "(/home フォーマットなし)"
+
+#: slitaz-installer:293
+msgid "Hostname: %s"
+msgstr "ホスト名: %s"
+
+#: slitaz-installer:295
+msgid "User login: %s"
+msgstr "ユーザーログイン: %s"
+
+#: slitaz-installer:299
+msgid "Bootloader: installed"
+msgstr "ブートローダー: インストール"
+
+#: slitaz-installer:300
+msgid "No bootloader installed"
+msgstr "ブートローダー: 非インストール"
+
+#: slitaz-installer:304
+msgid ", with Windows dual-boot"
+msgstr "・Windows デュアルブート"
+
+#: slitaz-installer:305
+msgid ", no dual-boot"
+msgstr "・デュアルブートなし"
+
+#: slitaz-installer:322 slitaz-installer:336 slitaz-installer:350
+#: slitaz-installer:378 slitaz-installer:391
+msgid "Select %s"
+msgstr "%s　を選択"
+
+#: slitaz-installer:325 slitaz-installer:379
+msgid "Next"
+msgstr "次へ"
+
+#: slitaz-installer:326 slitaz-installer:353 slitaz-installer:380
+msgid "Back"
+msgstr "戻る"
+
+#: slitaz-installer:352 slitaz-installer:411
+msgid "Yes"
+msgstr "はい"
+
+#: slitaz-installer:354 slitaz-installer:412
+msgid "No"
+msgstr "いいえ"
+
+#: slitaz-installer:409
+msgid "Summary"
+msgstr "内容"
+
+#: slitaz-installer:419
+msgid "SliTaz install cancelled."
+msgstr "SliTaz インストールはキャンセルしました。"
+
+#: slitaz-installer:567
+msgid "SliTaz Installer"
+msgstr "SliTaz インストーラー"
+
+#: slitaz-installer:567
+msgid "Installing..."
+msgstr "インストール中..."
+
+#: slitaz-installer:573
+msgid "Installation complete"
+msgstr "インストール完了"
+
+#: slitaz-installer:575
+msgid "Exit"
+msgstr "終了"
+
+#: slitaz-installer:576
+msgid "Reboot"
+msgstr "再起動"
+
+#: slitaz-installer:585 slitaz-installer:597
+msgid "ESC pressed."
+msgstr "ESC が押されました。"
+
+#: slitaz-installer:588
+msgid "Process not completed"
+msgstr "プロセスは完了してしません"
