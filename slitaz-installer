@@ -26,7 +26,7 @@ MODE_MSG="\n$(_ 'Welcome to the slitaz-installer.')\n
 MEDIA_MSG="\n$(_ 'SliTaz can be installed from different media.')\n
 \Z2$(_ 'Select a media from the following list:')\Zn\n"
 
-SOURCE_USB_MSG="\n$(_ 'You have selected the option to install SliTaz from an USB Key.')\n
+SOURCE_USB_MSG="\n$(_ 'You have selected the option to install SliTaz from a USB Key.')\n
 \Z2$(_ 'Enter the partition where SliTaz Live is located:')\Zn\n"
 
 SOURCE_ISO_MSG="\n$(_ "You have selected the option to install SliTaz \
