@@ -36,7 +36,7 @@ msgid "Select a media from the following list:"
 msgstr "次の一覧からメディアを選択して下さい:"
 
 #: slitaz-installer:29
-msgid "You have selected the option to install SliTaz from an USB Key."
+msgid "You have selected the option to install SliTaz from a USB Key."
 msgstr "USB キーから SliTaz をインストールするオプションを選択しました。"
 
 #: slitaz-installer:30
