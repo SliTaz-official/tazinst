@@ -14,7 +14,7 @@ PATH="/usr/sbin:/usr/bin:/sbin:/bin"
 VERSION=3.98
 
 # Common functions from libtazpanel
-. lib/libtazpanel
+. ./lib/libtazpanel
 get_config
 
 TITLE=$(_ 'TazPanel - Installer')
