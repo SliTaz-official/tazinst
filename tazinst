@@ -1498,7 +1498,7 @@ bootloader()
 disknum()
 {
 	local partition="$(uuid2dev $1)"
-	partition="${partition%[0-9]}"
+	partition="${partition%%[0-9]*}"
 	/usr/sbin/parted -lms 2>&1 | grep "^/dev" | \
 		/bin/busybox awk -v PART="$partition" '{if (match($0,PART)) print NR-1}'
 }
@@ -1507,7 +1507,7 @@ disknum()
 partnum()
 {
 	local partition="$(uuid2dev $1)"
-	printf "%s\n" "$((${partition#/dev/[h-s]d[a-z]}-1))"
+	printf "%s\n" "$((${partition#/dev/[hs]d[a-z]}-1))"
 }
 
 # print root device
