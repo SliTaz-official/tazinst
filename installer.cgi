@@ -2,7 +2,7 @@
 #
 # Main CGI interface for Tazinst, the SliTaz installer.
 #
-# Copyright (C) 2012-2016 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2012-2017 SliTaz GNU/Linux - BSD License
 #
 # Authors : Dominique Corbex <domcox@slitaz.org>
 #
@@ -97,7 +97,7 @@ GNU/Linux. You can graphically manage your partitions with Gparted")</p>
 
 	<footer>
 		<form>
-			<button name="page" value="install" data-icon="slitaz"
+			<button type="submit" name="page" value="install" data-icon="slitaz"
 				title="$(_ 'Proceed to a new SliTaz installation')"
 				>$(_ 'Install SliTaz')</button>
 		</form>
@@ -123,7 +123,7 @@ SliTaz system will be updated as long you have an active internet connection.")<
 
 	<footer>
 		<form>
-			<button name="page" value="upgrade" data-icon="upgrade"
+			<button type="submit" name="page" value="upgrade" data-icon="upgrade"
 				title="$(_ 'Upgrade an existing SliTaz system')"
 				>$(_ 'Upgrade SliTaz')</button>
 		</form>
@@ -146,7 +146,6 @@ select_evaluate() {
 in the previous century..." '\slitaz')</p>
 	</div>
 
-	<footer>
 		<form action="boot.cgi">
 			<input type="hidden" name="iso"/>
 			<input type="hidden" name="action" value="install"/>
@@ -169,9 +168,8 @@ EOT
 	cat <<EOT
 			</select></td></tr>
 			</table>
-			<button data-icon="install">$(_ 'Install')</button>
+			<button type="submit" data-icon="install">$(_ 'Install')</button>
 		</form>
-	</footer>
 </section>
 EOT
 }
@@ -183,7 +181,7 @@ EOT
 
 exec_gparted() {
 	/bin/su - -c \
-	"exec env DISPLAY=':0.0' XAUTHORITY='/var/run/slim.auth' /usr/sbin/gparted"
+	"exec env DISPLAY=':0.0' XAUTHORITY='/var/run/slim.auth' /usr/sbin/gparted" >/dev/null 2>&1
 }
 
 
@@ -222,7 +220,7 @@ and so on.")</p>
 	<footer>
 		<!-- Launch GParted -->
 		<form>
-			<button name="page" value="gparted" data-icon="hdd"
+			<button type="submit" name="page" value="gparted" data-icon="hdd"
 				title="$(_ 'Launch GParted, the partition editor tool')"
 				>$(_ 'Execute GParted')</button>
 		</form>
@@ -248,7 +246,7 @@ select_source() {
 	local error
 
 	# set default media
-	[ "$media" ] || media="$(tazinst list media | cut -d ' ' -f1)"
+	[ -n "$media" ] || media="$(tazinst list media | cut -d ' ' -f1)"
 
 	comment "Source selection"
 	# cdrom
@@ -799,8 +797,8 @@ moveto_page()
 	cat <<EOT
 <hr/>
 <form>
-	<button name="page" value="$back_page" data-icon="back" >$back_msg</button>
-	<button name="page" value="$next_page" data-icon="start">$next_msg</button>
+	<button type="submit" name="page" value="$back_page" data-icon="back" >$back_msg</button>
+	<button type="submit" name="page" value="$next_page" data-icon="start">$next_msg</button>
 </form>
 EOT
 }
@@ -809,7 +807,7 @@ EOT
 moveto_home() {
 	cat <<EOT
 <form>
-	<button name="page" value="home" data-icon="back"
+	<button type="submit" name="page" value="home" data-icon="back"
 	>$(_ 'Back to Installer Start Page')</button>
 </form>
 EOT
@@ -819,6 +817,12 @@ EOT
 page_redirection() {
 	local page="$1"
 	cat <<EOT
+HTTP/1.1 301 Moved Permanently
+Location: $SCRIPT_NAME?page=$1
+
+EOT
+
+	true || cat <<EOT
 <!DOCTYPE html>
 <html>
 <head>
@@ -843,14 +847,18 @@ EOT
 #----------
 
 check_ressources() {
-	local errorcode=0
-	comment "check_ressources"
-	if ! [ -x /usr/sbin/tazinst ] ; then
+	local errorcode=0 buffer=$(mktemp)
+	{
+		header; xhtml_header; comment "check_ressources"
+	} > $buffer
+	if ! [ -x /usr/sbin/tazinst ]; then
+		{
 		h4 $(_ 'Tazinst Error')
 		p $(_ '%s, the backend to %s is missing.' '<strong>tazinst</strong>' 'slitaz-installer';
 		_ 'Any installation can not be done without %s.' 'tazinst')
 		p $(_ "Check %s permissions, or reinstall the %s package." \
 		'tazinst' 'slitaz-installer')
+		} >> $buffer
 		errorcode=1
 	else
 		# check tazinst minimum version
@@ -858,12 +866,14 @@ check_ressources() {
 		r=$TAZINST_MINIMUM_VERSION
 		if ! (printf '%s' "$v" | /bin/busybox awk -v r=$r \
 				'{v=$v+0}{ if (v < r) exit 1}') ; then
+			{
 			h4 $(_ 'Tazinst Error')
 			p $(_ '%s, the %s backend, is not at the minimum required version.' \
 			'<strong>tazinst</strong>' 'slitaz-installer';
 			_ 'Any installation can not be done without %s.' 'tazinst')
 			p $(_ 'Reinstall the %s package, or use %s in CLI mode.' \
 			'slitaz-installer' 'tazinst')
+			} >> $buffer
 			errorcode=1
 		fi
 		# check tazinst maximum version
@@ -871,15 +881,19 @@ check_ressources() {
 		r=$TAZINST_MAXIMUM_VERSION
 		if ! (printf '%s' "$v" | /bin/busybox awk -v r=$r \
 				'{v=$v+0}{ if (v > r) exit 1}') ; then
+			{
 			h4 $(_ 'Tazinst Error')
 			p $(_ "%s, the %s backend, is at a higher version than the maximum authorized \
 by the %s." '<strong>tazinst</strong>' 'slitaz-installer' 'slitaz-installer';
 			_ 'Any installation cannot be done.')
 			p $(_ 'Reinstall the %s package, or use %s in CLI mode.' \
 			'slitaz-installer' 'tazinst')
+			} >> $buffer
 			errorcode=1
 		fi
 	fi
+	[ "$errorcode" -eq 1 ] && cat $buffer
+	rm $buffer
 	return $errorcode
 }
 
@@ -1169,27 +1183,24 @@ add_style()
 # main
 #
 
-header
-
 case "$(GET page)" in
 	home)
-		xhtml_header
+		header; xhtml_header
 		select_action
 		select_install
 		select_upgrade
 		select_evaluate
 		;;
 	evaluate)
-		xhtml_header
+		header; xhtml_header
 		select_evaluate
 		;;
 	install)
-		xhtml_header
 		/usr/sbin/tazinst set mode install "$INSTFILE"
 		page_redirection partitioning
 		;;
 	partitioning)
-		xhtml_header
+		header; xhtml_header
 		form_start
 		display_mode
 		select_gparted
@@ -1198,16 +1209,14 @@ case "$(GET page)" in
 		;;
 	gparted)
 		exec_gparted
-		xhtml_header
 		page_redirection partitioning
 		;;
 	upgrade)
-		xhtml_header
 		/usr/sbin/tazinst set mode upgrade "$INSTFILE"
 		page_redirection input
 		;;
 	input)
-		xhtml_header
+		header; xhtml_header
 		add_style
 		form_start
 		display_mode
@@ -1216,15 +1225,23 @@ case "$(GET page)" in
 		form_end
 		;;
 	execute)
-		xhtml_header
-		form_start
-		display_mode
-		save_settings
+		buffer=$(mktemp)
+		{
+			header; xhtml_header
+			form_start
+			display_mode
+			save_settings
+		} > $buffer
 		if ! (/usr/sbin/tazinst check all $INSTFILE > /dev/null); then
+			rm $buffer
 			page_redirection "input&CHECK=yes"
 		else
-			tazinst_run && moveto_page home reboot \
-						|| moveto_page input failed
+			cat $buffer; rm $buffer
+			if tazinst_run; then
+				moveto_page home reboot
+			else
+				moveto_page input failed
+			fi
 		fi
 		form_end
 		;;
@@ -1232,14 +1249,13 @@ case "$(GET page)" in
 		/usr/sbin/tazinst clean "$INSTFILE"
 		reboot ;;
 	failed)
-		xhtml_header
+		header; xhtml_header
 		form_start
 		tazinst_log
 		moveto_home
 		form_end
 		;;
 	*)
-		xhtml_header
 		if check_ressources; then
 			/usr/sbin/tazinst new "$INSTFILE"
 			page_redirection home
