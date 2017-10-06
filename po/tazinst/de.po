@@ -1,14 +1,14 @@
 # German translations for Tazinst package.
-# Copyright (C) 2016 SliTaz
+# Copyright (C) 2017 SliTaz
 # This file is distributed under the same license as the Tazinst package.
-# Hans-Günter Theisgen, 2016.
+# Hans-Günter Theisgen, 2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tazinst \n"
+"Project-Id-Version: TazInst \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 17:07+0300\n"
-"PO-Revision-Date: 2016-11-25 17:37+0100\n"
+"POT-Creation-Date: 2016-11-19 23:40+0200\n"
+"PO-Revision-Date: 2017-10-06 14:47+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -27,11 +27,11 @@ msgstr "Aktualisierung eines bestehenden Systems"
 
 #: tazinst:64
 msgid "LiveCD"
-msgstr "Direktstart-CD"
+msgstr "optischer Direktstart-Datenträger"
 
 #: tazinst:65
 msgid "LiveUSB"
-msgstr "Direktstart-USB"
+msgstr "Direktstart-USB-Datenträger"
 
 #: tazinst:66
 msgid "ISO image on a local drive"
@@ -47,15 +47,15 @@ msgstr "B-tree-Dateisystem (Oracle)"
 
 #: tazinst:72
 msgid "Second extended filesystem (Linux)"
-msgstr "Zweites erweitertes Dateisystem (Linux)"
+msgstr "Zweites erweitertes Dateisystem (Linux) ext2"
 
 #: tazinst:73
 msgid "Third extended filesystem (Linux)"
-msgstr "Drittes erweitertes Dateisystem (Linux)"
+msgstr "Drittes erweitertes Dateisystem (Linux) ext3"
 
 #: tazinst:74
 msgid "Fourth extended file system (Linux)"
-msgstr "Viertes erweitertes Dateisystem (Linux)"
+msgstr "Viertes erweitertes Dateisystem (Linux) ext4"
 
 #: tazinst:75
 msgid "Journaled File System (IBM)"
@@ -95,7 +95,7 @@ msgstr "Freigegebene Version ohne Zusätze"
 
 #: tazinst:95
 msgid "Stable text-only version (8.1MB)"
-msgstr "Freigegebene Version ohne Grafik (8,1 MB)"
+msgstr "Freigegebene Version ohne Grafik (8,1 MiB)"
 
 #: tazinst:97
 msgid "Stable basic graphic version without graphic apps"
@@ -226,8 +226,8 @@ msgid ""
 "You must be the root user (system administrator) to install SliTaz, please "
 "use 'su' to get a root SHell and restart installation."
 msgstr ""
-"SliTaz kann nur mit Administratorrechten installiert werden."
-"Mit 'su' erhalten Sie Administratorrechte und können die Installation erneut beginnen."
+"SliTaz kann nur mit Systemadministratorrechten installiert werden."
+"Mit 'su' erhalten Sie Systemadministratorrechte und können die Installation erneut beginnen."
 
 #: tazinst:471
 msgid "Another instance of tazinst is running."
@@ -262,7 +262,7 @@ msgid "Error: invalid URL."
 msgstr "Fehler: ungültiger URL."
 
 #: tazinst:548
-# Ist gemeint: Mehrfache Zuweisung einer Partition?
+# HGT: Ist gemeint: Mehrfache Zuweisung einer Partition?
 msgid "Error: multiple assignations for a disk."
 msgstr "Fehler: mehrfache Zuweisungen für eine Platte."
 
@@ -356,7 +356,7 @@ msgstr "Rechnername"
 
 #: tazinst:768 tazinst:813
 msgid "Superuser password"
-msgstr "Administratorkennwort"
+msgstr "Systemadministratorkennwort"
 
 #: tazinst:769 tazinst:815
 msgid "First user name"
@@ -376,7 +376,7 @@ msgstr "Partition, von der alternativ Windows geladen werden kann"
 
 #: tazinst:790
 msgid "CD. Automatically set"
-msgstr "CD. Automatisch gesetzt"
+msgstr "optischer Datenträger. Automatisch gesetzt"
 
 #: tazinst:793
 msgid "USB partition. For a list, type: %s"
@@ -420,7 +420,7 @@ msgstr "=== Tazinst: Startzeitpunkt %s ==="
 
 #: tazinst:1208
 msgid "Process not completed"
-msgstr "Prozess nicht abgeschlossen"
+msgstr "Prozedur nicht abgeschlossen"
 
 #: tazinst:1209 tazinst:1213
 msgid "Error: %s"
@@ -452,7 +452,7 @@ msgstr "Dateien von USB-Speichermedium werden verwendet..."
 
 #: tazinst:1267
 msgid "Using files from USB device %s."
-msgstr "Dateien von USB-Gerät %s werden verwendet."
+msgstr "Dateien von USB-Speichermedium %s werden verwendet."
 
 #: tazinst:1269
 msgid "%s: Failed to mount USB device."
@@ -504,7 +504,7 @@ msgstr "Zielpartition wird vorbereitet..."
 
 #: tazinst:1377
 msgid "Partition is already mounted, unmounting."
-msgstr "Partition ist eingehängt, wird ausgehängt."
+msgstr "Bereits eingehängte Partition wird ausgehängt."
 
 #: tazinst:1381
 msgid "Partition is already in use."
@@ -616,7 +616,7 @@ msgstr "Die Dateien der Partition / (%s) werden gelöscht..."
 
 #: tazinst:1790 tazinst:2063
 msgid "keeping /home found on: %s"
-msgstr "Das Verzeichnis home in %s wird beibehalten"
+msgstr "Das Verzeichnis /home in %s wird beibehalten"
 
 #: tazinst:1795 tazinst:2077
 msgid "removing target: %s"
@@ -668,7 +668,7 @@ msgstr "Die Partition für / wird formatiert (falls erforderlich)..."
 
 #: tazinst:2010 tazinst:2192
 msgid "Extracting the root system..."
-msgstr "Die Dateien des Dateisystems / werden extrahiert..."
+msgstr "Die Dateien des Wurzeldateisystems werden extrahiert..."
 
 #: tazinst:2013 tazinst:2198
 msgid "Installing the Kernel..."
@@ -680,7 +680,7 @@ msgstr "Das System wird vorkonfiguriert..."
 
 #: tazinst:2019
 msgid "Configuring root and default user account..."
-msgstr "Administrator- und nichtprivilegierte Benutzerkennung werden eingerichtet..."
+msgstr "Systemadministrator- und nichtprivilegierte Benutzerkennung werden eingerichtet..."
 
 #: tazinst:2022
 msgid "Configuring /home..."

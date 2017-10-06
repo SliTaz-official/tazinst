@@ -1,15 +1,14 @@
 # German translations for installer.cgi package.
-# Copyright (C) 2016 SliTaz
+# Copyright (C) 2017 SliTaz
 # This file is distributed under the same license as the installer.cgi package.
-# Hans-Günter Theisgen, 2016.
+# Hans-Günter Theisgen, 2017.
 #
-#		in Bearbeitung
 msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 17:07+0300\n"
-"PO-Revision-Date: 2016-11-26 08:27+0100\n"
+"POT-Creation-Date: 2016-11-19 23:40+0200\n"
+"PO-Revision-Date: 2017-10-06 15:27+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -49,7 +48,7 @@ msgid ""
 "web by downloading an ISO file."
 msgstr ""
 "Die SliTaz-Installationsprozedur installiert oder aktualisiert SliTaz auf Platte von einem "
-"Medium wie Direktstart-CD oder Direktstart-USB, einem SliTaz-ISO-Abbild, oder über das "
+"Direktstart-Datenräger (optisch oder USB), einem SliTaz-ISO-Abbild, oder über das "
 "Netzwerk nach Transfer eines ISO-Abbildes."
 
 #: installer.cgi:73
@@ -108,7 +107,7 @@ msgstr ""
 "Aktualisieren eines bestehenden SliTaz-Systems auf Platte. Die Verzeichnisse "
 "/home, /etc und /var/www bleiben erhalten, alle anderen werden gelöscht. "
 "Zusätzliche Pakete, die in dem alten SliTaz-System nicht enthalten waren, "
-"werden aktualisiert, wenn eine Internet-Verbindung besteht"
+"werden aktualisiert, wenn eine Internet-Verbindung besteht."
 
 #: installer.cgi:127
 msgid "Upgrade an existing SliTaz system"
@@ -175,8 +174,8 @@ msgid ""
 msgstr ""
 "Wieviel Plattenspeicherplatz benötigt wird hängt davon ab, wieviel Software "
 "installiert werden soll und wieviel Platz die Benutzer benötigen. "
-"Es ist möglich, ein minimales SliTaz-System mit 300 MB oder weniger "
-"Plattenspeicherplatz zu betreiben, aber 2 GB sind sicher komfortabler."
+"Es ist möglich, ein minimales SliTaz-System mit 300 MiB oder weniger "
+"Plattenspeicherplatz zu betreiben, aber 2 GiB sind sicher komfortabler."
 
 #: installer.cgi:207
 msgid ""
@@ -184,7 +183,7 @@ msgid ""
 "space may be created if needed. SliTaz detects and uses swap partitions "
 "automatically."
 msgstr ""
-"Wenn gewünscht, kann eine eigene Partition für das Verzeichnis home und für "
+"Wenn gewünscht, kann eine eigene Partition für das Verzeichnis /home und für "
 "Seitenwechsel (swap) eingerichtet werden. SliTaz findet automatisch Partitionen "
 "für Seitenwechsel und benutzt diese."
 
@@ -208,8 +207,8 @@ msgstr ""
 "GParted unterstützt ohne weiteres Dateisysteme vom Typ ext2, ext3, ext4, "
 "linux swap, ntfs und fat32. Unterstützung für Dateisysteme vom Typ "
 "xjs, jfs, hfs und andere ist ebenfalls verfügbar, wenn zuvor die Treiber "
-"für diese Dateisysteme installiert wurden durch Installation der Pakete "
-"bzw. xfsprogs, jfsutils, linux-hfs und so weiter."
+"für diese Dateisysteme durch Installation der Pakete "
+"bzw. xfsprogs, jfsutils, linux-hfs und so weiter installiert wurden."
 
 #: installer.cgi:226
 msgid "Launch GParted, the partition editor tool"
@@ -233,15 +232,15 @@ msgstr ""
 
 #: installer.cgi:259
 msgid "LiveCD"
-msgstr "Direkstart-CD"
+msgstr "optischer Direkstart-Datenträger"
 
 #: installer.cgi:261
 msgid "Use the SliTaz LiveCD"
-msgstr "SliTaz-Direkstart-CD verwenden"
+msgstr "optischen SliTaz-Direkstart-Datenträger verwenden"
 
 #: installer.cgi:269
 msgid "LiveUSB:"
-msgstr "Direkstart-USB"
+msgstr "Direkstart-USB-Datenträger"
 
 #: installer.cgi:271
 msgid "Enter the partition where SliTaz Live is located on your USB Key"
@@ -289,7 +288,7 @@ msgstr "Die Partition angeben, in die SliTaz installiert werden soll"
 
 #: installer.cgi:380
 msgid "home partition"
-msgstr "Partition für das Verzeichnis home"
+msgstr "Partition für das Verzeichnis /home"
 
 #: installer.cgi:384
 msgid "Separate partition for %s:"
@@ -317,11 +316,11 @@ msgstr "Name des Rechners"
 
 #: installer.cgi:443
 msgid "Root superuser"
-msgstr "Administratorkennung root"
+msgstr "Systemadministratorkennung root"
 
 #: installer.cgi:446
 msgid "Root password:"
-msgstr "Benutzerkennwort des Administrators:"
+msgstr "Benutzerkennwort des Systemadministrators:"
 
 #: installer.cgi:447
 msgid "Enter the password for root"
@@ -508,7 +507,6 @@ msgid "Any installation can not be done without %s."
 msgstr "Ohne %s kann nichts installiert werden."
 
 #: installer.cgi:852
-#, fuzzy
 msgid "Check %s permissions, or reinstall the %s package."
 msgstr "Prüfen Sie die Berechtigungen von %s oder installieren Sie das Paket %s erneut."
 
@@ -517,7 +515,6 @@ msgid "%s, the %s backend, is not at the minimum required version."
 msgstr "%s, der Unterbau für %s, hat nicht die mindestens erforderliche Version."
 
 #: installer.cgi:865 installer.cgi:878
-#, fuzzy
 msgid "Reinstall the %s package, or use %s in CLI mode."
 msgstr "Installieren Sie das Paket %s erneut, oder verwenden Sie das Kommando %s."
 
@@ -535,9 +532,8 @@ msgstr "Es kann nichts installiert werden."
 
 #: installer.cgi:995 installer.cgi:1052
 # HGT 2016-11-26: kann sein "Nichts" oder "Keine"
-#, fuzzy
 msgid "None"
-msgstr ""
+msgstr "Keine"
 
 #: installer.cgi:1071
 msgid "Do not format"
