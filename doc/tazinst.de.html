@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 	<meta charset="UTF-8">
-	<title>Tazinst-Handbuch — Handbuch für “tazinst” Installationsprozedur</title>
+	<title>Tazinst-Handbuch — Handbuch für die Installationsprozedur “tazinst”</title>
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="../slitaz-doc.css">
 	<script src="../slitaz-doc.js"></script>
@@ -29,39 +29,48 @@ tazinst [command] &lt;setting&gt; &lt;value&gt; &lt;file&gt;
 <h2>BESCHREIBUNG</h2>
 
 <p>Tazinst ist eine ressourcenschonende Installationsprozedur, die SliTaz auf einer Platte installiert.
-Das Installationsmedium kann ein lokaler Datenträger wie eine "Live-CD", ein "Live"-USB-Speicher oder
-ein ISO-Abbild auf einer Platte sein oder es kann durch Kopieren ("download") eines SliTaz-ISO-Abbilds
+Das Installationsmedium kann ein lokaler Datenträger wie ein optischer Direktstart-Datentrager,
+ein USB-Direktstart-Datenträger oder ein ISO-Abbild auf einer Platte sein oder es kann durch Transferieren eines SliTaz-ISO-Abbilds
 über das Netzwerk installiert werden.</p>
 <p>Tazinst kann die Zielpartition mit den Dateisystemformaten ext2, ext3 oder ext4 einrichten. Wenn gewünscht,
 kann das Verzeichnis /home in einer eigenen Partition mit einem der verfügbaren Dateisystemformate eingerichtet
-werden. Tazinst kann auch einen Urlader ("bootloader") auf der Ziel-Platte installieren. Auch möglich ist eine
-Installation neben einer vorhandenen Windows™-Partition zum alternativen Laden ("dual boot"), wobei die
+werden. Tazinst kann auch einen Urlader ("bootloader") auf der Ziel-Partition installieren. Auch eine
+Installation neben einer vorhandenen Windows™-Partition zum alternativen Laden ("dual boot") ist möglich, wobei die
 Windows™-Partition automatisch gefunden oder manuell spezifiziert werden kann.</p>
 <p>Tazinst kann auch ein SliTaz aktualisieren, das in einer Partition einer Platte installiert ist; dies kann
 für einen Versionswechsel nützlich sein. In diesem Fall wird nur SliTaz aktualisiert, alle Dateien im Verzeichnis
 /home werden beibehalten. Zusätzlich installierte Pakete werden nach der SliTaz-Aktualisierung ebenfalls aktualisiert.</p>
-<p>Tazinst wurde unabhängig für die Bedürfnisse der "SliTaz GNU/Linux mini"-Distribution entwickelt.</p>
+<p>Tazinst wurde eigens für die Bedürfnisse der "SliTaz GNU/Linux mini"-Distribution entwickelt.</p>
 <p>Tazinst wurde von Grund auf als Kommandoprozedur ("shell script") geschrieben und ist mit "Busybox Ash" und "Bash"
 kompatibel. Tazinst ist unter "GNU Free GPL v3" lizensiert.</p>
+
 
 <h3>Bekannte Einschränkungen</h3>
 
 <p>Mit Tazinst installierte SliTaz-Systeme können nicht mit (U)EFI (hauptsächlich auf Windows™ 8 Rechnern) geladen
 werden, es sei denn im BIOS-Kompatibilitätsmodus.</p>
 
+
 <h2>EINSTELLUNGEN</h2>
 
 <p>Das Tazinst-Installationsprogramm kann eine Installation automatisiert ausführen, wenn zuvor einige Einstellungen
 vorgenommen wurden.</p>
 
+
 <h3 id="mode">mode</h3>
 
-<p>Der Installationsmodus in dem tazinst ablaufen soll. Mit <code>tazinst help mode</code> erhält man eine Liste der unterstützten Modi.</p>
+<p>Der Installationsmodus in dem tazinst ablaufen soll. Mit <code>tazinst help mode</code>
+erhält man eine Liste der unterstützten Modi.</p>
+
 
 <h3 id="media">media</h3>
 
-<p>Das Medium, das die SliTaz-Quelldateien enthält, entweder <strong>cdrom</strong> (SliTaz LiveCD), <strong>usb</strong> (SliTaz LiveUSB),
-<strong>iso</strong> (ISO-Abbild von SliTaz), or <strong>web</strong> (ISO-Abbild über Netzwerk).</p>
+<p>Das Medium, das die SliTaz-Quelldateien enthält, entweder
+<strong>cdrom</strong> (optischer SliTaz-Direktstart-Datenträger),
+<strong>usb</strong> (SliTaz-USB-Direktstart-Datenträger),
+<strong>iso</strong> (ISO-Abbild von SliTaz), or
+<strong>web</strong> (ISO-Abbild über Netzwerk).</p>
+
 
 <h3 id="source">source</h3>
 
@@ -73,86 +82,106 @@ vorgenommen wurden.</p>
 		<td><i>nicht verwendet</i></td>
 	</tr>
 	<tr> <td valign="top">usb:</td>
-		<td>Name der Partition auf dem Medium in dem USB-Gerät. Mit <code>tazinst list usb</code></strong>
+		<td>Name der Partition auf dem Medium in dem USB-Gerät. Mit <code>tazinst list usb</code>
 		erhält man eine Liste der Partitionen des Mediums in dem USB-Gerät.</td>
 	</tr>
 	<tr>
-		<td>iso:</td>
+		<td valign="top">iso:</td>
 		<td>Name des ISO-Abbilds, z.B.: <code>~/slitaz-rolling.iso</code>. Mit <code>tazinst list iso</code>
 	erhält man eine Liste der ISO-Abbilder auf den Platten.</td>
 	</tr>
 	<tr>
 		<td valign="top">web:</td>
-		<td>Name des ISO-Abbilds im Netzwerk, z.B.: <code>stable cooking rolling base core gtkonly justx</code>.
+		<td>Name des ISO-Abbilds im Netzwerk, z.B.:
+			<code>stable, cooking, rolling, base, core, gtkonly, justx</code>.
 		Mit <code>tazinst list web</code> erhält man eine Liste der über das Netzwerk zugreifbaren ISO-Abbilder.
-		Man kann auch den vollständigen URL des ISO-Abbilds angeben, z.B.: <code>http://mirror.slitaz.org/iso/cooking/slitaz-cooking.iso</code>. </td>
+		Man kann auch den vollständigen URL des ISO-Abbilds angeben, z.B.:
+		<code>http://mirror.slitaz.org/iso/cooking/slitaz-cooking.iso</code>. </td>
 	</tr>
 </table>
 
+
 <h3 id="root_uuid">root_uuid</h3>
 
-<p>Die Bezeichnung der Ziel-Partition, in der SliTaz installiert werden soll. Mit <code>tazinst list uuid</code> erhält
-man eine Liste der Partitionen auf den Platten.</p>
+<p>Die Bezeichnung der Ziel-Partition, in der SliTaz installiert werden soll.
+Mit <code>tazinst list uuid</code> erhält man eine Liste der Partitionen auf den Platten.</p>
+
 
 <h3 id="root_format">root_format</h3>
 
-<p>Optional. Wenn angegeben, wird die Ziel-Partition mit dem spezifizierten Dateisystem formatiert, sonst werden alle
-Dateien der Partition gelöscht mit Ausnahme derer im Verzeichnis /home. Mit <code>tazinst help format</code>
-erhält man eine Liste aller unterstützten Dateisysteme. <code>tazinst list root_format</code> zeigt die bereits installierten
-Dateisysteme auf den Platten.</p>
+<p>Optional. Wenn angegeben, wird die Ziel-Partition mit dem spezifizierten Dateisystem formatiert,
+sonst werden alle Dateien der Partition gelöscht mit Ausnahme derer im Verzeichnis /home.
+Mit <code>tazinst help format</code> erhält man eine Liste aller unterstützten Dateisysteme.
+<code>tazinst list root_format</code> zeigt die bereits installierten Dateisysteme auf den Platten.</p>
+
 
 <h3 id="home_uuid">home_uuid</h3>
 
-<p>Optional. Damit kann das Verzeichnis /home in einer separaten Partition angelegt werden. Es ist die Bezeichnung der
-Partition anzugeben, die das Verzeichnis /home aufnehmen soll.</p>
+<p>Optional. Damit kann das Verzeichnis /home in einer separaten Partition angelegt werden.
+Es ist die Bezeichnung der Partition anzugeben, die das Verzeichnis /home aufnehmen soll.</p>
+
 
 <h3 id="home_format">home_format</h3>
 
-<p>Optional. Damit wird bewirkt, dass die Partition, die das Verzeichnis /home aufnehmen soll, formatiert und mit dem 
-angegebenen Dateisystemformat eingerichtet wird.</p>
+<p>Optional. Damit wird bewirkt, dass die Partition, die das Verzeichnis /home aufnehmen soll,
+mit dem angegebenen Dateisystem formatiert wird.</p>
+
 
 <h3 id="hostname">hostname</h3>
 
-<p>Optional. Name ("hostname") des zu installierenden Systems; das ist <code>slitaz</code>, wenn nicht anders angegeben.</p>
+<p>Optional. Name ("hostname") des zu installierenden Systems;
+das ist <code>slitaz</code>, wenn nicht anders angegeben.</p>
+
 
 <h3 id="root_pwd">root_pwd</h3>
 
-<p>Optional. Kennwort ("password") des privilegierten Benutzers [root]; das ist <code>root</code>, wenn nicht anders angegeben.</p>
+<p>Optional. Kennwort des privilegierten Benutzers [root];
+das ist <code>root</code>, wenn nicht anders angegeben.</p>
 
 <h3 id="user_login">user_login</h3>
 
-<p>Optional. Name eines ersten nichtprivilegierten Benutzers; das ist <code>tux</code>, wenn nicht anders angegeben.</p>
+<p>Optional. Name eines ersten nichtprivilegierten Benutzers;
+das ist <code>tux</code>, wenn nicht anders angegeben.</p>
 
 <h3 id="user_pwd">user_pwd</h3>
 
-<p>Optional. Kennwort ("password") des ersten nichtprivilegierten Benutzers; das ist <code>tux</code>, wenn nicht anders angegeben.</p>
+<p>Optional. Kennwort des ersten nichtprivilegierten Benutzers;
+das ist <code>tux</code>, wenn nicht anders angegeben.</p>
+
 
 <h3 id="bootloader">bootloader</h3>
 
-<p>Optional. Es soll ein Urlader ("bootloader") installiert werden. Hier sollte <code>auto</code> angegeben werden, ausser
-wenn ein bereits installierter Urlader verwendet werden soll, ein Urlader manuell oder ein bestimmter Urlader installiert
-werden soll. Mit <code>tazinst help bootloader</code> erhält man eine Liste der unterstützten Urlader.</p>
+<p>Optional. Es soll ein Urlader ("bootloader") installiert werden. Hier sollte <code>auto</code> angegeben werden,
+ausser wenn ein bereits (in einer anderen Partition) installierter Urlader verwendet werden soll,
+ein Urlader manuell oder ein bestimmter Urlader installiert werden soll.
+Mit <code>tazinst help bootloader</code> erhält man eine Liste der unterstützten Urlader.</p>
+
 
 <h3 id="winboot">winboot</h3>
 
-<p>Optional. Wenn ein Urlader ("bootloader") installiert wird, wird hiermit bestimmt, dass alternatives Laden von Windows™ ("dual boot")
-von einer anzugebenden Partition ermöglicht werden soll. Ist <code>auto</code> angegeben, wird die erste Partition ausgewählt, die ein
-ladefähiges Windows™ enthält. Mit <code>tazinst list winboot</code> kann man feststellen, welche Windows™-Partitionen <code>tazinst</code> automatisch findet.</p>
+<p>Optional. Wenn ein Urlader ("bootloader") installiert wird, wird hiermit bestimmt,
+dass alternatives Laden von Windows™ ("dual boot") von einer anzugebenden Partition ermöglicht werden soll.
+Ist <code>auto</code> angegeben, wird die erste Partition ausgewählt, die ein ladefähiges Windows™ enthält.
+Mit <code>tazinst list winboot</code> kann man feststellen,
+welche Windows™-Partitionen <code>tazinst</code> automatisch findet.</p>
+
 
 <h2>KOMMANDOS</h2>
 
 <h3 id="new">new</h3>
 
-<p>Es wird eine Datei mit Installations-Einstellungen nach den Anforderungen des Benutzers erstellt, die in sich dokumentiert ist
-und mithilfe derer tazinst eine automatisierte Installation durchführen kann. Der Standardname der Datei ist <code>./tazint.rc</code>;
+<p>Es wird eine Datei mit Installations-Einstellungen nach den Anforderungen des Benutzers erstellt,
+die in sich dokumentiert ist und mithilfe derer tazinst eine automatisierte Installation durchführen kann.
+Der Standardname der Datei ist <code>./tazinst.rc</code>;
 optional kann ein anderer Dateiname als Parameter angegeben werden.</p>
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst new
-tazinst new /var/lib/tazinst.conf
-</pre>
+<code>
+ tazinst new<br>
+ tazinst new /var/lib/tazinst.conf
+</code>
+
 
 <h3 id="set">set</h3>
 
@@ -160,10 +189,10 @@ tazinst new /var/lib/tazinst.conf
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst set mode install
+<code>
+tazinst set mode install<br>
 tazinst set mode install /var/lib/tazinst.conf
-</pre>
+</code>
 
 <h3 id="unset">unset</h3>
 
@@ -171,10 +200,10 @@ tazinst set mode install /var/lib/tazinst.conf
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst unset mode
+<code>
+tazinst unset mode<br>
 tazinst unset mode /var/lib/tazinst.conf
-</pre>
+</code>
 
 <h3 id="get">get</h3>
 
@@ -182,10 +211,12 @@ tazinst unset mode /var/lib/tazinst.conf
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst get
-tazinst get mode tazinst get mode /var/lib/tazinst.conf
-</pre>
+<code>
+tazinst get<br>
+tazinst get mode<br>
+tazinst get mode /var/lib/tazinst.conf
+</code>
+
 
 <h3 id="check">check</h3>
 
@@ -193,10 +224,12 @@ tazinst get mode tazinst get mode /var/lib/tazinst.conf
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst check
-tazinst check mode tazinst check mode /var/lib/tazinst.conf
-</pre>
+<code>
+tazinst check<br>
+tazinst check mode<br>
+tazinst check mode /var/lib/tazinst.conf
+</code>
+
 
 <h3 id="list">list</h3>
 
@@ -209,7 +242,7 @@ tazinst check mode tazinst check mode /var/lib/tazinst.conf
 	</tr>
 	<tr>
 		<td valign="top">media</td>
-		<td>Verfügbare Installationsmedien. Beispiel: cdrom wird an Rechnern ohne CD- oder DVD-Laufwerk nicht angezeigt</td>
+		<td>Verfügbare Installationsmedien. Beispiel: cdrom wird an Rechnern ohne optische Laufwerke nicht angezeigt</td>
 	</tr>
 	<tr>
 		<td>usb</td>
@@ -217,15 +250,16 @@ tazinst check mode tazinst check mode /var/lib/tazinst.conf
 	</tr>
 	<tr>
 		<td valign="top">iso</td>
-		<td>ISO-Abbilder auf lokalen Laufwerken, im Verzeichnis /root und im Stammverzeichnis aller Benutzer und deren ersten Unterverzeichnissen</td>
+		<td>ISO-Abbilder auf lokalen Laufwerken, im Verzeichnis /root und
+			im Stammverzeichnis aller Benutzer und deren ersten Unterverzeichnissen</td>
 	</tr>
 	<tr>
 		<td valign="top">web</td>
-		<td>Vordefinierte Namen von ISO-Abbildern zum impliziten Kopieren ("download") über das Internet</td>
+		<td>Vordefinierte Namen von ISO-Abbildern zum impliziten Transferieren über das Internet</td>
 	</tr>
 	<tr>
 		<td>format</td>
-		<td>Installierte Dateisysteme</td>
+		<td>Installierte Dateisystemformate</td>
 	</tr>
 	<tr>
 		<td>bootloader</td>
@@ -243,23 +277,26 @@ tazinst check mode tazinst check mode /var/lib/tazinst.conf
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst list
+<code>
+tazinst list<br>
 tazinst list media
-</pre>
+</code>
+
 
 <h3 id="execute">execute</h3>
 
-<p>SliTaz wird nach den Angaben in der Installationsdatei auf Platte installiert. Dabei gehen alle Daten auf der Platte
-verloren, wenn Formatierung der Platte ausgewählt wurde. Andernfalls werden alle Dateien bis auf die im Verzeichnis
-/home gelöscht; das Verzeichnis /home bleibt dann unverändert erhalten.</p>
+<p>SliTaz wird nach den Angaben in der Installationsdatei auf Platte installiert.
+Dabei gehen alle Daten auf der Platte verloren, wenn Formatierung der Platte ausgewählt wurde.
+Andernfalls werden alle Dateien bis auf die im Verzeichnis <code>/home</code> gelöscht;
+das Verzeichnis <code>/home</code> bleibt dann unverändert erhalten.</p>
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst execute
+<code>
+tazinst execute<br>
 tazinst execute /var/lib/tazinst.conf
-</pre>
+</code>
+
 
 <h3 id="clean">clean</h3>
 
@@ -267,10 +304,11 @@ tazinst execute /var/lib/tazinst.conf
 
 <h5>Beispiele:</h5>
 
-<pre>
-tazinst clean
+<code>
+tazinst clean<br>
 tazinst clean /var/lib/tazinst.conf
-</pre>
+</code>
+
 
 <h3 id="log">log</h3>
 
@@ -278,9 +316,10 @@ tazinst clean /var/lib/tazinst.conf
 
 <h5>Beispiel:</h5>
 
-<pre>
+<code>
 tazinst log
-</pre>
+</code>
+
 
 <h3 id="version">version</h3>
 
@@ -288,9 +327,10 @@ tazinst log
 
 <h5>Beispiel:</h5>
 
-<pre>
+<code>
 tazinst version
-</pre>
+</code>
+
 
 <h3 id="usage">usage</h3>
 
@@ -298,9 +338,10 @@ tazinst version
 
 <h5>Beispiel:</h5>
 
-<pre>
+<code>
 tazinst usage
-</pre>
+</code>
+
 
 <h3 id="help">help</h3>
 
@@ -309,25 +350,28 @@ Ohne Parameter wird eine kurze Anwendungshilfe für alle Einstellungen angezeigt
 
 <h5>Beispiel:</h5>
 
-<pre>
+<code>
 tazinst help mode
-</pre>
+</code>
+
 
 <h2>BEISPIELE</h2>
 
 <h3>Installation</h3>
 
-<p>Installation von SliTaz in einer Partition einer Platte. Die "root"-Partition wird nicht formatiert, alle Dateien ausser
-in einem vorhandenen Verzeichnis <code>/home</code> werden gelöscht; das Verzeichnis <code>/home</code> bleibt unverändert erhalten.</p>
+<p>Installation von SliTaz in einer Partition einer Platte.
+Die Wurzel-Partition wird nicht formatiert, alle Dateien ausser
+in einem vorhandenen Verzeichnis <code>/home</code> werden gelöscht;
+das Verzeichnis <code>/home</code> bleibt unverändert erhalten.</p>
 
 <ol>
 	<li>Es soll eine neue Installationsdatei mit Standardnamen erzeugt werden:
 		<pre># tazinst new</pre></li>
 	<li>Der Modus wird auf <code>install</code> gesetzt:
 		<pre># tazinst set mode install</pre></li>
-	<li>Als Installationsmedium soll eine CD oder DVD verwendet werden:
+	<li>Als Installationsmedium soll ein optischer Datenträger verwendet werden:
 		<pre># tazinst set media cdrom</pre></li>
-	<li>SliTaz soll in der Partition /dev/hda1 installiert werden:
+	<li>SliTaz soll in der Partition <code>/dev/hda1</code> installiert werden:
 		<pre># tazinst set root_uuid /dev/hda1</pre></li>
 	<li>Es soll ein Urlader installiert werden:
 		<pre># tazinst set bootloader auto</pre></li>
@@ -335,28 +379,31 @@ in einem vorhandenen Verzeichnis <code>/home</code> werden gelöscht; das Verzei
 		<pre># tazinst execute</pre></li>
 </ol>
 
+
 <h3>Komplexe Installation</h3>
 
-<p>Installation von SliTaz auf Platte, wobei das Verzeichnis /home in einer eigenen Partition angelegt werden soll
-und alternativ Windows™ von einer anderen Partition geladen werden können soll ("dual boot"). Die "root"-Partition
-und die Partition für das Verzeichnis /home werden beide formatiert, sodass alle dort vorhandenen Daten verloren gehen).</p>
+<p>Installation von SliTaz auf Platte, wobei das Verzeichnis <code>/home</code>
+in einer eigenen Partition angelegt werden soll und alternativ Windows™
+von einer anderen Partition geladen werden können soll ("dual boot").
+Die Partitionen für das Wurzeldateisystem und für das Verzeichnis <code>/home</code>
+werden beide formatiert, sodass alle dort vorhandenen Daten verloren gehen.</p>
 
 <ol>
 	<li>Es soll eine neue Installationsdatei mit Standardnamen erzeugt werden:
 		<pre># tazinst new</pre></li>
 	<li>Der Modus wird auf <code>install</code> gesetzt:
 		<pre># tazinst set mode install</pre></li>
-	<li>Als Installationsmedium soll ein USB-Gerät mit einem "live"-Medium verwendet werden:
+	<li>Als Installationsmedium soll ein Direktstart-Datenträger in einem USB-Gerät verwendet werden:
 		<pre># tazinst set media usb</pre></li>
-	<li>Es soll die Partition 1 auf dem Medium des USB-Gerätes als Installationsquelle verwendet werden:
+	<li>Es soll die Partition 1 auf dem USB-Datenträger als Installationsquelle verwendet werden:
 		<pre># tazinst set source /dev/sda1</pre></li>
-	<li>SliTaz soll in der Partition /dev/hda1 installiert werden:
+	<li>SliTaz soll in der Partition <code>/dev/hda1</code> installiert werden:
 		<pre># tazinst set root_uuid /dev/hda1</pre></li>
-	<li>Die "root"-Partition soll formatiert werden und ein Dateisystem vom Typ ext4 erhalten:
+	<li>Die Partition für das Wurzeldateisystem soll mit einem Dateisystem vom Typ ext4 formatiert werden:
 		<pre># tazinst set root_format ext4</pre></li>
-	<li>Das Verzeichnis /home soll in einer eigenen Partition /dev/hda2 angelegt werden:
+	<li>Das Verzeichnis <code>/home</code> soll in einer eigenen Partition <code>/dev/hda2</code> angelegt werden:
 		<pre># tazinst set home_uuid /dev/hda2</pre></li>
-	<li>Die Partition für das Verzeichnis /home soll formatiert werden und ein Dateisystem vom Typ ext2 erhalten:
+	<li>Die Partition für das Verzeichnis <code>/home</code> soll mit einem Dateisystem vom Typ ext2 formatiert werden:
 		<pre># tazinst set home_format ext2</pre></li>
 	<li>Es soll ein Urlader ("bootloader") installiert werden:
 		<pre># tazinst set bootloader auto</pre></li>
@@ -368,10 +415,13 @@ und die Partition für das Verzeichnis /home werden beide formatiert, sodass all
 		<pre># tazinst clean</pre></li>
 </ol>
 
+
 <h3>Versionsaktualisierung</h3>
 
-<p>Aktualisierung eines auf Platte installieten SliTaz. Die Verzeichnisse <code>/home /etc /var/www</code> bleiben erhalten,
-alle anderen Verzeichnisse werden gelöscht. Wenn eine Internet-Verbindung besteht, werden auch alle zusätzlich zu SliTaz
+<p>Aktualisierung eines auf Platte installierten SliTaz. Die Verzeichnisse
+<code>/home, /etc</code> und <code>/var/www</code> bleiben erhalten,
+alle anderen Verzeichnisse werden gelöscht.
+Wenn eine Internet-Verbindung besteht, werden auch alle zusätzlich zu SliTaz
 installierten Pakete aktualisiert.</p>
 
 <ol>
@@ -381,15 +431,16 @@ installierten Pakete aktualisiert.</p>
 		<pre># tazinst set mode upgrade</pre></li>
 	<li>Als Installationsmedium soll das Netzwerk verwendet werden:
 		<pre># tazinst set media web</pre></li>
-	<li>Als Installationsquelle soll das dauerhafte Abbild verwendet werden:
+	<li>Als Installationsquelle soll die freigegebene SliTaz-Version verwendet werden:
 		<pre># tazinst set source stable</pre></li>
-	<li>SliTaz in der Partition /dev/hda1 soll aktualisiert werden:
+	<li>SliTaz in der Partition <code>/dev/hda1</code> soll aktualisiert werden:
 		<pre># tazinst set root_uuid /dev/hda1</pre></li>
 	<li>Es soll ein Urlader ("bootloader") installiert werden:
 		<pre># tazinst set bootloader auto</pre></li>
 	<li>Die Installation wird gestartet:
 		<pre># tazinst execute</pre></li>
 </ol>
+
 
 <h3>Tipps</h3>
 
@@ -401,24 +452,33 @@ installierten Pakete aktualisiert.</p>
 		<pre># tazinst check</pre></li>
 </ol>
 
+
 <h2>DATEIEN</h2>
 
 <h3>INSTALLATIONSDATEI</h3>
 
-<p>Einstellungen werden in die Installationsdatei geschrieben und dann von tazinst für eine automatisierte Installation verwendet.
-Der Standardname der Datei ist <code>./tazint.rc</code>; optional kann ein anderer Dateiname als Parameter angegeben werden. Die
-Installationsdatei ist in sich dokumentiert. Das Kommando <code>clean</code> löscht diese Datei.</p>
+<p>Einstellungen werden in die Installationsdatei geschrieben und dann von tazinst
+für eine automatisierte Installation verwendet.
+Der Standardname der Datei ist <code>./tazinst.rc</code>;
+optional kann ein anderer Dateiname als Parameter angegeben werden.
+Die Installationsdatei ist in sich dokumentiert.
+Das Kommando <code>clean</code> löscht diese Datei.</p>
+
 
 <h3>SYSTEMDATEI</h3>
 
-<p>Die Konfigurationsdatei <code>/etc/slitaz/tazinst.conf</code> ermöglicht es, die Voreinstellungen von <code>tazinst</code>
+<p>Die Konfigurationsdatei <code>/etc/slitaz/tazinst.conf</code> ermöglicht es,
+die Voreinstellungen von <code>tazinst</code>
 zu ändern, wenn eigene Voreinstellungen verwendet werden sollen.</p>
-<p>Alle Einstellungen können angepasst werden. Wenn eine Einstellung in der Datei fehlt, kann der Name der Einstellung
-(in Großbuchstaben) mit einem neuen Wert einfach in die Datei eingefügt werden.</p>
+
+<p>Alle Einstellungen können angepasst werden. Wenn eine Einstellung in der Datei fehlt,
+kann der Name der Einstellung (in Großbuchstaben) mit einem neuen Wert einfach
+in die Datei eingefügt werden.</p>
 
 <h4>Beispiel:</h4>
 
-<p>Wenn SliTaz immer über das Netzwerk aus demselben ISO-Abbild installiert werden soll, kann man die folgenden Werte ändern oder einfügen:</p>
+<p>Wenn SliTaz immer über das Netzwerk aus demselben ISO-Abbild installiert werden soll,
+kann man die folgenden Werte ändern oder einfügen:</p>
 
 <pre>
 MEDIA="web"
@@ -426,7 +486,9 @@ SOURCE="stable"
 </pre>
 
 <h3>PROTOKOLLDATEI</h3>
-<p>Die Datei <code>/var/log/tazinst.log</code> enthält ein Protokoll des Installationsvorgangs. Das Kommando <code>clean</code> löscht diese Datei.</p>
+<p>Die Datei <code>/var/log/tazinst.log</code> enthält ein Protokoll des Installationsvorgangs.
+Das Kommando <code>clean</code> löscht diese Datei.</p>
+
 
 <h2>BETREUER</h2>
 
@@ -437,7 +499,7 @@ Dominique Corbex &lt;domcox at slitaz.org&gt;</p>
 </div>
 
 <footer>
-	Copyright © 2007-<span class="year"></span> <a href="http://www.slitaz.org/">SliTaz GNU/Linux</a>
+	Copyright © 2017-<span class="year"></span> <a href="http://www.slitaz.org/">SliTaz GNU/Linux</a>
 </footer>
 
 </body>
