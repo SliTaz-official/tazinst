@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 17:07+0300\n"
+"POT-Creation-Date: 2018-01-30 12:31+0200\n"
 "PO-Revision-Date: 2016-03-28 05:01-0300\n"
 "Last-Translator: Leonardo Laporte <hackdorte@sapo.pt>\n"
 "Language-Team: Portuguese <i18n@slitaz.org>\n"
@@ -27,7 +27,7 @@ msgstr "TazPanel - Instalador"
 msgid "Installation"
 msgstr "Instalar"
 
-#: installer.cgi:47 installer.cgi:102 installer.cgi:750
+#: installer.cgi:47 installer.cgi:102 installer.cgi:748
 msgid "Install SliTaz"
 msgstr "Instalar o SliTaz"
 
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Which type of installation do you want to start?"
 msgstr "Qual o tipo de instalação a ser iniciado?"
 
-#: installer.cgi:86 installer.cgi:172
+#: installer.cgi:86 installer.cgi:171
 msgid "Install"
 msgstr "Instalar"
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Upgrade an existing SliTaz system"
 msgstr "Atualiza um sistema SliTaz existente"
 
-#: installer.cgi:128 installer.cgi:760
+#: installer.cgi:128 installer.cgi:758
 msgid "Upgrade SliTaz"
 msgstr "Atualizar o SliTaz"
 
@@ -133,29 +133,29 @@ msgid ""
 "century..."
 msgstr "SliTaz estará no diretório %s como previsto anteriormente..."
 
-#: installer.cgi:154
+#: installer.cgi:153
 msgid "ISO image file full path"
 msgstr ""
 
-#: installer.cgi:155
+#: installer.cgi:154
 msgid "set %s for a physical CD-ROM"
 msgstr ""
 
-#: installer.cgi:158
+#: installer.cgi:157
 #, fuzzy
 msgid "Target partition"
 msgstr "Partição home"
 
-#: installer.cgi:160
+#: installer.cgi:159
 #, fuzzy
 msgid "Choose a partition"
 msgstr "Partição home"
 
-#: installer.cgi:195
+#: installer.cgi:193
 msgid "Partitioning"
 msgstr "Particionando"
 
-#: installer.cgi:198
+#: installer.cgi:196
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
 "Windows&trade;, or Linux, or another operating system. You'll need to resize "
@@ -168,7 +168,7 @@ msgstr ""
 "distribuição irá funcionar em conjunto com outro sistema operacional "
 "existente no disco rígido."
 
-#: installer.cgi:203
+#: installer.cgi:201
 msgid ""
 "The amount of space needed depends on how much software you plan to install "
 "and how much space you require for users. It's conceivable that you could "
@@ -179,7 +179,7 @@ msgstr ""
 "pretende instalar para utilização dos usuários. Para um sistema mínimo do "
 "SliTaz 300 MB livres são suficientes, porém 2G é o recomendado."
 
-#: installer.cgi:207
+#: installer.cgi:205
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
 "space may be created if needed. SliTaz detects and uses swap partitions "
@@ -189,7 +189,7 @@ msgstr ""
 "ser cridas caso necessário. O SliTaz irá detectar e usar a partição swap "
 "automaticamente."
 
-#: installer.cgi:211
+#: installer.cgi:209
 msgid ""
 "You can graphically manage your partitions with GParted. GParted is a "
 "partition editor for graphically managing your disk partitions. GParted "
@@ -198,7 +198,7 @@ msgstr ""
 "Pode-se gerenciar as partições com o Gparted, programa que permite criar, "
 "apagar, redimensionar ou copiar partições sem perda de dados."
 
-#: installer.cgi:215
+#: installer.cgi:213
 msgid ""
 "GParted supports ext2, ext3, ext4, linux swap, ntfs and fat32 filesystems "
 "right out of the box. Support for xjs, jfs, hfs and other filesystems is "
@@ -209,19 +209,19 @@ msgstr ""
 "por padrão. O suporte à xfs, jfs, hfs e outros estão disponíveis por meio de "
 "drivers fornecidos pelos pacotes xfsprogs, jfsutils, linux-hfs e outros."
 
-#: installer.cgi:226
+#: installer.cgi:224
 msgid "Launch GParted, the partition editor tool"
 msgstr "Executar o GParted, editor de partições"
 
-#: installer.cgi:227
+#: installer.cgi:225
 msgid "Execute GParted"
 msgstr "Executar Gparted"
 
-#: installer.cgi:232
+#: installer.cgi:230
 msgid "Continue installation"
 msgstr "Continuar instalação"
 
-#: installer.cgi:234
+#: installer.cgi:232
 msgid ""
 "Once you've made room for SliTaz on your drive, you should be able to "
 "continue installation."
@@ -229,143 +229,143 @@ msgstr ""
 "Assim que houver espaço para o SliTaz no disco rígido, pode-se continuar com "
 "a instalação."
 
-#: installer.cgi:259
+#: installer.cgi:257
 msgid "LiveCD"
 msgstr "LiveCD"
 
-#: installer.cgi:261
+#: installer.cgi:259
 msgid "Use the SliTaz LiveCD"
 msgstr "Usar o Sistema Live SliTaz"
 
-#: installer.cgi:269
+#: installer.cgi:267
 msgid "LiveUSB:"
 msgstr "LiveUSB"
 
-#: installer.cgi:271
+#: installer.cgi:269
 msgid "Enter the partition where SliTaz Live is located on your USB Key"
 msgstr "Informe a partição da mídia USB onde o SliTaz Live está localizado"
 
-#: installer.cgi:286
+#: installer.cgi:284
 msgid "ISO file:"
 msgstr "Imagem ISO:"
 
-#: installer.cgi:288
+#: installer.cgi:286
 msgid "Select a SliTaz ISO file located on a local disk"
 msgstr "Selecionar uma imagem ISO do SliTaz gravada num disco local"
 
-#: installer.cgi:294 installer.cgi:301
+#: installer.cgi:292 installer.cgi:299
 msgid "Select an ISO or enter the full path to the ISO file"
 msgstr "Selecionar imagem ISO ou informar caminho completo para a ISO"
 
-#: installer.cgi:313
+#: installer.cgi:311
 msgid "Web:"
 msgstr "Web:"
 
-#: installer.cgi:315
+#: installer.cgi:313
 msgid "Select a SliTaz version on the Web"
 msgstr "Selecionar uma versão do SliTaz na Web"
 
-#: installer.cgi:322 installer.cgi:329
+#: installer.cgi:320 installer.cgi:327
 msgid "Select a version or enter the full URL to an ISO file"
 msgstr "Selecionar uma versão ou informar url completa para arquivo ISO"
 
-#: installer.cgi:345
+#: installer.cgi:343
 msgid "Existing SliTaz partition to upgrade:"
 msgstr "Partição existente do SliTaz para atualizar:"
 
-#: installer.cgi:346
+#: installer.cgi:344
 msgid "Specify the partition containing the system to upgrade"
 msgstr "Informar a partição na qual está o sistema a ser atualizado"
 
-#: installer.cgi:350
+#: installer.cgi:348
 msgid "Install SliTaz to partition:"
 msgstr "Instalar o SliTaz na partição:"
 
-#: installer.cgi:351
+#: installer.cgi:349
 msgid "Specify the partition where to install SliTaz"
 msgstr "Informar a partição na qual o SliTaz será instalado"
 
-#: installer.cgi:380
+#: installer.cgi:378
 msgid "home partition"
 msgstr "Partição home"
 
-#: installer.cgi:384
+#: installer.cgi:382
 msgid "Separate partition for %s:"
 msgstr "Usar uma partição separada para a %s:"
 
-#: installer.cgi:385
+#: installer.cgi:383
 msgid "Specify the partition containing %s"
 msgstr "Definir uma partição separada para a %s:"
 
-#: installer.cgi:416
+#: installer.cgi:414
 msgid "Hostname"
 msgstr "Nome do host"
 
-#: installer.cgi:419
+#: installer.cgi:417
 msgid "Set Hostname to:"
 msgstr "Definir nome do host como:"
 
-#: installer.cgi:420
+#: installer.cgi:418
 msgid "Hostname configuration allows you to specify the machine name"
 msgstr "Configuração de nome do host permite definir um nome para a máquina"
 
-#: installer.cgi:426
+#: installer.cgi:424
 msgid "Name of your system"
 msgstr "Nome do sistema"
 
-#: installer.cgi:443
+#: installer.cgi:441
 msgid "Root superuser"
 msgstr "Usuário root"
 
-#: installer.cgi:446
+#: installer.cgi:444
 msgid "Root password:"
 msgstr "Senha do root:"
 
-#: installer.cgi:447
+#: installer.cgi:445
 msgid "Enter the password for root"
 msgstr "Informe a senha do usuário root"
 
-#: installer.cgi:453
+#: installer.cgi:451
 msgid "Password of root"
 msgstr "Senha do root"
 
-#: installer.cgi:469
+#: installer.cgi:467
 msgid "User"
 msgstr "Usuário"
 
-#: installer.cgi:472
+#: installer.cgi:470
 msgid "User login:"
 msgstr "Login do usuário:"
 
-#: installer.cgi:473
+#: installer.cgi:471
 msgid "Enter the name of the first user"
 msgstr "Informe o nome do primeiro usuário"
 
-#: installer.cgi:479
+#: installer.cgi:477
 msgid "Name of the first user"
 msgstr "Nome do primeiro usuário"
 
-#: installer.cgi:494
+#: installer.cgi:492
 msgid "User password:"
 msgstr "Senha do usuário:"
 
-#: installer.cgi:495
+#: installer.cgi:493
 msgid "The password for default user"
 msgstr "Senha para o usuário padrão"
 
-#: installer.cgi:501
+#: installer.cgi:499
 msgid "Password of the first user"
 msgstr "Senha do primeiro usuário"
 
-#: installer.cgi:518
+#: installer.cgi:516
 msgid "Bootloader"
 msgstr "Gerenciador de boot"
 
-#: installer.cgi:526
+#: installer.cgi:524
 msgid "Install a bootloader."
 msgstr "Instalar gerenciador de boot."
 
-#: installer.cgi:527
+#: installer.cgi:525
 msgid ""
 "Usually you should answer yes, unless you want to install a bootloader by "
 "hand yourself."
@@ -373,11 +373,11 @@ msgstr ""
 "Instala o gerenciador de boot Grub. Por padrão deve-se instalá-lo, a não ser "
 "que se queira instalar o Grub manualmente."
 
-#: installer.cgi:548
+#: installer.cgi:546
 msgid "Enable Windows Dual-Boot."
 msgstr "Habilitar Dual-Boot com Windows."
 
-#: installer.cgi:549
+#: installer.cgi:547
 msgid ""
 "At start-up, you will be asked whether you want to boot into Windows&trade; "
 "or SliTaz GNU/Linux."
@@ -385,39 +385,39 @@ msgstr ""
 "Será requisitado na inicialização se você deseja iniciar pelo Windows&trade; "
 "ou pelo SliTaz GNU/Linux."
 
-#: installer.cgi:564
+#: installer.cgi:562
 msgid "Errors found. Please check your settings."
 msgstr "Erros encontrados. Por favor checar as configurações."
 
-#: installer.cgi:577
+#: installer.cgi:575
 msgid "Select source media:"
 msgstr "Mídia fonte do SliTaz"
 
-#: installer.cgi:584
+#: installer.cgi:582
 msgid "Select destination"
 msgstr "Seleção do destino:"
 
-#: installer.cgi:594
+#: installer.cgi:592
 msgid "Options"
 msgstr "Opções"
 
-#: installer.cgi:622
+#: installer.cgi:620
 msgid "Checking settings..."
 msgstr "Checando configurações..."
 
-#: installer.cgi:689
+#: installer.cgi:687
 msgid "Proceeding to: %s"
 msgstr ""
 
-#: installer.cgi:707
+#: installer.cgi:705
 msgid "Errors encountered."
 msgstr "Erros encontrados."
 
-#: installer.cgi:720
+#: installer.cgi:718
 msgid "Process completed!"
 msgstr "Processo completo!"
 
-#: installer.cgi:726
+#: installer.cgi:724
 msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
 "new SliTaz GNU/Linux operating system."
@@ -425,11 +425,11 @@ msgstr ""
 "A instalação foi completada, você pode fechar o instalador ou reiniciar em "
 "sem novo sistema operacional SliTaz GNU/Linux."
 
-#: installer.cgi:736
+#: installer.cgi:734
 msgid "Tazinst log"
 msgstr "Log do Tazinst"
 
-#: installer.cgi:752
+#: installer.cgi:750
 msgid ""
 "You're going to install SliTaz on a partition of your hard disk drive. If "
 "you decide to format your HDD, all data will be lost. If you do not format, "
@@ -441,7 +441,7 @@ msgstr ""
 "formatar, todos os dados exceto os contidos no diretório /home serão "
 "removidos (os contidos em /home serão mantidos como estão)."
 
-#: installer.cgi:762
+#: installer.cgi:760
 msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
@@ -453,39 +453,39 @@ msgstr ""
 "removidos. Qualquer pacote adicional existente no sistema antigo será "
 "atualizado desde que haja uma conexão à internet."
 
-#: installer.cgi:779
+#: installer.cgi:777
 msgid "Back to partitioning"
 msgstr "Voltar ao particionamento"
 
-#: installer.cgi:781
+#: installer.cgi:779
 msgid "Back to entering settings"
 msgstr "Voltar a informar as configurações"
 
-#: installer.cgi:783 installer.cgi:796 installer.cgi:813
+#: installer.cgi:781 installer.cgi:794 installer.cgi:811
 msgid "Back to Installer Start Page"
 msgstr "Voltar à página inicial do instalador"
 
-#: installer.cgi:788
+#: installer.cgi:786
 msgid "Proceed to SliTaz installation"
 msgstr "Continuar com a instalação do SliTaz"
 
-#: installer.cgi:790
+#: installer.cgi:788
 msgid "Installation complete. You can now restart"
 msgstr "Instalação completa. Pode-se agora reiniciar o sistema (reboot)"
 
-#: installer.cgi:792
+#: installer.cgi:790
 msgid "Installation failed. See log"
 msgstr "Instalação falhou. Ver o log"
 
-#: installer.cgi:794
+#: installer.cgi:792
 msgid "Continue installation."
 msgstr "Continuar instalação"
 
-#: installer.cgi:826
+#: installer.cgi:830
 msgid "A web page that points a browser to a different page after 2 seconds"
 msgstr "Uma página que direciona o navegador à uma outra após 2 segundos"
 
-#: installer.cgi:832
+#: installer.cgi:836
 msgid ""
 "If your browser doesn't automatically redirect within a few seconds, you may "
 "want to go there manually [here]"
@@ -493,60 +493,60 @@ msgstr ""
 "Se o navegador não for redirecionado automaticamente após alguns segundos, "
 "deve-se ir ao endereço manualmente [aqui]"
 
-#: installer.cgi:849 installer.cgi:861 installer.cgi:874
+#: installer.cgi:856 installer.cgi:870 installer.cgi:885
 msgid "Tazinst Error"
 msgstr "Erro do Tazinst"
 
-#: installer.cgi:850
+#: installer.cgi:857
 #, fuzzy
 msgid "%s, the backend to %s is missing."
 msgstr "%s, o instalador do SliTaz (%s) não foi encontrado."
 
-#: installer.cgi:851 installer.cgi:864
+#: installer.cgi:858 installer.cgi:873
 msgid "Any installation can not be done without %s."
 msgstr "A instalação ou atualização não pode ser feita sem ele %s."
 
-#: installer.cgi:852
+#: installer.cgi:859
 msgid "Check %s permissions, or reinstall the %s package."
 msgstr "Checar permissões do %s, ou reinstalar o pacote %s."
 
-#: installer.cgi:862
+#: installer.cgi:871
 #, fuzzy
 msgid "%s, the %s backend, is not at the minimum required version."
 msgstr "%s, o instalador do SliTaz (%s) não foi encontrado."
 
-#: installer.cgi:865 installer.cgi:878
+#: installer.cgi:874 installer.cgi:889
 msgid "Reinstall the %s package, or use %s in CLI mode."
 msgstr "Reinstalar o pacote %s, ou usar o %s em modo texto."
 
-#: installer.cgi:875
+#: installer.cgi:886
 #, fuzzy
 msgid ""
 "%s, the %s backend, is at a higher version than the maximum authorized by "
 "the %s."
 msgstr "%s, o instalador do SliTaz (%s) não foi encontrado (%s)."
 
-#: installer.cgi:877
+#: installer.cgi:888
 #, fuzzy
 msgid "Any installation cannot be done."
 msgstr "A instalação ou atualização não pode ser feita sem ele."
 
-#: installer.cgi:995 installer.cgi:1052
+#: installer.cgi:1009 installer.cgi:1066
 msgid "None"
 msgstr "Nenhum"
 
-#: installer.cgi:1071
+#: installer.cgi:1085
 msgid "Do not format"
 msgstr "Não formatar"
 
-#: installer.cgi:1073
+#: installer.cgi:1087
 msgid ""
 "To format this partition, select a filesystem, usually it's safe to use ext4"
 msgstr ""
 "Para formatar esta partição, definir o sistema de arquivos (é seguro usar "
 "ext4)"
 
-#: installer.cgi:1075
+#: installer.cgi:1089
 msgid "Formatting option:"
 msgstr "Opção de formatação:"
 

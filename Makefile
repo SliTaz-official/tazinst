@@ -5,7 +5,7 @@ PREFIX?=/usr
 DOCDIR?=/usr/share/doc
 DESTDIR?=
 TAZPANEL?=/var/www/tazpanel
-LINGUAS?=de el es fr ja pt_BR ru sv zh_CN
+LINGUAS?=de el es fr it ja pt_BR ru sv zh_CN
 
 PACKAGE	=	tazinst
 VERSION	:=	$(shell grep ^VERSION ${PACKAGE} | cut -d '=' -f 2)

@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-02 18:22+0900\n"
+"POT-Creation-Date: 2018-01-30 12:31+0200\n"
 "PO-Revision-Date: 2017-01-05 22:59+0900\n"
+"Last-Translator: BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <balloonakafusen　AT "
+"gmail DOT com>\n"
 "Language-Team: \n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <balloonakafusen　AT "
-"gmail DOT com>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: ja_JP\n"
 
 #: installer.cgi:20
 msgid "TazPanel - Installer"
@@ -27,7 +27,7 @@ msgstr "TazPanel - インストール"
 msgid "Installation"
 msgstr "インストール"
 
-#: installer.cgi:47 installer.cgi:102 installer.cgi:750
+#: installer.cgi:47 installer.cgi:102 installer.cgi:748
 msgid "Install SliTaz"
 msgstr "SliTaz のインストール"
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Which type of installation do you want to start?"
 msgstr "どの種類でインストールを開始しますか？"
 
-#: installer.cgi:86 installer.cgi:172
+#: installer.cgi:86 installer.cgi:171
 msgid "Install"
 msgstr "インストール"
 
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Upgrade an existing SliTaz system"
 msgstr "既存の SliTaz システムをアップグレードする"
 
-#: installer.cgi:128 installer.cgi:760
+#: installer.cgi:128 installer.cgi:758
 msgid "Upgrade SliTaz"
 msgstr "SliTaz　のアップグレード"
 
@@ -133,27 +133,27 @@ msgid ""
 "century..."
 msgstr "SliTaz は以前の UMSDOS みたいな %s ディレクトリにあります..."
 
-#: installer.cgi:154
+#: installer.cgi:153
 msgid "ISO image file full path"
 msgstr "ISO イメージファイルのフルパス"
 
-#: installer.cgi:155
+#: installer.cgi:154
 msgid "set %s for a physical CD-ROM"
 msgstr "物理 CD-ROM に %s を設定する"
 
-#: installer.cgi:158
+#: installer.cgi:157
 msgid "Target partition"
 msgstr "対象のパーティション"
 
-#: installer.cgi:160
+#: installer.cgi:159
 msgid "Choose a partition"
 msgstr "パーティションを選択する"
 
-#: installer.cgi:195
+#: installer.cgi:193
 msgid "Partitioning"
 msgstr "パーティション選択"
 
-#: installer.cgi:198
+#: installer.cgi:196
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
 "Windows&trade;, or Linux, or another operating system. You'll need to resize "
@@ -166,7 +166,7 @@ msgstr ""
 "SliTaz は、ハードドライブに既にインストールされている他のオペレーティングシス"
 "テムと共存します。"
 
-#: installer.cgi:203
+#: installer.cgi:201
 msgid ""
 "The amount of space needed depends on how much software you plan to install "
 "and how much space you require for users. It's conceivable that you could "
@@ -177,7 +177,7 @@ msgstr ""
 "によって異なります。 300M 以下で SliTaz の最小システムを走らせることができる"
 "と考えられますが、実際には 2G あるとより快適です。"
 
-#: installer.cgi:207
+#: installer.cgi:205
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
 "space may be created if needed. SliTaz detects and uses swap partitions "
@@ -187,7 +187,7 @@ msgstr ""
 "ティションが作成されます。 SliTaz は自動的に swap　パーティションを検出して使"
 "用します。"
 
-#: installer.cgi:211
+#: installer.cgi:209
 msgid ""
 "You can graphically manage your partitions with GParted. GParted is a "
 "partition editor for graphically managing your disk partitions. GParted "
@@ -198,7 +198,7 @@ msgstr ""
 "す。 GParted　を使用すると、データ損失のないパーティションを作成、破棄、サイ"
 "ズ変更、コピーすることができます。"
 
-#: installer.cgi:215
+#: installer.cgi:213
 msgid ""
 "GParted supports ext2, ext3, ext4, linux swap, ntfs and fat32 filesystems "
 "right out of the box. Support for xjs, jfs, hfs and other filesystems is "
@@ -210,19 +210,19 @@ msgstr ""
 "すが、関連するパッケージ xfsprogs、jfsutils、linux-hfs などをインストールする"
 "ことで、これらのファイルシステム用のドライバを追加する必要があります。"
 
-#: installer.cgi:226
+#: installer.cgi:224
 msgid "Launch GParted, the partition editor tool"
 msgstr "パーティション編集ツール GParted を起動"
 
-#: installer.cgi:227
+#: installer.cgi:225
 msgid "Execute GParted"
 msgstr "GParted　を実行"
 
-#: installer.cgi:232
+#: installer.cgi:230
 msgid "Continue installation"
 msgstr "インストールを続ける"
 
-#: installer.cgi:234
+#: installer.cgi:232
 msgid ""
 "Once you've made room for SliTaz on your drive, you should be able to "
 "continue installation."
@@ -230,143 +230,143 @@ msgstr ""
 "ドライブに SliTaz の空き容量を確保したら、インストールを続けることができま"
 "す。"
 
-#: installer.cgi:259
+#: installer.cgi:257
 msgid "LiveCD"
 msgstr "LiveCD"
 
-#: installer.cgi:261
+#: installer.cgi:259
 msgid "Use the SliTaz LiveCD"
 msgstr "SliTaz LiveCD を使用"
 
-#: installer.cgi:269
+#: installer.cgi:267
 msgid "LiveUSB:"
 msgstr "LiveUSB:"
 
-#: installer.cgi:271
+#: installer.cgi:269
 msgid "Enter the partition where SliTaz Live is located on your USB Key"
 msgstr "SliTaz Live がある USB キーのパーティションを入力してください"
 
-#: installer.cgi:286
+#: installer.cgi:284
 msgid "ISO file:"
 msgstr "ISO ファイル:"
 
-#: installer.cgi:288
+#: installer.cgi:286
 msgid "Select a SliTaz ISO file located on a local disk"
 msgstr "ローカルディスクにある SliTaz ISO ファイルを選択して下さい"
 
-#: installer.cgi:294 installer.cgi:301
+#: installer.cgi:292 installer.cgi:299
 msgid "Select an ISO or enter the full path to the ISO file"
 msgstr "ISO を選択するか、ISO ファイルのフルパスを入力してください"
 
-#: installer.cgi:313
+#: installer.cgi:311
 msgid "Web:"
 msgstr "Web:"
 
-#: installer.cgi:315
+#: installer.cgi:313
 msgid "Select a SliTaz version on the Web"
 msgstr "Web 上の SliTaz バージョンを選択して下さい"
 
-#: installer.cgi:322 installer.cgi:329
+#: installer.cgi:320 installer.cgi:327
 msgid "Select a version or enter the full URL to an ISO file"
 msgstr "バージョンを選択するか、ISO　ファイルの完全な URL を入力してください"
 
-#: installer.cgi:345
+#: installer.cgi:343
 msgid "Existing SliTaz partition to upgrade:"
 msgstr "アップグレードする既存の SliTaz パーティション:"
 
-#: installer.cgi:346
+#: installer.cgi:344
 msgid "Specify the partition containing the system to upgrade"
 msgstr "アップグレードするシステムを含むパーティションを指定して下さい"
 
-#: installer.cgi:350
+#: installer.cgi:348
 msgid "Install SliTaz to partition:"
 msgstr "SliTaz をインストールするパーティション:"
 
-#: installer.cgi:351
+#: installer.cgi:349
 msgid "Specify the partition where to install SliTaz"
 msgstr "SliTaz　をインストールするパーティションを指定する"
 
-#: installer.cgi:380
+#: installer.cgi:378
 msgid "home partition"
 msgstr "ホームパーティション"
 
-#: installer.cgi:384
+#: installer.cgi:382
 msgid "Separate partition for %s:"
 msgstr "%s パーティションを別にする："
 
-#: installer.cgi:385
+#: installer.cgi:383
 msgid "Specify the partition containing %s"
 msgstr "%s を含むパーティションを指定する"
 
-#: installer.cgi:416
+#: installer.cgi:414
 msgid "Hostname"
 msgstr "ホスト名"
 
-#: installer.cgi:419
+#: installer.cgi:417
 msgid "Set Hostname to:"
 msgstr "ホスト名を次に設定:"
 
-#: installer.cgi:420
+#: installer.cgi:418
 msgid "Hostname configuration allows you to specify the machine name"
 msgstr "ホスト名の設定は、マシン名を指定することができます"
 
-#: installer.cgi:426
+#: installer.cgi:424
 msgid "Name of your system"
 msgstr "システムの名称"
 
-#: installer.cgi:443
+#: installer.cgi:441
 msgid "Root superuser"
 msgstr "Root スーパーユーザー"
 
-#: installer.cgi:446
+#: installer.cgi:444
 msgid "Root password:"
 msgstr "Root パスワード:"
 
-#: installer.cgi:447
+#: installer.cgi:445
 msgid "Enter the password for root"
 msgstr "root のパスワードを入力して下さい"
 
-#: installer.cgi:453
+#: installer.cgi:451
 msgid "Password of root"
 msgstr "root のパスワード"
 
-#: installer.cgi:469
+#: installer.cgi:467
 msgid "User"
 msgstr "ユーザー"
 
-#: installer.cgi:472
+#: installer.cgi:470
 msgid "User login:"
 msgstr "ユーザーログイン:"
 
-#: installer.cgi:473
+#: installer.cgi:471
 msgid "Enter the name of the first user"
 msgstr "最初のユーザー名を入力して下さい"
 
-#: installer.cgi:479
+#: installer.cgi:477
 msgid "Name of the first user"
 msgstr "最初のユーザー名"
 
-#: installer.cgi:494
+#: installer.cgi:492
 msgid "User password:"
 msgstr "ユーザーパスワード:"
 
-#: installer.cgi:495
+#: installer.cgi:493
 msgid "The password for default user"
 msgstr "デフォルトユーザーのパスワード"
 
-#: installer.cgi:501
+#: installer.cgi:499
 msgid "Password of the first user"
 msgstr "最初のユーザーパスワード"
 
-#: installer.cgi:518
+#: installer.cgi:516
 msgid "Bootloader"
 msgstr "ブートローダー"
 
-#: installer.cgi:526
+#: installer.cgi:524
 msgid "Install a bootloader."
 msgstr "ブートローダーをインストールします。"
 
-#: installer.cgi:527
+#: installer.cgi:525
 msgid ""
 "Usually you should answer yes, unless you want to install a bootloader by "
 "hand yourself."
@@ -374,11 +374,11 @@ msgstr ""
 "手動でブートローダーをインストールしたいのでなければ、通常 yes と答えるべきで"
 "す。"
 
-#: installer.cgi:548
+#: installer.cgi:546
 msgid "Enable Windows Dual-Boot."
 msgstr "Windows デュアルブートを有効にします。"
 
-#: installer.cgi:549
+#: installer.cgi:547
 msgid ""
 "At start-up, you will be asked whether you want to boot into Windows&trade; "
 "or SliTaz GNU/Linux."
@@ -386,39 +386,39 @@ msgstr ""
 "起動時に Windows＆trade または SliTaz GNU/Linux を起動するかどうかを尋ねられ"
 "ます。"
 
-#: installer.cgi:564
+#: installer.cgi:562
 msgid "Errors found. Please check your settings."
 msgstr "エラーが見つかりました。 設定を確認してください。"
 
-#: installer.cgi:577
+#: installer.cgi:575
 msgid "Select source media:"
 msgstr "ソースメディアを選択: "
 
-#: installer.cgi:584
+#: installer.cgi:582
 msgid "Select destination"
 msgstr "目的地を選択"
 
-#: installer.cgi:594
+#: installer.cgi:592
 msgid "Options"
 msgstr "オプション"
 
-#: installer.cgi:622
+#: installer.cgi:620
 msgid "Checking settings..."
 msgstr "設定の確認中..."
 
-#: installer.cgi:689
+#: installer.cgi:687
 msgid "Proceeding to: %s"
 msgstr "次へ進む: &s"
 
-#: installer.cgi:707
+#: installer.cgi:705
 msgid "Errors encountered."
 msgstr "エラーが発生しました。"
 
-#: installer.cgi:720
+#: installer.cgi:718
 msgid "Process completed!"
 msgstr "プロセスが完了しました！"
 
-#: installer.cgi:726
+#: installer.cgi:724
 msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
 "new SliTaz GNU/Linux operating system."
@@ -426,11 +426,11 @@ msgstr ""
 "インストールが完了しました。インストーラを終了するか、新しい SliTaz GNU/"
 "Linux オペレーティングシステムで再起草することができます。"
 
-#: installer.cgi:736
+#: installer.cgi:734
 msgid "Tazinst log"
 msgstr "Tazinst ログ"
 
-#: installer.cgi:752
+#: installer.cgi:750
 msgid ""
 "You're going to install SliTaz on a partition of your hard disk drive. If "
 "you decide to format your HDD, all data will be lost. If you do not format, "
@@ -442,7 +442,7 @@ msgstr ""
 "の /home ディレクトリ以外のすべてのデータが削除されます。（ホームディレクトリ"
 "はそのまま維持されます）"
 
-#: installer.cgi:762
+#: installer.cgi:760
 msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
 "drive. Your /home /etc /var/www directories will be kept, all other "
@@ -454,39 +454,39 @@ msgstr ""
 "クトリは削除されます。 古い SliTaz システムの追加パッケージは、インターネット"
 "に接続している間は更新されます。"
 
-#: installer.cgi:779
+#: installer.cgi:777
 msgid "Back to partitioning"
 msgstr "パーティション選択へ戻る"
 
-#: installer.cgi:781
+#: installer.cgi:779
 msgid "Back to entering settings"
 msgstr "入力設定へ戻る"
 
-#: installer.cgi:783 installer.cgi:796 installer.cgi:813
+#: installer.cgi:781 installer.cgi:794 installer.cgi:811
 msgid "Back to Installer Start Page"
 msgstr "インストーラスタートページに戻る"
 
-#: installer.cgi:788
+#: installer.cgi:786
 msgid "Proceed to SliTaz installation"
 msgstr "SliTaz のインストールへ進む"
 
-#: installer.cgi:790
+#: installer.cgi:788
 msgid "Installation complete. You can now restart"
 msgstr "インストールが完了しました。 今すぐ再起動できます"
 
-#: installer.cgi:792
+#: installer.cgi:790
 msgid "Installation failed. See log"
 msgstr "インストールに失敗しました。 ログを参照して下さい"
 
-#: installer.cgi:794
+#: installer.cgi:792
 msgid "Continue installation."
 msgstr "インストールを続行します。"
 
-#: installer.cgi:826
+#: installer.cgi:830
 msgid "A web page that points a browser to a different page after 2 seconds"
 msgstr "2秒後にブラウザはウェブページを別のページにします"
 
-#: installer.cgi:832
+#: installer.cgi:836
 msgid ""
 "If your browser doesn't automatically redirect within a few seconds, you may "
 "want to go there manually [here]"
@@ -494,32 +494,32 @@ msgstr ""
 "ブラウザが数秒以内に自動的にリダイレクトされない場合は、手動で移動して下さい "
 "[こちら]"
 
-#: installer.cgi:849 installer.cgi:861 installer.cgi:874
+#: installer.cgi:856 installer.cgi:870 installer.cgi:885
 msgid "Tazinst Error"
 msgstr "Tazinst エラー"
 
-#: installer.cgi:850
+#: installer.cgi:857
 msgid "%s, the backend to %s is missing."
 msgstr "%s 、%s へのバックエンドがありません。"
 
-#: installer.cgi:851 installer.cgi:864
+#: installer.cgi:858 installer.cgi:873
 msgid "Any installation can not be done without %s."
 msgstr "%s なしではインストールできません。"
 
-#: installer.cgi:852
+#: installer.cgi:859
 msgid "Check %s permissions, or reinstall the %s package."
 msgstr "%s の権限を確認するか、%s パッケージを再インストールしてください。"
 
-#: installer.cgi:862
+#: installer.cgi:871
 msgid "%s, the %s backend, is not at the minimum required version."
 msgstr "%s 、バックエンド %s は最低限必要なバージョンではありません。"
 
-#: installer.cgi:865 installer.cgi:878
+#: installer.cgi:874 installer.cgi:889
 msgid "Reinstall the %s package, or use %s in CLI mode."
 msgstr ""
 "%s パッケージを再インストールするか、CLI モードで %s を使用してください。"
 
-#: installer.cgi:875
+#: installer.cgi:886
 msgid ""
 "%s, the %s backend, is at a higher version than the maximum authorized by "
 "the %s."
@@ -527,25 +527,25 @@ msgstr ""
 "%s 、バックエンド %s は、 %s によって許可された最大値よりも高いバージョンで"
 "す。"
 
-#: installer.cgi:877
+#: installer.cgi:888
 msgid "Any installation cannot be done."
 msgstr "いくつかインストールできていません。"
 
-#: installer.cgi:995 installer.cgi:1052
+#: installer.cgi:1009 installer.cgi:1066
 msgid "None"
 msgstr "なし"
 
-#: installer.cgi:1071
+#: installer.cgi:1085
 msgid "Do not format"
 msgstr "フォーマットしない"
 
-#: installer.cgi:1073
+#: installer.cgi:1087
 msgid ""
 "To format this partition, select a filesystem, usually it's safe to use ext4"
 msgstr ""
 "このパーティションをフォーマットするためのファイルシステムを選択します。通常 "
 "ext4 を使うのが安全です"
 
-#: installer.cgi:1075
+#: installer.cgi:1089
 msgid "Formatting option:"
 msgstr "フォーマットオプション:"

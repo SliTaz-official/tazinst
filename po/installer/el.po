@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 17:07+0300\n"
+"POT-Creation-Date: 2018-01-30 12:31+0200\n"
 "PO-Revision-Date: 2012-06-10 17:15+0200\n"
 "Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
@@ -26,7 +26,7 @@ msgstr "Εγκαταστάτης SliTaz"
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: installer.cgi:47 installer.cgi:102 installer.cgi:750
+#: installer.cgi:47 installer.cgi:102 installer.cgi:748
 msgid "Install SliTaz"
 msgstr "Εγκατάσταση SliTaz"
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Which type of installation do you want to start?"
 msgstr ""
 
-#: installer.cgi:86 installer.cgi:172
+#: installer.cgi:86 installer.cgi:171
 msgid "Install"
 msgstr "Εγκατάσταση"
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Upgrade an existing SliTaz system"
 msgstr "Δημιουργία Ζωντανών USB SliTaz συστημάτων"
 
-#: installer.cgi:128 installer.cgi:760
+#: installer.cgi:128 installer.cgi:758
 msgid "Upgrade SliTaz"
 msgstr "Αναβάθμιση SliTaz"
 
@@ -140,29 +140,29 @@ msgid ""
 "century..."
 msgstr ""
 
-#: installer.cgi:154
+#: installer.cgi:153
 msgid "ISO image file full path"
 msgstr ""
 
-#: installer.cgi:155
+#: installer.cgi:154
 msgid "set %s for a physical CD-ROM"
 msgstr ""
 
-#: installer.cgi:158
+#: installer.cgi:157
 #, fuzzy
 msgid "Target partition"
 msgstr "Διαμέρισμα home"
 
-#: installer.cgi:160
+#: installer.cgi:159
 #, fuzzy
 msgid "Choose a partition"
 msgstr "Διαμέρισμα home"
 
-#: installer.cgi:195
+#: installer.cgi:193
 msgid "Partitioning"
 msgstr "Κατάτμηση"
 
-#: installer.cgi:198
+#: installer.cgi:196
 #, fuzzy
 msgid ""
 "On most used systems, the hard drive is already dedicated to partitions for "
@@ -177,7 +177,7 @@ msgstr ""
 "θα συνυπάρχει με άλλα λειτουργικά συστήματα που έχουν ήδη εγκατασταθεί στον "
 "σκληρό σας δίσκο."
 
-#: installer.cgi:203
+#: installer.cgi:201
 #, fuzzy
 msgid ""
 "The amount of space needed depends on how much software you plan to install "
@@ -190,7 +190,7 @@ msgstr ""
 "αντιληπτό ότι θα μπορούσατε να τρέξετε ένα ελάχιστο σύστημα sliTaz σε 300MB "
 "ή λιγότερο, αλλά 2GB είναι πράγματι πιο άνετα."
 
-#: installer.cgi:207
+#: installer.cgi:205
 #, fuzzy
 msgid ""
 "A separate home partition and a partition that will be used as Linux swap "
@@ -201,7 +201,7 @@ msgstr ""
 "χώρος Linux swap μπορεί να δημιουργηθεί αν χρειαστεί. Το SliTaz εντοπίζει "
 "και χρησιμοποιεί αυτόματα κατατμήσεις swap."
 
-#: installer.cgi:211
+#: installer.cgi:209
 #, fuzzy
 msgid ""
 "You can graphically manage your partitions with GParted. GParted is a "
@@ -214,7 +214,7 @@ msgstr ""
 "καταστροφή, αντιγραφή, αλλαγή μεγέθους των κατατμήσεων σας χωρίς απώλεια "
 "δεδομένων."
 
-#: installer.cgi:215
+#: installer.cgi:213
 #, fuzzy
 msgid ""
 "GParted supports ext2, ext3, ext4, linux swap, ntfs and fat32 filesystems "
@@ -228,20 +228,20 @@ msgstr ""
 "συστήματα αρχείων με την εγκατάσταση των σχετικών πακέτων xfsprogs, "
 "jfsutils, linux-hfs και ούτω καθεξής."
 
-#: installer.cgi:226
+#: installer.cgi:224
 msgid "Launch GParted, the partition editor tool"
 msgstr ""
 
-#: installer.cgi:227
+#: installer.cgi:225
 #, fuzzy
 msgid "Execute GParted"
 msgstr "Εκτέλεση Gparted"
 
-#: installer.cgi:232
+#: installer.cgi:230
 msgid "Continue installation"
 msgstr "Συνέχιση εγκατάστασης"
 
-#: installer.cgi:234
+#: installer.cgi:232
 #, fuzzy
 msgid ""
 "Once you've made room for SliTaz on your drive, you should be able to "
@@ -250,149 +250,149 @@ msgstr ""
 "Αφού έχετε κάνει χώρο για το SliTaz στη μονάδα δίσκου σας, θα μπορείτε να "
 "συνεχίσετε την εγκατάσταση."
 
-#: installer.cgi:259
+#: installer.cgi:257
 msgid "LiveCD"
 msgstr "Ζωντανό CD"
 
-#: installer.cgi:261
+#: installer.cgi:259
 #, fuzzy
 msgid "Use the SliTaz LiveCD"
 msgstr "Ζωντανό USB SliTaz"
 
-#: installer.cgi:269
+#: installer.cgi:267
 msgid "LiveUSB:"
 msgstr "Ζωντανό USB"
 
-#: installer.cgi:271
+#: installer.cgi:269
 msgid "Enter the partition where SliTaz Live is located on your USB Key"
 msgstr ""
 
-#: installer.cgi:286
+#: installer.cgi:284
 msgid "ISO file:"
 msgstr "Αρχείο ISO:"
 
-#: installer.cgi:288
+#: installer.cgi:286
 msgid "Select a SliTaz ISO file located on a local disk"
 msgstr ""
 
-#: installer.cgi:294 installer.cgi:301
+#: installer.cgi:292 installer.cgi:299
 msgid "Select an ISO or enter the full path to the ISO file"
 msgstr ""
 
-#: installer.cgi:313
+#: installer.cgi:311
 msgid "Web:"
 msgstr "Ιστός:"
 
-#: installer.cgi:315
+#: installer.cgi:313
 msgid "Select a SliTaz version on the Web"
 msgstr ""
 
-#: installer.cgi:322 installer.cgi:329
+#: installer.cgi:320 installer.cgi:327
 msgid "Select a version or enter the full URL to an ISO file"
 msgstr ""
 
-#: installer.cgi:345
+#: installer.cgi:343
 msgid "Existing SliTaz partition to upgrade:"
 msgstr "Υπάρχον διαμέρισμα SliTaz για αναβάθμιση:"
 
-#: installer.cgi:346
+#: installer.cgi:344
 msgid "Specify the partition containing the system to upgrade"
 msgstr ""
 
-#: installer.cgi:350
+#: installer.cgi:348
 msgid "Install SliTaz to partition:"
 msgstr "Εγκατάσταση SliTaz στο διαμέρισμα:"
 
-#: installer.cgi:351
+#: installer.cgi:349
 msgid "Specify the partition where to install SliTaz"
 msgstr ""
 
-#: installer.cgi:380
+#: installer.cgi:378
 msgid "home partition"
 msgstr "Διαμέρισμα home"
 
-#: installer.cgi:384
+#: installer.cgi:382
 msgid "Separate partition for %s:"
 msgstr "Χρησιμοποιήστε ξεχωριστό διαμέρισμα για το %s:"
 
-#: installer.cgi:385
+#: installer.cgi:383
 #, fuzzy
 msgid "Specify the partition containing %s"
 msgstr "Χρησιμοποιήστε ξεχωριστό διαμέρισμα για το %s:"
 
-#: installer.cgi:416
+#: installer.cgi:414
 msgid "Hostname"
 msgstr "Όνομα υπολογιστή (Hostname)"
 
-#: installer.cgi:419
+#: installer.cgi:417
 msgid "Set Hostname to:"
 msgstr "Ορισμός ονόματος υπολογιστή (Hostname) σε:"
 
-#: installer.cgi:420
+#: installer.cgi:418
 msgid "Hostname configuration allows you to specify the machine name"
 msgstr ""
 
-#: installer.cgi:426
+#: installer.cgi:424
 msgid "Name of your system"
 msgstr "Το όνομα του συστήματός σας"
 
-#: installer.cgi:443
+#: installer.cgi:441
 msgid "Root superuser"
 msgstr ""
 
-#: installer.cgi:446
+#: installer.cgi:444
 msgid "Root password:"
 msgstr "Κωδικός διαχειριστή:"
 
-#: installer.cgi:447
+#: installer.cgi:445
 #, fuzzy
 msgid "Enter the password for root"
 msgstr "Σφάλμα κωδικού χρήστη"
 
-#: installer.cgi:453
+#: installer.cgi:451
 msgid "Password of root"
 msgstr "Κωδικός του διαχειριστή"
 
-#: installer.cgi:469
+#: installer.cgi:467
 msgid "User"
 msgstr "Χρήστης"
 
-#: installer.cgi:472
+#: installer.cgi:470
 msgid "User login:"
 msgstr "Όνομα χρήστη:"
 
-#: installer.cgi:473
+#: installer.cgi:471
 #, fuzzy
 msgid "Enter the name of the first user"
 msgstr "Όνομα του πρώτου χρήστη"
 
-#: installer.cgi:479
+#: installer.cgi:477
 msgid "Name of the first user"
 msgstr "Όνομα του πρώτου χρήστη"
 
-#: installer.cgi:494
+#: installer.cgi:492
 msgid "User password:"
 msgstr "Κωδικός χρήστη:"
 
-#: installer.cgi:495
+#: installer.cgi:493
 #, fuzzy
 msgid "The password for default user"
 msgstr "Κωδικός του πρώτου χρήστη"
 
-#: installer.cgi:501
+#: installer.cgi:499
 msgid "Password of the first user"
 msgstr "Κωδικός του πρώτου χρήστη"
 
-#: installer.cgi:518
+#: installer.cgi:516
 #, fuzzy
 msgid "Bootloader"
 msgstr "Φορτωτής εκκίνησης (boot loader)"
 
-#: installer.cgi:526
+#: installer.cgi:524
 msgid "Install a bootloader."
 msgstr ""
 
-#: installer.cgi:527
+#: installer.cgi:525
 #, fuzzy
 msgid ""
 "Usually you should answer yes, unless you want to install a bootloader by "
@@ -401,63 +401,63 @@ msgstr ""
 "Εγκατάσταση του προγράμματος εκκίνησης Grub. Συνήθως θα πρέπει να απαντήσετε "
 "ναι, εκτός αν θέλετε να εγκαταστήσετε το grub με το χέρι, μόνος σας."
 
-#: installer.cgi:548
+#: installer.cgi:546
 msgid "Enable Windows Dual-Boot."
 msgstr "Ενεργοποίηση διπλής εκκίνησης με Windows (dual-boot)"
 
-#: installer.cgi:549
+#: installer.cgi:547
 msgid ""
 "At start-up, you will be asked whether you want to boot into Windows&trade; "
 "or SliTaz GNU/Linux."
 msgstr ""
 
-#: installer.cgi:564
+#: installer.cgi:562
 msgid "Errors found. Please check your settings."
 msgstr ""
 
-#: installer.cgi:577
+#: installer.cgi:575
 #, fuzzy
 msgid "Select source media:"
 msgstr "Πηγή προέλευσης SliTaz"
 
-#: installer.cgi:584
+#: installer.cgi:582
 #, fuzzy
 msgid "Select destination"
 msgstr "Επιλογή:"
 
-#: installer.cgi:594
+#: installer.cgi:592
 msgid "Options"
 msgstr "Επιλογές"
 
-#: installer.cgi:622
+#: installer.cgi:620
 #, fuzzy
 msgid "Checking settings..."
 msgstr "Έλεγχος για αναβαθμίσεις..."
 
-#: installer.cgi:689
+#: installer.cgi:687
 msgid "Proceeding to: %s"
 msgstr ""
 
-#: installer.cgi:707
+#: installer.cgi:705
 msgid "Errors encountered."
 msgstr ""
 
-#: installer.cgi:720
+#: installer.cgi:718
 msgid "Process completed!"
 msgstr ""
 
-#: installer.cgi:726
+#: installer.cgi:724
 msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
 "new SliTaz GNU/Linux operating system."
 msgstr ""
 
-#: installer.cgi:736
+#: installer.cgi:734
 #, fuzzy
 msgid "Tazinst log"
 msgstr "Σφάλμα Tazinst"
 
-#: installer.cgi:752
+#: installer.cgi:750
 #, fuzzy
 msgid ""
 "You're going to install SliTaz on a partition of your hard disk drive. If "
@@ -470,7 +470,7 @@ msgstr ""
 "χαθούν. Αν δεν τον διαμορφώσετε, όλα τα δεδομένα θα αφαιρεθούν, εκτός από "
 "οποιονδήποτε υπάρχον κατάλογο /home, ο κατάλογος /home θα διατηρηθεί ως έχει."
 
-#: installer.cgi:762
+#: installer.cgi:760
 #, fuzzy
 msgid ""
 "You're going to upgrade an already installed SliTaz system on your hard disk "
@@ -483,45 +483,45 @@ msgstr ""
 "κατάλογοι θα αφαιρεθούν. Τυχόν πρόσθετα πακέτα που είχαν προστεθεί στο παλιό "
 "σύστημα σας sliTaz, θα ενημερωθούν αν έχετε μια ενεργή σύνδεση στο Internet."
 
-#: installer.cgi:779
+#: installer.cgi:777
 msgid "Back to partitioning"
 msgstr "Πίσω στην κατάτμηση"
 
-#: installer.cgi:781
+#: installer.cgi:779
 #, fuzzy
 msgid "Back to entering settings"
 msgstr "Πίσω στην κατάτμηση"
 
-#: installer.cgi:783 installer.cgi:796 installer.cgi:813
+#: installer.cgi:781 installer.cgi:794 installer.cgi:811
 msgid "Back to Installer Start Page"
 msgstr "Πίσω στην αρχίκη σελίδα της εγκατάστασης"
 
-#: installer.cgi:788
+#: installer.cgi:786
 msgid "Proceed to SliTaz installation"
 msgstr "Προχωρήστε στην εγκατάσταση του SliTaz"
 
-#: installer.cgi:790
+#: installer.cgi:788
 #, fuzzy
 msgid "Installation complete. You can now restart"
 msgstr ""
 "Η εγκατάσταση ολοκληρώθηκε. Τώρα μπορείτε να επανεκκινήσετε τον υπολογιστή"
 
-#: installer.cgi:792
+#: installer.cgi:790
 msgid "Installation failed. See log"
 msgstr "Η εγκατάσταση απέτυχε. Δες το αρχείο καταγραφής (log)"
 
-#: installer.cgi:794
+#: installer.cgi:792
 #, fuzzy
 msgid "Continue installation."
 msgstr "Συνέχιση εγκατάστασης"
 
-#: installer.cgi:826
+#: installer.cgi:830
 msgid "A web page that points a browser to a different page after 2 seconds"
 msgstr ""
 "Μια ιστοσελίδα που δείχνει στο πρόγραμμα περιήγησης σε μια διαφορετική "
 "σελίδα μετά από 2 δευτερόλεπτα"
 
-#: installer.cgi:832
+#: installer.cgi:836
 msgid ""
 "If your browser doesn't automatically redirect within a few seconds, you may "
 "want to go there manually [here]"
@@ -529,35 +529,35 @@ msgstr ""
 "Αν το πρόγραμμα περιήγησής σας δεν ανακατευθυνθεί αυτόματα μέσα σε λίγα "
 "δευτερόλεπτα, μπορεί να θέλετε να πάτε εκεί χειροκίνητα [here]"
 
-#: installer.cgi:849 installer.cgi:861 installer.cgi:874
+#: installer.cgi:856 installer.cgi:870 installer.cgi:885
 msgid "Tazinst Error"
 msgstr "Σφάλμα Tazinst"
 
-#: installer.cgi:850
+#: installer.cgi:857
 #, fuzzy
 msgid "%s, the backend to %s is missing."
 msgstr ""
 "%s, Λείπει το ελαφρύ πρόγραμμα εγκατάστασης του SliTaz (%s) σε σκληρό δίσκο. "
 
-#: installer.cgi:851 installer.cgi:864
+#: installer.cgi:858 installer.cgi:873
 msgid "Any installation can not be done without %s."
 msgstr "Δεν μπορούν να πραγματοποιηθούν εγκαταστάσεις χωρίς το %s."
 
-#: installer.cgi:852
+#: installer.cgi:859
 msgid "Check %s permissions, or reinstall the %s package."
 msgstr "Ελέγξτε τα δικαιώματα του %s ή επανεγκαταστήστε το πακέτο %s."
 
-#: installer.cgi:862
+#: installer.cgi:871
 #, fuzzy
 msgid "%s, the %s backend, is not at the minimum required version."
 msgstr ""
 "%s, Λείπει το ελαφρύ πρόγραμμα εγκατάστασης του SliTaz (%s) σε σκληρό δίσκο."
 
-#: installer.cgi:865 installer.cgi:878
+#: installer.cgi:874 installer.cgi:889
 msgid "Reinstall the %s package, or use %s in CLI mode."
 msgstr ""
 
-#: installer.cgi:875
+#: installer.cgi:886
 #, fuzzy
 msgid ""
 "%s, the %s backend, is at a higher version than the maximum authorized by "
@@ -566,25 +566,25 @@ msgstr ""
 "%s, Λείπει το ελαφρύ πρόγραμμα εγκατάστασης του SliTaz (%s) σε σκληρό δίσκο "
 "%s."
 
-#: installer.cgi:877
+#: installer.cgi:888
 #, fuzzy
 msgid "Any installation cannot be done."
 msgstr "Δεν μπορούν να πραγματοποιηθούν εγκαταστάσεις χωρίς το."
 
-#: installer.cgi:995 installer.cgi:1052
+#: installer.cgi:1009 installer.cgi:1066
 msgid "None"
 msgstr "Κανένα"
 
-#: installer.cgi:1071
+#: installer.cgi:1085
 msgid "Do not format"
 msgstr ""
 
-#: installer.cgi:1073
+#: installer.cgi:1087
 msgid ""
 "To format this partition, select a filesystem, usually it's safe to use ext4"
 msgstr ""
 
-#: installer.cgi:1075
+#: installer.cgi:1089
 #, fuzzy
 msgid "Formatting option:"
 msgstr "Διαμόρφωση διαμερίσματος ως:"
