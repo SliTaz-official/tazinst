@@ -1,77 +1,79 @@
 # Italian translations for slitaz-installer package.
 # Copyright (C) 2018 SliTaz
 # This file is distributed under the same license as the slitaz-installer package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Christian Michelini <christian@alklibri.com>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: slitaz-installer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-30 12:31+0200\n"
-"PO-Revision-Date: 2018-01-30 12:28+0200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2018-01-31 02:41+0100\n"
+"Last-Translator: Christian Michelini <christian@alklibri.com>\n"
 "Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: slitaz-installer:23
 msgid "Welcome to the slitaz-installer."
-msgstr ""
+msgstr "Benvenuto nel programma di installazione di SliTaz."
 
 #: slitaz-installer:24
 msgid "Which type of installation do you want to start?"
-msgstr ""
+msgstr "Quale tipo di installazione desideri iniziare?"
 
 #: slitaz-installer:26
 msgid "SliTaz can be installed from different media."
-msgstr ""
+msgstr "SliTaz può essere installato da differenti dispositivi."
 
 #: slitaz-installer:27
 msgid "Select a media from the following list:"
-msgstr ""
+msgstr "Scegli un dispositivo dalla lista seguente:"
 
 #: slitaz-installer:29
 msgid "You have selected the option to install SliTaz from a USB Key."
-msgstr ""
+msgstr "Hai selezionato l'opzione di installare SliTaz da una penna USB."
 
 #: slitaz-installer:30
 msgid "Enter the partition where SliTaz Live is located:"
-msgstr ""
+msgstr "Inserisci la partizione in cui trovare SliTaz Live:"
 
 #: slitaz-installer:32
 msgid ""
 "You have selected the option to install SliTaz from an ISO file located on a "
 "local disk."
 msgstr ""
+"Hai selezionato l'opzione di installare SliTaz da una immagine ISO che si "
+"trova in un disco locale"
 
 #: slitaz-installer:34
 msgid "Please, select a file below:"
-msgstr ""
+msgstr "Per favore, scegliere uno de file sottostanti:"
 
 #: slitaz-installer:36
 msgid "You have selected the option to install SliTaz from the web."
-msgstr ""
+msgstr "Hai selezionato l'opzione di installare SliTaz dal Web."
 
 #: slitaz-installer:37
 msgid "Please, select a version:"
-msgstr ""
+msgstr "Per favore, seleziona una versione:"
 
 #: slitaz-installer:39
 msgid "Select the source:"
-msgstr ""
+msgstr "Seleziona il sorgente"
 
 #: slitaz-installer:41
 msgid "Drive selection"
-msgstr ""
+msgstr "Dispositivo di destinazione"
 
 #: slitaz-installer:42
 msgid "Please specify the partition where to install SliTaz:"
-msgstr ""
+msgstr "Per favore specifica la partizione dove installare SliTaz:"
 
 #: slitaz-installer:44
 msgid ""
@@ -81,14 +83,21 @@ msgid ""
 "configuration files and reinstall any packages which are not present on the "
 "CD-ROM."
 msgstr ""
+"Il programma di installazione aggiornerà la versione esistente di SliTaz "
+"salvando tutti i file di configurazione e la lista dei pacchetti installati. "
+"Poi cancellerà la partizione e installerà una nuova versione di SliTaz, "
+"ripristinando i file di configurazione e reinstallando i pacchetti che non "
+"erano presenti sul CD-ROM."
 
 #: slitaz-installer:49
 msgid "You will need an active internet connection before upgrading."
 msgstr ""
+"È necessaria una connessione Internet attiva prima di procedere con "
+"l'aggiornamento."
 
 #: slitaz-installer:50
 msgid "Partition containing the system to upgrade:"
-msgstr ""
+msgstr "Partizione contenente il sistema da aggiornare:"
 
 #: slitaz-installer:52
 msgid ""
@@ -96,18 +105,24 @@ msgid ""
 "intend to use another filesystem, you have to install it before. Unless you "
 "know what you are doing, it is safe to use ext2, ext3 or ext4."
 msgstr ""
+"Sono elencati solo i filesystem correntemente supportati nel tuo sistema. Se "
+"desideri utilizzare un altro filesystem, devi prima installarlo. A meno che "
+"tu non sappia esattamente cosa stai facendo, è opportuno usare i filesystem "
+"ext2, ext3 oppure ext4."
 
 #: slitaz-installer:56
 msgid "To format this partition, please select a filesystem below:"
 msgstr ""
+"Per formattare questa partizione, per favore scegli qui sotto un sistema di "
+"organizzazione file :"
 
 #: slitaz-installer:58
 msgid "Separate /home partition"
-msgstr ""
+msgstr "Separa la partizione /home"
 
 #: slitaz-installer:59
 msgid "Please, select the partition to use:"
-msgstr ""
+msgstr "Per favore, scegli la partizione da usare:"
 
 #: slitaz-installer:61
 msgid ""
@@ -115,10 +130,14 @@ msgid ""
 "is used internally to identify the host on the network. This value can be "
 "changed after the system is installed."
 msgstr ""
+"La configurazione del nome dell'host ti permette di specificare il nome del "
+"tuo dispositivo. Il nome dell'host è usato internamente per identificare il "
+"dispositivo nella rete. Questo nome può anche essere modificato dopo che il "
+"sistema è stato installato."
 
 #: slitaz-installer:64
 msgid "Enter a hostname:"
-msgstr ""
+msgstr "Inserisci un nome per l'host:"
 
 #: slitaz-installer:66
 msgid ""
@@ -126,40 +145,51 @@ msgid ""
 "system. A root user can damage your system so you should always setup a "
 "strong password with special characters and/or numbers."
 msgstr ""
+"I privilegi di amministratore Root ti permettono di gestire e configurare "
+"l'intero sistema. Un utente root può danneggiare il tuo sistema e pertanto "
+"dovresti sempre impostare una parola chiave robusta,  usando caratteri "
+"speciali e/o numeri."
 
 #: slitaz-installer:69
 msgid "Enter the password for root:"
-msgstr ""
+msgstr "Inserisci la parola chiave per l'utente Root:"
 
 #: slitaz-installer:71
 msgid ""
 "The default user for the system will have their personal files stored in /"
 "home/*user* (and will be automatically added to the audio group)"
 msgstr ""
+"I file personali dell'utente predefinito del sistema saranno archiviati "
+"nella cartella /home/*utente* (e saranno automaticamente aggiunti al gruppo "
+"audio)"
 
 #: slitaz-installer:74
 msgid "Enter the name of the first user:"
-msgstr ""
+msgstr "Inserisci il nome del primo utente"
 
 #: slitaz-installer:76
 msgid "The password for default user."
-msgstr ""
+msgstr "La parola chiave per l'utente predefinito"
 
 #: slitaz-installer:77
 msgid ""
 "It may be a security risk if too weak and should always be strong if you use "
 "a SSH connection through the web."
 msgstr ""
+"Può essere un rischio per la sicurezza se troppo debole e dovrebbe sempre "
+"essere abbastanza robusta se desideri usare una connessione SSH su Internet."
 
 #: slitaz-installer:79
 msgid "Enter the password for the default user:"
-msgstr ""
+msgstr "Inserisci la parola chiave per l'utente predefinito:"
 
 #: slitaz-installer:81
 msgid ""
 "Installation is now finished, you can exit the installer or reboot on your "
 "new SliTaz GNU/Linux operating system."
 msgstr ""
+"L'installazione è ora terminata, puoi chiudere il programma di installazione "
+"oppure riavviare il tuo nuovo sistema operativo SliTaz GNU/Linux."
 
 #: slitaz-installer:87
 msgid ""
@@ -167,24 +197,32 @@ msgid ""
 "stable and/or journaled filesystem. If the partition is already formated you "
 "can skip this stage, if not just accept."
 msgstr ""
+"Il prossimo passo ti permetterà di formattare la partizione di destinazione. "
+"Scegli tra filesystem diversi per robustezza, stabilità e/o supporto al "
+"journaling. Se la partizione è già formattata puoi saltare questo passaggio, "
+"altrimenti procedi."
 
 #: slitaz-installer:90 slitaz-installer:101
 msgid "Warning! formating a partition will destroy all current data."
 msgstr ""
+"Attenzione: formattare una partizione cancellerà tutti i dati presenti."
 
 #: slitaz-installer:91
 msgid "Do you wish to format the partition?"
-msgstr ""
+msgstr "Desideri formattare la partizione?"
 
 #: slitaz-installer:93
 msgid ""
 "On most GNU/Linux systems users personal files are stored in the directory /"
 "home. Home can be on a separate partition or another hard disk."
 msgstr ""
+"Nella maggior parte dei sistemi GNU/Linux i dati personali degli utenti sono "
+"archiviati nella cartella /home. Questa cartella può anche essere su una "
+"partizione a parte, o su un differente disco fisso."
 
 #: slitaz-installer:96
 msgid "Do you want to use a separate Home partition?"
-msgstr ""
+msgstr "Vuoi usare una partizione Home separata?"
 
 #: slitaz-installer:98
 msgid ""
@@ -192,16 +230,21 @@ msgid ""
 "format the /home partition. If the partition is already formated you can "
 "skip this stage, if not just accept."
 msgstr ""
+"/home sarà installata in una partizione separata. Il prossimo passo ti "
+"permetterà di formattare la partizione /home. Se la partizione è già "
+"formattata puoi saltare questo passaggio, altrimenti procedi."
 
 #: slitaz-installer:102
 msgid "Do you wish to format the /home partition?"
-msgstr ""
+msgstr "Desideri formattare la partizione /home?"
 
 #: slitaz-installer:104
 msgid ""
 "You have now the option to install a bootloader which is capable of booting "
 "almost any kind of operating system."
 msgstr ""
+"Ora hai la possibilità di installare un bootloader. Il Bootloader è in grado "
+"di avviare praticamente qualunque tipo di sistema operativo."
 
 #: slitaz-installer:106
 msgid ""
@@ -209,166 +252,175 @@ msgid ""
 "configure your bootloader to boot SliTaz (refer to your bootloader "
 "documentation on how to do this)."
 msgstr ""
+"Se vuoi usare un bootloader preesistente, salta questo passaggio e configura "
+"il tuo bootloader per avviare SliTaz (consulta la documentazione del tuo "
+"bootloader per sapere come procedere)"
 
 #: slitaz-installer:109
 msgid "Install a bootloader?"
-msgstr ""
+msgstr "Vuoi installare un bootloader?"
 
 #: slitaz-installer:111
 msgid ""
 "Do you want to implement a dual-boot with Windows? At start-up, you will be "
 "asked whether you want to boot into Windows or SliTaz GNU/Linux."
 msgstr ""
+"Vuoi implementare il dual-boot con Windows? All'accensione del sistema, ti "
+"verrà chiesto se vuoi avviare Windows oppure SliTaz GNU/Linux."
 
 #: slitaz-installer:114
 msgid "Install a dual-boot with Windows?"
-msgstr ""
+msgstr "Installare un Dual-Boot con Windows?"
 
 #: slitaz-installer:116
 msgid ""
 "Installation settings summary and last chance to cancel or restart all "
 "installation steps."
 msgstr ""
+"Sommario delle impostazioni di installazione. Dopo questa schermata non "
+"potrai più cancellare o riavviare tutti i passi dell'installazione."
 
 #: slitaz-installer:118
 msgid "Go and install SliTaz?"
-msgstr ""
+msgstr "Procedi e installa SliTaz?"
 
 #: slitaz-installer:120
 msgid "Sorry, no device, nor file found or available."
-msgstr ""
+msgstr "Spiacente, nessun dispositivo né archivio trovato o disponibile"
 
 #: slitaz-installer:131 slitaz-installer:140
 msgid "Error 2:"
-msgstr ""
+msgstr "Errore 2:"
 
 #: slitaz-installer:132
 msgid "The lightweight SliTaz HDD installer '%s' is missing."
-msgstr ""
+msgstr "Manca il programma di installazione di SliTaz per disco fisso '%s'"
 
 #: slitaz-installer:133
 msgid "Check permissions, or reinstall the %s package."
-msgstr ""
+msgstr "Controlla i permessi, oppure installa nuovamente il pacchetto %s."
 
 #: slitaz-installer:141
 msgid ""
 "The lightweight SliTaz HDD installer tazinst (%s) is not at the required "
 "version (%s)."
 msgstr ""
+"Purtroppo il programma di installazione di SliTaz tazinst (%s) per disco "
+"fisso non  è nella versione richiesta (%s)."
 
 #: slitaz-installer:143
 msgid "Use %s in an xterm or reinstall the %s package."
-msgstr ""
+msgstr "Usa %s nel terminale xterm oppure reinstalla il pacchetto %s."
 
 #: slitaz-installer:268
 msgid "Mode: %s"
-msgstr ""
+msgstr "Modalità: %s"
 
 #: slitaz-installer:271
 msgid "From media: %s"
-msgstr ""
+msgstr "Dal dispositivo: %s"
 
 #: slitaz-installer:276
 msgid "To the disk: %s"
-msgstr ""
+msgstr "Al disco: %s"
 
 #: slitaz-installer:280 slitaz-installer:290
 msgid "(Formatting as %s)"
-msgstr ""
+msgstr "(Formattando come %s)"
 
 #: slitaz-installer:281
 msgid "(No formatting)"
-msgstr ""
+msgstr "(Nessuna formattazione)"
 
 #: slitaz-installer:285
 msgid "Separate /home is: %s"
-msgstr ""
+msgstr "La /home separata è: %s"
 
 #: slitaz-installer:286
 msgid "No separate /home partition"
-msgstr ""
+msgstr "Nessuna partizione /home separata"
 
 #: slitaz-installer:291
 msgid "(No /home formatting)"
-msgstr ""
+msgstr "(Nessuna formattazione di /home)"
 
 #: slitaz-installer:293
 msgid "Hostname: %s"
-msgstr ""
+msgstr "Nome dell'Host: %s"
 
 #: slitaz-installer:295
 msgid "User login: %s"
-msgstr ""
+msgstr "Autenticazione utente: %s"
 
 #: slitaz-installer:299
 msgid "Bootloader: installed"
-msgstr ""
+msgstr "Bootloader: installato"
 
 #: slitaz-installer:300
 msgid "No bootloader installed"
-msgstr ""
+msgstr "Nessun bootloader installato"
 
 #: slitaz-installer:304
 msgid ", with Windows dual-boot"
-msgstr ""
+msgstr ", con dual-boot di Windows"
 
 #: slitaz-installer:305
 msgid ", no dual-boot"
-msgstr ""
+msgstr ", senza dual-boot"
 
 #: slitaz-installer:322 slitaz-installer:336 slitaz-installer:350
 #: slitaz-installer:378 slitaz-installer:391
 msgid "Select %s"
-msgstr ""
+msgstr "Scegli %s"
 
 #: slitaz-installer:325 slitaz-installer:379
 msgid "Next"
-msgstr ""
+msgstr "Prossimo"
 
 #: slitaz-installer:326 slitaz-installer:353 slitaz-installer:380
 msgid "Back"
-msgstr ""
+msgstr "Precedente"
 
 #: slitaz-installer:352 slitaz-installer:411
 msgid "Yes"
-msgstr ""
+msgstr "Sì"
 
 #: slitaz-installer:354 slitaz-installer:412
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: slitaz-installer:409
 msgid "Summary"
-msgstr ""
+msgstr "Sommario"
 
 #: slitaz-installer:419
 msgid "SliTaz install cancelled."
-msgstr ""
+msgstr "L'installazione di SliTaz è stata cancellata."
 
 #: slitaz-installer:567
 msgid "SliTaz Installer"
-msgstr ""
+msgstr "Installatore di SliTaz"
 
 #: slitaz-installer:567
 msgid "Installing..."
-msgstr ""
+msgstr "Installazione in corso..."
 
 #: slitaz-installer:573
 msgid "Installation complete"
-msgstr ""
+msgstr "Installazione completa"
 
 #: slitaz-installer:575
 msgid "Exit"
-msgstr ""
+msgstr "Uscita"
 
 #: slitaz-installer:576
 msgid "Reboot"
-msgstr ""
+msgstr "Riavvia."
 
 #: slitaz-installer:585 slitaz-installer:597
 msgid "ESC pressed."
-msgstr ""
+msgstr "Premuto ESC."
 
 #: slitaz-installer:588
 msgid "Process not completed"
-msgstr ""
+msgstr "Processo non completo"
