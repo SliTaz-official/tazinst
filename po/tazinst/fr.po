@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-09 16:49+0300\n"
-"PO-Revision-Date: 2016-09-18 11:20+0200\n"
+"PO-Revision-Date: 2018-04-02 22:01+0200\n"
 "Last-Translator: Pascal Bellard <pascal.bellard@slitaz.org>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -120,7 +120,7 @@ msgstr "Installeur SliTaz GNU/Linux - Version : %s"
 
 #: tazinst:115
 msgid "Usage:"
-msgstr "Usage:"
+msgstr "Usage :"
 
 #: tazinst:116
 msgid "%s [command] <setting> <value> <file>"
@@ -128,7 +128,7 @@ msgstr "%s [commande] <paramétrage> <valeur> <fichier>"
 
 #: tazinst:117
 msgid "Commands:"
-msgstr "Commandes:"
+msgstr "Commandes :"
 
 #: tazinst:119
 msgid "Create a new install file."
@@ -144,7 +144,7 @@ msgstr "Efface un paramètre."
 
 #: tazinst:122
 msgid "Get the value of a setting."
-msgstr "Lit un paramètre"
+msgstr "Obtient la valeur d'un paramètre"
 
 #: tazinst:123
 msgid "Check settings."
@@ -220,7 +220,7 @@ msgstr "Efface le fichier d'installation : %s"
 
 #: tazinst:445
 msgid "Error: Unable to delete install file."
-msgstr "Erreur : Impossible d'éffacer le fichier d'installation."
+msgstr "Erreur : Impossible d'effacer le fichier d'installation."
 
 #: tazinst:460
 msgid ""
@@ -265,7 +265,7 @@ msgstr "Erreur : URL invalide."
 
 #: tazinst:548
 msgid "Error: multiple assignations for a disk."
-msgstr "Erreur : utilisation multiple du même disque"
+msgstr "Erreur : utilisation multiple du même disque."
 
 #: tazinst:562
 msgid "Error: password too long."
@@ -273,7 +273,7 @@ msgstr "Erreur : mot de passe trop long."
 
 #: tazinst:567
 msgid "Error: Unallowed characters in password."
-msgstr "Erreur : Caractères interdits dans le mot de passe"
+msgstr "Erreur : Caractères interdits dans le mot de passe."
 
 #: tazinst:577
 msgid "Warning: short password!"
@@ -293,7 +293,7 @@ msgstr "%s Erreur : Trop long."
 
 #: tazinst:599
 msgid "%s Error: Invalid chars."
-msgstr "%s Erreur : Caract..res invalides."
+msgstr "%s Erreur : Caractères invalides."
 
 #: tazinst:611
 msgid "Error: Dualboot set with no bootloader."
@@ -309,7 +309,7 @@ msgstr "Erreur : Aucun disque choisi, ne peut pas installer d'amorceur."
 
 #: tazinst:748
 msgid "The Source setting depends on the type of media:"
-msgstr "Le choix de la source depend du type de media :"
+msgstr "Le choix de la source dépend du type de media :"
 
 #: tazinst:752
 msgid "Name or URL of the image on the web."
@@ -413,7 +413,7 @@ msgstr "Ne peut pas installer %s."
 
 #: tazinst:1167
 msgid "Adding package %s to the target system..."
-msgstr "Ajout du paquet sur le syst..me cible : %s..."
+msgstr "Ajout du paquet sur le système cible : %s..."
 
 #: tazinst:1182
 msgid "=== Tazinst: started on %s ==="
@@ -501,7 +501,7 @@ msgstr "Le formatage a échoué"
 
 #: tazinst:1373
 msgid "Preparing target partition..."
-msgstr "Prepare la partition cible..."
+msgstr "Prépare la partition cible..."
 
 #: tazinst:1377
 msgid "Partition is already mounted, unmounting."
@@ -509,7 +509,7 @@ msgstr "Partition déjà montée, démontage."
 
 #: tazinst:1381
 msgid "Partition is already in use."
-msgstr "Partition déjà utilisée"
+msgstr "Partition déjà utilisée."
 
 #: tazinst:1389
 msgid "%s: The partition will be cleaned..."
@@ -537,7 +537,7 @@ msgstr "Effaçage de : %s"
 
 #: tazinst:1443
 msgid "Ejecting CD-ROM..."
-msgstr "Éjection du CD-Rom..."
+msgstr "Éjection du CD-ROM..."
 
 #: tazinst:1452
 msgid ""
@@ -565,7 +565,7 @@ msgstr "Activation du Dual-boot avec Windows"
 
 #: tazinst:1610
 msgid "Installing GRUB on: %s"
-msgstr "Installation de grub sur : %s"
+msgstr "Installation de GRUB sur : %s"
 
 #: tazinst:1611
 msgid "GRUB not found"
@@ -581,7 +581,7 @@ msgstr "Copie de l'image de fond"
 
 #: tazinst:1710
 msgid "Installing Syslinux"
-msgstr "Installation de syslinux"
+msgstr "Installation de Syslinux"
 
 #: tazinst:1720
 msgid "Syslinux not found"
@@ -597,7 +597,7 @@ msgstr "mbr.bin introuvable"
 
 #: tazinst:1728
 msgid "Installing MBR"
-msgstr "Installe le mbr"
+msgstr "Installe le MBR"
 
 #: tazinst:1732
 msgid "Setting the legacy_boot flag on"
@@ -605,7 +605,7 @@ msgstr "Activation du legacy_boot flag"
 
 #: tazinst:1741
 msgid "Installing GPTMBR"
-msgstr "Installe gptmbr"
+msgstr "Installe GPTMBR"
 
 #: tazinst:1742
 msgid "gptmbr.bin not found"
@@ -741,7 +741,7 @@ msgstr "Installation : %s..."
 
 #: tazinst:2141
 msgid "Installation of packages complete..."
-msgstr "Installation des paquets réussie."
+msgstr "Installation des paquets réussie..."
 
 #: tazinst:2150
 msgid "Creating package lists..."
