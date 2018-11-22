@@ -1,14 +1,14 @@
 # German translations for Tazinst package.
 # Copyright (C) 2017 SliTaz
 # This file is distributed under the same license as the Tazinst package.
-# Hans-Günter Theisgen, 2017.
+# Hans-Günter Theisgen, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: TazInst \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 23:40+0200\n"
-"PO-Revision-Date: 2017-10-06 14:47+0100\n"
+"PO-Revision-Date: 2018-11-22 17:19+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -296,7 +296,7 @@ msgstr "%s Fehler: Unzulässige Zeichen."
 
 #: tazinst:611
 msgid "Error: Dualboot set with no bootloader."
-msgstr "Fehler: Alternatives Laden ohne Urlader gewählt."
+msgstr "Fehler: Alternatives Laden ohne Urladerinstallation gewählt."
 
 #: tazinst:625
 msgid "Error: Unsupported Partition Table."
@@ -572,7 +572,7 @@ msgstr "GRUB nicht gefunden"
 
 #: tazinst:1615
 msgid "Setting the boot flag"
-msgstr "Das Ladekennzeichen wird gesetzt"
+msgstr "Das Merkmal 'urladefähig' wird für die Partition gesetzt"
 
 #: tazinst:1620 tazinst:1748
 msgid "Copying splash image"
@@ -588,7 +588,7 @@ msgstr "Syslinux nicht gefunden"
 
 #: tazinst:1724
 msgid "Setting the boot flag on"
-msgstr "Das Ladekennzeichen wird gesetzt auf"
+msgstr "Das Merkmal 'urladefähig' wird für die Partition gesetzt"
 
 #: tazinst:1727
 msgid "mbr.bin not found"
@@ -600,7 +600,7 @@ msgstr "MBR wird geschrieben"
 
 #: tazinst:1732
 msgid "Setting the legacy_boot flag on"
-msgstr "Das Ladekennzeichen wird gesetzt auf"
+msgstr "Das Merkmal 'urladefähig' wird für die Partition gesetzt"
 
 #: tazinst:1741
 msgid "Installing GPTMBR"
