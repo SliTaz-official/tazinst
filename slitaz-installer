@@ -172,7 +172,7 @@ msg()
 		esac ;;
 	root_uuid)
 		local mode="$(tazinst get mode)"
-		if [ "$mode" == 'upgrade' ]; then printf "$ROOT_UUID_UPGRADE_MSG";
+		if [ "$mode" = 'upgrade' ]; then printf "$ROOT_UUID_UPGRADE_MSG";
 			else printf "$ROOT_UUID_DEFAULT_MSG"; fi ;;
 	root_format|home_format)
 		printf "$ROOT_FORMAT_MSG" ;;

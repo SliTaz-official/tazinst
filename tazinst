@@ -85,7 +85,7 @@ syslinux:$(_ 'Lightweight bootloader')"
 
 # predefined iso (key:url:help)
 SLITAZ_VERSION="${SLITAZ_VERSION:-cooking}"
-[ "$SLITAZ_VERSION" == 'cooking' ] && SLITAZ_VERSION="$(($(date "+%y")-8)).0"
+[ "$SLITAZ_VERSION" = 'cooking' ] && SLITAZ_VERSION="$(($(date "+%y")-8)).0"
 [ -n "$URL_ISO" ] && readonly LST_WEB="$URL_ISO" || readonly LST_WEB="
 stable:iso/stable/slitaz-$SLITAZ_VERSION.iso \
 :$(_ 'Stable release') $SLITAZ_VERSION
@@ -495,7 +495,7 @@ check_uuid()
 {
 	local setting="$1" value="$(get $1)" found=0 partition msg
 	for partition in $(list_uuid); do
-		[ "$partition" == "$value" ] && found="$(($found + 1))"
+		[ "$partition" = "$value" ] && found="$(($found + 1))"
 	done
 	if [ "$found" != "1" ]; then
 		msg="$(gettext "$setting")=$value
@@ -619,7 +619,7 @@ check_table()
 	local pt_list="gpt msdos"
 	# get root uuid
 	local uuid="$(get root_uuid)"
-	if [ "$(/sbin/blkid | grep -c "$uuid")" == "1" ]; then
+	if [ "$(/sbin/blkid | grep -c "$uuid")" = "1" ]; then
 		if ! printf "%s" "$(p_table $uuid)" | \
 				egrep -q "$(regex "$pt_list")"; then
 			_ 'Error: Unsupported Partition Table.' 1>&2
@@ -1409,7 +1409,7 @@ prepare_uuid()
 	mount -t "$mount_fs" "$ROOT_UUID" \
 			"$TARGET_ROOT" >>"$LOG" 2>>"$LOG"
 	if [ $(mount | \
-			grep -c "mnt/target") == "0" ]; then
+			grep -c "mnt/target") = "0" ]; then
 		error 4 "$(_ '%s: Unable to mount partition' "$ROOT_UUID")"
 	fi
 }
@@ -1439,7 +1439,7 @@ umount_devices()
 	fi
 
 	# eject cd
-	if [ "$SOURCE" == "cdrom" ]; then
+	if [ "$SOURCE" = "cdrom" ]; then
 		_ 'Ejecting CD-ROM...'
 		eject
 	fi
@@ -1471,12 +1471,12 @@ end_of_install()
 # selection
 bootloader()
 {
-	if [ "$BOOTLOADER" == "auto" ]; then
+	if [ "$BOOTLOADER" = "auto" ]; then
 		# use syslinux, but if p_table=msdos take grub (if available)
 		unset BOOTLOADER
 		printf "%s" "$(list_bootloader)" | \
 			grep -q "syslinux" && BOOTLOADER=syslinux
-		if [ "$(p_table $ROOT_UUID)" == "msdos" ]; then
+		if [ "$(p_table $ROOT_UUID)" = "msdos" ]; then
 			printf "%s" "$(list_bootloader)" | \
 				grep -q " grub" && BOOTLOADER=grub
 		fi
@@ -2123,7 +2123,7 @@ install_pkgs()
 
 	# install packages.
 	log "$(_ 'Installing packages...')"
-	if [ "$packages" == "0" ]; then
+	if [ "$packages" = "0" ]; then
 		log "$(_ 'packages to install: 0')"
 	else
 		# get-install all missing pkgs.

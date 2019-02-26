@@ -285,7 +285,7 @@ select_source() {
 		"$media" \
 		"$(_ 'Select a SliTaz ISO file located on a local disk')"
 	error="$?"
-	if [ "$media" == "iso" ]; then
+	if [ "$media" = "iso" ]; then
 		input "text" \
 			"src_iso" \
 			"$source" "" \
@@ -313,7 +313,7 @@ select_source() {
 		"$(_ 'Select a SliTaz version on the Web')"
 	error="$?"
 
-	if [ "$media" == "web" ]; then
+	if [ "$media" = "web" ]; then
 		input "text" \
 			"src_web" \
 			"$source" "" \
@@ -338,7 +338,7 @@ select_root_uuid()
 	local root_uuid="$(/usr/sbin/tazinst get root_uuid "$INSTFILE")"
 	local mode="$(/usr/sbin/tazinst get mode "$INSTFILE")"
 	comment "root_uuid selection"
-	if [ "$mode" == "upgrade" ]; then
+	if [ "$mode" = "upgrade" ]; then
 		label "root_uuid" \
 			"$(_ 'Existing SliTaz partition to upgrade:')" \
 			"$(_ 'Specify the partition containing the system to upgrade')"
@@ -671,7 +671,7 @@ save_settings()
 	/usr/sbin/tazinst set winboot "$(GET WINBOOT)" "$INSTFILE"
 
 	# bootloader
-	if [ "$(GET BOOTLOADER)" == "auto" ]; then
+	if [ "$(GET BOOTLOADER)" = "auto" ]; then
 		/usr/sbin/tazinst set bootloader "auto" "$INSTFILE"
 	else
 		/usr/sbin/tazinst unset bootloader "$INSTFILE"
@@ -970,7 +970,7 @@ label() {
 
 label_media() {
 	local id="$1" label="$2" media="$3" title="$4" retcode=0
-	if [ "$media" == "$id" ]; then
+	if [ "$media" = "$id" ]; then
 		label "source" \
 			"$label" \
 			"$title" \
@@ -1033,7 +1033,7 @@ input()
 	printf '<input type="%s" id="%s" list="list_%s" ' "$type" "$name" "$name"
 	printf 'name="%s" class="%s" ' "$(printf $name | tr [a-z] [A-Z])" "$type"
 	[ "$value" ] && printf 'value="%s" ' "$value"
-	[ "$value" == "$selected" ] && printf '%s' "checked "
+	[ "$value" = "$selected" ] && printf '%s' "checked "
 	[ "$action" ] && printf \
 		'onInput="document.getElementById(%s).checked = true;" ' "'$action'"
 	[ "$help" ] && printf 'placeholder="%s" />\n' "$help" || echo "/>"
@@ -1043,7 +1043,7 @@ input_media()
 {
 	local id="$1" media="$2"
 	printf '<input type="radio" name="MEDIA" value="%s" id="%s" ' "$id" "$id"
-	[ "$media" == "$id" ] && echo 'checked />' || echo '/>'
+	[ "$media" = "$id" ] && echo 'checked />' || echo '/>'
 }
 
 input_hidden()
