@@ -181,7 +181,7 @@ EOT
 
 exec_gparted() {
 	/bin/su - -c \
-	"exec env DISPLAY=':0.0' XAUTHORITY='/var/run/slim.auth' /usr/sbin/gparted" >/dev/null 2>&1
+	"exec env DISPLAY=':0.0' XAUTHORITY='/var/run/slim.auth' gparted" >/dev/null 2>&1
 }
 
 
