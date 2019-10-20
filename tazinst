@@ -1242,8 +1242,8 @@ error9()
 mount_cdrom()
 {
 	# set device name
-	local drive="$(cat /proc/sys/dev/cdrom/info | \
-		grep "drive name" | cut -f 3)"
+	local drive="$(grep "drive name" < \
+		/proc/sys/dev/cdrom/info | cut -f 3)"
 	[ -n "$drive" ] || drive=cdrom
 	local cdrom=/dev/$drive
 	# mount cdrom
@@ -1277,7 +1277,7 @@ mount_iso()
 	# check integrity
 	local md5file=$(printf "%s" $SOURCE | sed 's/.iso$/.md5/')
 	if [ -r "$md5file" ]; then
-		local md5ref="$(cat "$md5file" | cut -d' ' -f1)"
+		local md5ref="$(cut -d' ' -f1 < "$md5file")"
 		local md5calc="$(md5sum $SOURCE | cut -d' ' -f1)"
 		if [ ! "$md5calc" = "$md5ref" ]; then
 			log "md5sum iso=$md5ref md5sum tazinst=$md5calc"
@@ -2112,7 +2112,7 @@ install_pkgs()
 	log "$(_ 'Checking the availability of packages...')"
 	touch packages-to-install.list
 	packages=0
-	diff="$(cat packages-selection.diff | sort)"
+	diff="$(sort < packages-selection.diff)"
 	for pkg in $diff
 	do
 		if grep -q ^$pkg-[0-9] /var/lib/tazpkg/packages.list; then
@@ -2127,7 +2127,7 @@ install_pkgs()
 		log "$(_ 'packages to install: 0')"
 	else
 		# get-install all missing pkgs.
-		for pkg in $(cat packages-to-install.list)
+		while read pkg
 		do
 			log "$(_ 'Installing: %s...' "$pkg")"
 			# get install package and answer yes in case of dependencies.
@@ -2136,7 +2136,7 @@ install_pkgs()
 			yes "" | /usr/bin/tazpkg install $pkgname.tazpkg \
 --root=$TARGET_ROOT >/dev/null 2>/dev/null
 			rm -f $pkgname.tazpkg
-		done
+		done < packages-to-install.list
 	fi
 	log "$(_ 'Installation of packages complete...')"
 }
