@@ -720,9 +720,8 @@ tazinst_run()
 		echo "</script>"
 		br
 		br
-		br
-		p $(_ "Installation is now finished, you can exit the installer \
-or reboot on your new SliTaz GNU/Linux operating system.")
+		p "$(_ "Installation is now finished, you can exit the installer \
+or reboot on your new SliTaz GNU/Linux operating system.")"
 	fi
 	return "$error"
 
@@ -854,10 +853,10 @@ check_ressources() {
 	if ! [ -x /usr/sbin/tazinst ]; then
 		{
 		h4 $(_ 'Tazinst Error')
-		p $(_ '%s, the backend to %s is missing.' '<strong>tazinst</strong>' 'slitaz-installer';
-		_ 'Any installation can not be done without %s.' 'tazinst')
-		p $(_ "Check %s permissions, or reinstall the %s package." \
-		'tazinst' 'slitaz-installer')
+		p "$(_ '%s, the backend to %s is missing.' '<strong>tazinst</strong>' 'slitaz-installer';
+		_ 'Any installation can not be done without %s.' 'tazinst')"
+		p "$(_ "Check %s permissions, or reinstall the %s package." \
+		'tazinst' 'slitaz-installer')"
 		} >> $buffer
 		errorcode=1
 	else
@@ -868,11 +867,11 @@ check_ressources() {
 				'{v=$v+0}{ if (v < r) exit 1}') ; then
 			{
 			h4 $(_ 'Tazinst Error')
-			p $(_ '%s, the %s backend, is not at the minimum required version.' \
+			p "$(_ '%s, the %s backend, is not at the minimum required version.' \
 			'<strong>tazinst</strong>' 'slitaz-installer';
-			_ 'Any installation can not be done without %s.' 'tazinst')
-			p $(_ 'Reinstall the %s package, or use %s in CLI mode.' \
-			'slitaz-installer' 'tazinst')
+			_ 'Any installation can not be done without %s.' 'tazinst')"
+			p "$(_ 'Reinstall the %s package, or use %s in CLI mode.' \
+			'slitaz-installer' 'tazinst')"
 			} >> $buffer
 			errorcode=1
 		fi
@@ -883,11 +882,11 @@ check_ressources() {
 				'{v=$v+0}{ if (v > r) exit 1}') ; then
 			{
 			h4 $(_ 'Tazinst Error')
-			p $(_ "%s, the %s backend, is at a higher version than the maximum authorized \
+			p "$(_ "%s, the %s backend, is at a higher version than the maximum authorized \
 by the %s." '<strong>tazinst</strong>' 'slitaz-installer' 'slitaz-installer';
-			_ 'Any installation cannot be done.')
-			p $(_ 'Reinstall the %s package, or use %s in CLI mode.' \
-			'slitaz-installer' 'tazinst')
+			_ 'Any installation cannot be done.')"
+			p "$(_ 'Reinstall the %s package, or use %s in CLI mode.' \
+			'slitaz-installer' 'tazinst')"
 			} >> $buffer
 			errorcode=1
 		fi

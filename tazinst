@@ -938,7 +938,7 @@ list_bootloader()
 # list Windows partitions
 list_winboot()
 {
-	/usr/sbin/parted -lms 2>&1 | /bin/busybox awk '
+	/usr/sbin/parted -lms 2>&1 | sed '/zram/,$d' | /bin/busybox awk '
 	BEGIN{
 		FS=":"
 		disknum=-1
@@ -1108,7 +1108,7 @@ is_removable()
 	local uuid="$1" removable=1
 	local disk="$(uuid2disk $uuid | /bin/busybox awk '{print substr($0,6,3)}')"
 	if [ "$(printf "%s" $disk | wc -w)" -eq "1" ]; then
-		[ "$(cat /sys/block/"$disk"/removable)" -gt "0" ] \
+		[ "$(cat /sys/block/"$disk"/removable 2> /dev/null)" -gt "0" ] \
 			&& removable=0
 	fi
 	return "$removable"
@@ -2217,6 +2217,7 @@ case $1 in
 	new)
 		new_file "$2" ;;
 	set)
+		[ -s "$4" ] || new_file "$4"
 		read_file "$4"
 		change "$2" "$3" "$4" ;;
 	unset)
