@@ -151,9 +151,8 @@ in the previous century..." '\slitaz')</p>
 			<input type="hidden" name="action" value="install"/>
 			<table>
 			<tr><td>$(_ 'ISO image file full path')
-				<span data-img="info" title="$(_ 'set %s for a physical CD-ROM' '/dev/cdrom')"></span>
 			</td>
-			<td>$(file_chooser "iso" "")</td></tr>
+			<td>$(file_chooser "iso" "/dev/cdrom")</td></tr>
 			<tr><td>$(_ 'Target partition')</td>
 			<td><select name="instdev">
 				<option value="/dev/null">$(_ 'Choose a partition')</option>
