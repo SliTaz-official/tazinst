@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Tazinst manual
+Name[fr]=Manuel de Tazinst
+Name[pt]=Manual do Tazinst
+Name[pt_BR]=Manual do Tazinst
+Name[ru]=Руководство TazInst
+Exec=browser file:///usr/share/doc/tazinst/tazinst.html
+Icon=slitaz-doc
+Categories=Documentation;
