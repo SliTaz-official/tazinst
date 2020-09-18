@@ -1707,12 +1707,10 @@ syslinux_install()
 	log "$(_ 'Installing Syslinux')"
 	# needed tools
 	local dir disk="$(uuid2disk $ROOT_UUID)"
-	for dir in /home/boot/extlinux /home/boot/syslinux /boot/syslinux; do
-		[ -d "$dir" ] && cp $dir/*.c32 "$TARGET_ROOT/boot/syslinux/"
-		[ -d "$dir" ] && cp $dir/*.sys "$TARGET_ROOT/boot/syslinux/"
+	for dir in /home/boot/extlinux /home/boot/syslinux /boot/syslinux /boot/isolinux; do
+		[ -d "$dir" ] && cp $dir/*.c32 $dir/*.sys "$TARGET_ROOT/boot/syslinux/"
 	done
-	/usr/bin/lzma d /usr/share/boot/chain.c32.lzma \
-		$TARGET_ROOT/boot/syslinux/chain.c32 2>> "$LOG"
+	cp /usr/share/boot/chain.c32 $TARGET_ROOT/boot/syslinux/chain.c32 2>> "$LOG"
 	# install syslinux
 	/bin/syslinux -version >> "$LOG" || error 5 "$(_ 'Syslinux not found')"
 	/bin/extlinux --install $TARGET_ROOT/boot/syslinux >> "$LOG" 2>> "$LOG"
