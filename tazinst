@@ -40,6 +40,9 @@ readonly VERSION=3.95
 export TEXTDOMAIN='tazinst'
 
 
+# common kernels arguments
+readonly KERNEL_ARGS="video=-32 quiet"
+
 # files
 readonly DEFAULT_INSTALL_FILE=./tazinst.rc
 readonly SOURCE_ROOT=/media/source
@@ -619,7 +622,7 @@ check_table()
 	local pt_list="gpt msdos"
 	# get root uuid
 	local uuid="$(get root_uuid)"
-	if [ "$(/sbin/blkid | grep -c "$uuid")" = "1" ]; then
+	if [ "$(blkid | grep -c "$uuid")" = "1" ]; then
 		if ! printf "%s" "$(p_table $uuid)" | \
 				egrep -q "$(regex "$pt_list")"; then
 			_ 'Error: Unsupported Partition Table.' 1>&2
@@ -797,12 +800,10 @@ help()
 	web)
 		printf "%s" "$LST_WEB" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $3}' ;;
-	root_uuid)
-	 	/sbin/blkid -s TYPE -s LABEL | sort ;;
 	root_format)
 	 	printf "%s" "$LST_FORMAT" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n", $1, $2}' ;;
-	home_uuid)
+	home_uuid|root_uuid)
 		/sbin/blkid -s TYPE -s LABEL | sort ;;
 	home_format)
 		printf "%s" "$LST_FORMAT" | \
@@ -858,7 +859,7 @@ list_usb()
 			if readlink $DEV | grep -q usb; then
 				DEV=$(basename $DEV)
 				if [ -d /sys/block/${DEV}/${DEV}1 ]; then
-					/sbin/blkid /dev/$DEV* | tr ' ' '\n' | /bin/busybox awk '
+					blkid /dev/$DEV* | tr ' ' '\n' | /bin/busybox awk '
 						/^\/dev\// {
 							DEV=$1
 							gsub(/:/,"",DEV)
@@ -951,13 +952,13 @@ list_winboot()
 		if (match($1,"^/dev")){
 			disknum++
 			part=0
-			disk=substr($1,1,8)
-			dev=substr($1,6,3)
+			disk=$1
+			dev=substr($1,6)
 			# get removable status
 			file="/sys/block/"dev"/removable"
 			"cat " file | getline removable
 			close("cat ")
-	}
+		}
 		# Count partitions
 		if (match($1,"[0-9][0-9]?")){
 			# List fixed drives only
@@ -1055,20 +1056,17 @@ regex()
 # print dev from uuid
 uuid2dev()
 {
-	local uuid="$1" id
-	if [ "$(printf "%s" $uuid | cut -d '=' -f1)" = "UUID" ]; then
-		id="$(printf "%s" $uuid | cut -d'=' -f2)"
-		printf "$(/sbin/blkid -U $id)"
-	else
-		printf "%s" "$uuid"
+	local uuid="$1"
+	if [ "${uuid%=*}" = "UUID" ]; then
+		uuid="$(blkid | sed '/ UUID="'${uuid#*=}'"/!d;s|:.*||')"
 	fi
+	printf "%s" "$uuid"
 }
 
 # print disk from uuid
 uuid2disk()
 {
-	local uuid="$1"
-	printf "%s" "$(uuid2dev $uuid | /bin/busybox awk '{print substr($0,1,8)}')"
+	printf "%s" "$(uuid2dev $1 | /bin/busybox sed 's|p*[0-9]*$||')"
 }
 
 dev2uuid()
@@ -1105,9 +1103,9 @@ filesys()
 # return removable status from uuid
 is_removable()
 {
-	local uuid="$1" removable=1
-	local disk="$(uuid2disk $uuid | /bin/busybox awk '{print substr($0,6,3)}')"
-	if [ "$(printf "%s" $disk | wc -w)" -eq "1" ]; then
+	local removable=1
+	local disk="$(uuid2disk $1 | sed 's|/dev/||')"
+	if [ "$disk" ]; then
 		[ "$(cat /sys/block/"$disk"/removable 2> /dev/null)" -gt "0" ] \
 			&& removable=0
 	fi
@@ -1492,22 +1490,21 @@ bootloader()
 			syslinux_config
 			log "$(_ 'No bootloader to install.')" ;;
 	esac
+	[ -d /sys/firmware/efi ] && efiboot_install
 }
 
 # print disk num
 disknum()
 {
-	local partition="$(uuid2dev $1)"
-	partition="${partition%%[0-9]*}"
+	local disk="$(uuid2dev $1 | /bin/busybox sed 's|p*[0-9]*$||')"
 	/usr/sbin/parted -lms 2>&1 | grep "^/dev" | \
-		/bin/busybox awk -v PART="$partition" '{if (match($0,PART)) print NR-1}'
+		/bin/busybox awk -v PART="$disk:" '{if (match($0,PART)) print NR-1}'
 }
 
 # print partition num
 partnum()
 {
-	local partition="$(uuid2dev $1)"
-	printf "%s\n" "$((${partition#/dev/[hs]d[a-z]}-1))"
+	printf "%s" "$(($(uuid2dev $1 | /bin/busybox sed 's|.*[^0-9]||')-1))"
 }
 
 # print root device
@@ -1529,7 +1526,7 @@ rootdev()
 # add rootdelay for removable devices
 rootdelay()
 {
-	is_removable "$ROOT_UUID" && printf "%s" "rootdelay=9"
+	is_removable "$ROOT_UUID" && printf "%s" " rootdelay=9"
 }
 
 # print winboot uuid
@@ -1578,7 +1575,7 @@ splashimage=/boot/grub/splash.xpm.gz
 #
 title SliTaz GNU/Linux $(cat $TARGET_ROOT/etc/slitaz-release) (Kernel $KERNEL)
 root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
-kernel /boot/$KERNEL root=$(rootdev $ROOT_UUID) video=-32 quiet $(rootdelay)
+kernel /boot/$KERNEL root=$(rootdev $ROOT_UUID) $KERNEL_ARGS$(rootdelay)
 
 _EOF_
 
@@ -1679,7 +1676,7 @@ MENU COLOR tabmsg       31;40   #30ffffff #00000000 std
 LABEL slitaz
 	MENU LABEL SliTaz GNU/Linux $version
 	LINUX /boot/$KERNEL
-	APPEND root=$(rootdev $ROOT_UUID) video=-32 quiet $(rootdelay)
+	APPEND root=$(rootdev $ROOT_UUID) $KERNEL_ARGS$(rootdelay)
 
 LABEL cmdline
 	MENU LABEL Command Line
@@ -1751,6 +1748,32 @@ syslinux_install()
 	fi
 }
 
+
+#-------------
+# 5.3 efiboot
+#-------------
+
+efiboot_install()
+{
+	local esp_fs_uuid mnt="/media/esp$$" efiboot="/EFI/SLITAZ"
+	# We need efi stub support
+	[ "$(strings $TARGET_ROOT/boot/$KERNEL | head | grep reloc)" ] || return
+	# And the esp partition
+	esp_fs_uuid="$(blkid | sed '/EFI system partition/!d;s|.* UUID="||;s|".*||;q')"
+	[ "$esp_fs_uuid" ] || return
+	# Copy SliTaz kernel and cmdline in esp partition
+	mkdir $mnt &&
+	mount "$(uuid2dev UUID=$esp_fs_uuid)" $mnt &&
+	mkdir -p $mnt$efiboot 2> /dev/null
+	if cp $TARGET_ROOT/boot/$KERNEL $mnt$efiboot/BZIMAGE.EFI; then
+		log "$(_ 'Updating UEFI boot files')"
+		echo "root=$(rootdev $ROOT_UUID) $KERNEL_ARGS$(rootdelay)" > $mnt$efiboot/linux.cmdline
+		efibootmgr -v | grep -q SliTaz ||
+		efibootmgr -c -d "$(uuid2disk UUID=$esp_fs_uuid)" -p "$(partnum UUID=$esp_fs_uuid)" \
+			-L "SliTaz GNU/Linux" -l "${efiboot//\//\\}\\BZIMAGE.EFI"
+	fi
+	umount $mnt && rmdir $mnt
+}
 
 #--------------------
 # 6. execute section
