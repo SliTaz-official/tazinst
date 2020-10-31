@@ -1827,12 +1827,9 @@ clean_target()
 # kernel is renamed to standard vmlinuz-$VERSION.
 install_kernel()
 {
-	if [ -d /$TARGET_ROOT/lib/modules ]; then
-		KERNEL="vmlinuz-$(ls /$TARGET_ROOT/lib/modules | tail -1)"
-	else
-		KERNEL="vmlinuz-$(uname -r)"
+	KERNEL="vmlinuz-$(uname -r)"
+	[ -d /$TARGET_ROOT/lib/modules/$(uname -r) ] ||
 		log "$(_ 'Kernel name not found, falling back to: %s' "$(uname -r)")"
-	fi
 	mkdir -p $TARGET_ROOT/boot || error8
 	for i in $SOURCE_ROOT/boot/bzImage* ; do
 		cp $i $TARGET_ROOT/boot/${KERNEL%slitaz*}slitaz${i#*bzImage}
@@ -1904,7 +1901,7 @@ extract_rootfs()
 		  cat "$i" ) 2>>"$LOG" | /bin/busybox cpio -idu
 	done 2>>"$LOG" > /dev/null
 	fi
-	cp /etc/keymap.conf /etc/locale.conf /etc/TZ /etc/network.conf etc
+	install -m 644 /etc/keymap.conf /etc/locale.conf /etc/TZ /etc/network.conf etc
 	# unpack /usr (double check...)
 	if ls etc/tazlito | grep -q ".extract"; then
 		for i in etc/tazlito/*.extract; do
