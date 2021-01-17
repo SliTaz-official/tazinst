@@ -1901,7 +1901,7 @@ extract_rootfs()
 		  cat "$i" ) 2>>"$LOG" | /bin/busybox cpio -idu
 	done 2>>"$LOG" > /dev/null
 	fi
-	/usr/sbin/install -m 644 /etc/keymap.conf /etc/locale.conf /etc/TZ /etc/network.conf etc
+	$(which install) -m 644 /etc/keymap.conf /etc/locale.conf /etc/TZ /etc/network.conf etc
 	# unpack /usr (double check...)
 	if ls etc/tazlito | grep -q ".extract"; then
 		for i in etc/tazlito/*.extract; do
