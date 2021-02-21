@@ -1902,6 +1902,7 @@ extract_rootfs()
 	done 2>>"$LOG" > /dev/null
 	fi
 	$(which install) -m 644 /etc/keymap.conf /etc/locale.conf /etc/TZ /etc/network.conf etc
+	cp -a /usr/lib/locale usr/lib/
 	# unpack /usr (double check...)
 	if ls etc/tazlito | grep -q ".extract"; then
 		for i in etc/tazlito/*.extract; do
