@@ -532,6 +532,52 @@ EOT
 }
 
 
+select_liveboot()
+{
+	local liveboot="$(/usr/sbin/tazinst get liveboot "$INSTFILE")" error
+
+	cat <<EOT
+	$(
+	input "checkbox" \
+		"liveboot" \
+		"auto" \
+		"$liveboot"
+	label "liveboot" \
+		"$(_ 'Enable the liveboot/rescue mode. (with default passwords!)')" \
+		"$(_ "At start-up, you will be asked whether you want to boot \
+into SliTaz GNU/Linux on disk or in RAM.")"
+	error="$?"
+	error_msg "$error" \
+		"liveboot"
+	)
+	<br/>
+EOT
+}
+
+
+select_webboot()
+{
+	local webboot="$(/usr/sbin/tazinst get webboot "$INSTFILE")" error
+
+	cat <<EOT
+	$(
+	input "checkbox" \
+		"webboot" \
+		"auto" \
+		"$webboot"
+	label "webboot" \
+		"$(_ 'Enable the webboot mode. (with default passwords!)')" \
+		"$(_ "At start-up, you will be asked whether you want to boot \
+into SliTaz GNU/Linux on disk or boot in RAM from the Web.")"
+	error="$?"
+	error_msg "$error" \
+		"webboot"
+	)
+	<br/>
+EOT
+}
+
+
 select_winboot()
 {
 	local winboot="$(/usr/sbin/tazinst get winboot "$INSTFILE")" error
@@ -601,6 +647,8 @@ select_settings() {
 
 	<div class="bootloader">$(
 	printf '%s' "$settings" | grep -q "bootloader" && select_bootloader
+	printf '%s' "$settings" | grep -q "liveboot" && select_liveboot
+	printf '%s' "$settings" | grep -q "webboot" && select_webboot
 	printf '%s' "$settings" | grep -q "winboot" && select_winboot
 	)</div>
 </fieldset>
@@ -666,6 +714,12 @@ save_settings()
 	# user Pwd
 	/usr/sbin/tazinst set user_pwd "$(GET USER_PWD)" "$INSTFILE"
 
+	# SliTaz Live Boot
+	/usr/sbin/tazinst set liveboot "$(GET LIVEBOOT)" "$INSTFILE"
+
+	# SliTaz Web Boot
+	/usr/sbin/tazinst set webboot "$(GET WEBBOOT)" "$INSTFILE"
+
 	# win Dual-Boot
 	/usr/sbin/tazinst set winboot "$(GET WINBOOT)" "$INSTFILE"
 
@@ -673,8 +727,9 @@ save_settings()
 	if [ "$(GET BOOTLOADER)" = "auto" ]; then
 		/usr/sbin/tazinst set bootloader "auto" "$INSTFILE"
 	else
-		/usr/sbin/tazinst unset bootloader "$INSTFILE"
-		/usr/sbin/tazinst unset winboot "$INSTFILE"
+		for i in bootloader liveboot webboot winboot ; do
+			/usr/sbin/tazinst unset $i "$INSTFILE"
+		done
 	fi
 	input_hidden "CHECK" "yes"
 }
@@ -690,7 +745,7 @@ tazinst_run()
 			print "<script type=\"text/javascript\">"
 			printf "document.write(\047<div id=\"progress\">"
 			printf "<img src=\"/styles/default/images/loader.gif\" />"
-			printf $1 "&#37; " substr($0, length($1)+2, 40)
+			printf $1 "&#37; " substr($0, length($1)+2)
 			print "</div>\047)"
 			print "</script>"
 			}

@@ -75,6 +75,7 @@ install: msgfmt
 	@echo "Installing Tazinst into $(DESTDIR)$(PREFIX)/sbin..."
 	mkdir -p $(DESTDIR)$(PREFIX)/sbin
 	install -m 0755 tazinst $(DESTDIR)$(PREFIX)/sbin
+	-[ "$(VERSION)" ] && sed -i 's/readonly VERSION=["0-9].*/readonly VERSION=$(VERSION)/' $(DESTDIR)$(PREFIX)/sbin/tazinst
 	@echo "Installing slitaz-installer into $(DESTDIR)$(PREFIX)/sbin..."
 	mkdir -p $(DESTDIR)$(PREFIX)/sbin
 	install -m 0755 slitaz-installer $(DESTDIR)$(PREFIX)/sbin

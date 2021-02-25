@@ -55,7 +55,7 @@ MIRRORS="${MIRRORS:-$LOCALSTATE/mirrors}"
 readonly SETTINGS="mode media source \
 root_uuid root_format home_uuid home_format \
 hostname root_pwd user_login user_pwd \
-bootloader winboot"
+bootloader liveboot webboot winboot"
 
 # modes (key:help)
 readonly LST_MODE="
@@ -262,6 +262,18 @@ USER_PWD="$USER_PWD"
 # Run 'tazinst list bootloader' to list all options.
 BOOTLOADER="$BOOTLOADER"
 
+# SliTaz live/rescue boot:
+# If you do not want enable live boot, leave LIVEBOOT empty (LIVEBOOT="").
+# You may let tazinst automatically find your rootfs file(s) by specifying auto
+# (LIVEBOOT="auto").
+LIVEBOOT="$LIVEBOOT"
+
+# SliTaz Web boot:
+# If you do not want enable Web boot, leave WEBBOOT empty (WEBBOOT="").
+# You may let tazinst automatically find your pxe client by specifying auto
+# (WEBBOOT="auto").
+WEBBOOT="$WEBBOOT"
+
 # Windows dual boot:
 # If you do not want enable Dual boot, leave WINBOOT empty (WINBOOT="").
 # You may let tazinst automatically find your win partition by specifying auto
@@ -315,7 +327,7 @@ get_settings()
 	local "mode=$(get_value mode)"
 	case "$mode" in
 		upgrade)
-			echo "mode media source root_uuid bootloader winboot" ;;
+			echo "mode media source root_uuid bootloader liveboot webboot winboot" ;;
 		*)
 			printf "%s\n" "$SETTINGS" ;;
 	esac
@@ -334,7 +346,7 @@ get()
 		case "$setting" in
 			all)
 				for i in mode media source root_uuid root_format home_uuid home_format \
-					hostname root_pwd user_login user_pwd bootloader winboot; do
+					hostname root_pwd user_login user_pwd bootloader liveboot webboot winboot; do
 					printf "%-15s: %s\n" "$i" "$(get_value $i)"
 				done
 				;;
@@ -422,6 +434,12 @@ load_settings()
 	echo "bootloader" | egrep -q "$(regex "$settings")" \
 		&& BOOTLOADER="$(get bootloader)" \
 		|| unset BOOTLOADER
+	echo "liveboot" | egrep -q "$(regex "$settings")" \
+		&& LIVEBOOT="$(get liveboot)" \
+		|| unset LIVEBOOT
+	echo "webboot" | egrep -q "$(regex "$settings")" \
+		&& WEBBOOT="$(get webboot)" \
+		|| unset WEBBOOT
 	echo "winboot" | egrep -q "$(regex "$settings")" \
 		&& WINBOOT="$(get winboot)" \
 		|| unset WINBOOT
@@ -608,12 +626,18 @@ check_name()
 check_boot_mix()
 {
 	local bootloader=$(get bootloader)
-	local winboot=$(get winboot)
-	if [ -z "$bootloader" ] && [ -n "$winboot" ]; then
-
-		_ 'Error: Dualboot set with no bootloader.' 1>&2
+	local var name
+	[ -z "$bootloader" ] && while read var name; do
+		local value
+		eval value=\$$var
+		[ -z "$value" ] && continue
+		_ 'Error: %s set with no bootloader.' "$name" 1>&2
 		exit 1
-	fi
+	done <<EOT
+liveboot	Rescue/live boot
+webbot		Web boot
+winboot		Dualboot
+EOT
 }
 
 # exit if partition table is not in list
@@ -643,54 +667,48 @@ check_all()
 	for key in $(get settings); do
 	case "$key" in
 		mode)
-			printf "%-15s: " "mode"
-			check_key mode "$(key "$LST_MODE")" && echo "ok" ;;
+			printf "%-15s: " "$key"
+			check_key $key "$(key "$LST_MODE")" && echo "ok" ;;
 		media)
-			printf "%-15s: " "media"
-			check_key media "$(key "$LST_MEDIA")" && echo "ok" ;;
+			printf "%-15s: " "$key"
+			check_key $key "$(key "$LST_MEDIA")" && echo "ok" ;;
 		source)
-			printf "%-15s: " "source"
+			printf "%-15s: " "$key"
 			check_source && echo "ok" ;;
 		root_uuid)
-			printf "%-15s: " "root_uuid"
-			check_uuid root_uuid && echo "ok" ;;
-		root_format)
-			printf "%-15s: " "root_format"
-			[ -n "$(get root_format)" ] && \
-			{ check_key root_format "$(key "$LST_FORMAT")" && echo "ok"; } \
+			printf "%-15s: " "$key"
+			check_uuid $key && echo "ok" ;;
+		root_format|home_format)
+			printf "%-15s: " "$key"
+			[ -n "$(get $key)" ] && \
+			{ check_key $key "$(key "$LST_FORMAT")" && echo "ok"; } \
 				|| echo "ok" ;;
 		home_uuid)
-			printf "%-15s: " "home_uuid"
-			[ -n "$(get home_uuid)" ] && \
-				{ check_uuid home_uuid && check_uuid_mix && echo "ok"; } \
+			printf "%-15s: " "$key"
+			[ -n "$(get $key)" ] && \
+				{ check_uuid $key && check_uuid_mix && echo "ok"; } \
 				|| echo "ok" ;;
-		home_format)
-			printf "%-15s: " "home_format"
-			[ -n "$(get home_format)" ] && \
-			{ check_key home_format "$(key "$LST_FORMAT")" && echo "ok"; } \
-				|| echo "ok" ;;
-		hostname)
-			printf "%-15s: " "hostname"
-			check_name hostname && echo "ok" ;;
-		root_pwd)
-			printf "%-15s: " "root_password"
-			check_password root_pwd && echo "ok" ;;
-		user_login)
-			printf "%-15s: " "user_login"
-			check_name user_login && echo "ok" ;;
-		user_pwd)
-			printf "%-15s: " "user_password"
-			check_password user_pwd && echo "ok" ;;
+		hostname|user_login)
+			printf "%-15s: " "$key"
+			check_name $key && echo "ok" ;;
+		root_pwd|user_pwd)
+			printf "%-15s: " "${key/pwd/password}"
+			check_password $key && echo "ok" ;;
 		bootloader)
-			printf "%-15s: " "bootloader"
-			[ -n "$(get bootloader)" ] \
-				&& { check_key bootloader "$(list_bootloader)" \
+			printf "%-15s: " "$key"
+			[ -n "$(get $key)" ] \
+				&& { check_key $key "$(list_bootloader)" \
 				&& check_table && echo "ok" ; } \
 				|| echo "ok" ;;
+		liveboot|webboot)
+			printf "%-15s: " "$key"
+			[ -n "$(get $key)" ] && { "$(get $key)" == "auto" ] \
+				&& check_boot_mix && echo "ok"; } \
+				|| echo "ok" ;;
 		winboot)
-			printf "%-15s: " "winboot"
-			[ -n "$(get winboot)" ] && [ "$(get winboot)" != "auto" ] \
-				&& { check_uuid winboot && check_boot_mix && echo "ok"; } \
+			printf "%-15s: " "$key"
+			[ -n "$(get $key)" ] && [ "$(get $key)" != "auto" ] \
+				&& { check_uuid $key && check_boot_mix && echo "ok"; } \
 				|| echo "ok" ;;
 	esac
 	done
@@ -702,38 +720,37 @@ check()
 	local setting="$1"
 	case "$setting" in
 		mode)
-			check_key mode "$(key "$LST_MODE")" ;;
+			check_key $setting "$(key "$LST_MODE")" ;;
 		media)
-			check_key media "$(key "$LST_MEDIA")" ;;
+			check_key $setting "$(key "$LST_MEDIA")" ;;
 		source)
 			check_source ;;
 		root_uuid)
-			check_uuid root_uuid
+			check_uuid $setting
 			check_uuid_mix ;;
 		home_uuid)
-			[ -z "$(get home_uuid)" ] || check_uuid home_uuid
+			[ -z "$(get $setting)" ] || check_uuid $setting
 			check_uuid_mix ;;
 		root_format)
-			[ -z "$(get root_format)" ] \
-				|| check_key root_format "$(key "$LST_FORMAT")" ;;
+			[ -z "$(get $setting)" ] \
+				|| check_key $setting "$(key "$LST_FORMAT")" ;;
 		home_format)
-			[ -z "$(get home_format)" ] \
-				|| check_key home_format "$(key "$LST_FORMAT")" ;;
-		hostname)
-			check_name hostname ;;
-		root_pwd)
-			check_password root_pwd ;;
-		user_login)
-			check_name user_login ;;
-		user_pwd)
-			check_password user_pwd ;;
+			[ -z "$(get $setting)" ] \
+				|| check_key $setting "$(key "$LST_FORMAT")" ;;
+		hostname|user_login)
+			check_name $setting ;;
+		root_pwd|user_pwd)
+			check_password $setting ;;
 		bootloader)
-			[ -z "$(get bootloader)" ] \
-				|| (check_key bootloader "$(list_bootloader)" \
+			[ -z "$(get $setting)" ] \
+				|| (check_key $setting "$(list_bootloader)" \
 				&& check_table ; ) ;;
+		liveboot|webboot)
+			([ -z "$(get $setting)" ] || [ "$(get $setting)" = "auto" ]) \
+				&& check_boot_mix ;;
 		winboot)
-			([ -z "$(get winboot)" ] || [ "$(get winboot)" = "auto" ]) \
-				|| check_uuid winboot && check_boot_mix ;;
+			([ -z "$(get $setting)" ] || [ "$(get $setting)" = "auto" ]) \
+				|| check_uuid $setting && check_boot_mix ;;
 		""|all)
 			check_all ;;
 		*)
@@ -772,6 +789,8 @@ root_pwd	$(_ 'Superuser password')
 user_login	$(_ 'First user name')
 user_pwd	$(_ 'First user password')
 bootloader	$(_ 'Install a bootloader')
+liveboot	$(_ 'Install a live/rescue boot (with default passwords!)')
+webboot		$(_ 'Install a web boot (with default passwords!)')
 winboot		$(_ 'Partition to dualboot Windows from')
 "
 }
@@ -819,6 +838,8 @@ help()
 	bootloader)
 		printf "%s" "$LST_BOOTLOADER" | \
 			/bin/busybox awk -F: '/..*/{printf "%-12s%s\n",$1,$2}' ;;
+	liveboot|webboot)
+		_ "Empty string, or 'auto'" ;;
 	winboot)
 		_ "Partition containing Windows, or 'auto'" ;;
 	""|all)
@@ -1579,6 +1600,39 @@ kernel /boot/$KERNEL root=$(rootdev $ROOT_UUID) $KERNEL_ARGS$(rootdelay)
 
 _EOF_
 
+	if [ -n "$LIVEBOOT" ]; then
+		local rootfs_files="$(cd $TARGET_ROOT/boot/tazinst.$$ ; ls rootfs*)"
+		log "$(_ 'Enabling live/rescue boot with %s' "$rootfs_files")"
+		for i in $rootfs_files; do
+			[ -s $TARGET_ROOT/boot/$i ] &&
+				mv $TARGET_ROOT/boot/$i $TARGET_ROOT/boot/$i.bak
+			mv $TARGET_ROOT/boot/tazinst.$$/$i $TARGET_ROOT/boot/
+		done
+		cat >> $TARGET_ROOT/boot/grub/menu.lst <<_EOF_
+# For booting SliTaz Live from : $ROOT_UUID
+#
+title SliTaz GNU/Linux rescue $(cat $TARGET_ROOT/etc/slitaz-release) (Kernel $KERNEL)
+root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
+kernel /boot/$KERNEL $(sed 's|.*gz ||' /proc/cmdline)
+initrd /boot/$ROOTFS
+
+_EOF_
+	fi
+
+	if [ -n "$WEBBOOT" -a -n "$IPXE" ]; then
+		log "$(_ 'Enabling Webboot using %s' $IPXE)"
+		mv -f $TARGET_ROOT/boot/tazinst.$$/$IPXE $TARGET_ROOT/boot/
+		cat >> $TARGET_ROOT/boot/grub/menu.lst <<_EOF_
+# For booting SliTaz Live from the web
+#
+title SliTaz GNU/Linux web boot
+root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
+kernel /boot/$IPXE
+
+_EOF_
+	fi
+	rm -rf $TARGET_ROOT/boot/tazinst.$$ 2> /dev/null
+
 	local winpart="$(winboot_uuid)"
 	if [ -n "$winpart" ]; then
 		log "$(_ 'Enabling Windows dual-boot')"
@@ -1678,6 +1732,38 @@ LABEL slitaz
 	LINUX /boot/$KERNEL
 	APPEND root=$(rootdev $ROOT_UUID) $KERNEL_ARGS$(rootdelay)
 
+EOF
+	if [ -n "$LIVEBOOT" ]; then
+		local rootfs_files="$(cd $TARGET_ROOT/boot/tazinst.$$ ; ls rootfs*)"
+		log "$(_ 'Enabling live/rescue boot with %s' "$rootfs_files")"
+		for i in $rootfs_files; do
+			[ -s $TARGET_ROOT/boot/$i ] &&
+				mv $TARGET_ROOT/boot/$i $TARGET_ROOT/boot/$i.bak
+			mv $TARGET_ROOT/boot/tazinst.$$/$i $TARGET_ROOT/boot/
+		done
+		cat >> $TARGET_ROOT/boot/syslinux/syslinux.cfg <<EOF
+LABEL live rescue
+	MENU LABEL SliTaz GNU/Linux live/rescue $version
+	LINUX /boot/$KERNEL
+	INITRD /boot/$ROOTFS
+	APPEND root=$(rootdev $ROOT_UUID) $(sed 's|.*gz ||' /proc/cmdline)
+
+EOF
+	fi
+
+	if [ -n "$WEBBOOT" -a -n "$IPXE" ]; then
+		log "$(_ 'Enabling Webboot using %s' $IPXE)"
+		mv -f $TARGET_ROOT/boot/tazinst.$$/$IPXE $TARGET_ROOT/boot/
+		cat >> $TARGET_ROOT/boot/syslinux/syslinux.cfg <<EOF
+LABEL web zeb
+	MENU LABEL SliTaz GNU/Linux web boot
+	LINUX /boot/$IPXE
+
+EOF
+	fi
+	rm -rf $TARGET_ROOT/boot/tazinst.$$ 2> /dev/null
+
+	cat >> $TARGET_ROOT/boot/syslinux/syslinux.cfg <<EOF
 LABEL cmdline
 	MENU LABEL Command Line
 	MENU QUIT
@@ -1834,6 +1920,15 @@ install_kernel()
 	for i in $SOURCE_ROOT/boot/bzImage* ; do
 		cp $i $TARGET_ROOT/boot/${KERNEL%slitaz*}slitaz${i#*bzImage}
 	done
+	mkdir $TARGET_ROOT/boot/tazinst.$$
+	for i in $(ls -r $SOURCE_ROOT/boot/rootfs?*.gz 2> /dev/null | sed q) \
+		 $SOURCE_ROOT/boot/rootfs.gz $SOURCE_ROOT/boot/*pxe* ; do
+		cp $i $TARGET_ROOT/boot/tazinst.$$/
+	done
+	IPXE="$(cd $TARGET_ROOT/boot/tazinst.$$ ; ls *pxe* 2> /dev/null)"
+	ROOTFS="$(cd $TARGET_ROOT/boot/tazinst.$$ ; ls rootfs.* 2> /dev/null)"
+	[ -n "$ROOTFS" ] ||
+		ROOTFS="$(cd $TARGET_ROOT/boot/tazinst.$$ ; ls -r rootfs?*.* | sed q)"
 	log "$(_ 'install_kernel: %s' "$KERNEL")"
 }
 
