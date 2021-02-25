@@ -373,8 +373,8 @@ msgstr ""
 "un chargeur d'amorçage vous même"
 
 #: installer.cgi:546
-msgid "Enable the liveboot/rescue mode. (with default passwords!)"
-msgstr "Ajouter le boot de secours en RAM. (avec les mots de passe par defaut !)"
+msgid "Enable the liveboot/rescue mode. (with root password)"
+msgstr "Ajouter le boot de secours en RAM. (avec le mot de passe de root)"
 
 #: installer.cgi:547
 msgid ""
@@ -385,8 +385,8 @@ msgstr ""
 "Linux sur disque ou en RAN."
 
 #: installer.cgi:569
-msgid "Enable the webboot mode. (with default passwords!)"
-msgstr "Ajouter le boot sur le Web. (avec les mots de passe par defaut !)"
+msgid "Enable the webboot mode. (with root password)"
+msgstr "Ajouter le boot sur la Web. (avec le mot de passe de root)"
 
 #: installer.cgi:570
 msgid ""

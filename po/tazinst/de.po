@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TazInst \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 19:44+0000\n"
+"POT-Creation-Date: 2021-02-25 11:59+0000\n"
 "PO-Revision-Date: 2018-11-22 17:19+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German\n"
@@ -374,11 +374,11 @@ msgid "Install a bootloader"
 msgstr "Urlader installieren"
 
 #: tazinst:792
-msgid "Install a live/rescue boot (with default passwords!)"
+msgid "Install a live/rescue boot (with root password)"
 msgstr ""
 
 #: tazinst:793
-msgid "Install a web boot (with default passwords!)"
+msgid "Install a web boot (with root password)"
 msgstr ""
 
 #: tazinst:794
@@ -573,161 +573,161 @@ msgstr "Protokoll wird nach %s kopiert"
 msgid "No bootloader to install."
 msgstr "Kein Urlader zu installieren."
 
-#: tazinst:1605 tazinst:1738
+#: tazinst:1616 tazinst:1751
 msgid "Enabling live/rescue boot with %s"
 msgstr ""
 
-#: tazinst:1623 tazinst:1755
+#: tazinst:1635 tazinst:1768
 msgid "Enabling Webboot using %s"
 msgstr ""
 
-#: tazinst:1638 tazinst:1774
+#: tazinst:1651 tazinst:1787
 msgid "Enabling Windows dual-boot"
 msgstr "Alternatives Laden von Windows wird eingerichtet"
 
-#: tazinst:1661
+#: tazinst:1674
 msgid "Installing GRUB on: %s"
 msgstr "GRUB wird auf %s installiert"
 
-#: tazinst:1662
+#: tazinst:1675
 msgid "GRUB not found"
 msgstr "GRUB nicht gefunden"
 
-#: tazinst:1666
+#: tazinst:1679
 msgid "Setting the boot flag"
 msgstr "Das Merkmal 'urladefähig' wird für die Partition gesetzt"
 
-#: tazinst:1671 tazinst:1829
+#: tazinst:1684 tazinst:1842
 msgid "Copying splash image"
 msgstr "Das Startbild wird kopiert"
 
-#: tazinst:1793
+#: tazinst:1806
 msgid "Installing Syslinux"
 msgstr "Syslinux wird installiert"
 
-#: tazinst:1801
+#: tazinst:1814
 msgid "Syslinux not found"
 msgstr "Syslinux nicht gefunden"
 
-#: tazinst:1805
+#: tazinst:1818
 msgid "Setting the boot flag on"
 msgstr "Das Merkmal 'urladefähig' wird für die Partition gesetzt"
 
-#: tazinst:1808
+#: tazinst:1821
 msgid "mbr.bin not found"
 msgstr "mbr.bin nicht gefunden"
 
-#: tazinst:1809
+#: tazinst:1822
 msgid "Installing MBR"
 msgstr "MBR wird geschrieben"
 
-#: tazinst:1813
+#: tazinst:1826
 msgid "Setting the legacy_boot flag on"
 msgstr "Das Merkmal 'urladefähig' wird für die Partition gesetzt"
 
-#: tazinst:1822
+#: tazinst:1835
 msgid "Installing GPTMBR"
 msgstr "GPTMBR wird geschrieben"
 
-#: tazinst:1823
+#: tazinst:1836
 msgid "gptmbr.bin not found"
 msgstr "gptmbr.bin nicht gefunden"
 
-#: tazinst:1853
+#: tazinst:1866
 msgid "Updating UEFI boot files"
 msgstr ""
 
-#: tazinst:1888
+#: tazinst:1901
 msgid "Cleaning the root partition (%s)..."
 msgstr "Die Dateien der Partition / (%s) werden gelöscht..."
 
-#: tazinst:1897 tazinst:2177
+#: tazinst:1910 tazinst:2190
 msgid "keeping /home found on: %s"
 msgstr "Das Verzeichnis /home in %s wird beibehalten"
 
-#: tazinst:1902 tazinst:2191
+#: tazinst:1915 tazinst:2204
 msgid "removing target: %s"
 msgstr "Das Zielverzeichnis %s wird gelöscht"
 
-#: tazinst:1918
+#: tazinst:1931
 msgid "Kernel name not found, falling back to: %s"
 msgstr "Linux-Kern nicht gefunden, gehe zurück auf %s"
 
-#: tazinst:1932
+#: tazinst:1945
 msgid "install_kernel: %s"
 msgstr "install_kernel: %s"
 
-#: tazinst:2019
+#: tazinst:2032
 msgid "Restoring directory: /home..."
 msgstr "Das Verzeichnis /home wird wiederhergestellt..."
 
-#: tazinst:2025
+#: tazinst:2038
 msgid "Adding / partition and CHECK_FS to file %s..."
 msgstr "CHECK_FS für Dateisystem / wird in Datei %s eingefügt..."
 
-#: tazinst:2028
+#: tazinst:2041
 msgid "Configuring host name: %s"
 msgstr "Rechnername %s wird übernommen"
 
-#: tazinst:2091
+#: tazinst:2104
 msgid "Configuring partition to be used as /home: %s"
 msgstr "Eigene Partition %s für das Verzeichnis /home wird konfiguriert"
 
-#: tazinst:2110
+#: tazinst:2123
 msgid "Installing SliTaz on: %s"
 msgstr "SliTaz wird auf %s installiert"
 
-#: tazinst:2111 tazinst:2290
+#: tazinst:2124 tazinst:2303
 msgid "Checking settings..."
 msgstr "Einstellungen werden geprüft..."
 
-#: tazinst:2115 tazinst:2294
+#: tazinst:2128 tazinst:2307
 msgid "Preparing source media..."
 msgstr "Installationsquelle wird vorbereitet..."
 
-#: tazinst:2118 tazinst:2297
+#: tazinst:2131 tazinst:2310
 msgid "Preparing target disk..."
 msgstr "Installationsziel wird vorbereitet..."
 
-#: tazinst:2121
+#: tazinst:2134
 msgid "Cleaning the root partition if necessary..."
 msgstr "Die Partition für / wird formatiert (falls erforderlich)..."
 
-#: tazinst:2124 tazinst:2306
+#: tazinst:2137 tazinst:2319
 msgid "Extracting the root system..."
 msgstr "Die Dateien des Wurzeldateisystems werden extrahiert..."
 
-#: tazinst:2127 tazinst:2312
+#: tazinst:2140 tazinst:2325
 msgid "Installing the Kernel..."
 msgstr "Der Linux-Kern wird installiert..."
 
-#: tazinst:2130
+#: tazinst:2143
 msgid "Preconfiguring the system..."
 msgstr "Das System wird vorkonfiguriert..."
 
-#: tazinst:2133
+#: tazinst:2146
 msgid "Configuring root and default user account..."
 msgstr ""
 "Systemadministrator- und nichtprivilegierte Benutzerkennung werden "
 "eingerichtet..."
 
-#: tazinst:2136
+#: tazinst:2149
 msgid "Configuring /home..."
 msgstr "Das Dateisystem /home wird konfiguriert..."
 
-#: tazinst:2139
+#: tazinst:2152
 msgid "Checking bootloader installation..."
 msgstr "Urlader wird installiert (falls angefordert)..."
 
-#: tazinst:2142 tazinst:2321
+#: tazinst:2155 tazinst:2334
 msgid "Files installation completed"
 msgstr "Installation der Dateien abgeschlossen"
 
-#: tazinst:2156
+#: tazinst:2169
 msgid "Preparing upgrade of SliTaz release: %s"
 msgstr "Versionsaktualisierung der SliTaz-Version %s wird vorbereitet"
 
-#: tazinst:2158
+#: tazinst:2171
 msgid ""
 "%s: This partition doesn't appear to contain a valid SliTaz system, the "
 "file: %s doesn't exist."
@@ -735,51 +735,51 @@ msgstr ""
 "Die Partition %s scheint kein SliTaz-System zu enthalten, da die Datei %s "
 "nicht vorhanden ist."
 
-#: tazinst:2181
+#: tazinst:2194
 msgid "keeping /etc found on: %s"
 msgstr "Das Verzeichnis /etc von %s wird beibehalten"
 
-#: tazinst:2185
+#: tazinst:2198
 msgid "keeping /var/www found on: %s"
 msgstr "Das Verzeichnis /var/www von %s wird beibehalten"
 
-#: tazinst:2212
+#: tazinst:2225
 msgid "backups restored: %s"
 msgstr "gesicherte Verzeichnisse wiederhergestellt am %s"
 
-#: tazinst:2219
+#: tazinst:2232
 msgid "backups saved in %s"
 msgstr "Sicherungsdateien gespeichert unter %s"
 
-#: tazinst:2226
+#: tazinst:2239
 msgid "Checking the availability of packages..."
 msgstr "Verfügbarkeit von Paketen wird geprüft..."
 
-#: tazinst:2239
+#: tazinst:2252
 msgid "Installing packages..."
 msgstr "Pakete werden installiert..."
 
-#: tazinst:2241
+#: tazinst:2254
 msgid "packages to install: 0"
 msgstr "zu installierende Pakete: 0"
 
-#: tazinst:2246
+#: tazinst:2259
 msgid "Installing: %s..."
 msgstr "%s wird installiert..."
 
-#: tazinst:2255
+#: tazinst:2268
 msgid "Installation of packages complete..."
 msgstr "Installation von Paketen abgeschlossen..."
 
-#: tazinst:2264
+#: tazinst:2277
 msgid "Creating package lists..."
 msgstr "Paketliste wird erstellt..."
 
-#: tazinst:2266 tazinst:2270
+#: tazinst:2279 tazinst:2283
 msgid "%s: done"
 msgstr "%s wurde erstellt"
 
-#: tazinst:2277
+#: tazinst:2290
 msgid ""
 "The list of available packages on the mirror could not be downloaded. No "
 "missing packages will be reinstalled now, but you can do so later by looking "
@@ -789,26 +789,26 @@ msgstr ""
 "fehlenden Pakete kann jetzt neu installiert werden. Dies kann zu einem "
 "späteren Zeitpunkt nachgeholt werden anhand der Liste:"
 
-#: tazinst:2289
+#: tazinst:2302
 msgid "Upgrading SliTaz on: %s"
 msgstr "SliTaz auf %s wird aktualisiert"
 
-#: tazinst:2300
+#: tazinst:2313
 msgid "Searching for %s..."
 msgstr "Die Datei %s wird gesucht..."
 
-#: tazinst:2303
+#: tazinst:2316
 msgid "Backup /etc, /home and the packages list..."
 msgstr "Die Verzeichnisse /etc, /home und die Paketliste werden gesichert..."
 
-#: tazinst:2309
+#: tazinst:2322
 msgid "Restoring configuration files..."
 msgstr "Die Konfigurationsdateien werden wiederhergestellt..."
 
-#: tazinst:2315
+#: tazinst:2328
 msgid "Upgrading added packages..."
 msgstr "Zusätzliche Pakete werden aktualisiert..."
 
-#: tazinst:2318
+#: tazinst:2331
 msgid "Bootloader..."
 msgstr "Urlader..."

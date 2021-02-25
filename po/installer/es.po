@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 18:28+0000\n"
+"POT-Creation-Date: 2021-02-25 11:59+0000\n"
 "PO-Revision-Date: 2012-06-11 03:13-0000\n"
 "Last-Translator: kevin fabian quintero <kefaquin@gmail.com>\n"
 "Language-Team: \n"
@@ -395,7 +395,7 @@ msgstr ""
 "sí, a menos que usted quiere instalar grub manualmente."
 
 #: installer.cgi:546
-msgid "Enable the liveboot/rescue mode. (with default passwords!)"
+msgid "Enable the liveboot/rescue mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:547
@@ -405,7 +405,7 @@ msgid ""
 msgstr ""
 
 #: installer.cgi:569
-msgid "Enable the webboot mode. (with default passwords!)"
+msgid "Enable the webboot mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:570

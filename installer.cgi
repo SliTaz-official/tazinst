@@ -543,7 +543,7 @@ select_liveboot()
 		"auto" \
 		"$liveboot"
 	label "liveboot" \
-		"$(_ 'Enable the liveboot/rescue mode. (with default passwords!)')" \
+		"$(_ 'Enable the liveboot/rescue mode. (with root password)')" \
 		"$(_ "At start-up, you will be asked whether you want to boot \
 into SliTaz GNU/Linux on disk or in RAM.")"
 	error="$?"
@@ -566,7 +566,7 @@ select_webboot()
 		"auto" \
 		"$webboot"
 	label "webboot" \
-		"$(_ 'Enable the webboot mode. (with default passwords!)')" \
+		"$(_ 'Enable the webboot mode. (with root password)')" \
 		"$(_ "At start-up, you will be asked whether you want to boot \
 into SliTaz GNU/Linux on disk or boot in RAM from the Web.")"
 	error="$?"

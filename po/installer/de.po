@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 18:28+0000\n"
+"POT-Creation-Date: 2021-02-25 11:59+0000\n"
 "PO-Revision-Date: 2017-10-06 15:27+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German\n"
@@ -374,7 +374,7 @@ msgstr ""
 "installieren wollen."
 
 #: installer.cgi:546
-msgid "Enable the liveboot/rescue mode. (with default passwords!)"
+msgid "Enable the liveboot/rescue mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:547
@@ -387,7 +387,7 @@ msgstr ""
 "Linux geladen werden soll."
 
 #: installer.cgi:569
-msgid "Enable the webboot mode. (with default passwords!)"
+msgid "Enable the webboot mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:570

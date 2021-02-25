@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 18:28+0000\n"
+"POT-Creation-Date: 2021-02-25 11:59+0000\n"
 "PO-Revision-Date: 2012-06-10 17:15+0200\n"
 "Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
@@ -398,7 +398,7 @@ msgstr ""
 "ναι, εκτός αν θέλετε να εγκαταστήσετε το grub με το χέρι, μόνος σας."
 
 #: installer.cgi:546
-msgid "Enable the liveboot/rescue mode. (with default passwords!)"
+msgid "Enable the liveboot/rescue mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:547
@@ -408,7 +408,7 @@ msgid ""
 msgstr ""
 
 #: installer.cgi:569
-msgid "Enable the webboot mode. (with default passwords!)"
+msgid "Enable the webboot mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:570

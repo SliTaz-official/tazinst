@@ -789,8 +789,8 @@ root_pwd	$(_ 'Superuser password')
 user_login	$(_ 'First user name')
 user_pwd	$(_ 'First user password')
 bootloader	$(_ 'Install a bootloader')
-liveboot	$(_ 'Install a live/rescue boot (with default passwords!)')
-webboot		$(_ 'Install a web boot (with default passwords!)')
+liveboot	$(_ 'Install a live/rescue boot (with root password)')
+webboot		$(_ 'Install a web boot (with root password)')
 winboot		$(_ 'Partition to dualboot Windows from')
 "
 }
@@ -1567,6 +1567,14 @@ winboot_uuid()
 # 5.1 grub1
 #-----------
 
+grub_password_command()
+{
+	grub --batch 2> /dev/null <<EOT | sed '/^Encrypted/!d;s|^Encrypted: |password --md5 |'
+md5crypt
+$ROOT_PWD
+EOT
+}
+
 # create grub legacy conf
 grub_config()
 {
@@ -1588,6 +1596,9 @@ timeout 8
 
 # Graphical splash image.
 splashimage=/boot/grub/splash.xpm.gz
+
+# Root password is required for edition
+$(grub_password_command)
 
 # Change the colors.
 #color yellow/brown light-green/black
@@ -1612,6 +1623,7 @@ _EOF_
 # For booting SliTaz Live from : $ROOT_UUID
 #
 title SliTaz GNU/Linux rescue $(cat $TARGET_ROOT/etc/slitaz-release) (Kernel $KERNEL)
+$(grub_password_command)
 root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
 kernel /boot/$KERNEL $(sed 's|.*gz ||' /proc/cmdline)
 initrd /boot/$ROOTFS
@@ -1626,6 +1638,7 @@ _EOF_
 # For booting SliTaz Live from the web
 #
 title SliTaz GNU/Linux web boot
+$(grub_password_command)
 root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
 kernel /boot/$IPXE
 

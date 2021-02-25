@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 18:28+0000\n"
+"POT-Creation-Date: 2021-02-25 11:59+0000\n"
 "PO-Revision-Date: 2016-03-28 05:01-0300\n"
 "Last-Translator: Leonardo Laporte <hackdorte@sapo.pt>\n"
 "Language-Team: Portuguese <i18n@slitaz.org>\n"
@@ -370,7 +370,7 @@ msgstr ""
 "que se queira instalar o Grub manualmente."
 
 #: installer.cgi:546
-msgid "Enable the liveboot/rescue mode. (with default passwords!)"
+msgid "Enable the liveboot/rescue mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:547
@@ -383,7 +383,7 @@ msgstr ""
 "ou pelo SliTaz GNU/Linux."
 
 #: installer.cgi:569
-msgid "Enable the webboot mode. (with default passwords!)"
+msgid "Enable the webboot mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:570

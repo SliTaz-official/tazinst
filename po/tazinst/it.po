@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TazInst\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 19:44+0000\n"
+"POT-Creation-Date: 2021-02-25 11:59+0000\n"
 "PO-Revision-Date: 2018-01-31 02:41+0100\n"
 "Last-Translator: Christian Michelini <christian@alklibri.com>\n"
 "Language-Team: \n"
@@ -374,11 +374,11 @@ msgid "Install a bootloader"
 msgstr "Installa un bootloader"
 
 #: tazinst:792
-msgid "Install a live/rescue boot (with default passwords!)"
+msgid "Install a live/rescue boot (with root password)"
 msgstr ""
 
 #: tazinst:793
-msgid "Install a web boot (with default passwords!)"
+msgid "Install a web boot (with root password)"
 msgstr ""
 
 #: tazinst:794
@@ -573,159 +573,159 @@ msgstr "Sto copiando il registro su %s"
 msgid "No bootloader to install."
 msgstr "Nessun bootloader da installare."
 
-#: tazinst:1605 tazinst:1738
+#: tazinst:1616 tazinst:1751
 msgid "Enabling live/rescue boot with %s"
 msgstr ""
 
-#: tazinst:1623 tazinst:1755
+#: tazinst:1635 tazinst:1768
 msgid "Enabling Webboot using %s"
 msgstr ""
 
-#: tazinst:1638 tazinst:1774
+#: tazinst:1651 tazinst:1787
 msgid "Enabling Windows dual-boot"
 msgstr "Abilito il Dual-boot con Windows"
 
-#: tazinst:1661
+#: tazinst:1674
 msgid "Installing GRUB on: %s"
 msgstr "Installo GRUB su: %s"
 
-#: tazinst:1662
+#: tazinst:1675
 msgid "GRUB not found"
 msgstr "Non ho trovato GRUB"
 
-#: tazinst:1666
+#: tazinst:1679
 msgid "Setting the boot flag"
 msgstr "Imposta il boot flag"
 
-#: tazinst:1671 tazinst:1829
+#: tazinst:1684 tazinst:1842
 msgid "Copying splash image"
 msgstr "Sto copiando l'immagine di caricamento"
 
-#: tazinst:1793
+#: tazinst:1806
 msgid "Installing Syslinux"
 msgstr "Sto installando Syslinux"
 
-#: tazinst:1801
+#: tazinst:1814
 msgid "Syslinux not found"
 msgstr "Syslinux non trovato"
 
-#: tazinst:1805
+#: tazinst:1818
 msgid "Setting the boot flag on"
 msgstr "Imposta il boot flag su"
 
-#: tazinst:1808
+#: tazinst:1821
 msgid "mbr.bin not found"
 msgstr "mbr.bin non trovato"
 
-#: tazinst:1809
+#: tazinst:1822
 msgid "Installing MBR"
 msgstr "Sto installando MBR"
 
-#: tazinst:1813
+#: tazinst:1826
 msgid "Setting the legacy_boot flag on"
 msgstr "Imposta la flag del legacy_boot su "
 
-#: tazinst:1822
+#: tazinst:1835
 msgid "Installing GPTMBR"
 msgstr "Sto installando GPTMBR"
 
-#: tazinst:1823
+#: tazinst:1836
 msgid "gptmbr.bin not found"
 msgstr "gptmbr.bin non trovato"
 
-#: tazinst:1853
+#: tazinst:1866
 msgid "Updating UEFI boot files"
 msgstr ""
 
-#: tazinst:1888
+#: tazinst:1901
 msgid "Cleaning the root partition (%s)..."
 msgstr "Sto ripulendo la partizione root (%s)..."
 
-#: tazinst:1897 tazinst:2177
+#: tazinst:1910 tazinst:2190
 msgid "keeping /home found on: %s"
 msgstr "Preservo /home che ho trovato su: %s"
 
-#: tazinst:1902 tazinst:2191
+#: tazinst:1915 tazinst:2204
 msgid "removing target: %s"
 msgstr "Rimuovendo la destinazione: %s"
 
-#: tazinst:1918
+#: tazinst:1931
 msgid "Kernel name not found, falling back to: %s"
 msgstr "Nome de Kernel non trovato, ritorno a: %s"
 
-#: tazinst:1932
+#: tazinst:1945
 msgid "install_kernel: %s"
 msgstr "install_kernel: %s"
 
-#: tazinst:2019
+#: tazinst:2032
 msgid "Restoring directory: /home..."
 msgstr "Sto ripristinando la cartella: /home..."
 
-#: tazinst:2025
+#: tazinst:2038
 msgid "Adding / partition and CHECK_FS to file %s..."
 msgstr "Aggiungo la partizione / ed effettuo CHECK_FS sul file %s..."
 
-#: tazinst:2028
+#: tazinst:2041
 msgid "Configuring host name: %s"
 msgstr "Configurando il nome dell'host: %s"
 
-#: tazinst:2091
+#: tazinst:2104
 msgid "Configuring partition to be used as /home: %s"
 msgstr "Configurando la partizione da usare come /home: %s"
 
-#: tazinst:2110
+#: tazinst:2123
 msgid "Installing SliTaz on: %s"
 msgstr "Sto installando SliTaz su: %s"
 
-#: tazinst:2111 tazinst:2290
+#: tazinst:2124 tazinst:2303
 msgid "Checking settings..."
 msgstr "Controllo delle impostazioni..."
 
-#: tazinst:2115 tazinst:2294
+#: tazinst:2128 tazinst:2307
 msgid "Preparing source media..."
 msgstr "Preparazione dei supporti di origine..."
 
-#: tazinst:2118 tazinst:2297
+#: tazinst:2131 tazinst:2310
 msgid "Preparing target disk..."
 msgstr "Preparazione del disco di destinazione..."
 
-#: tazinst:2121
+#: tazinst:2134
 msgid "Cleaning the root partition if necessary..."
 msgstr "Pulendo la partizione di root se necessario..."
 
-#: tazinst:2124 tazinst:2306
+#: tazinst:2137 tazinst:2319
 msgid "Extracting the root system..."
 msgstr "Estraendo il sistema root..."
 
-#: tazinst:2127 tazinst:2312
+#: tazinst:2140 tazinst:2325
 msgid "Installing the Kernel..."
 msgstr "Installando il Kernel..."
 
-#: tazinst:2130
+#: tazinst:2143
 msgid "Preconfiguring the system..."
 msgstr "Preconfigurazione del sistema..."
 
-#: tazinst:2133
+#: tazinst:2146
 msgid "Configuring root and default user account..."
 msgstr "Configuro l'utente root e quello predefinito..."
 
-#: tazinst:2136
+#: tazinst:2149
 msgid "Configuring /home..."
 msgstr "Configurando /home..."
 
-#: tazinst:2139
+#: tazinst:2152
 msgid "Checking bootloader installation..."
 msgstr "Controllando l'installazione del bootloader..."
 
-#: tazinst:2142 tazinst:2321
+#: tazinst:2155 tazinst:2334
 msgid "Files installation completed"
 msgstr "Installazione dei file completata"
 
-#: tazinst:2156
+#: tazinst:2169
 msgid "Preparing upgrade of SliTaz release: %s"
 msgstr "Preparo l'aggiornamento della versione SliTaz: %s"
 
-#: tazinst:2158
+#: tazinst:2171
 msgid ""
 "%s: This partition doesn't appear to contain a valid SliTaz system, the "
 "file: %s doesn't exist."
@@ -733,51 +733,51 @@ msgstr ""
 "%s: Questa partizione non sembra contenere un sistema SliTaz valido, il "
 "file: %s non esiste."
 
-#: tazinst:2181
+#: tazinst:2194
 msgid "keeping /etc found on: %s"
 msgstr "Preservo /etc trovato su: %s"
 
-#: tazinst:2185
+#: tazinst:2198
 msgid "keeping /var/www found on: %s"
 msgstr "Preservo /var/www trovato su: %s"
 
-#: tazinst:2212
+#: tazinst:2225
 msgid "backups restored: %s"
 msgstr "Ripristino della copia di sicurezza: %s"
 
-#: tazinst:2219
+#: tazinst:2232
 msgid "backups saved in %s"
 msgstr "Copia di sicurezza salvata in %s"
 
-#: tazinst:2226
+#: tazinst:2239
 msgid "Checking the availability of packages..."
 msgstr "Controllo della disponibilità dei pacchetti..."
 
-#: tazinst:2239
+#: tazinst:2252
 msgid "Installing packages..."
 msgstr "Installazione pacchetti..."
 
-#: tazinst:2241
+#: tazinst:2254
 msgid "packages to install: 0"
 msgstr "Pacchetti da installare: 0"
 
-#: tazinst:2246
+#: tazinst:2259
 msgid "Installing: %s..."
 msgstr "Installando: %s..."
 
-#: tazinst:2255
+#: tazinst:2268
 msgid "Installation of packages complete..."
 msgstr "Installazione dei pacchetti completa..."
 
-#: tazinst:2264
+#: tazinst:2277
 msgid "Creating package lists..."
 msgstr "Creazione delle liste di pacchetti"
 
-#: tazinst:2266 tazinst:2270
+#: tazinst:2279 tazinst:2283
 msgid "%s: done"
 msgstr "%s: completato"
 
-#: tazinst:2277
+#: tazinst:2290
 msgid ""
 "The list of available packages on the mirror could not be downloaded. No "
 "missing packages will be reinstalled now, but you can do so later by looking "
@@ -787,27 +787,27 @@ msgstr ""
 "Nessun pacchetto mancante sarà reinstallato ora, ma puoi farlo in seguito, "
 "controllando la seguente lista:"
 
-#: tazinst:2289
+#: tazinst:2302
 msgid "Upgrading SliTaz on: %s"
 msgstr "Aggiornamento di SliTaz su: %s"
 
-#: tazinst:2300
+#: tazinst:2313
 msgid "Searching for %s..."
 msgstr "Ricerca di %s..."
 
-#: tazinst:2303
+#: tazinst:2316
 msgid "Backup /etc, /home and the packages list..."
 msgstr ""
 "Effettuo copia di sicurezza di /etc, /home e della lista dei pacchetti..."
 
-#: tazinst:2309
+#: tazinst:2322
 msgid "Restoring configuration files..."
 msgstr "Ripristino i file di configurazione..."
 
-#: tazinst:2315
+#: tazinst:2328
 msgid "Upgrading added packages..."
 msgstr "Aggiorno i pacchetti aggiunti..."
 
-#: tazinst:2318
+#: tazinst:2331
 msgid "Bootloader..."
 msgstr "Bootloader..."

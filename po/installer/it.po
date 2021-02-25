@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installer.cgi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 18:28+0000\n"
+"POT-Creation-Date: 2021-02-25 11:59+0000\n"
 "PO-Revision-Date: 2018-01-31 02:39+0100\n"
 "Last-Translator: Christian Michelini <christian@alklibri.com>\n"
 "Language-Team: \n"
@@ -380,7 +380,7 @@ msgstr ""
 "manualmente un bootloader"
 
 #: installer.cgi:546
-msgid "Enable the liveboot/rescue mode. (with default passwords!)"
+msgid "Enable the liveboot/rescue mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:547
@@ -393,7 +393,7 @@ msgstr ""
 "oppure SliTaz GNU/Linux."
 
 #: installer.cgi:569
-msgid "Enable the webboot mode. (with default passwords!)"
+msgid "Enable the webboot mode. (with root password)"
 msgstr ""
 
 #: installer.cgi:570
