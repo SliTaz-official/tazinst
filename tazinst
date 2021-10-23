@@ -1623,7 +1623,7 @@ _EOF_
 # For booting SliTaz Live from : $ROOT_UUID
 #
 title SliTaz GNU/Linux rescue $(cat $TARGET_ROOT/etc/slitaz-release) (Kernel $KERNEL)
-$(grub_password_command)
+lock
 root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
 kernel /boot/$KERNEL $(sed 's|.*gz ||' /proc/cmdline)
 initrd /boot/$ROOTFS
@@ -1638,7 +1638,7 @@ _EOF_
 # For booting SliTaz Live from the web
 #
 title SliTaz GNU/Linux web boot
-$(grub_password_command)
+lock
 root (hd$(disknum $ROOT_UUID),$(partnum $ROOT_UUID))
 kernel /boot/$IPXE
 

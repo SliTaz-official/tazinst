@@ -25,7 +25,7 @@ export TEXTDOMAIN
 
 # tazinst required version
 TAZINST_MINIMUM_VERSION="3.8"
-TAZINST_MAXIMUM_VERSION="4.99"
+TAZINST_MAXIMUM_VERSION="999"
 
 # tazinst setup file
 INSTFILE=/root/tazinst.conf
