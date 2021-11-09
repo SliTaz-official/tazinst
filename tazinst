@@ -702,8 +702,8 @@ check_all()
 				|| echo "ok" ;;
 		liveboot|webboot)
 			printf "%-15s: " "$key"
-			[ -n "$(get $key)" ] && { "$(get $key)" == "auto" ] \
-				&& check_boot_mix && echo "ok"; } \
+			[ -n "$(get $key)" ] && [ "$(get $key)" == "auto" ] \
+				&& { check_boot_mix && echo "ok"; } \
 				|| echo "ok" ;;
 		winboot)
 			printf "%-15s: " "$key"
@@ -746,10 +746,10 @@ check()
 				|| (check_key $setting "$(list_bootloader)" \
 				&& check_table ; ) ;;
 		liveboot|webboot)
-			([ -z "$(get $setting)" ] || [ "$(get $setting)" = "auto" ]) \
+			{ [ -z "$(get $setting)" ] || [ "$(get $setting)" = "auto" ]; } \
 				&& check_boot_mix ;;
 		winboot)
-			([ -z "$(get $setting)" ] || [ "$(get $setting)" = "auto" ]) \
+			{ [ -z "$(get $setting)" ] || [ "$(get $setting)" = "auto" ]; } \
 				|| check_uuid $setting && check_boot_mix ;;
 		""|all)
 			check_all ;;
@@ -1138,10 +1138,9 @@ randomize_mirrors()
 	local list_mirrors
 	if [ -r "$MIRRORS" ]; then
 		# randomize list of mirrors
-		list_mirrors="$(cat $MIRRORS | \
-			/bin/busybox awk 'BEGIN {srand()}{
+		list_mirrors="$(busybox awk 'BEGIN {srand()}{
 				printf "%05.0f %s \n",rand()*99999, $0;
-			}' | sort -n | sed 's/^[0-9]* //' )"
+			}' < $MIRRORS | sort -n | sed 's/^[0-9]* //' )"
 	else
 		log "$(_ 'No mirror list found, run %s.' 'tazpkg recharge')"
 		list_mirrors="http://mirror.slitaz.org/"
@@ -1164,7 +1163,7 @@ dnl()
 	if [ "$transfer" -gt "0" ];then
 		log "$(_ 'Download completed.')"
 	else
-		error 5 "(_ '%s: Download failed.' "$file")"
+		error 5 "$(_ '%s: Download failed.' "$file")"
 	fi
 }
 
@@ -1349,8 +1348,8 @@ mount_source()
 
 	#  exit if no rootfs.gz found.
 	log "$(_ 'Checking installation media...')"
-	if [ ! -f $SOURCE_ROOT/boot/rootfs.gz -a \
-		 ! -f $SOURCE_ROOT/boot/rootfs1.gz ]; then
+	if [ ! -f $SOURCE_ROOT/boot/rootfs.gz ] &&
+	   [ ! -f $SOURCE_ROOT/boot/rootfs1.gz ]; then
 		error 3 "$(_ 'Invalid source')"
 	else
 		log "$(_ 'Installation media checked ok')"
@@ -1428,7 +1427,7 @@ prepare_uuid()
 	mount -t "$mount_fs" "$ROOT_UUID" \
 			"$TARGET_ROOT" >>"$LOG" 2>>"$LOG"
 	if [ $(mount | \
-			grep -c "mnt/target") = "0" ]; then
+			grep -c "mnt/target") -eq 0 ]; then
 		error 4 "$(_ '%s: Unable to mount partition' "$ROOT_UUID")"
 	fi
 }
@@ -1631,7 +1630,7 @@ initrd /boot/$ROOTFS
 _EOF_
 	fi
 
-	if [ -n "$WEBBOOT" -a -n "$IPXE" ]; then
+	if [ -n "$WEBBOOT" ] && [ -n "$IPXE" ]; then
 		log "$(_ 'Enabling Webboot using %s' $IPXE)"
 		mv -f $TARGET_ROOT/boot/tazinst.$$/$IPXE $TARGET_ROOT/boot/
 		cat >> $TARGET_ROOT/boot/grub/menu.lst <<_EOF_
@@ -1764,7 +1763,7 @@ LABEL live rescue
 EOF
 	fi
 
-	if [ -n "$WEBBOOT" -a -n "$IPXE" ]; then
+	if [ -n "$WEBBOOT" ] && [ -n "$IPXE" ]; then
 		log "$(_ 'Enabling Webboot using %s' $IPXE)"
 		mv -f $TARGET_ROOT/boot/tazinst.$$/$IPXE $TARGET_ROOT/boot/
 		cat >> $TARGET_ROOT/boot/syslinux/syslinux.cfg <<EOF
@@ -1854,7 +1853,7 @@ efiboot_install()
 {
 	local esp_fs_uuid mnt="/media/esp$$" efiboot="/EFI/SLITAZ"
 	# We need efi stub support
-	[ "$(strings $TARGET_ROOT/boot/$KERNEL | head | grep reloc)" ] || return
+	strings $TARGET_ROOT/boot/$KERNEL | head | grep -q reloc || return
 	# And the esp partition
 	esp_fs_uuid="$(blkid | sed '/EFI system partition/!d;s|.* UUID="||;s|".*||;q')"
 	[ "$esp_fs_uuid" ] || return
@@ -2242,7 +2241,7 @@ install_pkgs()
 	diff="$(sort < packages-selection.diff)"
 	for pkg in $diff
 	do
-		if grep -q ^$pkg-[0-9] /var/lib/tazpkg/packages.list; then
+		if grep -q "^$pkg-[0-9]" /var/lib/tazpkg/packages.list; then
 			packages="$(($packages+1))"
 			printf "%s\n" "$pkg" >> packages-to-install.list
 		fi
@@ -2279,7 +2278,7 @@ update_pkgs()
 	log "$(_ '%s: done' 'packages-source.list')"
 	# diff
 	/bin/busybox diff packages-source.list packages-selection.list | \
-		grep ^+[a-z] | sed s/^+// > packages-selection.diff
+		grep '^+[a-z]' | sed 's/^+//' > packages-selection.diff
 	log "$(_ '%s: done' 'packages-selection.diff')"
 	# get mirror list.
 	/usr/bin/tazpkg recharge >>$LOG 2>>$LOG
